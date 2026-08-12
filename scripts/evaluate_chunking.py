@@ -1,30 +1,18 @@
-"""Compare chunk sizes — directly answers the mentor's check:
-"Did they try more than one chunk size and notice the difference?"
-
-For each chunk size we: load -> chunk -> embed -> retrieve (no LLM needed) a set
-of probe questions against the insurance claims corpus, and report the best
-retrieved chunk + its similarity. This shows how chunk size changes what retrieval
-surfaces.
-
-Run:  python -m scripts.evaluate_chunking
-"""
 from __future__ import annotations
 
 from rich.console import Console
 from rich.table import Table
 
+from app.core.config import settings
 from app.embeddings.embedder import get_embedder
 from app.ingestion.chunker import chunk_documents
 from app.ingestion.loaders import load_directory
-from app.core.config import settings
 
 console = Console()
 
-# Chunk sizes to compare (characters).
 CHUNK_SIZES = [300, 800, 1500]
 OVERLAP_RATIO = 0.15
 
-# Probe questions whose answers live in the insurance corpus.
 PROBES = [
     "How soon must I report a theft claim?",
     "What documents are needed to file a motor claim?",
@@ -34,14 +22,14 @@ PROBES = [
 
 
 def _cosine(a: list[float], b: list[float]) -> float:
-    # Vectors are already L2-normalized by the embedder, so dot == cosine.
+    # Vectors are L2-normalized, so dot product equals cosine similarity.
     return sum(x * y for x, y in zip(a, b))
 
 
 def main() -> None:
     documents = load_directory(settings.data_raw_dir)
     if not documents:
-        console.print("[red]No documents found in data/raw. Add the sample corpus first.[/red]")
+        console.print("[red]No documents found in data/raw.[/red]")
         return
 
     embedder = get_embedder()
@@ -65,16 +53,10 @@ def main() -> None:
             qv = query_vectors[q]
             scored = [(_cosine(qv, cv), c) for cv, c in zip(chunk_vectors, chunks)]
             best_score, best_chunk = max(scored, key=lambda t: t[0])
-            snippet = best_chunk.text.replace("\n", " ")[:90] + "..."
-            table.add_row(q, f"{best_score:.3f}", best_chunk.source, snippet)
+            table.add_row(q, f"{best_score:.3f}", best_chunk.source, best_chunk.text.replace("\n", " ")[:90] + "...")
 
         console.print(table)
         console.print()
-
-    console.print(
-        "[dim]Notice how smaller chunks give sharper, more focused matches while "
-        "larger chunks pull in more surrounding context (and can dilute the score).[/dim]"
-    )
 
 
 if __name__ == "__main__":
