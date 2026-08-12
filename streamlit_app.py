@@ -98,9 +98,21 @@ with tab_upload:
     col_btn, col_reset = st.columns(2)
     reset = col_reset.checkbox("Reset index before ingesting", value=True)
 
-    if col_btn.button("⚡ Run Ingestion", use_container_width=True, type="primary"):
+    if "ingesting" not in st.session_state:
+        st.session_state.ingesting = False
+
+    if col_btn.button(
+        "⚡ Run Ingestion",
+        use_container_width=True,
+        type="primary",
+        disabled=st.session_state.ingesting,
+    ):
+        st.session_state.ingesting = True
+        st.rerun()
+
+    if st.session_state.ingesting:
         from app.ingestion.pipeline import ingest
-        with st.spinner("Ingesting documents…"):
+        with st.spinner("Ingesting documents… please wait."):
             try:
                 result = ingest(chunk_size=chunk_size, chunk_overlap=chunk_overlap, reset=reset)
                 st.balloons()
@@ -112,6 +124,8 @@ with tab_upload:
                 st.success(f"✅ Indexed into collection **'{result.collection}'**")
             except Exception as e:
                 st.error(f"Ingestion failed: {e}")
+            finally:
+                st.session_state.ingesting = False
 
     st.divider()
     st.subheader("📄 Documents in data/raw/")
