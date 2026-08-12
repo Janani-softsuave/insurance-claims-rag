@@ -1,7 +1,3 @@
-"""Insurance Claims RAG System — Streamlit UI.
-
-Run:  streamlit run streamlit_app.py
-"""
 from __future__ import annotations
 
 import sys
@@ -12,7 +8,6 @@ sys.path.insert(0, str(ROOT))
 
 import streamlit as st
 
-# ── page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Insurance Claims RAG",
     page_icon="📋",
@@ -20,13 +15,11 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── lazy imports (heavy — load once via session_state) ─────────────────────────
-@st.cache_resource(show_spinner="Loading embedding & reranker models…")
+
+@st.cache_resource(show_spinner="Loading models…")
 def load_service(top_k: int, rerank_top_n: int):
     from app.services.rag_service import RagService
-    svc = RagService()
-    svc.retriever.store  # touch store to ensure collection exists
-    return svc
+    return RagService()
 
 
 def get_store():
@@ -35,9 +28,7 @@ def get_store():
     return ChromaStore(path=settings.chroma_path, collection_name=settings.collection_name)
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# SIDEBAR — configuration
-# ══════════════════════════════════════════════════════════════════════════════
+# Sidebar
 with st.sidebar:
     st.title("📋 Insurance Claims RAG")
     st.caption("Week 3 — Retrieval-Augmented Generation")
@@ -45,9 +36,9 @@ with st.sidebar:
 
     st.subheader("⚙️ Chunking")
     chunk_size = st.slider("Chunk Size (chars)", 100, 2000, 800, step=50,
-                           help="Larger = more context per chunk, lower score precision.")
+                           help="Larger = more context per chunk, lower retrieval precision.")
     chunk_overlap = st.slider("Overlap (chars)", 0, 500, 120, step=10,
-                              help="Overlap prevents answers from being cut at boundaries.")
+                              help="Overlap prevents answers from being cut at chunk boundaries.")
 
     st.subheader("🔍 Retrieval")
     top_k = st.slider("Top K candidates", 4, 20, 8,
@@ -59,9 +50,9 @@ with st.sidebar:
     st.subheader("📊 Index Stats")
     try:
         store = get_store()
-        col1, col2 = st.columns(2)
-        col1.metric("Chunks", store.count())
-        col2.metric("Collection", store.collection_name)
+        c1, c2 = st.columns(2)
+        c1.metric("Chunks", store.count())
+        c2.metric("Collection", store.collection_name)
     except Exception:
         st.warning("Index not built yet. Go to Upload & Ingest.")
 
@@ -69,24 +60,14 @@ with st.sidebar:
         st.rerun()
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# MAIN TABS
-# ══════════════════════════════════════════════════════════════════════════════
-tab_upload, tab_ask = st.tabs([
-    "📁  Upload & Ingest",
-    "💬  Ask Questions",
-])
+# Tabs
+tab_upload, tab_ask = st.tabs(["📁  Upload & Ingest", "💬  Ask Questions"])
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# TAB 1 — Upload & Ingest
-# ──────────────────────────────────────────────────────────────────────────────
+# Tab 1 — Upload & Ingest
 with tab_upload:
     st.header("Document Upload & Ingestion")
-    st.markdown(
-        "Upload your insurance documents (PDF, TXT, Markdown). "
-        "They will be **chunked → embedded → indexed** into the vector store."
-    )
+    st.markdown("Upload insurance documents (PDF, TXT, Markdown). They will be chunked, embedded, and indexed.")
 
     col_up, col_cfg = st.columns([2, 1])
 
@@ -97,16 +78,13 @@ with tab_upload:
             type=["pdf", "txt", "md"],
             accept_multiple_files=True,
         )
-
         if uploaded_files:
             from app.core.config import settings as cfg
             raw_dir = Path(cfg.data_raw_dir)
             raw_dir.mkdir(parents=True, exist_ok=True)
-
             saved = []
             for f in uploaded_files:
-                dest = raw_dir / f.name
-                dest.write_bytes(f.read())
+                (raw_dir / f.name).write_bytes(f.read())
                 saved.append(f.name)
             st.success(f"Saved {len(saved)} file(s): {', '.join(saved)}")
 
@@ -120,9 +98,8 @@ with tab_upload:
         )
 
     st.divider()
-
-    col_btn, col_reset = st.columns([1, 1])
-    reset = col_reset.checkbox("Reset index before ingesting", value=False)
+    col_btn, col_reset = st.columns(2)
+    reset = col_reset.checkbox("Reset index before ingesting", value=True)
 
     if col_btn.button("⚡ Run Ingestion", use_container_width=True, type="primary"):
         from app.ingestion.pipeline import ingest
@@ -147,32 +124,24 @@ with tab_upload:
         files = sorted(raw_dir.glob("*"))
         if files:
             for f in files:
-                size_kb = round(f.stat().st_size / 1024, 1)
-                st.markdown(f"- `{f.name}` — {size_kb} KB")
+                st.markdown(f"- `{f.name}` — {round(f.stat().st_size / 1024, 1)} KB")
         else:
             st.info("No documents yet. Upload some above.")
     else:
-        st.info("data/raw/ directory does not exist yet.")
+        st.info("data/raw/ does not exist yet.")
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# TAB 2 — Ask Questions
-# ──────────────────────────────────────────────────────────────────────────────
+# Tab 2 — Ask Questions
 with tab_ask:
     st.header("Ask the Documents")
     st.markdown(
-        "Ask any question. The system retrieves the most relevant chunks, "
-        "then generates a **grounded answer with citations** — or says "
-        "**'I don't know'** if the answer isn't in the documents."
+        "Ask a question. The system retrieves the most relevant chunks and generates "
+        "a **grounded answer with citations** — or says **'I don't know'** if the answer isn't in the documents."
     )
 
-    question = st.text_area(
-        "Your question",
-        placeholder="e.g. How soon must I report a theft claim?",
-        height=80,
-    )
+    question = st.text_area("Your question", placeholder="e.g. How soon must I report a theft claim?", height=80)
 
-    if st.button("🔍 Ask", type="primary", use_container_width=False):
+    if st.button("🔍 Ask", type="primary"):
         if not question.strip():
             st.warning("Please enter a question.")
         else:
@@ -184,24 +153,18 @@ with tab_ask:
                     if resp.can_answer:
                         st.success("✅ Answer found in documents")
                         st.markdown(f"### Answer\n{resp.answer}")
-
                         if resp.citations:
                             with st.expander("📎 Citations", expanded=True):
                                 for i, c in enumerate(resp.citations, 1):
                                     st.markdown(f"**[{i}] {c.source}**")
                                     st.caption(f'"{c.snippet}"')
                                     st.divider()
-
                         if resp.sources:
-                            st.markdown(
-                                "**Sources retrieved:** " +
-                                ", ".join(f"`{s}`" for s in resp.sources)
-                            )
+                            st.markdown("**Sources:** " + ", ".join(f"`{s}`" for s in resp.sources))
                     else:
                         st.warning("⚠️ I don't know — the answer is not in the documents.")
                         st.markdown(f"_{resp.answer}_")
 
-                    # save to history
                     if "history" not in st.session_state:
                         st.session_state.history = []
                     st.session_state.history.insert(0, {
@@ -214,7 +177,6 @@ with tab_ask:
                 except Exception as e:
                     st.error(f"Error: {e}")
 
-    # Q&A History
     if st.session_state.get("history"):
         st.divider()
         st.subheader("🕓 History")
@@ -224,5 +186,3 @@ with tab_ask:
                 st.write(item["a"])
                 if item["sources"]:
                     st.caption("Sources: " + ", ".join(item["sources"]))
-
-

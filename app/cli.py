@@ -1,11 +1,3 @@
-"""Command-line interface.
-
-Examples:
-    python -m app.cli ingest --reset
-    python -m app.cli ingest --chunk-size 400 --chunk-overlap 60
-    python -m app.cli ask "What temperature do I bake chocolate chip cookies at?"
-    python -m app.cli stats
-"""
 from __future__ import annotations
 
 import typer
@@ -19,7 +11,7 @@ from app.ingestion.pipeline import ingest as run_ingest
 from app.services.rag_service import RagService
 from app.vectorstore.chroma_store import get_store
 
-app = typer.Typer(help="Week 3 AI POC — Insurance Claims RAG (ask your policy documents).")
+app = typer.Typer(help="Insurance Claims RAG — ask your policy documents.")
 console = Console()
 
 
@@ -30,19 +22,14 @@ def ingest(
     chunk_overlap: int = typer.Option(settings.chunk_overlap, help="Overlap (characters)."),
     data_dir: str = typer.Option(settings.data_raw_dir, help="Folder of source documents."),
 ) -> None:
-    """Load, chunk, embed and index the documents."""
-    result = run_ingest(
-        data_dir=data_dir,
-        chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap,
-        reset=reset,
-    )
+    """Load, chunk, embed and index documents."""
+    result = run_ingest(data_dir=data_dir, chunk_size=chunk_size, chunk_overlap=chunk_overlap, reset=reset)
     console.print(
         Panel.fit(
             f"[green]Ingestion complete[/green]\n"
-            f"Documents loaded : {result.documents_loaded}\n"
-            f"Chunks indexed   : {result.chunks_indexed}\n"
-            f"Collection       : {result.collection}\n"
+            f"Documents loaded  : {result.documents_loaded}\n"
+            f"Chunks indexed    : {result.chunks_indexed}\n"
+            f"Collection        : {result.collection}\n"
             f"Chunk size/overlap: {result.chunk_size}/{result.chunk_overlap}",
             title="ingest",
         )
@@ -51,11 +38,11 @@ def ingest(
 
 @app.command()
 def ask(
-    question: str = typer.Argument(..., help="Your question about the documents."),
+    question: str = typer.Argument(..., help="Your question."),
     top_k: int = typer.Option(settings.top_k, help="Dense candidates to retrieve."),
     rerank_top_n: int = typer.Option(settings.rerank_top_n, help="Chunks kept after rerank."),
 ) -> None:
-    """Ask a question and get a grounded, cited answer (or 'I don't know')."""
+    """Ask a question and get a grounded, cited answer."""
     service = RagService()
     try:
         response = service.ask(question, top_k=top_k, rerank_top_n=rerank_top_n)
@@ -63,8 +50,7 @@ def ask(
         console.print(f"[red]Refused:[/red] {exc}")
         raise typer.Exit(code=1)
 
-    color = "green" if response.can_answer else "yellow"
-    console.print(Panel(response.answer, title="Answer", border_style=color))
+    console.print(Panel(response.answer, title="Answer", border_style="green" if response.can_answer else "yellow"))
 
     if response.citations:
         table = Table(title="Citations", show_lines=True)
@@ -80,7 +66,7 @@ def ask(
 
 @app.command()
 def stats() -> None:
-    """Show how many chunks are currently indexed."""
+    """Show index stats."""
     store = get_store()
     console.print(
         Panel.fit(

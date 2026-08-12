@@ -1,9 +1,3 @@
-"""Dense retriever — embed the query, then top-K similarity search.
-
-Step 1 of the two-stage retrieval the brief describes (bi-encoder recall, then
-cross-encoder precision). This stage is fast and casts a wide net (top_k);
-the reranker then narrows it.
-"""
 from __future__ import annotations
 
 from app.core.config import settings

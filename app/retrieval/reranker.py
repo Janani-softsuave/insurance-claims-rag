@@ -1,13 +1,3 @@
-"""Cross-encoder reranker — the precision stage (Week-3 bi- vs cross-encoder).
-
-A bi-encoder embeds query and chunk separately (fast, approximate). A
-cross-encoder reads the (query, chunk) pair *together* and scores relevance
-directly — more accurate but too slow to run over the whole corpus. So we only
-rerank the handful of candidates the dense retriever already surfaced.
-
-Raw BGE-reranker scores are logits; we squash them through a sigmoid to a 0..1
-relevance score, which the grounding guardrail then thresholds.
-"""
 from __future__ import annotations
 
 import math
@@ -41,24 +31,17 @@ class Reranker:
         if not candidates:
             return []
         top_n = top_n or settings.rerank_top_n
-
         pairs = [(query, c.chunk.text) for c in candidates]
-        raw_scores = self.model.predict(pairs)
-
+        # Raw cross-encoder scores are logits; sigmoid maps them to 0..1.
         reranked = [
             RetrievedChunk(chunk=c.chunk, score=_sigmoid(float(s)))
-            for c, s in zip(candidates, raw_scores)
+            for c, s in zip(candidates, self.model.predict(pairs))
         ]
         reranked.sort(key=lambda r: r.score, reverse=True)
-        logger.info(
-            "Reranked %d candidate(s); top score=%.3f",
-            len(reranked),
-            reranked[0].score if reranked else 0.0,
-        )
+        logger.info("Reranked %d candidate(s); top score=%.3f", len(reranked), reranked[0].score)
         return reranked[:top_n]
 
 
 @lru_cache
 def get_reranker() -> Reranker:
-    """Cached singleton — the cross-encoder is heavy, load it once."""
     return Reranker()
