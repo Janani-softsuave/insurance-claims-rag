@@ -8,7 +8,6 @@ from app.models.schemas import Chunk, Document
 
 logger = get_logger(__name__)
 
-# Ordered coarsest to finest; empty string forces a hard character cut.
 _SEPARATORS = ["\n\n", "\n", ". ", " ", ""]
 
 

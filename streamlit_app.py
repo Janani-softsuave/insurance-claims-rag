@@ -28,7 +28,6 @@ def get_store():
     return ChromaStore(path=settings.chroma_path, collection_name=settings.collection_name)
 
 
-# Sidebar
 with st.sidebar:
     st.title("📋 Insurance Claims RAG")
     st.caption("Week 3 — Retrieval-Augmented Generation")
@@ -60,11 +59,9 @@ with st.sidebar:
         st.rerun()
 
 
-# Tabs
 tab_upload, tab_ask = st.tabs(["📁  Upload & Ingest", "💬  Ask Questions"])
 
 
-# Tab 1 — Upload & Ingest
 with tab_upload:
     st.header("Document Upload & Ingestion")
     st.markdown("Upload insurance documents (PDF, TXT, Markdown). They will be chunked, embedded, and indexed.")
@@ -131,7 +128,6 @@ with tab_upload:
         st.info("data/raw/ does not exist yet.")
 
 
-# Tab 2 — Ask Questions
 with tab_ask:
     st.header("Ask the Documents")
     st.markdown(
