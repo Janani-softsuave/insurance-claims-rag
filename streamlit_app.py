@@ -64,14 +64,18 @@ tab_upload, tab_ask = st.tabs(["📁  Upload & Ingest", "💬  Ask Questions"])
 
 with tab_upload:
     st.header("Document Upload & Ingestion")
-    st.markdown("Upload insurance documents (PDF, TXT, Markdown). They will be chunked, embedded, and indexed.")
+    st.info(
+        "**Step 1 (optional):** Upload your own documents — they are saved to `data/raw/`.\n\n"
+        "**Step 2:** Click **Run Ingestion** to chunk, embed, and index all documents in `data/raw/` "
+        "into the vector store. Do this once at the start, or whenever you add new documents or change the chunk size."
+    )
 
     col_up, col_cfg = st.columns([2, 1])
 
     with col_up:
-        st.subheader("📤 Upload Documents")
+        st.subheader("📤 Upload New Document (optional)")
         uploaded_files = st.file_uploader(
-            "Drop files here (PDF, TXT, MD)",
+            "Drop files here — they will be saved to data/raw/",
             type=["pdf", "txt", "md"],
             accept_multiple_files=True,
         )
@@ -83,7 +87,7 @@ with tab_upload:
             for f in uploaded_files:
                 (raw_dir / f.name).write_bytes(f.read())
                 saved.append(f.name)
-            st.success(f"Saved {len(saved)} file(s): {', '.join(saved)}")
+            st.success(f"Saved {len(saved)} file(s): {', '.join(saved)} — now click Run Ingestion below.")
 
     with col_cfg:
         st.subheader("🔧 Active Config")
@@ -96,7 +100,8 @@ with tab_upload:
 
     st.divider()
     col_btn, col_reset = st.columns(2)
-    reset = col_reset.checkbox("Reset index before ingesting", value=True)
+    reset = col_reset.checkbox("Reset index before ingesting", value=True,
+                               help="Check this when changing chunk size or replacing documents.")
 
     if "ingesting" not in st.session_state:
         st.session_state.ingesting = False
