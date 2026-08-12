@@ -1,0 +1,20 @@
+# Secrets — keys must stay out of the repo (Week 2 practice)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Vector DB persistence
+storage/
+
+# Model caches
+.cache/
+
+# IDE
+.idea/
+.vscode/
