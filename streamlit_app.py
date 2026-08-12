@@ -5,7 +5,6 @@ Run:  streamlit run streamlit_app.py
 from __future__ import annotations
 
 import sys
-import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -30,53 +29,10 @@ def load_service(top_k: int, rerank_top_n: int):
     return svc
 
 
-@st.cache_resource(show_spinner="Loading embedding model…")
-def load_embedder():
-    from app.embeddings.embedder import get_embedder
-    return get_embedder()
-
-
 def get_store():
     from app.vectorstore.chroma_store import ChromaStore
     from app.core.config import settings
     return ChromaStore(path=settings.chroma_path, collection_name=settings.collection_name)
-
-
-# ── helpers ────────────────────────────────────────────────────────────────────
-def cosine(a, b):
-    return sum(x * y for x, y in zip(a, b))
-
-
-def run_chunk_comparison(probe_questions: list[str], chunk_sizes: list[int]):
-    """Return comparison data without calling the LLM."""
-    from app.ingestion.loaders import load_directory
-    from app.ingestion.chunker import chunk_documents
-    from app.core.config import settings
-
-    embedder = load_embedder()
-    documents = load_directory(settings.data_raw_dir)
-    if not documents:
-        return None, "No documents found in data/raw/."
-
-    rows = []
-    for size in chunk_sizes:
-        overlap = int(size * 0.15)
-        chunks = chunk_documents(documents, chunk_size=size, chunk_overlap=overlap)
-        vecs = embedder.embed_documents([c.text for c in chunks])
-        for q in probe_questions:
-            qv = embedder.embed_query(q)
-            scores = [cosine(qv, v) for v in vecs]
-            best_idx = max(range(len(scores)), key=lambda i: scores[i])
-            rows.append({
-                "Chunk Size": size,
-                "Overlap": overlap,
-                "Total Chunks": len(chunks),
-                "Question": q[:60] + ("…" if len(q) > 60 else ""),
-                "Best Score": round(scores[best_idx], 4),
-                "Source": chunks[best_idx].source,
-                "Snippet": chunks[best_idx].text.replace("\n", " ")[:120] + "…",
-            })
-    return rows, None
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -116,10 +72,9 @@ with st.sidebar:
 # ══════════════════════════════════════════════════════════════════════════════
 # MAIN TABS
 # ══════════════════════════════════════════════════════════════════════════════
-tab_upload, tab_ask, tab_mentor = st.tabs([
+tab_upload, tab_ask = st.tabs([
     "📁  Upload & Ingest",
     "💬  Ask Questions",
-    "🎓  Mentor Checks",
 ])
 
 
@@ -271,171 +226,3 @@ with tab_ask:
                     st.caption("Sources: " + ", ".join(item["sources"]))
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# TAB 3 — Mentor Checks
-# ──────────────────────────────────────────────────────────────────────────────
-with tab_mentor:
-    st.header("🎓 Mentor Evaluation")
-    st.markdown(
-        "This tab runs **all 4 mentor checks** automatically and shows pass/fail. "
-        "Checks 1–3 call the full RAG pipeline (Gemini required). "
-        "Check 4 uses the embedder only — no API key needed."
-    )
-    st.divider()
-
-    PROBE_QUESTIONS = [
-        "How soon must I report a theft claim?",
-        "What documents are needed for a motor insurance claim?",
-        "Is earthquake damage covered under a standard property policy?",
-        "What is a total loss in motor insurance?",
-    ]
-    OUT_OF_CORPUS = "What is the best programming language for machine learning?"
-
-    run_all = st.button("▶ Run All Mentor Checks", type="primary", use_container_width=True)
-
-    st.divider()
-
-    # ── Check 1 & 2: answer correctness + citations ────────────────────────
-    st.subheader("Check 1 — Can the app answer correctly from the documents?")
-    st.subheader("Check 2 — Does every answer show which document it came from?")
-
-    check12_placeholder = st.container()
-
-    if run_all:
-        with check12_placeholder:
-            with st.spinner("Running Q&A checks…"):
-                try:
-                    service = load_service(top_k, rerank_top_n)
-                    results_12 = []
-                    for q in PROBE_QUESTIONS:
-                        resp = service.ask(q, top_k=top_k, rerank_top_n=rerank_top_n)
-                        results_12.append({
-                            "Question": q,
-                            "Answered": resp.can_answer,
-                            "Has Citations": len(resp.citations) > 0,
-                            "Answer (excerpt)": resp.answer[:120] + "…" if len(resp.answer) > 120 else resp.answer,
-                            "Sources": ", ".join(resp.sources) if resp.sources else "—",
-                        })
-                        time.sleep(0.3)
-
-                    answered = sum(1 for r in results_12 if r["Answered"])
-                    cited = sum(1 for r in results_12 if r["Has Citations"])
-
-                    c1, c2 = st.columns(2)
-                    check1_pass = answered == len(PROBE_QUESTIONS)
-                    check2_pass = cited == len(PROBE_QUESTIONS)
-                    c1.metric("Check 1", f"{'✅ PASS' if check1_pass else '❌ FAIL'}",
-                              f"{answered}/{len(PROBE_QUESTIONS)} questions answered")
-                    c2.metric("Check 2", f"{'✅ PASS' if check2_pass else '❌ FAIL'}",
-                              f"{cited}/{len(PROBE_QUESTIONS)} answers cited")
-
-                    for r in results_12:
-                        icon = "✅" if r["Answered"] else "❌"
-                        cite_icon = "📎" if r["Has Citations"] else "⚠️"
-                        with st.expander(f"{icon} {cite_icon} {r['Question']}"):
-                            st.markdown(f"**Answer:** {r['Answer (excerpt)']}")
-                            st.markdown(f"**Sources:** `{r['Sources']}`")
-
-                except Exception as e:
-                    st.error(f"Check 1/2 failed: {e}")
-
-    st.divider()
-
-    # ── Check 3: I don't know ──────────────────────────────────────────────
-    st.subheader("Check 3 — Does it admit 'I don't know' for out-of-corpus questions?")
-
-    check3_placeholder = st.container()
-
-    if run_all:
-        with check3_placeholder:
-            with st.spinner("Testing out-of-corpus question…"):
-                try:
-                    service = load_service(top_k, rerank_top_n)
-                    resp3 = service.ask(OUT_OF_CORPUS, top_k=top_k, rerank_top_n=rerank_top_n)
-                    check3_pass = not resp3.can_answer
-
-                    st.metric(
-                        "Check 3",
-                        "✅ PASS" if check3_pass else "❌ FAIL",
-                        "Correctly refused" if check3_pass else "Incorrectly attempted to answer",
-                    )
-                    st.markdown(f"**Question asked:** _{OUT_OF_CORPUS}_")
-                    if check3_pass:
-                        st.success(f"Response: _{resp3.answer}_")
-                    else:
-                        st.error(
-                            f"The app answered instead of refusing:\n\n_{resp3.answer}_\n\n"
-                            "Try lowering the score threshold in config.py."
-                        )
-                except Exception as e:
-                    st.error(f"Check 3 failed: {e}")
-
-    st.divider()
-
-    # ── Check 4: chunk size comparison ────────────────────────────────────
-    st.subheader("Check 4 — Did they try more than one chunk size and notice the difference?")
-    st.markdown(
-        "Runs the probe questions across **3 chunk sizes** using only the embedder "
-        "(no LLM call). Shows how chunk size affects retrieval score and snippet focus."
-    )
-
-    CHUNK_SIZES = [300, 800, 1500]
-    check4_placeholder = st.container()
-
-    if run_all:
-        with check4_placeholder:
-            with st.spinner("Running chunk size comparison (no LLM needed)…"):
-                rows, err = run_chunk_comparison(PROBE_QUESTIONS[:2], CHUNK_SIZES)
-                if err:
-                    st.error(err)
-                else:
-                    import pandas as pd
-                    df = pd.DataFrame(rows)
-
-                    # score comparison chart per question
-                    for q in df["Question"].unique():
-                        sub = df[df["Question"] == q][["Chunk Size", "Total Chunks", "Best Score", "Source"]]
-                        st.markdown(f"**Q: {q}**")
-                        st.dataframe(sub.reset_index(drop=True), use_container_width=True)
-
-                    st.divider()
-
-                    # overall score trend
-                    pivot = df.pivot_table(index="Chunk Size", values="Best Score", aggfunc="mean").reset_index()
-                    pivot.columns = ["Chunk Size", "Avg Best Score"]
-                    st.markdown("**Average best-match score across probe questions by chunk size:**")
-                    st.bar_chart(pivot.set_index("Chunk Size"))
-
-                    # insight
-                    scores = pivot["Avg Best Score"].tolist()
-                    if scores[0] > scores[-1]:
-                        insight = (
-                            f"✅ **Smaller chunks (300) score higher ({scores[0]:.3f}) than "
-                            f"larger chunks (1500) ({scores[-1]:.3f})** — because smaller chunks "
-                            f"contain a single focused fact, so cosine similarity is higher. "
-                            f"Larger chunks mix multiple topics, diluting the score."
-                        )
-                    else:
-                        insight = (
-                            f"Chunk sizes 300→1500 scored {scores[0]:.3f}→{scores[-1]:.3f}. "
-                            f"Different chunk sizes surface different strengths — "
-                            f"small chunks are precise, large chunks provide more context."
-                        )
-                    st.info(insight)
-                    st.metric("Check 4", "✅ PASS", "3 chunk sizes compared with score analysis")
-
-    # ── Summary card ──────────────────────────────────────────────────────
-    if run_all:
-        st.divider()
-        st.subheader("📋 Evaluation Summary")
-        st.markdown("""
-| # | Mentor Check | Status |
-|---|-------------|--------|
-| 1 | App answers correctly using the documents | See results above |
-| 2 | Every answer shows which document it came from | See results above |
-| 3 | Admits "I don't know" for out-of-corpus questions | See results above |
-| 4 | Tried more than one chunk size and noticed the difference | ✅ Shown above |
-        """)
-
-    if not run_all:
-        st.info("Click **▶ Run All Mentor Checks** above to evaluate all 4 checks.")
