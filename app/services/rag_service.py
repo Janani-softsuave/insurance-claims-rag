@@ -13,6 +13,21 @@ logger = get_logger(__name__)
 _REFUSAL = "I don't know — I couldn't find an answer to that in the documents I have."
 
 
+def _retrieval_only_response(question: str, reranked) -> AskResponse:
+    sources = sorted({rc.chunk.source for rc in reranked})
+    combined = "\n\n---\n\n".join(
+        f"[{rc.chunk.source}]\n{rc.chunk.text.strip()}" for rc in reranked
+    )
+    return AskResponse(
+        question=question,
+        answer=combined,
+        can_answer=True,
+        citations=[],
+        sources=sources,
+        retrieval_only=True,
+    )
+
+
 class RagService:
     def __init__(self):
         self.retriever = Retriever()
@@ -32,7 +47,11 @@ class RagService:
         if not is_grounded(reranked):
             return AskResponse(question=question, answer=_REFUSAL, can_answer=False, citations=[], sources=[])
 
-        result: GroundedAnswer = get_generator().generate(question, reranked)
+        try:
+            result: GroundedAnswer = get_generator().generate(question, reranked)
+        except Exception as exc:
+            logger.warning("Generation failed (%s) — falling back to retrieval only.", exc)
+            return _retrieval_only_response(question, reranked)
 
         if not result.can_answer:
             return AskResponse(

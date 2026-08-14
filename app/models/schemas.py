@@ -56,6 +56,7 @@ class AskResponse(BaseModel):
     can_answer: bool
     citations: list[Citation]
     sources: list[str]
+    retrieval_only: bool = False
 
 
 class IngestResponse(BaseModel):

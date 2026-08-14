@@ -164,7 +164,16 @@ with tab_ask:
                     service = load_service(top_k, rerank_top_n)
                     resp = service.ask(question.strip(), top_k=top_k, rerank_top_n=rerank_top_n)
 
-                    if resp.can_answer:
+                    if resp.retrieval_only:
+                        st.warning(
+                            "⚠️ LLM unavailable (API overloaded) — showing retrieved document chunks directly."
+                        )
+                        if resp.sources:
+                            st.markdown("**Sources:** " + ", ".join(f"`{s}`" for s in resp.sources))
+                        for block in resp.answer.split("\n\n---\n\n"):
+                            st.markdown(block)
+                            st.divider()
+                    elif resp.can_answer:
                         st.success("✅ Answer found in documents")
                         st.markdown(f"### Answer\n{resp.answer}")
                         if resp.citations:
