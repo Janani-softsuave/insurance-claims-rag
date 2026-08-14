@@ -120,7 +120,6 @@ with tab_upload:
         with st.spinner("Ingesting documents… please wait."):
             try:
                 result = ingest(chunk_size=chunk_size, chunk_overlap=chunk_overlap, reset=reset)
-                st.balloons()
                 m1, m2, m3, m4 = st.columns(4)
                 m1.metric("Documents loaded", result.documents_loaded)
                 m2.metric("Chunks indexed", result.chunks_indexed)
