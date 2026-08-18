@@ -41,7 +41,6 @@ def main() -> None:
     dense_result = evaluate(TEST_QUERIES, dense_retrieve, k=K)
     hybrid_result = evaluate(TEST_QUERIES, hybrid_retrieve, k=K)
 
-    # Per-query breakdown
     table = Table(title=f"Per-query retrieval results  (k={K})", show_lines=True)
     table.add_column("Question", style="cyan")
     table.add_column("Expected source", style="magenta")
@@ -56,7 +55,6 @@ def main() -> None:
         d_hit = hit_rate_at_k(d_chunks, exp, K)
         h_hit = hit_rate_at_k(h_chunks, exp, K)
 
-        # Failure labelling
         if d_hit:
             failure = "✅ Correct"
         elif not d_hit and d_chunks:
@@ -74,7 +72,6 @@ def main() -> None:
 
     console.print(table)
 
-    # Summary
     summary = Table(title="Before / After Summary", show_lines=True)
     summary.add_column("Method")
     summary.add_column(f"hit-rate@{K}", justify="right")

@@ -14,16 +14,7 @@ _HYDE_PROMPT = (
 
 
 def hyde_embed(question: str) -> list[float]:
-    """
-    Hypothetical Document Embeddings — generate a hypothetical answer document,
-    embed it, and use that vector for retrieval.
-
-    The hypothetical document is closer to real document language than the raw
-    question, so it lands nearer to the actual answer chunk in vector space.
-    Falls back to embedding the original question if generation fails.
-    """
     from app.embeddings.embedder import get_embedder
-
     embedder = get_embedder()
 
     try:

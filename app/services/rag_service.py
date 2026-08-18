@@ -67,7 +67,6 @@ class RagService:
         question = validate_question(question)
         rewritten: str | None = None
 
-        # Step 1: Query transformation — HyDE takes priority over query rewriting
         if use_hyde:
             from app.retrieval.hyde import hyde_embed
             from app.vectorstore.chroma_store import get_store
@@ -83,12 +82,10 @@ class RagService:
                 search_query = question
             candidates = self._retriever.retrieve(search_query, top_k=top_k or settings.top_k)
 
-        # Step 2: Cross-encoder reranking
         reranked = self.reranker.rerank(
             question, candidates, top_n=rerank_top_n or settings.rerank_top_n
         )
 
-        # Step 3: MMR diversity reranking (applied after cross-encoder)
         if use_mmr and reranked:
             from app.embeddings.embedder import get_embedder
             from app.retrieval.mmr import mmr_rerank
@@ -100,7 +97,6 @@ class RagService:
                 lambda_=mmr_lambda,
             )
 
-        # Step 4: Grounding gate
         if not is_grounded(reranked):
             return AskResponse(
                 question=question,
@@ -112,7 +108,6 @@ class RagService:
                 retrieved_chunks=_chunk_infos(reranked),
             )
 
-        # Step 5: Grounded generation
         try:
             result: GroundedAnswer = get_generator().generate(question, reranked)
         except Exception as exc:

@@ -19,29 +19,14 @@ def mmr_rerank(
     lambda_: float | None = None,
     embedder: Embedder | None = None,
 ) -> list[RetrievedChunk]:
-    """
-    Maximal Marginal Relevance — selects chunks that are relevant to the query
-    but not redundant with each other.
-
-    MMR score = λ * sim(chunk, query) - (1 - λ) * max(sim(chunk, selected))
-
-    λ = 1.0 → pure relevance (same as no MMR)
-    λ = 0.0 → pure diversity
-    λ = 0.5 → balanced (default)
-    """
     top_n = top_n or settings.rerank_top_n
-    lambda_ = lambda_ if lambda_ is not None else settings.mmr_lambda
+    lambda_ = settings.mmr_lambda if lambda_ is None else lambda_
     embedder = embedder or get_embedder()
 
     if not candidates:
         return []
 
-    chunk_texts = [rc.chunk.text for rc in candidates]
-    chunk_vectors = embedder.embed_documents(chunk_texts)
-
-    # Relevance of each candidate to the query (already computed as score from reranker)
-    # We use the stored score as relevance rather than re-embedding, since the
-    # cross-encoder score is more accurate than raw cosine.
+    chunk_vectors = embedder.embed_documents([rc.chunk.text for rc in candidates])
     relevance = [rc.score for rc in candidates]
 
     selected_indices: list[int] = []
@@ -49,16 +34,14 @@ def mmr_rerank(
 
     while remaining and len(selected_indices) < top_n:
         if not selected_indices:
-            # First pick: highest relevance
             best = max(remaining, key=lambda i: relevance[i])
         else:
-            # MMR: balance relevance and redundancy
             selected_vecs = [chunk_vectors[i] for i in selected_indices]
 
             def mmr_score(i: int) -> float:
-                rel = relevance[i]
-                max_sim = max(_cosine(chunk_vectors[i], sv) for sv in selected_vecs)
-                return lambda_ * rel - (1 - lambda_) * max_sim
+                return lambda_ * relevance[i] - (1 - lambda_) * max(
+                    _cosine(chunk_vectors[i], sv) for sv in selected_vecs
+                )
 
             best = max(remaining, key=mmr_score)
 

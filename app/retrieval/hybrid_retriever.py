@@ -44,7 +44,6 @@ class HybridRetriever:
         dense_results = self.dense.retrieve(query, top_k=top_k)
         bm25_results = self.bm25.retrieve(query, top_k=settings.bm25_top_k)
 
-        # Reciprocal Rank Fusion — merge by chunk id
         rrf_scores: dict[str, float] = {}
         chunk_map: dict[str, Chunk] = {}
 

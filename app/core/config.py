@@ -24,7 +24,6 @@ class Settings(BaseSettings):
     score_threshold: float = 0.52
     max_retries: int = 3
 
-    # Week 4: hybrid search, query rewriting, MMR, HyDE
     use_hybrid_search: bool = False
     use_query_rewriting: bool = False
     use_mmr: bool = False
