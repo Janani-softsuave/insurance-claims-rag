@@ -4,7 +4,7 @@ from app.core.config import settings
 from app.core.logging import get_logger
 from app.generation.generator import get_generator
 from app.guardrails.guards import is_grounded, validate_question
-from app.models.schemas import AskResponse, GroundedAnswer
+from app.models.schemas import AskResponse, GroundedAnswer, RetrievedChunk, RetrievedChunkInfo
 from app.retrieval.reranker import get_reranker
 from app.retrieval.retriever import Retriever
 
@@ -13,9 +13,43 @@ logger = get_logger(__name__)
 _REFUSAL = "I don't know — I couldn't find an answer to that in the documents I have."
 
 
+def _chunk_infos(reranked: list[RetrievedChunk]) -> list[RetrievedChunkInfo]:
+    return [
+        RetrievedChunkInfo(
+            source=rc.chunk.source,
+            score=round(rc.score, 4),
+            text=rc.chunk.text[:300],
+            chunk_index=rc.chunk.chunk_index,
+        )
+        for rc in reranked
+    ]
+
+
+def _retrieval_only_response(question: str, rewritten: str | None, reranked: list[RetrievedChunk]) -> AskResponse:
+    combined = "\n\n---\n\n".join(
+        f"[{rc.chunk.source}]\n{rc.chunk.text.strip()}" for rc in reranked
+    )
+    return AskResponse(
+        question=question,
+        rewritten_question=rewritten,
+        answer=combined,
+        can_answer=True,
+        citations=[],
+        sources=sorted({rc.chunk.source for rc in reranked}),
+        retrieval_only=True,
+        retrieved_chunks=_chunk_infos(reranked),
+    )
+
+
 class RagService:
-    def __init__(self):
-        self.retriever = Retriever()
+    def __init__(self, use_hybrid: bool = False):
+        if use_hybrid:
+            from app.retrieval.hybrid_retriever import HybridRetriever
+            self._retriever = HybridRetriever()
+            logger.info("RagService initialized with hybrid retrieval")
+        else:
+            self._retriever = Retriever()
+            logger.info("RagService initialized with dense retrieval")
         self.reranker = get_reranker()
 
     def ask(
@@ -23,30 +57,55 @@ class RagService:
         question: str,
         top_k: int | None = None,
         rerank_top_n: int | None = None,
+        use_query_rewriting: bool = False,
     ) -> AskResponse:
         question = validate_question(question)
 
-        candidates = self.retriever.retrieve(question, top_k=top_k or settings.top_k)
-        reranked = self.reranker.rerank(question, candidates, top_n=rerank_top_n or settings.rerank_top_n)
+        rewritten: str | None = None
+        search_query = question
+        if use_query_rewriting:
+            from app.retrieval.query_rewriter import rewrite_query
+            rewritten = rewrite_query(question)
+            if rewritten != question:
+                search_query = rewritten
+
+        candidates = self._retriever.retrieve(search_query, top_k=top_k or settings.top_k)
+        reranked = self.reranker.rerank(search_query, candidates, top_n=rerank_top_n or settings.rerank_top_n)
 
         if not is_grounded(reranked):
-            return AskResponse(question=question, answer=_REFUSAL, can_answer=False, citations=[], sources=[])
+            return AskResponse(
+                question=question,
+                rewritten_question=rewritten,
+                answer=_REFUSAL,
+                can_answer=False,
+                citations=[],
+                sources=[],
+                retrieved_chunks=_chunk_infos(reranked),
+            )
 
-        result: GroundedAnswer = get_generator().generate(question, reranked)
+        try:
+            result: GroundedAnswer = get_generator().generate(question, reranked)
+        except Exception as exc:
+            logger.warning("Generation failed (%s) — falling back to retrieval only.", exc)
+            return _retrieval_only_response(question, rewritten, reranked)
 
         if not result.can_answer:
             return AskResponse(
                 question=question,
+                rewritten_question=rewritten,
                 answer=result.answer or _REFUSAL,
                 can_answer=False,
                 citations=result.citations,
                 sources=[],
+                retrieved_chunks=_chunk_infos(reranked),
             )
 
         return AskResponse(
             question=question,
+            rewritten_question=rewritten,
             answer=result.answer,
             can_answer=True,
             citations=result.citations,
             sources=sorted({rc.chunk.source for rc in reranked}),
+            retrieved_chunks=_chunk_infos(reranked),
         )

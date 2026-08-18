@@ -9,9 +9,9 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 
 
 class Settings(BaseSettings):
-
     gemini_api_key: str = ""
     gemini_model: str = "gemini-flash-latest"
+
     embedding_model: str = "BAAI/bge-small-en-v1.5"
     query_instruction: str = "Represent this sentence for searching relevant passages: "
     reranker_model: str = "BAAI/bge-reranker-base"
@@ -21,10 +21,14 @@ class Settings(BaseSettings):
 
     top_k: int = 8
     rerank_top_n: int = 4
-
     score_threshold: float = 0.52
-
     max_retries: int = 3
+
+    # Week 4: hybrid search + query rewriting
+    use_hybrid_search: bool = False
+    use_query_rewriting: bool = False
+    rrf_k: int = 60
+    bm25_top_k: int = 8
 
     chroma_path: str = str(ROOT_DIR / "storage" / "chroma")
     collection_name: str = "insurance_claims"
@@ -40,5 +44,6 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
 
 settings = get_settings()

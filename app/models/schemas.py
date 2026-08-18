@@ -44,18 +44,22 @@ class GroundedAnswer(BaseModel):
     )
 
 
-class AskRequest(BaseModel):
-    question: str = Field(min_length=1, max_length=1000)
-    top_k: int | None = None
-    rerank_top_n: int | None = None
+class RetrievedChunkInfo(BaseModel):
+    source: str
+    score: float
+    text: str
+    chunk_index: int
 
 
 class AskResponse(BaseModel):
     question: str
+    rewritten_question: str | None = None
     answer: str
     can_answer: bool
     citations: list[Citation]
     sources: list[str]
+    retrieval_only: bool = False
+    retrieved_chunks: list[RetrievedChunkInfo] = Field(default_factory=list)
 
 
 class IngestResponse(BaseModel):
@@ -64,11 +68,3 @@ class IngestResponse(BaseModel):
     collection: str
     chunk_size: int
     chunk_overlap: int
-
-
-class UploadResponse(BaseModel):
-    filename: str
-    saved_path: str
-    chunks_indexed: int
-    collection: str
-    message: str
