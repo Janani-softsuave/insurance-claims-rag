@@ -13,7 +13,7 @@ logger = get_logger(__name__)
 _REFUSAL = "I don't know — I couldn't find an answer to that in the documents I have."
 
 
-def _chunk_infos(reranked: list[RetrievedChunk]) -> list[RetrievedChunkInfo]:
+def _chunk_infos(chunks: list[RetrievedChunk]) -> list[RetrievedChunkInfo]:
     return [
         RetrievedChunkInfo(
             source=rc.chunk.source,
@@ -21,11 +21,13 @@ def _chunk_infos(reranked: list[RetrievedChunk]) -> list[RetrievedChunkInfo]:
             text=rc.chunk.text[:300],
             chunk_index=rc.chunk.chunk_index,
         )
-        for rc in reranked
+        for rc in chunks
     ]
 
 
-def _retrieval_only_response(question: str, rewritten: str | None, reranked: list[RetrievedChunk]) -> AskResponse:
+def _retrieval_only_response(
+    question: str, rewritten: str | None, reranked: list[RetrievedChunk]
+) -> AskResponse:
     combined = "\n\n---\n\n".join(
         f"[{rc.chunk.source}]\n{rc.chunk.text.strip()}" for rc in reranked
     )
@@ -58,20 +60,47 @@ class RagService:
         top_k: int | None = None,
         rerank_top_n: int | None = None,
         use_query_rewriting: bool = False,
+        use_mmr: bool = False,
+        mmr_lambda: float | None = None,
+        use_hyde: bool = False,
     ) -> AskResponse:
         question = validate_question(question)
-
         rewritten: str | None = None
-        search_query = question
-        if use_query_rewriting:
-            from app.retrieval.query_rewriter import rewrite_query
-            rewritten = rewrite_query(question)
-            if rewritten != question:
-                search_query = rewritten
 
-        candidates = self._retriever.retrieve(search_query, top_k=top_k or settings.top_k)
-        reranked = self.reranker.rerank(search_query, candidates, top_n=rerank_top_n or settings.rerank_top_n)
+        # Step 1: Query transformation — HyDE takes priority over query rewriting
+        if use_hyde:
+            from app.retrieval.hyde import hyde_embed
+            from app.vectorstore.chroma_store import get_store
+            query_vector = hyde_embed(question)
+            candidates = get_store().query(query_vector, top_k=top_k or settings.top_k)
+            logger.info("HyDE retrieval returned %d candidate(s)", len(candidates))
+        else:
+            if use_query_rewriting:
+                from app.retrieval.query_rewriter import rewrite_query
+                rewritten = rewrite_query(question)
+                search_query = rewritten if rewritten != question else question
+            else:
+                search_query = question
+            candidates = self._retriever.retrieve(search_query, top_k=top_k or settings.top_k)
 
+        # Step 2: Cross-encoder reranking
+        reranked = self.reranker.rerank(
+            question, candidates, top_n=rerank_top_n or settings.rerank_top_n
+        )
+
+        # Step 3: MMR diversity reranking (applied after cross-encoder)
+        if use_mmr and reranked:
+            from app.embeddings.embedder import get_embedder
+            from app.retrieval.mmr import mmr_rerank
+            query_vec = get_embedder().embed_query(question)
+            reranked = mmr_rerank(
+                query_vector=query_vec,
+                candidates=reranked,
+                top_n=rerank_top_n or settings.rerank_top_n,
+                lambda_=mmr_lambda,
+            )
+
+        # Step 4: Grounding gate
         if not is_grounded(reranked):
             return AskResponse(
                 question=question,
@@ -83,6 +112,7 @@ class RagService:
                 retrieved_chunks=_chunk_infos(reranked),
             )
 
+        # Step 5: Grounded generation
         try:
             result: GroundedAnswer = get_generator().generate(question, reranked)
         except Exception as exc:

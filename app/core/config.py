@@ -24,11 +24,14 @@ class Settings(BaseSettings):
     score_threshold: float = 0.52
     max_retries: int = 3
 
-    # Week 4: hybrid search + query rewriting
+    # Week 4: hybrid search, query rewriting, MMR, HyDE
     use_hybrid_search: bool = False
     use_query_rewriting: bool = False
+    use_mmr: bool = False
+    use_hyde: bool = False
     rrf_k: int = 60
     bm25_top_k: int = 8
+    mmr_lambda: float = 0.5
 
     chroma_path: str = str(ROOT_DIR / "storage" / "chroma")
     collection_name: str = "insurance_claims"

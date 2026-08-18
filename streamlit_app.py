@@ -43,8 +43,22 @@ with st.sidebar:
     rerank_top_n = st.slider("Rerank Top N", 2, 8, 4)
     use_hybrid = st.toggle("Hybrid Search (BM25 + Dense)", value=False,
                            help="Combines keyword (BM25) and semantic search via RRF fusion.")
+
+    st.subheader("🧠 Query Transformation")
+    use_hyde = st.toggle("HyDE", value=False,
+                         help="Generate a hypothetical answer and embed that instead of the question. "
+                              "Better for vague or indirect questions.")
     use_rewriting = st.toggle("Query Rewriting", value=False,
-                              help="Uses Gemini to rewrite the question before searching.")
+                              help="Rewrites the question into a precise search query before retrieval. "
+                                   "Ignored when HyDE is on.")
+
+    st.subheader("🎯 Reranking")
+    use_mmr = st.toggle("MMR (Diversity)", value=False,
+                        help="Maximal Marginal Relevance — reduces redundant chunks so the LLM "
+                             "sees diverse evidence. λ controls relevance vs diversity balance.")
+    mmr_lambda = st.slider("MMR λ (relevance ↔ diversity)", 0.0, 1.0, 0.5, step=0.1,
+                           disabled=not use_mmr,
+                           help="1.0 = pure relevance (no diversity), 0.0 = pure diversity.")
 
     st.divider()
     st.subheader("📊 Index Stats")
@@ -97,11 +111,12 @@ with tab_upload:
 
     with col_cfg:
         st.subheader("🔧 Active Config")
-        st.info(
-            f"**Chunk size:** {chunk_size} chars\n\n"
-            f"**Overlap:** {chunk_overlap} chars\n\n"
-            f"**Top K:** {top_k} | **Rerank N:** {rerank_top_n}"
-        )
+        active = [f"**Chunk:** {chunk_size}c / {chunk_overlap}c overlap", f"**Top K:** {top_k} | **Rerank N:** {rerank_top_n}"]
+        if use_hybrid: active.append("🔀 Hybrid search")
+        if use_hyde: active.append("🧠 HyDE")
+        elif use_rewriting: active.append("✏️ Query rewriting")
+        if use_mmr: active.append(f"🎯 MMR (λ={mmr_lambda})")
+        st.info("\n\n".join(active))
 
     st.divider()
     col_btn, col_reset = st.columns(2)
@@ -154,10 +169,13 @@ with tab_ask:
         "Ask a question. The system retrieves the most relevant chunks and generates "
         "a **grounded answer with citations** — or says **'I don't know'** if the answer isn't in the documents."
     )
-    if use_hybrid:
-        st.info("🔀 **Hybrid search active** — BM25 keyword + dense semantic with RRF fusion.")
-    if use_rewriting:
-        st.info("✏️ **Query rewriting active** — question will be rewritten before searching.")
+    active_tags = []
+    if use_hybrid: active_tags.append("🔀 Hybrid")
+    if use_hyde: active_tags.append("🧠 HyDE")
+    elif use_rewriting: active_tags.append("✏️ Rewriting")
+    if use_mmr: active_tags.append(f"🎯 MMR λ={mmr_lambda}")
+    if active_tags:
+        st.info("Active: " + " · ".join(active_tags))
 
     question = st.text_area("Your question", placeholder="e.g. How soon must I report a theft claim?", height=80)
 
@@ -173,10 +191,17 @@ with tab_ask:
                         top_k=top_k,
                         rerank_top_n=rerank_top_n,
                         use_query_rewriting=use_rewriting,
+                        use_mmr=use_mmr,
+                        mmr_lambda=mmr_lambda,
+                        use_hyde=use_hyde,
                     )
 
-                    if resp.rewritten_question and resp.rewritten_question != question.strip():
+                    if use_hyde:
+                        st.caption("🧠 HyDE: retrieved using a hypothetical document embedding.")
+                    elif resp.rewritten_question and resp.rewritten_question != question.strip():
                         st.caption(f"✏️ Rewritten query: *{resp.rewritten_question}*")
+                    if use_mmr:
+                        st.caption(f"🎯 MMR applied (λ={mmr_lambda}) — chunks diversified.")
 
                     if resp.retrieval_only:
                         st.warning("⚠️ LLM unavailable — showing retrieved chunks directly.")
