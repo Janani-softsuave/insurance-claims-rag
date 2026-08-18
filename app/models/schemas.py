@@ -44,12 +44,6 @@ class GroundedAnswer(BaseModel):
     )
 
 
-class AskRequest(BaseModel):
-    question: str = Field(min_length=1, max_length=1000)
-    top_k: int | None = None
-    rerank_top_n: int | None = None
-
-
 class AskResponse(BaseModel):
     question: str
     answer: str
@@ -65,11 +59,3 @@ class IngestResponse(BaseModel):
     collection: str
     chunk_size: int
     chunk_overlap: int
-
-
-class UploadResponse(BaseModel):
-    filename: str
-    saved_path: str
-    chunks_indexed: int
-    collection: str
-    message: str
