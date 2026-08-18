@@ -44,13 +44,22 @@ class GroundedAnswer(BaseModel):
     )
 
 
+class RetrievedChunkInfo(BaseModel):
+    source: str
+    score: float
+    text: str
+    chunk_index: int
+
+
 class AskResponse(BaseModel):
     question: str
+    rewritten_question: str | None = None
     answer: str
     can_answer: bool
     citations: list[Citation]
     sources: list[str]
     retrieval_only: bool = False
+    retrieved_chunks: list[RetrievedChunkInfo] = Field(default_factory=list)
 
 
 class IngestResponse(BaseModel):
