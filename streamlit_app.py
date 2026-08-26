@@ -28,7 +28,6 @@ def get_store():
     return ChromaStore(path=settings.chroma_path, collection_name=settings.collection_name)
 
 
-# ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.title("📋 Insurance Claims RAG")
     st.caption("Week 3 + 4 — Retrieval & RAG / Debugging")
@@ -74,7 +73,6 @@ with st.sidebar:
         st.rerun()
 
 
-# ── Tabs ───────────────────────────────────────────────────────────────────────
 tab_upload, tab_ask, tab_inspect, tab_eval = st.tabs([
     "📁 Upload & Ingest",
     "💬 Ask Questions",
@@ -82,8 +80,6 @@ tab_upload, tab_ask, tab_inspect, tab_eval = st.tabs([
     "📊 Evaluation",
 ])
 
-
-# ── Tab 1: Upload & Ingest ─────────────────────────────────────────────────────
 with tab_upload:
     st.header("Document Upload & Ingestion")
     st.info(
@@ -162,7 +158,6 @@ with tab_upload:
         st.info("data/raw/ does not exist yet.")
 
 
-# ── Tab 2: Ask Questions ───────────────────────────────────────────────────────
 with tab_ask:
     st.header("Ask the Documents")
     st.markdown(
@@ -250,7 +245,6 @@ with tab_ask:
                     st.caption("Sources: " + ", ".join(item["sources"]))
 
 
-# ── Tab 3: Inspection View (Week 4) ───────────────────────────────────────────
 with tab_inspect:
     st.header("🔍 Inspection View")
     st.markdown(
@@ -320,7 +314,6 @@ with tab_inspect:
                 st.markdown(f"- {h['label']} — *{h['q'][:70]}*")
 
 
-# ── Tab 4: Evaluation (Week 4) ────────────────────────────────────────────────
 with tab_eval:
     st.header("📊 Retrieval Evaluation")
     st.markdown(
