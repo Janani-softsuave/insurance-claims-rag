@@ -67,6 +67,25 @@ class ChromaStore:
             retrieved.append(RetrievedChunk(chunk=chunk, score=1.0 - float(dist)))
         return retrieved
 
+    def get_by_ids(self, ids: list[str]) -> list[Chunk]:
+        if not ids:
+            return []
+        result = self.collection.get(ids=ids, include=["documents", "metadatas"])
+        chunks: list[Chunk] = []
+        for cid, text, meta in zip(result["ids"], result["documents"], result["metadatas"]):
+            meta = dict(meta or {})
+            chunks.append(
+                Chunk(
+                    id=cid,
+                    text=text,
+                    source=meta.get("source", "unknown"),
+                    source_path=meta.get("source_path", ""),
+                    chunk_index=int(meta.get("chunk_index", 0)),
+                    metadata=meta,
+                )
+            )
+        return chunks
+
     def count(self) -> int:
         return self.collection.count()
 

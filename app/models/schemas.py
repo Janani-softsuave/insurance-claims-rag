@@ -52,6 +52,7 @@ class RetrievedChunkInfo(BaseModel):
 
 
 class AskResponse(BaseModel):
+    trace_id: str | None = None
     question: str
     rewritten_question: str | None = None
     answer: str

@@ -1,4 +1,4 @@
-# Pipeline — Insurance Claims RAG System (Week 3 + 4)
+# Pipeline — Insurance Claims RAG System (Week 3 + 4 + 5)
 
 ---
 
@@ -101,7 +101,12 @@ User question
     503/error  →  retrieval-only fallback
     │
     ▼
-AskResponse { answer, can_answer, citations, sources, retrieved_chunks }
+[TRACE]             app/core/tracing.py           (Week 5)
+    Redact PII → write Trace(trace_id, question, chunk_ids+scores,
+    model+params, raw_output, answer) to storage/traces/traces.jsonl
+    │
+    ▼
+AskResponse { trace_id, answer, can_answer, citations, sources, retrieved_chunks }
 ```
 
 ---
@@ -166,8 +171,12 @@ User question
     503/error → retrieval-only fallback (raw chunks shown)
     │
     ▼
+[TRACE]             app/core/tracing.py           (Week 5, every exit path)
+    Redact PII → write Trace to storage/traces/traces.jsonl
+    │
+    ▼
 AskResponse {
-    question, rewritten_question,
+    trace_id, question, rewritten_question,
     answer, can_answer, citations, sources,
     retrieval_only, retrieved_chunks
 }
@@ -212,6 +221,35 @@ After (Hybrid BM25+Dense):
 
 ---
 
+## Pipeline 3 — Error Analysis (Week 5)
+
+```
+STEP 1 — COLLECT           scripts/collect_week5_traces.py
+    30 varied real questions run through RagService.ask()
+    Every call appends a redacted Trace to storage/traces/traces.jsonl
+
+STEP 2 — SAMPLE            app.cli trace sample --seed <n>
+    random.Random(seed).sample(all_trace_ids, 20)
+    Written to analysis/week5/sample_trace_ids.json — reproducible, provable
+
+STEP 3 — REPLAY ONE        app.cli trace replay <trace_id>
+    Refetch the exact chunk_ids from ChromaDB (not a fresh similarity search)
+    Re-run generation with the same model + prompt version
+    Original vs replayed answer printed side by side
+
+STEP 4 — OPEN CODE         analysis/week5/notes.md   (manual, zero code changes)
+    One honest sentence per sampled trace — what was SEEN, not diagnosed
+
+STEP 5 — CLUSTER           analysis/week5/taxonomy.md
+    Group sentences into 4-7 named failure modes
+    count, frequency %, severity, one example trace_id per mode
+
+STEP 6 — PREDICT           git commit (dated)
+    One mode picked to attack next, with a falsifiable numeric target
+```
+
+---
+
 ## Technology at each step
 
 | Step | Technology |
@@ -228,3 +266,5 @@ After (Hybrid BM25+Dense):
 | Query rewriting | Gemini generation |
 | Generation | Gemini `gemini-flash-latest` + `instructor` |
 | Structured output | `Pydantic` `GroundedAnswer` schema |
+| Trace logging | JSONL + regex PII redaction (`core/tracing.py`) |
+| Seeded sampling | `random.Random(seed).sample()` |
