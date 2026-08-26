@@ -111,7 +111,7 @@ sentence unchanged; eight are new to the sample.
   to `_retrieval_only_response()`.
 - Expected delta: on a fresh 20-trace random sample collected the same way, Mode A
   drops from **25% (5/20) to under 10% (2/20)**.
-- Git commit hash: `TODO`
+- Git commit hash: `e6ba521`
 
 ## 6. Why a public benchmark would have missed the top-3 modes
 
