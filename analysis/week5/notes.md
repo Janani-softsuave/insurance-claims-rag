@@ -95,7 +95,7 @@ category or a fix. Zero code changes were made while writing this section.
   to `_retrieval_only_response()`.
 - Expected delta: on a fresh 20-trace random sample collected the same way, Mode A
   drops from **40% (8/20) to under 15% (3/20)**.
-- Git commit hash: TODO — pasted once this file is committed.
+- Git commit hash: `b4a1faa`
 
 ## 6. Why a public benchmark would have missed the top-3 modes
 
