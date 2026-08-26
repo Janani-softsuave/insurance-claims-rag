@@ -1,0 +1,27 @@
+{
+  "seed": 42,
+  "population_size": 29,
+  "sample_size": 20,
+  "trace_ids": [
+    "149efaef7f03",
+    "41744e44481e",
+    "a22cea304a71",
+    "11c87ea02445",
+    "c6ba55cfed03",
+    "45dafbfb8ebd",
+    "4f9b8701f5ba",
+    "0eefb31df041",
+    "86ebf155edf6",
+    "10f7e5c0cc6e",
+    "873d5923d5e4",
+    "4ed2138134bb",
+    "f8b0b1bd74c6",
+    "119a3c3662fa",
+    "8d5ddacf164d",
+    "6427c16ba118",
+    "ad9507f705f3",
+    "e24308e06772",
+    "a7dcd766ef72",
+    "32ef08e43ed2"
+  ]
+}

@@ -1,4 +1,4 @@
-# Architecture — Insurance Claims RAG System (Week 3 + 4)
+# Architecture — Insurance Claims RAG System (Week 3 + 4 + 5)
 
 ---
 
@@ -28,6 +28,7 @@ Dependencies flow **inward only** — interfaces call the service, the service c
 |------|---------------|
 | `config.py` | All settings loaded from `.env` via `pydantic-settings`. Single `Settings` object, `lru_cache`d. Covers chunking, retrieval, Week 4 toggles (hybrid, MMR, HyDE, query rewriting). |
 | `logging.py` | `get_logger(name)` — consistent log format across every module. |
+| `tracing.py` | Week 5. `Trace` schema, `redact()` (regex PII scrub for claim/policy numbers, emails, phones, labelled names), `write_trace()` / `read_traces()` / `find_trace()` against `storage/traces/traces.jsonl`. |
 
 ### `app/models/schemas.py`
 Pydantic types that flow through every layer:
@@ -37,7 +38,7 @@ Pydantic types that flow through every layer:
 - `RetrievedChunkInfo` — serialisable chunk snapshot (for inspection view)
 - `GroundedAnswer` — what the LLM is forced to return via `instructor`
 - `Citation` — source + verbatim snippet
-- `AskResponse` — final response including `retrieved_chunks`, `rewritten_question`, `retrieval_only`
+- `AskResponse` — final response including `trace_id`, `retrieved_chunks`, `rewritten_question`, `retrieval_only`
 - `IngestResponse` — ingestion summary
 
 ### `app/ingestion/`
@@ -55,7 +56,7 @@ Pydantic types that flow through every layer:
 ### `app/vectorstore/`
 | File | Responsibility |
 |------|---------------|
-| `chroma_store.py` | Persistent ChromaDB collection (HNSW, cosine). `add()` upserts chunks + vectors. `query()` returns top-K with similarity score (`1 - distance`). `reset()` drops and recreates. |
+| `chroma_store.py` | Persistent ChromaDB collection (HNSW, cosine). `add()` upserts chunks + vectors. `query()` returns top-K with similarity score (`1 - distance`). `get_by_ids()` fetches exact chunks by id — used to replay a trace without re-running similarity search. `reset()` drops and recreates. |
 
 ### `app/retrieval/`
 | File | Responsibility |
@@ -76,8 +77,8 @@ Pydantic types that flow through every layer:
 ### `app/generation/`
 | File | Responsibility |
 |------|---------------|
-| `prompts.py` | System prompt (rules: answer only from context, cite sources, say "I don't know", treat context as untrusted). `build_context()` renders numbered, source-labelled chunks. |
-| `generator.py` | Gemini via `instructor`. Forces `GroundedAnswer` schema. Auto-retries on validation failure. |
+| `prompts.py` | System prompt (rules: answer only from context, cite sources, say "I don't know", treat context as untrusted) plus two worked few-shot examples (answerable + refusal). `PROMPT_VERSION` is logged on every trace. `build_context()` renders numbered, source-labelled chunks. |
+| `generator.py` | Gemini via `instructor`. Forces `GroundedAnswer` schema. Auto-retries on validation failure. Returns a `GenerationTrace` (answer + prompt version + model + params + raw provider output when the adapter exposes it). |
 
 ### `app/services/rag_service.py`
 Orchestrates the full query pipeline in order:
@@ -88,6 +89,7 @@ Orchestrates the full query pipeline in order:
 5. MMR diversity reranking (optional)
 6. Grounding gate
 7. Grounded generation (with retrieval-only fallback on LLM error)
+8. Trace logging — redacts PII, then writes a full `Trace` record to `storage/traces/traces.jsonl` on every exit path (refusal, fallback, or grounded answer)
 
 Both interfaces call `RagService.ask()` — same pipeline, same results.
 
@@ -100,13 +102,14 @@ Both interfaces call `RagService.ask()` — same pipeline, same results.
 | File | Responsibility |
 |------|---------------|
 | `streamlit_app.py` | 4-tab UI: Upload & Ingest, Ask Questions, Inspection View (failure labelling), Evaluation (before/after metrics). Sidebar controls all Week 4 toggles. |
-| `app/cli.py` | Typer CLI: `ingest`, `ask`, `stats`. |
+| `app/cli.py` | Typer CLI: `ingest`, `ask`, `stats`, `trace sample`, `trace replay`. |
 
 ### Scripts
 | File | Responsibility |
 |------|---------------|
 | `scripts/evaluate_chunking.py` | Compares chunk sizes 300/800/1500 — retrieval quality without the LLM. |
 | `scripts/evaluate_retrieval.py` | Before/after evaluation table — dense vs hybrid, hit-rate@3 and MRR. |
+| `scripts/collect_week5_traces.py` | Runs 30 varied real questions through `RagService` to populate `traces.jsonl` for error analysis. |
 
 ---
 
@@ -122,3 +125,16 @@ Both interfaces call `RagService.ask()` — same pipeline, same results.
 | Inspection view | Diagnose retrieval vs generation failures | `streamlit_app.py` Tab 3 |
 | Evaluation metrics | Before/after numbers (hit-rate@k, MRR) | `evaluation/metrics.py` |
 | Evaluation script | CLI before/after table | `scripts/evaluate_retrieval.py` |
+
+---
+
+## Week 5 additions at a glance
+
+| Addition | Purpose | File |
+|----------|---------|------|
+| Few-shot prompt | Two worked examples (answerable + refusal) steer the structured output | `generation/prompts.py` |
+| Trace logging | Full, redacted record of every query — replayable evidence | `core/tracing.py`, `services/rag_service.py` |
+| PII redaction | Claim/policy numbers, emails, phones, labelled names scrubbed before write | `core/tracing.py::redact()` |
+| Seeded sampling | Reproducible random sample of trace_ids for open coding | `app/cli.py::trace sample` |
+| Replay | Refetches exact chunks by id and re-runs generation from the trace alone | `app/cli.py::trace replay` |
+| Error taxonomy | Hand-graded ranked failure modes from 20 real traces | `analysis/week5/taxonomy.md`, `notes.md` |

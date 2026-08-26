@@ -1,8 +1,10 @@
-# Insurance Claims RAG System — Week 3 + 4
+# Insurance Claims RAG System — Week 3 + 4 + 5
 
 A **Retrieval-Augmented Generation** app for the Insurance Claims knowledge base. Ask questions in plain English and get answers built **only** from your documents — with a citation to the source. If the answer isn't in the documents, it says **"I don't know"** instead of inventing one.
 
 Week 4 adds **hybrid search, MMR, HyDE, query rewriting**, failure diagnosis, and before/after evaluation metrics.
+
+Week 5 adds a **few-shot generation prompt**, full **trace logging with PII redaction** on every query, seeded random sampling + replay of traces, and a hand-graded **error taxonomy** (see `analysis/week5/`).
 
 ---
 
@@ -35,6 +37,14 @@ python -m app.cli ask "How soon must I report a theft claim?"
 python -m app.cli stats
 ```
 
+Every `ask` (CLI, Streamlit, or script) writes a redacted trace to `storage/traces/traces.jsonl`.
+Sample and replay them with:
+```powershell
+python -m scripts.collect_week5_traces
+python -m app.cli trace sample --seed 42
+python -m app.cli trace replay <trace_id>
+```
+
 ---
 
 ## Architecture
@@ -61,6 +71,7 @@ See **ARCHITECTURE.md** for the full file map and **PIPELINE.md** for step-by-st
 | Structured output | `instructor` + Pydantic |
 | UI | Streamlit (4 tabs) |
 | CLI | Typer + Rich |
+| Tracing | JSONL trace log with regex PII redaction (`app/core/tracing.py`) |
 
 ---
 
@@ -109,4 +120,22 @@ python -m scripts.evaluate_chunking
 
 # Before/after: dense vs hybrid retrieval (hit-rate@3, MRR)
 python -m scripts.evaluate_retrieval
+
+# Run 30 varied questions through the live app to populate traces.jsonl
+python -m scripts.collect_week5_traces
 ```
+
+---
+
+## Week 5 — Error Analysis
+
+`analysis/week5/` holds the graded deliverable: a random, seeded sample of 20 real
+traces, read and open-coded by hand, clustered into a named failure taxonomy.
+
+| File | Contents |
+|------|---------|
+| `taxonomy.md` | One-page ranked list of failure modes — count, frequency %, severity, example `trace_id` |
+| `notes.md` | The 20 verbatim open-coding sentences, the seeded sample, replay evidence, the dated prediction, and the benchmark note |
+| `sample_trace_ids.json` | The exact seed + trace_ids produced by `app.cli trace sample` |
+
+See **PIPELINE.md** for the trace-logging and error-analysis flow.
