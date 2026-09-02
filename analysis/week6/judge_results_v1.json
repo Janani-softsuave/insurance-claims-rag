@@ -1,0 +1,22 @@
+{
+  "A-01": {
+    "faithful": true,
+    "rationale": "The summary accurately states that the tyre is covered because other vehicle parts were also damaged, applies the 50% depreciation for tyres under IMT-28, waives depreciation for the bumper and rim, and correctly infers the application of the standard deductible based on the context's exception for glass-only claims."
+  },
+  "A-02": {
+    "faithful": true,
+    "rationale": "The summary accurately reflects the policy context regarding glass breakage cover, the absence of other damage, and the waiver of the standard compulsory deductible of \u20b91,000."
+  },
+  "A-03": {
+    "faithful": true,
+    "rationale": "Every coverage-relevant statement in the summary, including the total loss condition, IDV calculation for vehicles over five years, and the mention of RTI endorsement and salvage, is directly supported by the policy context."
+  },
+  "A-04": {
+    "faithful": true,
+    "rationale": "Every coverage-relevant statement in the summary, including the coverage decision and event limit, is directly supported by endorsement IMT-40 in the policy context."
+  },
+  "A-05": {
+    "faithful": false,
+    "rationale": "The policy context does not provide a specific coverage decision for the claim CLM-2026-00105, therefore the statement 'Coverage decision stated: covered' is not directly supported by the provided context."
+  }
+}
