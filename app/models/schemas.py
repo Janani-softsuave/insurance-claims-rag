@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -61,6 +63,28 @@ class AskResponse(BaseModel):
     sources: list[str]
     retrieval_only: bool = False
     retrieved_chunks: list[RetrievedChunkInfo] = Field(default_factory=list)
+
+
+class ClaimSummary(BaseModel):
+    claim_number: str = Field(
+        description="The claim number from the adjuster notes, normalized to CLM-YYYY-NNNNN form."
+    )
+    date_of_loss: str = Field(description="The date the loss occurred, as stated in the adjuster notes.")
+    coverage_decision: Literal["covered", "denied", "partial"] = Field(
+        description="Whether the claim is covered, denied, or partially covered, based ONLY on the POLICY CONTEXT."
+    )
+    excess_amount: float = Field(
+        description="The excess/deductible amount in rupees that applies to this claim, from the POLICY CONTEXT."
+    )
+    exclusion_clause_id: str | None = Field(
+        default=None,
+        description="The endorsement code or named exclusion from the POLICY CONTEXT that justifies a denial. "
+        "Required when coverage_decision is 'denied'; null otherwise.",
+    )
+    summary: str = Field(description="A concise 2-4 sentence prose summary of the claim for the claims file.")
+    citations: list[Citation] = Field(
+        default_factory=list, description="Policy document sources supporting the coverage decision."
+    )
 
 
 class IngestResponse(BaseModel):

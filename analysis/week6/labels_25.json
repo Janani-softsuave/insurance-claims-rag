@@ -1,0 +1,25 @@
+{
+  "note": "19 of 25 cases labeled so far (D-05, E-01..E-05 pending — blocked by Gemini free-tier daily quota, see notes.md). This file is committed BEFORE the judge is ever run on these cases, to prove blind ordering. It will be extended (never retroactively edited) once the remaining 6 cases are generated.",
+  "criterion": "faithful: true only if every coverage-relevant claim in the summary is directly supported by its own retrieved POLICY CONTEXT.",
+  "labels": {
+    "A-01": {"faithful": true, "rationale": "Tyre coverage-under-same-accident exception and 50% depreciation are both directly stated in the retrieved FAQ and endorsements chunks."},
+    "A-02": {"faithful": true, "rationale": "Deductible waiver for windshield-only glass claims matches the FAQ chunk verbatim."},
+    "A-03": {"faithful": true, "rationale": "IDV mutually-agreed rule for vehicles over 5 years is stated verbatim in the retrieved FAQ chunk."},
+    "A-04": {"faithful": true, "rationale": "4-event roadside assistance limit and battery jump-start coverage are both in the retrieved endorsements chunk."},
+    "A-05": {"faithful": true, "rationale": "Both settlement timelines (24-72h cashless, 30-day reimbursement) are stated in the retrieved chunks."},
+    "B-01": {"faithful": false, "rationale": "The summary asserts 'the policy was active' and 'no applicable exclusions exist' but none of the four retrieved chunks discuss premium timing, renewal, or grace periods at all -- the coverage conclusion is unsupported by its own context."},
+    "B-02": {"faithful": true, "rationale": "The unforced-entry exclusion is quoted almost verbatim from the retrieved policy-overview chunk."},
+    "B-03": {"faithful": true, "rationale": "Clause B's 'during the Policy Period' language is real and retrieved; the lapse-implies-outside-policy-period inference is reasonable and doesn't invent new facts."},
+    "B-04": {"faithful": false, "rationale": "'Section 5.a' in context is a procedural claim-proving clause, not a coverage exclusion for wear and tear -- the summary misapplies it to justify a denial the context doesn't actually support."},
+    "B-05": {"faithful": false, "rationale": "The summary states the context specifies no deductible amount, yet the excess_amount field reports 0.0 as if it were a real figure -- a fabricated number presented as fact."},
+    "C-01": {"faithful": false, "rationale": "The retrieved chunks are all about post-loss notification procedure for actual losses; nothing in them discusses renovation, and the summary invents a 'coverage denied' verdict for a routine maintenance question that isn't a claim at all."},
+    "C-02": {"faithful": true, "rationale": "Major-structural-work declaration requirement is stated verbatim in the retrieved FAQ chunk."},
+    "C-03": {"faithful": true, "rationale": "Police Final Investigation Report requirement for theft settlement is directly supported by the retrieved clause."},
+    "C-04": {"faithful": false, "rationale": "The summary invents 'Delayed intimation' as the denial reason and reaffirms a prior denial with zero information about the original incident in the notes or context."},
+    "C-05": {"faithful": true, "rationale": "The sub-₹50,000 spot-survey-via-video rule is stated verbatim in the retrieved claims_process chunk."},
+    "D-01": {"faithful": true, "rationale": "IAP-01 earthquake exclusion is stated verbatim in the retrieved FAQ chunk; this run correctly retrieved and used it."},
+    "D-02": {"faithful": true, "rationale": "Flood is listed as a covered peril in Column A of the retrieved Clause B chunk."},
+    "D-03": {"faithful": true, "rationale": "IMT-29 requirement for engine hydrostatic lock is stated in both retrieved chunks."},
+    "D-04": {"faithful": true, "rationale": "Comprehensive cover for natural calamities to the vehicle is stated in the retrieved FAQ chunk."}
+  }
+}
