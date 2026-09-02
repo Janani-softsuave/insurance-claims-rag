@@ -18,5 +18,33 @@
   "A-05": {
     "faithful": false,
     "rationale": "The policy context does not provide a specific coverage decision for the claim CLM-2026-00105, therefore the statement 'Coverage decision stated: covered' is not directly supported by the provided context."
+  },
+  "B-01": {
+    "faithful": false,
+    "rationale": "The summary asserts that the policy was active and the claim is covered, but the provided policy context contains no rules or terms regarding motor policy renewals or delayed premium payments to support this decision."
+  },
+  "B-02": {
+    "faithful": true,
+    "rationale": "The claim summary is fully supported by the policy context, which explicitly excludes coverage for unforced entry under Section 3.3."
+  },
+  "B-03": {
+    "faithful": true,
+    "rationale": "The claim summary accurately cites Clause B, which limits coverage to events occurring during the Policy Period, to support denying a claim that occurred after the policy lapsed."
+  },
+  "B-04": {
+    "faithful": false,
+    "rationale": "The policy context does not mention rules or exclusions for mechanical wear and tear under motor policies, and Section 5.a from the Group Home Protect Policy does not apply to motor claims."
+  },
+  "B-05": {
+    "faithful": false,
+    "rationale": "The context does not state that the claim is covered, so asserting a coverage decision of 'covered' is an unsupported assumption."
+  },
+  "C-01": {
+    "faithful": false,
+    "rationale": "The summary invents a formal coverage decision ('denied') and cites Section (IV) Claims Procedure as an exclusion clause, neither of which is supported by the provided policy context."
+  },
+  "C-02": {
+    "faithful": false,
+    "rationale": "The summary asserts a coverage decision of 'covered', which is not supported by the policy context as the context only states that structural alterations must be declared and failure to do so may void the policy."
   }
 }

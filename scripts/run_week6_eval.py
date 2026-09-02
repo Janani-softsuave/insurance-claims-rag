@@ -109,7 +109,17 @@ def run(
         chunks = [_chunk_from_dict(d) for d in entry["chunks"]]
         console.print(f"[dim]judging[/dim] {entry['id']} ({judge_version})...")
         try:
-            verdict = judge.judge(entry["adjuster_notes"], chunks, summary)
+            verdict = None
+            for backoff_attempt in range(3):
+                try:
+                    verdict = judge.judge(entry["adjuster_notes"], chunks, summary)
+                    break
+                except Exception as exc:
+                    if "UNAVAILABLE" not in str(exc) or backoff_attempt == 2:
+                        raise
+                    wait_s = 15 * (backoff_attempt + 1)
+                    console.print(f"[yellow]{entry['id']} hit a transient 503 — retrying in {wait_s}s...[/yellow]")
+                    time.sleep(wait_s)
         except Exception as exc:
             console.print(f"[red]{entry['id']} failed ({exc.__class__.__name__}) — stopping, {len(judge_results)} judged so far.[/red]")
             results_path.write_text(json.dumps(judge_results, indent=2), encoding="utf-8")
