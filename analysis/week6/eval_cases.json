@@ -1,0 +1,177 @@
+[
+  {
+    "id": "A-01",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00101, loss date 2026-02-03. Insured has IMT-28 Zero Dep cover on a 3-year-old sedan. Front-left tyre and rim were damaged in a pothole accident along with the bumper. Insured is asking whether the tyre will be reimbursed at full value under Zero Dep."
+  },
+  {
+    "id": "A-02",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00102, loss date 2026-02-10. Windshield cracked from a stone chip on the highway; insured holds glass breakage cover and is not claiming any other damage. Insured wants to know if the standard deductible applies."
+  },
+  {
+    "id": "A-03",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00103, loss date 2026-01-15. Insured's car, registered 6 years ago, was hit by a truck and the repair estimate exceeds the vehicle's value. Insured wants to know how the payout will be calculated for a total loss."
+  },
+  {
+    "id": "A-04",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00104, loss date 2026-02-20. Insured's car battery died on the highway; this is the third roadside assistance call this policy year for a jump-start. Insured wants confirmation this is covered under IMT-40."
+  },
+  {
+    "id": "A-05",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00105, loss date 2026-02-25. Motor claim submitted with all documents; insured is asking how long settlement will take if they use a network garage for cashless versus paying out of pocket and claiming reimbursement."
+  },
+  {
+    "id": "B-01",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00106, loss date 2026-03-01. Insured's motor policy renewed on 2026-02-05 but the premium was paid only on 2026-02-25, 20 days after the renewal date. A minor accident occurred on the loss date above. Insured wants to know if the claim is payable given the delay in premium payment."
+  },
+  {
+    "id": "B-02",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00107, loss date 2026-03-05. Insured's home was burgled; the back door was unlocked and there are no signs of forced entry. Insured is claiming for stolen electronics under the Burglary & Theft section and wants to know the payable amount."
+  },
+  {
+    "id": "B-03",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00108, loss date 2026-03-08. Insured's building policy premium lapsed and a fire caused damage 10 days into the lapse; insured wants to know if the fire claim is payable."
+  },
+  {
+    "id": "B-04",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00109, loss date 2026-03-12. Insured's car needed a new water pump due to normal wear; no accident was involved. Insured has a comprehensive own-damage policy and wants to know if this is covered."
+  },
+  {
+    "id": "B-05",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00110, loss date 2026-03-15. Insured wants to know the exact compulsory deductible that applies to their private car own-damage claim before repairs are authorised."
+  },
+  {
+    "id": "C-01",
+    "mode": "C",
+    "is_regression": true,
+    "source_trace_id": "32ef08e43ed2",
+    "adjuster_notes": "Claim CLM-2026-00111, loss date 2026-03-18. Adjuster note (verbatim from original real query, Week 5 trace 32ef08e43ed2): \"My house is undergoing a small paint job — do I need to inform the insurer?\""
+  },
+  {
+    "id": "C-02",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00112, loss date 2026-03-20. Insured's house is undergoing demolition of an interior wall to combine two rooms, plus adding a new floor above the garage. Insured wants to know if this must be reported to ABC Insurance."
+  },
+  {
+    "id": "C-03",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00113, loss date 2026-03-22. Insured's vehicle was stolen from a parking lot 95 days ago; police have still not issued a Non-Traceable Certificate. Insured is asking whether the theft claim can be settled now."
+  },
+  {
+    "id": "C-04",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00114, loss date 2026-03-25. Insured wants to know how to escalate a previously rejected fire claim that they believe was wrongly denied, and where to file a formal complaint if the insurer's Grievance Cell doesn't resolve it in time."
+  },
+  {
+    "id": "C-05",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00115, loss date 2026-03-28. Insured's claim for property damage is valued at ₹42,000 and insured is asking whether a surveyor will inspect the property in person or remotely."
+  },
+  {
+    "id": "D-01",
+    "mode": "D",
+    "is_regression": true,
+    "source_trace_id": "41744e44481e",
+    "adjuster_notes": "Claim CLM-2026-00116, loss date 2026-04-01. Adjuster note (verbatim from original real query, Week 5 trace 41744e44481e): \"Is my home covered for earthquake damage?\" Insured's home suffered structural cracks after an earthquake and insured does not have any additional endorsements beyond the standard building policy."
+  },
+  {
+    "id": "D-02",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00117, loss date 2026-04-03. Insured's building was damaged by flood water that entered through the ground floor; insured holds a standard property policy with Building Cover and wants to know if flood damage is covered."
+  },
+  {
+    "id": "D-03",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00118, loss date 2026-04-05. Insured's car engine seized after driving through a flooded street during heavy rain; insured does not have the Engine & Gearbox Protection endorsement. Insured wants to know if the engine damage is covered."
+  },
+  {
+    "id": "D-04",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00119, loss date 2026-04-08. Insured is asking generally whether their comprehensive motor policy covers damage from natural calamities like flood, earthquake and cyclone to the vehicle itself."
+  },
+  {
+    "id": "D-05",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00120, loss date 2026-04-10. Insured's rented-out flat suffered fire damage; the tenant's furniture was destroyed and the tenant is asking the insured (landlord) to cover the loss. Insured wants to know their liability."
+  },
+  {
+    "id": "E-01",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00121, loss date 2026-04-12. Insured under the Group Home Protect policy reports that some jewellery has gone missing from their home; they cannot say exactly when it disappeared or how. Insured wants to know if this is covered."
+  },
+  {
+    "id": "E-02",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00122, loss date 2026-04-14. Insured wants to know which Insurance Ombudsman office handles complaints for their city, Tirupur, under their Group Home Protect policy."
+  },
+  {
+    "id": "E-03",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00123, loss date 2026-04-16. Insured holds the standard ABC Insurance building & contents policy (not Group Home Protect) and is asking what the compulsory deductible is for a contents claim."
+  },
+  {
+    "id": "E-04",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00124, loss date 2026-04-18. Insured under the Group Home Protect policy is asking what counts as an 'Insured' person under their specific policy wording, since they recently added a family member to the household."
+  },
+  {
+    "id": "E-05",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00125, loss date 2026-04-20. Insured's home (covered under the Group Home Protect policy) was flooded and the ground floor was damaged. Insured wants confirmation that flood damage to the structure is covered."
+  }
+]
