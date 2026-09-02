@@ -1,5 +1,5 @@
 {
-  "note": "19 of 25 cases labeled so far (D-05, E-01..E-05 pending — blocked by Gemini free-tier daily quota, see notes.md). This file is committed BEFORE the judge is ever run on these cases, to prove blind ordering. It will be extended (never retroactively edited) once the remaining 6 cases are generated.",
+  "note": "All 25 cases labeled. Labeled blind, before the judge has been run on any of these cases, to prove ordering — see the commit history for this file.",
   "criterion": "faithful: true only if every coverage-relevant claim in the summary is directly supported by its own retrieved POLICY CONTEXT.",
   "labels": {
     "A-01": {"faithful": true, "rationale": "Tyre coverage-under-same-accident exception and 50% depreciation are both directly stated in the retrieved FAQ and endorsements chunks."},
@@ -20,6 +20,12 @@
     "D-01": {"faithful": true, "rationale": "IAP-01 earthquake exclusion is stated verbatim in the retrieved FAQ chunk; this run correctly retrieved and used it."},
     "D-02": {"faithful": true, "rationale": "Flood is listed as a covered peril in Column A of the retrieved Clause B chunk."},
     "D-03": {"faithful": true, "rationale": "IMT-29 requirement for engine hydrostatic lock is stated in both retrieved chunks."},
-    "D-04": {"faithful": true, "rationale": "Comprehensive cover for natural calamities to the vehicle is stated in the retrieved FAQ chunk."}
+    "D-04": {"faithful": true, "rationale": "Comprehensive cover for natural calamities to the vehicle is stated in the retrieved FAQ chunk."},
+    "D-05": {"faithful": true, "rationale": "The structure-only / tenant-contents distinction and the IAP-15 condition are both quoted almost verbatim from the retrieved FAQ chunk."},
+    "E-01": {"faithful": true, "rationale": "Both cited exclusions (missing/mislaid property, mysterious disappearance) are quoted verbatim from the retrieved policy chunks."},
+    "E-02": {"faithful": true, "rationale": "Chennai's listed jurisdiction ('Tamil Nadu, Pondicherry Town and Karaikal') reasonably extends to Tirupur, a Tamil Nadu city; not an invented office or address."},
+    "E-03": {"faithful": false, "rationale": "The summary's own prose says the deductible 'cannot be determined from the given documents,' yet the excess_amount field reports 0.0 as if it were a real figure -- the same fabricated-placeholder pattern as B-05."},
+    "E-04": {"faithful": false, "rationale": "The adjuster notes ask about the Group Home Protect policy specifically, but the summary's 'Insured Person' rule is sourced entirely from health-elite-policy-wording.pdf -- a different policy -- and presents it as if it answers the question asked. Confidently wrong via the wrong document."},
+    "E-05": {"faithful": false, "rationale": "The summary concludes 'covered' because flood isn't in the retrieved exclusion list, but none of its four retrieved chunks affirmatively state flood is covered either (that fact exists elsewhere in the corpus, e.g. D-02's Clause B chunk, and wasn't retrieved here) -- absence-of-exclusion is being presented as equivalent to an affirmative grounding, the same risky pattern as B-01."}
   }
 }
