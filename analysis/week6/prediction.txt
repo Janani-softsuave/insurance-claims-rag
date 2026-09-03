@@ -1,0 +1,12 @@
+Prediction (written before iterating judge_v2, based on reading all 5 v1 disagreements):
+
+Adding two few-shot examples to the judge prompt — one showing the judge's own
+correct call (A-05: an informational, non-coverage question should not be scored
+against a fabricated "covered" decision label) and one showing the judge's own
+over-conservative mistake (D-05: a general FAQ conditional rule, correctly applied
+to the specific facts given, IS sufficient grounding for a decision — general
+policy text is not automatically "insufficient support" just because it isn't
+case-specific) — will raise agreement on the 21 already-judged cases from 76.2%
+(16/21) to at least 90% (19/21), by fixing the judge's tendency to reject any
+coverage_decision it cannot find restated verbatim in the context, while keeping
+its correct rejection of coverage labels forced onto non-coverage questions.
