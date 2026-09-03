@@ -1,0 +1,34 @@
+Prediction (written before iterating judge_v2, based on reading all 5 v1 disagreements):
+
+Adding two few-shot examples to the judge prompt — one showing the judge's own
+correct call (A-05: an informational, non-coverage question should not be scored
+against a fabricated "covered" decision label) and one showing the judge's own
+over-conservative mistake (D-05: a general FAQ conditional rule, correctly applied
+to the specific facts given, IS sufficient grounding for a decision — general
+policy text is not automatically "insufficient support" just because it isn't
+case-specific) — will raise agreement on the 21 already-judged cases from 76.2%
+(16/21) to at least 90% (19/21), by fixing the judge's tendency to reject any
+coverage_decision it cannot find restated verbatim in the context, while keeping
+its correct rejection of coverage labels forced onto non-coverage questions.
+
+---
+
+OUTCOME (measured after judge_v2 was run on all 25 cases):
+
+Agreement on the same 21 cases moved from 76.2% (16/21) to 81.0% (17/21).
+Directionally right, magnitude wrong — I predicted >=90% (19/21) and got 81.0%
+(17/21), a miss of 2 cases against target.
+
+Where the prediction was wrong: I expected fixing D-05's pattern (general FAQ
+rule correctly applied) to also loosen the judge on A-05/C-02/C-03/C-05, since
+all four share a surface resemblance to D-05 (a coverage_decision the context
+doesn't restate verbatim). It didn't loosen on any of them -- D-05 flipped to
+faithful=true exactly as intended, but the other four stayed faithful=false in
+both v1 and v2. Rereading them after the fact, that's because they aren't the
+same pattern as D-05: A-05, C-02, C-03 and C-05 are all cases where the question
+being asked isn't really a coverage question at all (a settlement-timeline
+question, a "must I declare this" question, a "will a survey happen" question),
+so forcing a coverage_decision label onto them is genuinely unsupported -- and my
+original blind label calling that "faithful" was the one that was wrong, not the
+judge's. The prediction conflated "the judge disagreed with me" with "the judge
+is wrong," when for 4 of the 5 disagreements the judge was right both times.

@@ -1,0 +1,86 @@
+{
+  "A-01": {
+    "faithful": true,
+    "rationale": "The summary accurately states that the tyre is covered because other vehicle parts were also damaged, applies the 50% depreciation for tyres under IMT-28, waives depreciation for the bumper and rim, and correctly infers the application of the standard deductible based on the context's exception for glass-only claims."
+  },
+  "A-02": {
+    "faithful": true,
+    "rationale": "The summary accurately reflects the policy context regarding glass breakage cover, the absence of other damage, and the waiver of the standard compulsory deductible of \u20b91,000."
+  },
+  "A-03": {
+    "faithful": true,
+    "rationale": "Every coverage-relevant statement in the summary, including the total loss condition, IDV calculation for vehicles over five years, and the mention of RTI endorsement and salvage, is directly supported by the policy context."
+  },
+  "A-04": {
+    "faithful": true,
+    "rationale": "Every coverage-relevant statement in the summary, including the coverage decision and event limit, is directly supported by endorsement IMT-40 in the policy context."
+  },
+  "A-05": {
+    "faithful": false,
+    "rationale": "The policy context does not provide a specific coverage decision for the claim CLM-2026-00105, therefore the statement 'Coverage decision stated: covered' is not directly supported by the provided context."
+  },
+  "B-01": {
+    "faithful": false,
+    "rationale": "The summary asserts that the policy was active and the claim is covered, but the provided policy context contains no rules or terms regarding motor policy renewals or delayed premium payments to support this decision."
+  },
+  "B-02": {
+    "faithful": true,
+    "rationale": "The claim summary is fully supported by the policy context, which explicitly excludes coverage for unforced entry under Section 3.3."
+  },
+  "B-03": {
+    "faithful": true,
+    "rationale": "The claim summary accurately cites Clause B, which limits coverage to events occurring during the Policy Period, to support denying a claim that occurred after the policy lapsed."
+  },
+  "B-04": {
+    "faithful": false,
+    "rationale": "The policy context does not mention rules or exclusions for mechanical wear and tear under motor policies, and Section 5.a from the Group Home Protect Policy does not apply to motor claims."
+  },
+  "B-05": {
+    "faithful": false,
+    "rationale": "The context does not state that the claim is covered, so asserting a coverage decision of 'covered' is an unsupported assumption."
+  },
+  "C-01": {
+    "faithful": false,
+    "rationale": "The summary invents a formal coverage decision ('denied') and cites Section (IV) Claims Procedure as an exclusion clause, neither of which is supported by the provided policy context."
+  },
+  "C-02": {
+    "faithful": false,
+    "rationale": "The summary asserts a coverage decision of 'covered', which is not supported by the policy context as the context only states that structural alterations must be declared and failure to do so may void the policy."
+  },
+  "C-03": {
+    "faithful": false,
+    "rationale": "Condition 3.c is a document submission requirement rather than an exclusion clause, and the policy context does not support stating that coverage is denied while awaiting the required report."
+  },
+  "C-04": {
+    "faithful": false,
+    "rationale": "The summary asserts that 'Delayed intimation' was the cited exclusion clause for the claim denial, which is not stated or supported in the adjuster notes or policy context."
+  },
+  "C-05": {
+    "faithful": false,
+    "rationale": "The summary asserts a coverage decision of 'covered', which is not supported by the policy context as the claim is still subject to surveyor assessment."
+  },
+  "D-01": {
+    "faithful": true,
+    "rationale": "Every coverage-relevant detail in the summary, including the denial decision and the reference to the Earthquake Extension endorsement (IAP-01), is directly supported by the provided policy context and adjuster notes."
+  },
+  "D-02": {
+    "faithful": true,
+    "rationale": "The claim summary is fully supported by the policy context, which explicitly lists flood and inundation as a covered Insured Event under Clause B (5)."
+  },
+  "D-03": {
+    "faithful": true,
+    "rationale": "The claim summary is fully supported by the policy context, accurately stating that engine damage from hydrostatic lock/water ingression is excluded without the IMT-29 endorsement."
+  },
+  "D-04": {
+    "faithful": true,
+    "rationale": "Every statement in the summary, including the coverage decision and the requirement of IMT-29 for engine damage from water ingression under a comprehensive motor policy, is directly supported by the policy context."
+  },
+  "D-05": {
+    "faithful": false,
+    "rationale": "The summary asserts a definitive coverage decision of denied, which is not supported by the context as the policy documents only provide general FAQ guidance and do not state a claim outcome."
+  },
+  "E-01": {
+    "faithful": true,
+    "rationale": "The claim summary accurately reflects the policy context by denying coverage based on Exclusion 7 (missing property without a single identifiable event) and Exclusion 10 (mysterious disappearance and unexplained losses), both of which are explicitly stated in the context."
+  }
+}

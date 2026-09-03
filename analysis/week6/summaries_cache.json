@@ -1,0 +1,1325 @@
+[
+  {
+    "id": "A-01",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00101, loss date 2026-02-03. Insured has IMT-28 Zero Dep cover on a 3-year-old sedan. Front-left tyre and rim were damaged in a pothole accident along with the bumper. Insured is asking whether the tyre will be reimbursed at full value under Zero Dep.",
+    "summary": {
+      "claim_number": "CLM-2026-00101",
+      "date_of_loss": "2026-02-03",
+      "coverage_decision": "covered",
+      "excess_amount": 1000.0,
+      "exclusion_clause_id": null,
+      "summary": "Claim CLM-2026-00101 regarding the bumper, rim, and front-left tyre damage from a pothole accident on 2026-02-03 is covered. Because the vehicle body (bumper) was damaged alongside the tyre in the same incident, tyre damage qualifies for coverage under the IMT-28 add-on. However, tyres carry a mandatory 50% depreciation deduction regardless of Zero Dep cover, while depreciation on the bumper and rim is fully waived and the standard compulsory deductible of \u20b91,000 applies.",
+      "citations": [
+        {
+          "source": "endorsements_and_riders.md",
+          "snippet": "tyres and tubes (unless the vehicle is also damaged in the same accident)."
+        },
+        {
+          "source": "claims_faq.md",
+          "snippet": "However, tyres, tubes, and batteries carry a standard 50% depreciation regardless of IMT-28."
+        },
+        {
+          "source": "claims_faq.md",
+          "snippet": "standard compulsory deductible of \u20b91,000"
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::3::c548c2f3ac91",
+        "source": "claims_faq.md",
+        "chunk_index": 3,
+        "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims",
+        "score": 0.7140874872734339
+      },
+      {
+        "chunk_id": "endorsements_and_riders.md::0::10aebd621066",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident).",
+        "score": 0.600024458647438
+      },
+      {
+        "chunk_id": "endorsements_and_riders.md::1::6f913da73a7c",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 1,
+        "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price.",
+        "score": 0.5105583085349175
+      },
+      {
+        "chunk_id": "claims_faq.md::1::6fb1b9b030bb",
+        "source": "claims_faq.md",
+        "chunk_index": 1,
+        "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage.",
+        "score": 0.5027315128333492
+      }
+    ]
+  },
+  {
+    "id": "A-02",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00102, loss date 2026-02-10. Windshield cracked from a stone chip on the highway; insured holds glass breakage cover and is not claiming any other damage. Insured wants to know if the standard deductible applies.",
+    "summary": {
+      "claim_number": "CLM-2026-00102",
+      "date_of_loss": "2026-02-10",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured filed a claim for a cracked windshield caused by a stone chip on the highway on February 10, 2026. Because the insured possesses glass breakage cover and is claiming no additional damage, the claim is approved for coverage. Under policy terms, the repair/replacement is settled without applying the standard compulsory deductible of \u20b91,000.",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "If you have glass breakage cover, the windshield replacement is settled without the standard compulsory deductible of \u20b91,000, provided no other damage is claimed simultaneously."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::3::c548c2f3ac91",
+        "source": "claims_faq.md",
+        "chunk_index": 3,
+        "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims",
+        "score": 0.7160843117449275
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.5026520181410536
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.5019864905878654
+      },
+      {
+        "chunk_id": "endorsements_and_riders.md::0::10aebd621066",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident).",
+        "score": 0.5007814915773449
+      }
+    ]
+  },
+  {
+    "id": "A-03",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00103, loss date 2026-01-15. Insured's car, registered 6 years ago, was hit by a truck and the repair estimate exceeds the vehicle's value. Insured wants to know how the payout will be calculated for a total loss.",
+    "summary": {
+      "claim_number": "CLM-2026-00103",
+      "date_of_loss": "2026-01-15",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured vehicle, registered six years ago, sustained major damage in a collision with a truck on 2026-01-15, with repair estimates exceeding the vehicle's total value. As the repair cost exceeds 75% of the Insured Declared Value (IDV), the claim is processed as a total loss. Payout will be based on the mutually agreed IDV for vehicles over five years old (or invoice value if Return to Invoice endorsement IMT-34 is active), with the insurer taking possession of the salvage.",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "A claim is declared a total loss when the cost of repair exceeds 75% of the IDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement IMT-34 is active) and takes possession of the salvage."
+        },
+        {
+          "source": "claims_faq.md",
+          "snippet": "Vehicles over 5 years: IDV is mutually agreed upon."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::1::6fb1b9b030bb",
+        "source": "claims_faq.md",
+        "chunk_index": 1,
+        "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage.",
+        "score": 0.7078816865871314
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.5493758783903279
+      },
+      {
+        "chunk_id": "claims_process.md::2::fccd87095612",
+        "source": "claims_process.md",
+        "chunk_index": 2,
+        "text": "icy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement) ### Step 5 \u2014 Surveyor Appointment\nABC Insurance will appoint a **licensed surveyor** within **48 hours** of receiving\nthe claim. The surveyor will:\n- Inspect the damaged property or vehicle\n- Assess the extent of loss\n- Submit a survey report to the insurer within **30 days**\n\nFor claims below \u20b950,000, a **spot survey** may be conducted via video call.\n\n### Step 6 \u2014 Claim Settlement\n- Once the survey report and all documents are received, ABC Insurance will settle\n  the claim within **30 days**.\n- Payment is made by **NEFT** directly to the insured's registered bank account\n  or to the repairer / garage (cashless claims).\n- For **cashless motor claims**, the vehicle must be taken to a **network garage**.\n  A list of network garages is available on the website and mobile app.\n\n---\n\n## Cashless vs Reimbursement Claims",
+        "score": 0.5086247542284142
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.5052142949027766
+      }
+    ]
+  },
+  {
+    "id": "A-04",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00104, loss date 2026-02-20. Insured's car battery died on the highway; this is the third roadside assistance call this policy year for a jump-start. Insured wants confirmation this is covered under IMT-40.",
+    "summary": {
+      "claim_number": "CLM-2026-00104",
+      "date_of_loss": "2026-02-20",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured requested roadside assistance for a dead car battery while on the highway on February 20, 2026. This represents the third roadside assistance call during the current policy year, which is within the allowed limit of 4 events per policy year. Under endorsement IMT-40, battery jump-start services are covered.",
+      "citations": [
+        {
+          "source": "endorsements_and_riders.md",
+          "snippet": "### IMT-40 \u2014 Roadside Assistance (RSA)\n- **Services covered:** Towing (up to 50 km), flat tyre change, emergency fuel delivery, battery jump-start, key retrieval, and arrangement of alternative transport.\n- **Limit:** 4 assistance events per policy year."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "endorsements_and_riders.md::2::2789341de118",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 2,
+        "text": "sured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price. ### IMT-40 \u2014 Roadside Assistance (RSA)\n- **Services covered:** Towing (up to 50 km), flat tyre change, emergency fuel\n  delivery, battery jump-start, key retrieval, and arrangement of alternative transport.\n- **Limit:** 4 assistance events per policy year.\n- **Exclusions:** Mechanical breakdown not resulting from an accident.\n\n### IMT-47 \u2014 Consumables Cover\n- **What it does:** Covers the cost of consumables \u2014 nuts, bolts, washers, engine\n  oil, coolant, AC gas \u2014 that are normally excluded from a standard claim.\n- **Note:** Must be availed at a network garage.\n\n---\n\n## Property Endorsements\n\n### IAP-01 \u2014 Earthquake (Fire & Shock) Extension\n- Extends the standard Fire policy to cover **direct loss or damage** caused by\n  earthquake including fire, shock, and subsequent landslide.\n- **Deductible:** 5% of claim amount, minimum \u20b925,000.",
+        "score": 0.7163435307343562
+      },
+      {
+        "chunk_id": "endorsements_and_riders.md::1::6f913da73a7c",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 1,
+        "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price.",
+        "score": 0.5107356152483314
+      },
+      {
+        "chunk_id": "claims_faq.md::2::5d8fdad2d369",
+        "source": "claims_faq.md",
+        "chunk_index": 2,
+        "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2) Submit a representation\nto the Grievance Cell at grievance@abcinsurance.in within 15 days. 3) If unresolved,\napproach the Insurance Ombudsman in your city. 4) File a complaint on IRDAI's IGMS\nportal (igms.irda.gov.in).\n\n---\n\n## Motor Claims\n\n**Q: My car was damaged in a flood. Is it covered?**\nA: Yes, if you hold a **Comprehensive (Own-Damage)** policy. Flood is a natural\ncalamity and is covered. Engine damage due to water ingression is covered only if\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\nengine hydrostatic lock is excluded.\n\n**Q: Can I take my car to any garage?**\nA: For **reimbursement** claims, yes \u2014 any registered garage. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website.",
+        "score": 0.5021479214194587
+      },
+      {
+        "chunk_id": "claims_faq.md::1::6fb1b9b030bb",
+        "source": "claims_faq.md",
+        "chunk_index": 1,
+        "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage.",
+        "score": 0.5014356165323391
+      }
+    ]
+  },
+  {
+    "id": "A-05",
+    "mode": "A",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00105, loss date 2026-02-25. Motor claim submitted with all documents; insured is asking how long settlement will take if they use a network garage for cashless versus paying out of pocket and claiming reimbursement.",
+    "summary": {
+      "claim_number": "CLM-2026-00105",
+      "date_of_loss": "2026-02-25",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "Motor claim CLM-2026-00105 submitted for an incident on 2026-02-25 has been processed with all required documents provided. The insured inquired regarding settlement processing times for cashless settlement versus out-of-pocket reimbursement. Per policy guidelines, cashless settlements at network garages are processed in 24 to 72 hours, while reimbursement claims are settled within 30 days of document submission.",
+      "citations": [
+        {
+          "source": "claims_process.md",
+          "snippet": "Settlement time | Faster (24\u201372 hours) | Up to 30 days"
+        },
+        {
+          "source": "claims_faq.md",
+          "snippet": "Settlement is by NEFT to your registered bank account within 30 days of document submission. Alternatively, use a network garage for a cashless settlement where we pay the garage directly."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::1::6fb1b9b030bb",
+        "source": "claims_faq.md",
+        "chunk_index": 1,
+        "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage.",
+        "score": 0.7295288340203238
+      },
+      {
+        "chunk_id": "claims_process.md::2::fccd87095612",
+        "source": "claims_process.md",
+        "chunk_index": 2,
+        "text": "icy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement) ### Step 5 \u2014 Surveyor Appointment\nABC Insurance will appoint a **licensed surveyor** within **48 hours** of receiving\nthe claim. The surveyor will:\n- Inspect the damaged property or vehicle\n- Assess the extent of loss\n- Submit a survey report to the insurer within **30 days**\n\nFor claims below \u20b950,000, a **spot survey** may be conducted via video call.\n\n### Step 6 \u2014 Claim Settlement\n- Once the survey report and all documents are received, ABC Insurance will settle\n  the claim within **30 days**.\n- Payment is made by **NEFT** directly to the insured's registered bank account\n  or to the repairer / garage (cashless claims).\n- For **cashless motor claims**, the vehicle must be taken to a **network garage**.\n  A list of network garages is available on the website and mobile app.\n\n---\n\n## Cashless vs Reimbursement Claims",
+        "score": 0.727777981367204
+      },
+      {
+        "chunk_id": "claims_faq.md::0::9c5dc30bcbb9",
+        "source": "claims_faq.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Claims FAQ\n\n## General Claims\n\n**Q: How soon must I report a claim?**\nA: For theft, report within 24 hours. For all other claims (accident, fire, flood,\nburglary), report within 7 days of the incident. Delayed reporting may lead to\nrepudiation unless you provide a valid written reason for the delay.\n\n**Q: Can I get a claim settled in cash?**\nA: Yes, via the reimbursement route. You pay the repairer, then submit original\nbills to ABC Insurance. Settlement is by NEFT to your registered bank account\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly.",
+        "score": 0.7216739642237484
+      },
+      {
+        "chunk_id": "claims_process.md::3::4ade51216f57",
+        "source": "claims_process.md",
+        "chunk_index": 3,
+        "text": "n to a **network garage**.\n  A list of network garages is available on the website and mobile app.\n\n---\n\n## Cashless vs Reimbursement Claims | Feature | Cashless | Reimbursement |\n|---------|----------|---------------|\n| Garage type | Network garage only | Any garage |\n| Payment | Direct to garage | Insured pays first, then claims back |\n| Paperwork | Minimal | Full documents required |\n| Settlement time | Faster (24\u201372 hours) | Up to 30 days |\n\n---\n\n## Common Reasons for Claim Rejection\n\n1. **Policy lapse** \u2014 premium not paid, grace period expired.\n2. **Non-disclosure** \u2014 material facts concealed at policy inception.\n3. **Excluded peril** \u2014 damage caused by an event not covered (e.g. mechanical breakdown).\n4. **Driving under influence** \u2014 DUI at the time of the accident.\n5. **Invalid driving licence** \u2014 expired, wrong class, or no licence.\n6. **Fraudulent claim** \u2014 misrepresentation of facts or inflated bills.\n7. **Delayed intimation** \u2014 not notifying within the required period without valid reason.\n\n---\n\n## Claim Status Tracking",
+        "score": 0.7156875806333305
+      }
+    ]
+  },
+  {
+    "id": "B-01",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00106, loss date 2026-03-01. Insured's motor policy renewed on 2026-02-05 but the premium was paid only on 2026-02-25, 20 days after the renewal date. A minor accident occurred on the loss date above. Insured wants to know if the claim is payable given the delay in premium payment.",
+    "summary": {
+      "claim_number": "CLM-2026-00106",
+      "date_of_loss": "2026-03-01",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured reported a minor motor accident occurring on March 1, 2026. Although the policy renewal premium was paid on February 25, 2026 (20 days after the renewal date of February 5, 2026), payment was completed prior to the date of loss. Since the policy was active at the time of the incident and no applicable exclusions exist in the provided policy terms, the claim is covered.",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "For all other claims (accident, fire, flood, burglary), report within 7 days of the incident."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::1::6fb1b9b030bb",
+        "source": "claims_faq.md",
+        "chunk_index": 1,
+        "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage.",
+        "score": 0.50535908028173
+      },
+      {
+        "chunk_id": "health-elite-policy-wording.pdf::144::d906d2a8a54c",
+        "source": "health-elite-policy-wording.pdf",
+        "chunk_index": 144,
+        "text": "ll be no refund of premium for the current Policy Year \nin which the claim got reported. However, the premium  for the unutilized subsequent Policy Years (if any), shall be refunded. \nii. Premium paid in multiple instalments \u2013  \n1) 1/2/3 years Policy Term - There shall be no refund of premium for the unexpired \ninstalment period.",
+        "score": 0.5024555014012725
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.5015485631846586
+      },
+      {
+        "chunk_id": "claims_faq.md::0::9c5dc30bcbb9",
+        "source": "claims_faq.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Claims FAQ\n\n## General Claims\n\n**Q: How soon must I report a claim?**\nA: For theft, report within 24 hours. For all other claims (accident, fire, flood,\nburglary), report within 7 days of the incident. Delayed reporting may lead to\nrepudiation unless you provide a valid written reason for the delay.\n\n**Q: Can I get a claim settled in cash?**\nA: Yes, via the reimbursement route. You pay the repairer, then submit original\nbills to ABC Insurance. Settlement is by NEFT to your registered bank account\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly.",
+        "score": 0.5012043311718908
+      }
+    ]
+  },
+  {
+    "id": "B-02",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00107, loss date 2026-03-05. Insured's home was burgled; the back door was unlocked and there are no signs of forced entry. Insured is claiming for stolen electronics under the Burglary & Theft section and wants to know the payable amount.",
+    "summary": {
+      "claim_number": "CLM-2026-00107",
+      "date_of_loss": "2026-03-05",
+      "coverage_decision": "denied",
+      "excess_amount": 5000.0,
+      "exclusion_clause_id": "Section 3.3 - Unforced entry is not covered",
+      "summary": "The insured filed a claim for stolen electronics following an alleged burglary at their home on March 5, 2026. Adjuster notes confirm that the back door was left unlocked and there were no signs of forced or violent entry. As the policy explicitly excludes losses resulting from unforced entry under the Burglary & Theft section, the claim is denied.",
+      "citations": [
+        {
+          "source": "insurance_policy_overview.md",
+          "snippet": "Covers loss of contents due to forcible and violent entry. Unforced entry is not covered."
+        },
+        {
+          "source": "insurance_policy_overview.md",
+          "snippet": "Burglary & Theft | As declared | \u20b95,000"
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.5718737562651771
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::108::570b9a28c487",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 108,
+        "text": "e event of a loss the Company shall indemnify th e Insured for the \nReplacement Value of the insured items as new at the time of damage less due allowance for Betterment, wear and tear and or depreciation as \nmentioned in the depreciation schedule or the value which can be realized \nfrom the market for such insured item immediately before occurrence of \ndamage whichever is lower \nPermanent Exclusions under the Section B \nWe will not pay for any loss or damage caused by or attributable to \u2013 \n1. Burglary or Theft where the Insured or any of the Insured\u2019s family is \nalleged to be concerned or implicated. \n2. Theft and Burglary Claims, if the premise is left unoccupied for more than \ncontinuous 30 days. \nExtensions specific to Section B \nB.3 Extension: Burglary Cover \nIn consideration of payment of additional premium,the benefit pro vided under \nthis extension is for any loss and/or damage caused by burglary and/or \nattempted burglary, to the contents of insured\u2019s structure. \nThe Company\u2019s liability under this benefit is limited as follows: \n1. Damage due to burglary shall be limited to the amount actually payable for",
+        "score": 0.546631322576246
+      },
+      {
+        "chunk_id": "insurance_policy_overview.md::2::e50d70223e17",
+        "source": "insurance_policy_overview.md",
+        "chunk_index": 2,
+        "text": "ousehold contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\nCovers loss of contents due to forcible and violent entry. Unforced entry is\n**not covered**. Cash limit: \u20b925,000 per incident.\n\n---\n\n## Section 4 \u2014 Policy Limits and Deductibles\n\n| Coverage | Sum Insured | Compulsory Deductible |\n|----------|-------------|----------------------|\n| Third-Party Liability | Unlimited (BI) / \u20b97.5 lakh (PD) | Nil |\n| Own-Damage Motor | As declared | \u20b91,000 (private car) |\n| Building | As declared | 1% of claim min \u20b910,000 |\n| Contents | As declared | \u20b92,500 |\n| Burglary & Theft | As declared | \u20b95,000 |\n\nA **voluntary deductible** of \u20b92,500, \u20b95,000, or \u20b910,000 may be chosen for a premium\ndiscount of 10%, 15%, or 20% respectively.\n\n---\n\n## Section 5 \u2014 Policy Period & Renewal\n\n- Motor policies: **1 year**, renewable annually.\n- Property policies: **1 year**, renewable annually.\n- Long-term motor (2 or 3 years) available for new vehicles at a 5% discount.\n- Coverage lapses if the premium is not paid within the **15-day grace period**.",
+        "score": 0.529467720519698
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::134::693d74ff8f47",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 134,
+        "text": "cause \n21. Mysterious disappearance and Unexplained Losses \n22. Any loss or damage to the insured property or to the general public and/ or legal liability arising out of immoral or unethical use of insured property \n23. Damage to property not belonging to or held in trust by or in the custody or \ncontrol of the Insured \n24. Loss or damage to Livestock, Pedal Cycles, Motor Cycles and Vehicles of \nany description \n25. Loss or damage to contents due to Burglary or Theft where the insured or \nany of the insured\u2019s family is alleged to be concerned or implicated. \n26. Expenses incurred for maintenance of Electronic and Electrical \nEquipment and Domestic Appliances \n27. Contents kept in the open or outside the premises other than generator \nset, dish antennae, solar equipment \n28. Theft and Burglary Claims, if the premise is left unoccupied for more than \ncontinuous 30 days. \n29. Loss, destruction or damage to the contents or items in \nRefrigerator/Fridge or similar type of Cold Storage caused by change of \ntemperature. \n30. Ionizing radiations or contamination by radioactivity from any nuclear fuel or",
+        "score": 0.50383536329088
+      }
+    ]
+  },
+  {
+    "id": "B-03",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00108, loss date 2026-03-08. Insured's building policy premium lapsed and a fire caused damage 10 days into the lapse; insured wants to know if the fire claim is payable.",
+    "summary": {
+      "claim_number": "CLM-2026-00108",
+      "date_of_loss": "2026-03-08",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Clause B",
+      "summary": "The insured submitted a claim for fire damage to their building occurring on March 8, 2026, 10 days after the policy premium lapsed. Under Clause B of the policy wording, insurance coverage applies strictly to physical loss or damage caused by unforeseen events occurring during the active Policy Period. Because the loss occurred while the policy was lapsed, coverage is denied.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "We give insurance cover for physical loss or damage, or destruction caused to Insured Property by the following unforeseen events occurring during the Policy Period."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.6016111809964437
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::103::cc559e365d2d",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 103,
+        "text": ". Over winding, denting or internal damage of watches and clocks \n6. Loss of Insured Premises from safe inside insured \u201cBuilding\u201d, following use of the key or any duplicate thereof or access code to the safe \nbelonging to the Insured, unless this has been obtained by threat or by \nviolence. \n7. Loss Destruction of or Damage to articles of Consumable Nature. \n8. Jewellery and valuables, works of art, paintings, curios unless \nspecifically insured. Further the Company sh all not be liable for loss or \ndamage to Works of art, paintings, curios due to breakage, cracking or \nscratching, unless caused by fire or Accidental External means. \n9. Loss or damage due to theft or attempted theft by any employee of the \nInsured or loss or da mage occasioned through the willful act of the \nInsured or any employee or the willful act of any other person with a \nconnivance of the Insured or any employee unless a FIR has been lodged \nagainst the employee. \n10. Mysterious disappearance and Unexplained Losses \n11. Loss or damage howsoever caused to Electronic and Electrical \nEquipment, Domestic Appliances older than 10 Years and Portable",
+        "score": 0.5154157617599465
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::16::070d34a9a9fb",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 16,
+        "text": "l \nas per Clause C (2) of this Policy. \nClause B. Insured Events \nWe give insurance cover for physical loss or damage, or destruction caused to Insured Property by the following unforeseen events occurring during the \n \nThe events covered are given in Column A and those not covered in respect of \nthese events are given in Column B. \n \n Column A Column B \n We cover phys ical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n1 Fire caused by burning of Insured \nProperty by order of any Public \nAuthority. \n2 Explosion or Implosion - \n3 Lightning - \n4 Earthquake, volcanic e r uption, \nor other convulsions of nature \n- \nPolicy Period. \n5 Storm,  Cyclone,  Typhoon, \nTempest, Hurricane, Tornado, \nTsunami, Flood and Inundation \n- \n Column A Column B \n We cover physical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n6 Subsidence of the land on which \nYour Home Building stands, \nLandslide, Rockslide \ncaused by",
+        "score": 0.5103753698835324
+      },
+      {
+        "chunk_id": "claims_faq.md::4::d3088ec5c0b9",
+        "source": "claims_faq.md",
+        "chunk_index": 4,
+        "text": "-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims **Q: Is my home covered for earthquake damage?**\nA: Standard fire policies **do not cover earthquake** by default. You need the\n**Earthquake Extension** endorsement (IAP-01). If you have it, both the fire\nfollowing earthquake and the shock damage are covered.\n\n**Q: My tenant's belongings were damaged in a fire. Am I liable?**\nA: A standard building policy covers the structure only. Your tenant's contents\nare the tenant's responsibility and should be covered under a separate contents\npolicy. However, if the fire originated from a defect in the building, the\n**Landlord's Legal Liability** endorsement (IAP-15) would cover your liability.\n\n**Q: My house is under renovation. Is it still covered?**\nA: Minor renovation (painting, tiling) does not affect coverage. Major structural\nwork (demolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period.",
+        "score": 0.5078811776513978
+      }
+    ]
+  },
+  {
+    "id": "B-04",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00109, loss date 2026-03-12. Insured's car needed a new water pump due to normal wear; no accident was involved. Insured has a comprehensive own-damage policy and wants to know if this is covered.",
+    "summary": {
+      "claim_number": "CLM-2026-00109",
+      "date_of_loss": "2026-03-12",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Section 5.a - Failure to Establish Insured Event",
+      "summary": "The insured filed a claim for the replacement of a water pump resulting from normal wear and tear, with no underlying accident or natural calamity. Per Section 5.a of the policy conditions, the insured is required to establish that an Insured Event has occurred. Because routine wear and tear does not constitute a covered Insured Event, the claim is denied.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "You must prove that the Insured Event has occurred, and the extent of physical loss or damage You have suffered with full details."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::2::5d8fdad2d369",
+        "source": "claims_faq.md",
+        "chunk_index": 2,
+        "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2) Submit a representation\nto the Grievance Cell at grievance@abcinsurance.in within 15 days. 3) If unresolved,\napproach the Insurance Ombudsman in your city. 4) File a complaint on IRDAI's IGMS\nportal (igms.irda.gov.in).\n\n---\n\n## Motor Claims\n\n**Q: My car was damaged in a flood. Is it covered?**\nA: Yes, if you hold a **Comprehensive (Own-Damage)** policy. Flood is a natural\ncalamity and is covered. Engine damage due to water ingression is covered only if\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\nengine hydrostatic lock is excluded.\n\n**Q: Can I take my car to any garage?**\nA: For **reimbursement** claims, yes \u2014 any registered garage. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website.",
+        "score": 0.6280534370444134
+      },
+      {
+        "chunk_id": "claims_process.md::1::fd6c6f4eba78",
+        "source": "claims_process.md",
+        "chunk_index": 1,
+        "text": "cious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended. ### Step 3 \u2014 Document the Loss\nCollect and preserve:\n- Photographs of damaged vehicle/property from multiple angles\n- Repair estimates from authorised service centres or contractors\n- Medical bills and reports (for personal accident claims)\n- Witness statements, if available\n\n### Step 4 \u2014 Submit the Claim Form\nComplete the **Claim Intimation Form** and submit within **15 days** of the incident\nalong with the following documents:\n\n**For Motor Claims:**\n- Duly signed claim form\n- Copy of Registration Certificate (RC)\n- Copy of valid Driving Licence\n- Copy of insurance policy / certificate\n- FIR copy (if applicable)\n- Repair estimate from garage\n\n**For Property Claims:**\n- Duly signed claim form\n- Copy of insurance policy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement)",
+        "score": 0.5394079412181414
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.5271794628370519
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.524567656389096
+      }
+    ]
+  },
+  {
+    "id": "B-05",
+    "mode": "B",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00110, loss date 2026-03-15. Insured wants to know the exact compulsory deductible that applies to their private car own-damage claim before repairs are authorised.",
+    "summary": {
+      "claim_number": "CLM-2026-00110",
+      "date_of_loss": "2026-03-15",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured submitted an own-damage claim (CLM-2026-00110) for a private car incident occurring on March 15, 2026, seeking confirmation of the applicable deductible prior to authorizing repairs. Under the policy guidelines, own-damage claims involving no third-party injuries are eligible for processing upon submission of the required claim form, vehicle registration, driving licence, and repair estimate. As no specific compulsory deductible amount is specified in the provided policy context, the claim is covered subject to standard documentation.",
+      "citations": [
+        {
+          "source": "claims_process.md",
+          "snippet": "For accidents involving only own-damage with no third-party injury, an FIR is **not mandatory** but is recommended."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_process.md::1::fd6c6f4eba78",
+        "source": "claims_process.md",
+        "chunk_index": 1,
+        "text": "cious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended. ### Step 3 \u2014 Document the Loss\nCollect and preserve:\n- Photographs of damaged vehicle/property from multiple angles\n- Repair estimates from authorised service centres or contractors\n- Medical bills and reports (for personal accident claims)\n- Witness statements, if available\n\n### Step 4 \u2014 Submit the Claim Form\nComplete the **Claim Intimation Form** and submit within **15 days** of the incident\nalong with the following documents:\n\n**For Motor Claims:**\n- Duly signed claim form\n- Copy of Registration Certificate (RC)\n- Copy of valid Driving Licence\n- Copy of insurance policy / certificate\n- FIR copy (if applicable)\n- Repair estimate from garage\n\n**For Property Claims:**\n- Duly signed claim form\n- Copy of insurance policy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement)",
+        "score": 0.6135137481775589
+      },
+      {
+        "chunk_id": "endorsements_and_riders.md::0::10aebd621066",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident).",
+        "score": 0.5675693935294661
+      },
+      {
+        "chunk_id": "claims_faq.md::1::6fb1b9b030bb",
+        "source": "claims_faq.md",
+        "chunk_index": 1,
+        "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage.",
+        "score": 0.5166930444417411
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.5110621595849559
+      }
+    ]
+  },
+  {
+    "id": "C-01",
+    "mode": "C",
+    "is_regression": true,
+    "source_trace_id": "32ef08e43ed2",
+    "adjuster_notes": "Claim CLM-2026-00111, loss date 2026-03-18. Adjuster note (verbatim from original real query, Week 5 trace 32ef08e43ed2): \"My house is undergoing a small paint job \u2014 do I need to inform the insurer?\"",
+    "summary": {
+      "claim_number": "CLM-2026-00111",
+      "date_of_loss": "2026-03-18",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Section (IV) Claims Procedure - Insured Event Requirement",
+      "summary": "The insured inquired whether notification is required for a small home painting job. According to Section (IV)(1)(a) of the policy wording, policyholders are only required to notify the insurer when physical loss or damage occurs due to an Insured Event. Since routine painting is non-emergency maintenance and does not involve loss or damage from an Insured Event, coverage for routine maintenance is denied and notice is not required.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "As soon as any physical loss or damage occurs to Your Home Building or Home Contents due to an Insured Event, You must immediately give notice to Us of the loss or damage."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::41::e25911a02ac6",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 41,
+        "text": "mediately give \nnotice to Us of the loss or damage. This is necessary for Us to survey/ \ninvestigate the loss or damage, as may be required. b. You can give notice to any of Our offices or call-centres. \nc. You must state in this notice \ni. the Policy Number, \nii. Your name, \niii. details of report to the police that You made, \niv. details of report to any Authority that You made, \nv. details of the Insured Event, \nvi. a brief statement of the loss, \nvii. particulars of any other insurance of Your Home Building or any of \nYour Home Contents,",
+        "score": 0.5513668872454198
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.518451352844181
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::40::3695b3f2f688",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 40,
+        "text": "urrender or release Your interest in such additional structure or \nitem of Home Content, or Your interest in these ends. \ne. Effect of death In the event of the unfortunate death of the Insured during the Policy \nPeriod, the Home Building Cover and the Home Contents Cover that You \nhave purchased will continue for the benefit of Your legal \nrepresentative/s during the Policy Period subject to all the terms and \nconditions of this Policy. \n(IV) Claims Procedure \nIf You suffer a loss because of an Insured Event, You must make a claim for \nYour financial loss at Your cost. The procedure for making a claim is given \nbelow. These include things that  You must do, and that You must not do. It is \nimportant to comply with these to ensure that it does not prejudice Your \nclaim in any manner. \n1. Immediate notice to Us \na. As soon as any physical loss or damage occurs to Your Home Building  or \nHome Contents due to an Insured Event, You must immediately give \nnotice to Us of the loss or damage. This is necessary for Us to survey/ \ninvestigate the loss or damage, as may be required.",
+        "score": 0.502933035256063
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.5028326036045204
+      }
+    ]
+  },
+  {
+    "id": "C-02",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00112, loss date 2026-03-20. Insured's house is undergoing demolition of an interior wall to combine two rooms, plus adding a new floor above the garage. Insured wants to know if this must be reported to ABC Insurance.",
+    "summary": {
+      "claim_number": "CLM-2026-00112",
+      "date_of_loss": "2026-03-20",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured inquired whether major structural alterations, including demolishing an interior wall and adding a new floor above the garage, must be reported to ABC Insurance. According to the policy terms, major renovations such as demolishing walls and adding floors must be declared to the insurer to maintain valid coverage. Failure to declare these alterations may void the policy during the renovation period, so the insured must officially declare the changes.",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "emolishing walls, adding floors) must be **declared** to ABC Insurance. Failure to declare may void the policy during the renovation period."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_process.md::0::1b6d56eb17a5",
+        "source": "claims_process.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Claims Process Guide\n\n---\n\n## How to File a Claim\n\n### Step 1 \u2014 Notify the Insurer Immediately\nReport the incident to ABC Insurance within **24 hours** for theft claims and\nwithin **7 days** for all other claims. You can notify via:\n- **Toll-free helpline:** 1800-XXX-XXXX (24 \u00d7 7)\n- **Mobile app:** \"ABC Insurance\" \u2192 Raise a Claim\n- **Email:** claims@abcinsurance.in\n- **Nearest branch office**\n\nFailure to notify within the stipulated period may result in the claim being\n**repudiated** unless a valid reason for delay is provided.\n\n### Step 2 \u2014 File an FIR (where applicable)\nAn FIR (First Information Report) with the local police is **mandatory** for:\n- Theft of vehicle or property\n- Third-party bodily injury or death\n- Riots, malicious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended.",
+        "score": 0.7166236563335618
+      },
+      {
+        "chunk_id": "claims_faq.md::5::f88881c42340",
+        "source": "claims_faq.md",
+        "chunk_index": 5,
+        "text": "emolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period. **Q: What is the depreciation applied to contents claims?**\nA: Contents are settled on **market value** (not reinstatement value). Depreciation\ndepends on age and condition. Electronics older than 5 years typically attract\n50% depreciation. Furniture and appliances are assessed by the appointed surveyor.\n\n---\n\n## Health & Personal Accident Claims\n\n**Q: What is the deadline for submitting a health claim?**\nA: For **planned hospitalisation**, notify ABC Insurance 48 hours before admission.\nFor **emergency hospitalisation**, notify within 24 hours of admission. Post-discharge\nreimbursement claims must be submitted within **30 days** of discharge.\n\n**Q: Is a pre-existing condition covered?**\nA: Pre-existing conditions are covered after a **waiting period of 48 months**\n(4 years) of continuous coverage with ABC Insurance. Specific diseases such as\ncataracts and joint replacements have a **24-month waiting period**.",
+        "score": 0.7041652665390434
+      },
+      {
+        "chunk_id": "claims_faq.md::0::9c5dc30bcbb9",
+        "source": "claims_faq.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Claims FAQ\n\n## General Claims\n\n**Q: How soon must I report a claim?**\nA: For theft, report within 24 hours. For all other claims (accident, fire, flood,\nburglary), report within 7 days of the incident. Delayed reporting may lead to\nrepudiation unless you provide a valid written reason for the delay.\n\n**Q: Can I get a claim settled in cash?**\nA: Yes, via the reimbursement route. You pay the repairer, then submit original\nbills to ABC Insurance. Settlement is by NEFT to your registered bank account\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly.",
+        "score": 0.6598055986920601
+      },
+      {
+        "chunk_id": "claims_process.md::2::fccd87095612",
+        "source": "claims_process.md",
+        "chunk_index": 2,
+        "text": "icy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement) ### Step 5 \u2014 Surveyor Appointment\nABC Insurance will appoint a **licensed surveyor** within **48 hours** of receiving\nthe claim. The surveyor will:\n- Inspect the damaged property or vehicle\n- Assess the extent of loss\n- Submit a survey report to the insurer within **30 days**\n\nFor claims below \u20b950,000, a **spot survey** may be conducted via video call.\n\n### Step 6 \u2014 Claim Settlement\n- Once the survey report and all documents are received, ABC Insurance will settle\n  the claim within **30 days**.\n- Payment is made by **NEFT** directly to the insured's registered bank account\n  or to the repairer / garage (cashless claims).\n- For **cashless motor claims**, the vehicle must be taken to a **network garage**.\n  A list of network garages is available on the website and mobile app.\n\n---\n\n## Cashless vs Reimbursement Claims",
+        "score": 0.6446765533895318
+      }
+    ]
+  },
+  {
+    "id": "C-03",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00113, loss date 2026-03-22. Insured's vehicle was stolen from a parking lot 95 days ago; police have still not issued a Non-Traceable Certificate. Insured is asking whether the theft claim can be settled now.",
+    "summary": {
+      "claim_number": "CLM-2026-00113",
+      "date_of_loss": "2026-03-22",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Condition 3.c (Police Final Investigation Report)",
+      "summary": "The insured reported the theft of their vehicle on March 22, 2026, and inquired about immediate claim settlement. Under the policy terms, settlement of theft claims requires the submission of a Police Final Investigation Report (Non-Traceable Certificate). Because this mandatory document has not yet been issued by the police, the claim cannot be settled at this time and coverage is denied for immediate payout.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "Police Final Investigation Report for Theft and Burglary Claims"
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::1::6fb1b9b030bb",
+        "source": "claims_faq.md",
+        "chunk_index": 1,
+        "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage.",
+        "score": 0.5105684945180683
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.5091148313562371
+      },
+      {
+        "chunk_id": "claims_faq.md::0::9c5dc30bcbb9",
+        "source": "claims_faq.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Claims FAQ\n\n## General Claims\n\n**Q: How soon must I report a claim?**\nA: For theft, report within 24 hours. For all other claims (accident, fire, flood,\nburglary), report within 7 days of the incident. Delayed reporting may lead to\nrepudiation unless you provide a valid written reason for the delay.\n\n**Q: Can I get a claim settled in cash?**\nA: Yes, via the reimbursement route. You pay the repairer, then submit original\nbills to ABC Insurance. Settlement is by NEFT to your registered bank account\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly.",
+        "score": 0.5058448022418298
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.5057325589253688
+      }
+    ]
+  },
+  {
+    "id": "C-04",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00114, loss date 2026-03-25. Insured wants to know how to escalate a previously rejected fire claim that they believe was wrongly denied, and where to file a formal complaint if the insurer's Grievance Cell doesn't resolve it in time.",
+    "summary": {
+      "claim_number": "CLM-2026-00114",
+      "date_of_loss": "2026-03-25",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Delayed intimation",
+      "summary": "The insured requested information on escalating a previously rejected fire claim under CLM-2026-00114 for a loss on 2026-03-25. The coverage decision remains denied under standard policy guidelines. The insured was advised to submit a formal complaint to the Grievance Cell within 15 days and, if unresolved, escalate to the regional Insurance Ombudsman or the IRDAI IGMS portal (igms.irda.gov.in).",
+      "citations": [
+        {
+          "source": "claims_process.md",
+          "snippet": "If dissatisfied with the claim settlement: 1. Contact the Grievance Cell at grievance@abcinsurance.in within 15 days. 2. If unresolved in 15 days, escalate to the Insurance Ombudsman in your region. 3. IRDAI's integrated grievance portal: igms.irda.gov.in"
+        },
+        {
+          "source": "claims_process.md",
+          "snippet": "7. **Delayed intimation** \u2014 not notifying within the required period without valid reason."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.5041820097568084
+      },
+      {
+        "chunk_id": "claims_process.md::4::2d9decb2e90e",
+        "source": "claims_process.md",
+        "chunk_index": 4,
+        "text": "or inflated bills.\n7. **Delayed intimation** \u2014 not notifying within the required period without valid reason.\n\n---\n\n## Claim Status Tracking Track your claim 24 \u00d7 7 via:\n- **Mobile app** \u2192 \"My Claims\"\n- **Website:** www.abcinsurance.in/claims-track\n- **SMS:** Send CLAIM <Claim No.> to 56XXX\n- **Helpline:** 1800-XXX-XXXX\n\n---\n\n## Grievance Redressal\n\nIf dissatisfied with the claim settlement:\n1. Contact the **Grievance Cell** at grievance@abcinsurance.in within **15 days**.\n2. If unresolved in 15 days, escalate to the **Insurance Ombudsman** in your region.\n3. IRDAI's integrated grievance portal: **igms.irda.gov.in**",
+        "score": 0.5040612570903116
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::153::306234075969",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 153,
+        "text": ", during normal business hours. \n20. Claim Clause/ Settlement of Claim: \n1) Claim Intimation: Connect with us via: Toll-free no.: 1800 2666, Email ID: customersupport@icicilombard.com,  on our website: \nhttps://coclaims.icicilombard.com/claimstrack er/CommercialClaims/cc \nplandingpage.aspx \nRegister the claim and submit claim related documents along with claim \nform. You will receive a claim reference number as your reference point \nfor future correspondence. \n2) File an FIR: In case of third-party property damage/bodily injury, fire \netc. if applicable as per policy terms and conditions.",
+        "score": 0.5020121483473696
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.5011737495054662
+      }
+    ]
+  },
+  {
+    "id": "C-05",
+    "mode": "C",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00115, loss date 2026-03-28. Insured's claim for property damage is valued at \u20b942,000 and insured is asking whether a surveyor will inspect the property in person or remotely.",
+    "summary": {
+      "claim_number": "CLM-2026-00115",
+      "date_of_loss": "2026-03-28",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured submitted a property damage claim valued at \u20b942,000 for an occurrence on 2026-03-28. Per the policy guidelines, a licensed surveyor will be appointed upon receipt of the claim details and documentation. Because the claimed value is under \u20b950,000, a spot survey may be conducted remotely via video call.",
+      "citations": [
+        {
+          "source": "claims_process.md",
+          "snippet": "For claims below \u20b950,000, a spot survey may be conducted via video call."
+        },
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "On receipt of all the required information along with the claim form, the Company shall appoint a surveyor for assessing the loss/ claim within 24 hours of the receipt of intimation from the Insured."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::137::a5a27577fc12",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 137,
+        "text": "he receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured shall assist and not hinder or prevent the surveyor in pursuance of his/ her \nduties. The Insured shall not abandon the insured property/items in the \npremises, nor take any step to rectify/ remedy the damage before the \nsame has been approved by the Company or the Surveyor \nThe insured shall within 30 days of the occurrence of the loss to the \nbuilding, intimate to the insurance company his intention to either \nreconstruct the Structure or opt not to do so.",
+        "score": 0.71158016995023
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.6709155727562112
+      },
+      {
+        "chunk_id": "claims_process.md::2::fccd87095612",
+        "source": "claims_process.md",
+        "chunk_index": 2,
+        "text": "icy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement) ### Step 5 \u2014 Surveyor Appointment\nABC Insurance will appoint a **licensed surveyor** within **48 hours** of receiving\nthe claim. The surveyor will:\n- Inspect the damaged property or vehicle\n- Assess the extent of loss\n- Submit a survey report to the insurer within **30 days**\n\nFor claims below \u20b950,000, a **spot survey** may be conducted via video call.\n\n### Step 6 \u2014 Claim Settlement\n- Once the survey report and all documents are received, ABC Insurance will settle\n  the claim within **30 days**.\n- Payment is made by **NEFT** directly to the insured's registered bank account\n  or to the repairer / garage (cashless claims).\n- For **cashless motor claims**, the vehicle must be taken to a **network garage**.\n  A list of network garages is available on the website and mobile app.\n\n---\n\n## Cashless vs Reimbursement Claims",
+        "score": 0.5559178183060092
+      },
+      {
+        "chunk_id": "endorsements_and_riders.md::3::b2e6000a68f9",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 3,
+        "text": "s or damage** caused by\n  earthquake including fire, shock, and subsequent landslide.\n- **Deductible:** 5% of claim amount, minimum \u20b925,000. ### IAP-07 \u2014 Terrorism Cover\n- Covers physical damage to the insured property arising from acts of **terrorism**\n  as defined by the Terrorism Risk Insurance Pool (TRIP).\n- **Exclusion:** War, civil war, nuclear/chemical/biological attacks.\n- Underwritten by the **National Insurance Pool** at IRDAI-approved rates.\n\n### IAP-12 \u2014 Rent for Alternative Accommodation\n- If the insured building is rendered **uninhabitable** due to an insured peril,\n  this endorsement pays actual rent for alternative accommodation up to:\n  - **\u20b925,000 per month** for up to **6 months**, or until repairs are complete,\n    whichever is earlier.\n\n### IAP-15 \u2014 Landlord's Legal Liability\n- Covers a landlord's legal liability to a **tenant** for bodily injury or property\n  damage caused by a defect in the insured building.\n- Limit: **\u20b910 lakh** per occurrence.\n\n---\n\n## How to Add an Endorsement",
+        "score": 0.5085020735749217
+      }
+    ]
+  },
+  {
+    "id": "D-01",
+    "mode": "D",
+    "is_regression": true,
+    "source_trace_id": "41744e44481e",
+    "adjuster_notes": "Claim CLM-2026-00116, loss date 2026-04-01. Adjuster note (verbatim from original real query, Week 5 trace 41744e44481e): \"Is my home covered for earthquake damage?\" Insured's home suffered structural cracks after an earthquake and insured does not have any additional endorsements beyond the standard building policy.",
+    "summary": {
+      "claim_number": "CLM-2026-00116",
+      "date_of_loss": "2026-04-01",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "IAP-01",
+      "summary": "The insured submitted a claim for structural cracks to their home resulting from an earthquake on April 1, 2026. Standard building policies do not automatically cover earthquake damage without the optional Earthquake Extension endorsement (IAP-01). Since the insured does not possess this endorsement, coverage for the loss is denied.",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "Standard fire policies do not cover earthquake by default. You need the Earthquake Extension endorsement (IAP-01)."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::4::d3088ec5c0b9",
+        "source": "claims_faq.md",
+        "chunk_index": 4,
+        "text": "-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims **Q: Is my home covered for earthquake damage?**\nA: Standard fire policies **do not cover earthquake** by default. You need the\n**Earthquake Extension** endorsement (IAP-01). If you have it, both the fire\nfollowing earthquake and the shock damage are covered.\n\n**Q: My tenant's belongings were damaged in a fire. Am I liable?**\nA: A standard building policy covers the structure only. Your tenant's contents\nare the tenant's responsibility and should be covered under a separate contents\npolicy. However, if the fire originated from a defect in the building, the\n**Landlord's Legal Liability** endorsement (IAP-15) would cover your liability.\n\n**Q: My house is under renovation. Is it still covered?**\nA: Minor renovation (painting, tiling) does not affect coverage. Major structural\nwork (demolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period.",
+        "score": 0.7281604032597837
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::142::4548c76c2550",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 142,
+        "text": "burden of proving that the loss/damage is a result  of \nearthquake/Act of Terrorism or operation of RSMD peril respectively will \nbe on You. 5. Contribution - If at the time of claim, there exists any other insurance(s) \ncovering the same loss, Our liability will be restricted to the rateable \nproportion of the loss. However, if the insured property is hypothecated to \nany bank, other lending or financial entity then this clause is not \napplicable. \n6. Reinstatement of p roperty - If We elect to reinstate the Structure or part of \nthe Structure damaged or destroyed instead of paying the amount of loss or \ndamage, We shall not be bound to reinstate completely but only to the extent \nthe circumstances permit and to the extent o f loss occurred, subject \nto Sum Insured and also subject to condition of average, such action of \nOurs being limited to reinstating the Structure or part of the Structure \nas it was before happening of loss. You shall be liable to provide any details \nas are reasonably required by Us for such reinstatement including \nplan, specification, measurements, etc as may be required by Us at Your",
+        "score": 0.5315579706669893
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::42::b552fc74287f",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 42,
+        "text": "red Event, \nvi. a brief statement of the loss, \nvii. particulars of any other insurance of Your Home Building or any of \nYour Home Contents, Annexure I \n-7- UIN : IRDAN115CP0003V02202021 CIN : L67200MH2000PLC129408 \n \n \nviii. details of loss or damage under any Optional Cover or Add-ons, \nix. submit photographs of loss or physical damage, wherever \npossible. \n2. Steps to prevent loss and damage \na. You must take all reasonable steps to prevent further loss or damage \nto Your Home Building and Home Contents. \nb. Until We have inspected Your Home Building and Home Contents, and \nhave given Our consent, \ni. You must not sell, give away or dispose of any damaged items of \nany property for which You are making a claim; \nii. You must not wash or clean, or remove any damaged item or \ndebris, except for any urgent necessity; \niii. You must not carry out repairs, unless such repairs are urgent and \nYou cannot contact Us. \n3. Immediate notice to Authorities \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For",
+        "score": 0.5067381774638837
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::16::070d34a9a9fb",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 16,
+        "text": "l \nas per Clause C (2) of this Policy. \nClause B. Insured Events \nWe give insurance cover for physical loss or damage, or destruction caused to Insured Property by the following unforeseen events occurring during the \n \nThe events covered are given in Column A and those not covered in respect of \nthese events are given in Column B. \n \n Column A Column B \n We cover phys ical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n1 Fire caused by burning of Insured \nProperty by order of any Public \nAuthority. \n2 Explosion or Implosion - \n3 Lightning - \n4 Earthquake, volcanic e r uption, \nor other convulsions of nature \n- \nPolicy Period. \n5 Storm,  Cyclone,  Typhoon, \nTempest, Hurricane, Tornado, \nTsunami, Flood and Inundation \n- \n Column A Column B \n We cover physical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n6 Subsidence of the land on which \nYour Home Building stands, \nLandslide, Rockslide \ncaused by",
+        "score": 0.5057683048762877
+      }
+    ]
+  },
+  {
+    "id": "D-02",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00117, loss date 2026-04-03. Insured's building was damaged by flood water that entered through the ground floor; insured holds a standard property policy with Building Cover and wants to know if flood damage is covered.",
+    "summary": {
+      "claim_number": "CLM-2026-00117",
+      "date_of_loss": "2026-04-03",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "On April 3, 2026, the insured property sustained ground floor water damage resulting from a flood. Under Clause B (5) of the policy wording, physical loss or damage caused by flood and inundation is explicitly listed as a covered Insured Event. Consequently, the claim for building damage due to flood is covered under the policy.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "5 Storm, Cyclone, Typhoon, Tempest, Hurricane, Tornado, Tsunami, Flood and Inundation"
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::16::070d34a9a9fb",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 16,
+        "text": "l \nas per Clause C (2) of this Policy. \nClause B. Insured Events \nWe give insurance cover for physical loss or damage, or destruction caused to Insured Property by the following unforeseen events occurring during the \n \nThe events covered are given in Column A and those not covered in respect of \nthese events are given in Column B. \n \n Column A Column B \n We cover phys ical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n1 Fire caused by burning of Insured \nProperty by order of any Public \nAuthority. \n2 Explosion or Implosion - \n3 Lightning - \n4 Earthquake, volcanic e r uption, \nor other convulsions of nature \n- \nPolicy Period. \n5 Storm,  Cyclone,  Typhoon, \nTempest, Hurricane, Tornado, \nTsunami, Flood and Inundation \n- \n Column A Column B \n We cover physical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n6 Subsidence of the land on which \nYour Home Building stands, \nLandslide, Rockslide \ncaused by",
+        "score": 0.5472477045591717
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.5353475850931628
+      },
+      {
+        "chunk_id": "claims_faq.md::4::d3088ec5c0b9",
+        "source": "claims_faq.md",
+        "chunk_index": 4,
+        "text": "-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims **Q: Is my home covered for earthquake damage?**\nA: Standard fire policies **do not cover earthquake** by default. You need the\n**Earthquake Extension** endorsement (IAP-01). If you have it, both the fire\nfollowing earthquake and the shock damage are covered.\n\n**Q: My tenant's belongings were damaged in a fire. Am I liable?**\nA: A standard building policy covers the structure only. Your tenant's contents\nare the tenant's responsibility and should be covered under a separate contents\npolicy. However, if the fire originated from a defect in the building, the\n**Landlord's Legal Liability** endorsement (IAP-15) would cover your liability.\n\n**Q: My house is under renovation. Is it still covered?**\nA: Minor renovation (painting, tiling) does not affect coverage. Major structural\nwork (demolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period.",
+        "score": 0.5244128126842038
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.5218640876248406
+      }
+    ]
+  },
+  {
+    "id": "D-03",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00118, loss date 2026-04-05. Insured's car engine seized after driving through a flooded street during heavy rain; insured does not have the Engine & Gearbox Protection endorsement. Insured wants to know if the engine damage is covered.",
+    "summary": {
+      "claim_number": "CLM-2026-00118",
+      "date_of_loss": "2026-04-05",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "IMT-29",
+      "summary": "On April 5, 2026, the insured's car engine seized after being driven through a flooded street. The insured does not hold the Engine & Gearbox Protection endorsement (IMT-29), which is required to cover engine damage resulting from water ingression or hydrostatic lock. Therefore, the claim is denied under policy exclusions.",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "Engine damage due to water ingression is covered only if you have the Engine & Gearbox Protection endorsement (IMT-29). Without it, engine hydrostatic lock is excluded."
+        },
+        {
+          "source": "endorsements_and_riders.md",
+          "snippet": "Covers damage to the engine and gearbox caused by water ingression (flooding), hydrostatic lock, or oil leakage due to an accident."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "endorsements_and_riders.md::1::6f913da73a7c",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 1,
+        "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price.",
+        "score": 0.7168604023882706
+      },
+      {
+        "chunk_id": "claims_faq.md::2::5d8fdad2d369",
+        "source": "claims_faq.md",
+        "chunk_index": 2,
+        "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2) Submit a representation\nto the Grievance Cell at grievance@abcinsurance.in within 15 days. 3) If unresolved,\napproach the Insurance Ombudsman in your city. 4) File a complaint on IRDAI's IGMS\nportal (igms.irda.gov.in).\n\n---\n\n## Motor Claims\n\n**Q: My car was damaged in a flood. Is it covered?**\nA: Yes, if you hold a **Comprehensive (Own-Damage)** policy. Flood is a natural\ncalamity and is covered. Engine damage due to water ingression is covered only if\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\nengine hydrostatic lock is excluded.\n\n**Q: Can I take my car to any garage?**\nA: For **reimbursement** claims, yes \u2014 any registered garage. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website.",
+        "score": 0.6949889792189095
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.5073143255006375
+      },
+      {
+        "chunk_id": "claims_process.md::1::fd6c6f4eba78",
+        "source": "claims_process.md",
+        "chunk_index": 1,
+        "text": "cious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended. ### Step 3 \u2014 Document the Loss\nCollect and preserve:\n- Photographs of damaged vehicle/property from multiple angles\n- Repair estimates from authorised service centres or contractors\n- Medical bills and reports (for personal accident claims)\n- Witness statements, if available\n\n### Step 4 \u2014 Submit the Claim Form\nComplete the **Claim Intimation Form** and submit within **15 days** of the incident\nalong with the following documents:\n\n**For Motor Claims:**\n- Duly signed claim form\n- Copy of Registration Certificate (RC)\n- Copy of valid Driving Licence\n- Copy of insurance policy / certificate\n- FIR copy (if applicable)\n- Repair estimate from garage\n\n**For Property Claims:**\n- Duly signed claim form\n- Copy of insurance policy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement)",
+        "score": 0.5055979861231542
+      }
+    ]
+  },
+  {
+    "id": "D-04",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00119, loss date 2026-04-08. Insured is asking generally whether their comprehensive motor policy covers damage from natural calamities like flood, earthquake and cyclone to the vehicle itself.",
+    "summary": {
+      "claim_number": "CLM-2026-00119",
+      "date_of_loss": "2026-04-08",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured inquired whether damage to their vehicle from natural calamities like floods, earthquakes, and cyclones is covered under a comprehensive motor policy. Under the policy guidelines, physical damage to the vehicle caused by natural calamities is covered for Comprehensive (Own-Damage) policyholders. However, engine damage resulting specifically from water ingression requires the optional Engine & Gearbox Protection endorsement (IMT-29).",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "Yes, if you hold a Comprehensive (Own-Damage) policy. Flood is a natural calamity and is covered."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "endorsements_and_riders.md::1::6f913da73a7c",
+        "source": "endorsements_and_riders.md",
+        "chunk_index": 1,
+        "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price.",
+        "score": 0.539344611621434
+      },
+      {
+        "chunk_id": "claims_faq.md::2::5d8fdad2d369",
+        "source": "claims_faq.md",
+        "chunk_index": 2,
+        "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2) Submit a representation\nto the Grievance Cell at grievance@abcinsurance.in within 15 days. 3) If unresolved,\napproach the Insurance Ombudsman in your city. 4) File a complaint on IRDAI's IGMS\nportal (igms.irda.gov.in).\n\n---\n\n## Motor Claims\n\n**Q: My car was damaged in a flood. Is it covered?**\nA: Yes, if you hold a **Comprehensive (Own-Damage)** policy. Flood is a natural\ncalamity and is covered. Engine damage due to water ingression is covered only if\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\nengine hydrostatic lock is excluded.\n\n**Q: Can I take my car to any garage?**\nA: For **reimbursement** claims, yes \u2014 any registered garage. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website.",
+        "score": 0.5262060999132537
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::16::070d34a9a9fb",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 16,
+        "text": "l \nas per Clause C (2) of this Policy. \nClause B. Insured Events \nWe give insurance cover for physical loss or damage, or destruction caused to Insured Property by the following unforeseen events occurring during the \n \nThe events covered are given in Column A and those not covered in respect of \nthese events are given in Column B. \n \n Column A Column B \n We cover phys ical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n1 Fire caused by burning of Insured \nProperty by order of any Public \nAuthority. \n2 Explosion or Implosion - \n3 Lightning - \n4 Earthquake, volcanic e r uption, \nor other convulsions of nature \n- \nPolicy Period. \n5 Storm,  Cyclone,  Typhoon, \nTempest, Hurricane, Tornado, \nTsunami, Flood and Inundation \n- \n Column A Column B \n We cover physical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n6 Subsidence of the land on which \nYour Home Building stands, \nLandslide, Rockslide \ncaused by",
+        "score": 0.504914125517408
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.502801800855455
+      }
+    ]
+  },
+  {
+    "id": "D-05",
+    "mode": "D",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00120, loss date 2026-04-10. Insured's rented-out flat suffered fire damage; the tenant's furniture was destroyed and the tenant is asking the insured (landlord) to cover the loss. Insured wants to know their liability.",
+    "summary": {
+      "claim_number": "CLM-2026-00120",
+      "date_of_loss": "2026-04-10",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Standard building policy covers structure only",
+      "summary": "The insured's rented flat suffered fire damage, destroying the tenant's furniture. The tenant is seeking compensation from the landlord. Coverage is denied as a standard building policy covers only the structure, and not the tenant's personal contents, unless a specific endorsement like 'Landlord's Legal Liability' (IAP-15) is present and the fire originated from a building defect, neither of which is indicated.",
+      "citations": [
+        {
+          "source": "claims_faq.md",
+          "snippet": "A standard building policy covers the structure only. Your tenant's contents are the tenant's responsibility and should be covered under a separate contents policy. However, if the fire originated from a defect in the building, the **Landlord's Legal Liability** endorsement (IAP-15) would cover your liability."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "claims_faq.md::4::d3088ec5c0b9",
+        "source": "claims_faq.md",
+        "chunk_index": 4,
+        "text": "-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims **Q: Is my home covered for earthquake damage?**\nA: Standard fire policies **do not cover earthquake** by default. You need the\n**Earthquake Extension** endorsement (IAP-01). If you have it, both the fire\nfollowing earthquake and the shock damage are covered.\n\n**Q: My tenant's belongings were damaged in a fire. Am I liable?**\nA: A standard building policy covers the structure only. Your tenant's contents\nare the tenant's responsibility and should be covered under a separate contents\npolicy. However, if the fire originated from a defect in the building, the\n**Landlord's Legal Liability** endorsement (IAP-15) would cover your liability.\n\n**Q: My house is under renovation. Is it still covered?**\nA: Minor renovation (painting, tiling) does not affect coverage. Major structural\nwork (demolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period.",
+        "score": 0.5196999128879249
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.5180592492746053
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::43::15ed721992dc",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 43,
+        "text": "ties \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For example, You must report to the fire brigade of the local authori ty and \nthe police if there is damage by fire/ explosion / implosion or \nlightning. In case of subsidence /landslide/rockslide,  You must \ninform the District Administration. In the event of impact damage of \nany kind or Riot Strikes, Malicious damages and acts of terrorism, \nYou must inform the police. If there is a theft within 7 (seven) days \nfollowing an Insured Event You must inform the police. \nb. We may, but not necessarily, waive this condition if We are satisfied \nthat by reason of extreme hardship it was not possible for You or any \nother person on Your behalf to give such report. \n4. Submit claim \na. Claim form: \ni. You must submit Your claim in Our claim form at the earliest \nopportunity, but within 30 days from the date You first notice the loss  or \ndamage. The claim form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy",
+        "score": 0.5164773306974072
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::42::b552fc74287f",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 42,
+        "text": "red Event, \nvi. a brief statement of the loss, \nvii. particulars of any other insurance of Your Home Building or any of \nYour Home Contents, Annexure I \n-7- UIN : IRDAN115CP0003V02202021 CIN : L67200MH2000PLC129408 \n \n \nviii. details of loss or damage under any Optional Cover or Add-ons, \nix. submit photographs of loss or physical damage, wherever \npossible. \n2. Steps to prevent loss and damage \na. You must take all reasonable steps to prevent further loss or damage \nto Your Home Building and Home Contents. \nb. Until We have inspected Your Home Building and Home Contents, and \nhave given Our consent, \ni. You must not sell, give away or dispose of any damaged items of \nany property for which You are making a claim; \nii. You must not wash or clean, or remove any damaged item or \ndebris, except for any urgent necessity; \niii. You must not carry out repairs, unless such repairs are urgent and \nYou cannot contact Us. \n3. Immediate notice to Authorities \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For",
+        "score": 0.5078696032526449
+      }
+    ]
+  },
+  {
+    "id": "E-01",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00121, loss date 2026-04-12. Insured under the Group Home Protect policy reports that some jewellery has gone missing from their home; they cannot say exactly when it disappeared or how. Insured wants to know if this is covered.",
+    "summary": {
+      "claim_number": "CLM-2026-00121",
+      "date_of_loss": "2026-04-12",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Exclusion 7: Loss of missing property without identifiable event; Exclusion 10: Mysterious disappearance and Unexplained Losses",
+      "summary": "The insured reported missing jewellery from their home but cannot provide details on when or how the loss occurred. The policy explicitly excludes losses due to mysterious disappearance and loss of property that is missing or mislaid without a single identifiable event. Therefore, the claim for the missing jewellery is denied.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "7. Loss of any Insured Property which is missing or has been mislaid, or its disappearance cannot be linked to any single identifiable event."
+        },
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "10. Mysterious disappearance and Unexplained Losses"
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::40::3695b3f2f688",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 40,
+        "text": "urrender or release Your interest in such additional structure or \nitem of Home Content, or Your interest in these ends. \ne. Effect of death In the event of the unfortunate death of the Insured during the Policy \nPeriod, the Home Building Cover and the Home Contents Cover that You \nhave purchased will continue for the benefit of Your legal \nrepresentative/s during the Policy Period subject to all the terms and \nconditions of this Policy. \n(IV) Claims Procedure \nIf You suffer a loss because of an Insured Event, You must make a claim for \nYour financial loss at Your cost. The procedure for making a claim is given \nbelow. These include things that  You must do, and that You must not do. It is \nimportant to comply with these to ensure that it does not prejudice Your \nclaim in any manner. \n1. Immediate notice to Us \na. As soon as any physical loss or damage occurs to Your Home Building  or \nHome Contents due to an Insured Event, You must immediately give \nnotice to Us of the loss or damage. This is necessary for Us to survey/ \ninvestigate the loss or damage, as may be required.",
+        "score": 0.5173040374788966
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::136::2558ac03a636",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 136,
+        "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured",
+        "score": 0.507323437470566
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::32::61dfa9daca90",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 32,
+        "text": "lectricity from  whatever \ncause (lightning included). This exclusion applies only to the particular \nmachine so lost, damaged or destroyed. 6. Loss or damage to bullion or unset precious stones, manuscripts, plans, \ndrawings, securities, obligations or documents of any kind, coins or \npaper money, cheques, vehicles, and explosive substances unless \notherwise expressly stated in the policy. \n7. Loss of any Insured Property which is missing or has been mislaid, or its \ndisappearance cannot be linked to any single identifiable event. \n8. Loss or damage to any Insured Property removed from Your Home to any \nother place. \n9. Loss of earnings, loss by delay, loss of market or other consequential or \nindirect loss or damage of any kind or description whatsoever. \n10. Any reduction in market value of any Insured Property after its repair or \nreinstatement. \n11. Any addition, extension, or alteration to any structure of Your Home \nBuilding that increases its Carpet Area by more than 10% of the Carpet \nArea existing at the Commencement Date or on the date of renewal of  this",
+        "score": 0.5065617528530924
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::103::cc559e365d2d",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 103,
+        "text": ". Over winding, denting or internal damage of watches and clocks \n6. Loss of Insured Premises from safe inside insured \u201cBuilding\u201d, following use of the key or any duplicate thereof or access code to the safe \nbelonging to the Insured, unless this has been obtained by threat or by \nviolence. \n7. Loss Destruction of or Damage to articles of Consumable Nature. \n8. Jewellery and valuables, works of art, paintings, curios unless \nspecifically insured. Further the Company sh all not be liable for loss or \ndamage to Works of art, paintings, curios due to breakage, cracking or \nscratching, unless caused by fire or Accidental External means. \n9. Loss or damage due to theft or attempted theft by any employee of the \nInsured or loss or da mage occasioned through the willful act of the \nInsured or any employee or the willful act of any other person with a \nconnivance of the Insured or any employee unless a FIR has been lodged \nagainst the employee. \n10. Mysterious disappearance and Unexplained Losses \n11. Loss or damage howsoever caused to Electronic and Electrical \nEquipment, Domestic Appliances older than 10 Years and Portable",
+        "score": 0.5053459384980837
+      }
+    ]
+  },
+  {
+    "id": "E-02",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00122, loss date 2026-04-14. Insured wants to know which Insurance Ombudsman office handles complaints for their city, Tirupur, under their Group Home Protect policy.",
+    "summary": {
+      "claim_number": "CLM-2026-00122",
+      "date_of_loss": "2026-04-14",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured requested information regarding the appropriate Insurance Ombudsman office for complaints originating from Tirupur. The policy context indicates that the Chennai Insurance Ombudsman office has jurisdiction over Tamil Nadu, which includes Tirupur. Therefore, the Chennai office is the correct contact for the insured's query.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "6 CHENNAI \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \nFatima Akhtar Court, 4th Floor, 453, Anna \nSalai, Teynampet, CHENNAI \u2013 600 018. \nTel.: 044 - 24333668 / 24333678 \nEmail: bimalokpal.chennai@cioins.co.in \nTamil Nadu, Pondicherry \nTown and Karaikal (which \nare part of Pondicherry)."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::54::531fed5903e7",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 54,
+        "text": "are part of Pondicherry). \n7 DELHI \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \n2/2 A, Universal Insurance Building, Asaf Ali Road, New Delhi \u2013 110 002. \nTel.: 011 \u2013 23237539 \nEmail: bimalokpal.delhi@cioins.co.in \nDelhi & following District \nof Haryana \u2013 Gurugram, \nFaridabad, Sonepat and \nBahadurgarh \n8 ERNAKULAM \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \n2nd Floor, Pulinat Bldg., Opp. Cochin \nShipyard, M. G. Road, Ernakulam - 682 015. \nTel.: 0484 - 2358759 / 2359338 \nFax: 0484 - 2359336 \nEmail: bimalokpal.ernakulam@cioins.co.in \nKerala, Lakshadweep, \nMahe-a part of \nPuducherry. \n9 GUWAHATI \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \nJeevan Nivesh, 5th Floor, Nr. Panbazar over \nbridge, S.S. Road, \nGuwahati \u2013 781001(ASSAM). \nTel.: 0361 - 2632204 / 2602205 \nEmail: bimalokpal.guwahati@cioins.co.in \nAssam, Meghalaya, \nManipur, Mizoram, \nArunachal Pradesh, \nNagaland and Tripura.",
+        "score": 0.5061620296876367
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::59::8648996e9f5a",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 59,
+        "text": "ce Ombudsman, \nHindustan Bldg. Annexe, 4th Floor, 4, C.R. \nAvenue, KOLKATA - 700 072. \nTel.: 033 - 22124339 / 22124340 \nFax : 033 - 22124341 Email: bimalokpal.kolkata@cioins.co.in \nWest Bengal, Sikkim, \nAndaman & Nicobar \nIslands. \n13 LUCKNOW \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \n6th Floor, Jeevan Bhawan, Phase-II, Nawal \nKishore Road, Hazratganj, Lucknow - 226 001. \nTel.: 0522 - 4002082 / 3500613 \nEmail: bimalokpal.lucknow@cioins.co.in \nDistricts of Uttar Pradesh: \nLaitpur, Jhansi, Mahoba, \nHamirpur, Banda, \nChitrakoot, Allahabad, \nMirzapur, Sonbhabdra, \nFatehpur, Pratapgarh, \nJaunpur,Varanasi, Gazipur, \nJalaun, Kanpur, Lucknow, \nUnnao, Sitapur, Lakhimpur, \nBahraich, Barabanki, \nRaebareli, Sravasti, Gonda, \nFaizabad, Amethi, \nKaushambi, Balrampur, \nBasti, Ambedkarnagar, \nSultanpur, Maharajgang, \nSantkabirnagar, Azamgarh, \nKushinagar, Gorkhpur, \nDeoria, Mau, Ghazipur, \nChandauli, Ballia, \nSidharathnagar. \n14 MUMBAI \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \n3rd Floor, Jeevan Seva Annexe, S. V. Road, \nSantacruz (W), Mumbai - 400 054. \nTel.: 022 - 69038800/27/29/31/32/33",
+        "score": 0.50449183745563
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::55::1ac3469889d2",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 55,
+        "text": "2632204 / 2602205 \nEmail: bimalokpal.guwahati@cioins.co.in \nAssam, Meghalaya, \nManipur, Mizoram, \nArunachal Pradesh, \nNagaland and Tripura. Annexure I \n-9- UIN : IRDAN115CP0003V02202021 CIN : L67200MH2000PLC129408 \n \n \n \nS. r. \nNo. \nName of office of \ninsurance Ombudsman \nTerritorial Area of \njurisdiction \n15 NOIDA \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \nBhagwan Sahai Palace 4th Floor, Main Road, \nNaya Bans, Sector 15, Distt: Gautam Buddh \nNagar, U.P-201301. \nTel.: 0120-2514252 / 2514253 \nEmail: bimalokpal.noida@cioins.co.in \nState of Uttaranchal and \nthe following \nDistricts of Uttar Pradesh: \nAgra, Aligarh, Bagpat, \nBareilly, Bijnor, Budaun, \nBulandshehar, Etah, \nKanooj, Mainpuri, \nMathura, Meerut, \nMoradabad, \nMuzaffarnagar, Oraiyya, \nPilibhit, Etawah, \nFarrukhabad, Firozbad, \nGautambodhanagar, \nGhaziabad, Hardoi, \nShahjahanpur \n16 PATNA \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \n2nd Floor, Lalit Bhawan, Bailey Road, Patna \n800 001. \nTel.: 0612-2547068 \nEmail: bimalokpal.patna@cioins.co.in \nBihar, Jharkhand. \n17 PUNE \nInsurance Ombudsman \nOffice of the Insurance Ombudsman,",
+        "score": 0.5032011464106954
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::53::126d3010da95",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 53,
+        "text": "dir, Bhopal \u2013 462 011. \nTel.: 0755 - 2769201 / 2769202 \nEmail: bimalokpal.bhopal@cioins.co.in \nMadhya Pradesh, \nChattisgarh. \n4 BHUBANESHWAR Insurance Ombudsman \nOffice of the Insurance Ombudsman, \n62, Forest park, Bhubaneswar \u2013 751 009. \nTel.: 0674 - 2596461 /2596455 \nEmail:bimalokpal.bhubaneswar@cioins.co.in \nOdisha. \n5 CHANDIGARH \nInsurance Ombudsman \nOffice Of The Insurance Ombudsman, \nJeevan Deep Building SCO 20 -27, Ground \nFloor Sector- 17 A, Chandigarh \u2013 160 017. \nTel.: 0172 - 4646394 / 2706468 \nEmail: bimalokpal.chandigarh@cioins.co.in \nPunjab, Haryana \n(excluding Gurugram, \nFaridabad, Sonepat and \nBahadurgarh), Himachal \nPradesh, Union Territory of \nJammu & Kashmir, Ladakh \n& Chandigarh. \n6 CHENNAI \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \nFatima Akhtar Court, 4th Floor, 453, Anna \nSalai, Teynampet, CHENNAI \u2013 600 018. \nTel.: 044 - 24333668 / 24333678 \nEmail: bimalokpal.chennai@cioins.co.in \nTamil Nadu, Pondicherry \nTown and Karaikal (which \nare part of Pondicherry). \n7 DELHI \nInsurance Ombudsman \nOffice of the Insurance Ombudsman, \n2/2 A, Universal Insurance Building, Asaf Ali",
+        "score": 0.5030826198048269
+      }
+    ]
+  },
+  {
+    "id": "E-03",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00123, loss date 2026-04-16. Insured holds the standard ABC Insurance building & contents policy (not Group Home Protect) and is asking what the compulsory deductible is for a contents claim.",
+    "summary": {
+      "claim_number": "CLM-2026-00123",
+      "date_of_loss": "2026-04-16",
+      "coverage_decision": "partial",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The claim CLM-2026-00123, with a loss date of 2026-04-16, pertains to a contents claim under a standard ABC Insurance building & contents policy. The insured is inquiring about the compulsory deductible for this claim. However, the provided policy context, which predominantly details the 'Group Home Protect Policy', does not specify the compulsory deductible amount applicable to a 'standard ABC Insurance building & contents policy'. Therefore, the exact excess amount cannot be determined from the given documents.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "This document outlines the 'Group Home Protect Policy' terms and conditions, but does not provide details for a 'standard ABC Insurance building & contents policy'."
+        },
+        {
+          "source": "claims_faq.md",
+          "snippet": "This document contains FAQs regarding depreciation and health claims, but does not specify compulsory deductibles for contents policies."
+        },
+        {
+          "source": "claims_process.md",
+          "snippet": "This document describes the general claims process but does not detail policy-specific deductible amounts."
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::40::3695b3f2f688",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 40,
+        "text": "urrender or release Your interest in such additional structure or \nitem of Home Content, or Your interest in these ends. \ne. Effect of death In the event of the unfortunate death of the Insured during the Policy \nPeriod, the Home Building Cover and the Home Contents Cover that You \nhave purchased will continue for the benefit of Your legal \nrepresentative/s during the Policy Period subject to all the terms and \nconditions of this Policy. \n(IV) Claims Procedure \nIf You suffer a loss because of an Insured Event, You must make a claim for \nYour financial loss at Your cost. The procedure for making a claim is given \nbelow. These include things that  You must do, and that You must not do. It is \nimportant to comply with these to ensure that it does not prejudice Your \nclaim in any manner. \n1. Immediate notice to Us \na. As soon as any physical loss or damage occurs to Your Home Building  or \nHome Contents due to an Insured Event, You must immediately give \nnotice to Us of the loss or damage. This is necessary for Us to survey/ \ninvestigate the loss or damage, as may be required.",
+        "score": 0.5142802557140301
+      },
+      {
+        "chunk_id": "claims_process.md::0::1b6d56eb17a5",
+        "source": "claims_process.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Claims Process Guide\n\n---\n\n## How to File a Claim\n\n### Step 1 \u2014 Notify the Insurer Immediately\nReport the incident to ABC Insurance within **24 hours** for theft claims and\nwithin **7 days** for all other claims. You can notify via:\n- **Toll-free helpline:** 1800-XXX-XXXX (24 \u00d7 7)\n- **Mobile app:** \"ABC Insurance\" \u2192 Raise a Claim\n- **Email:** claims@abcinsurance.in\n- **Nearest branch office**\n\nFailure to notify within the stipulated period may result in the claim being\n**repudiated** unless a valid reason for delay is provided.\n\n### Step 2 \u2014 File an FIR (where applicable)\nAn FIR (First Information Report) with the local police is **mandatory** for:\n- Theft of vehicle or property\n- Third-party bodily injury or death\n- Riots, malicious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended.",
+        "score": 0.5071302628621087
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.5071180366136475
+      },
+      {
+        "chunk_id": "claims_faq.md::5::f88881c42340",
+        "source": "claims_faq.md",
+        "chunk_index": 5,
+        "text": "emolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period. **Q: What is the depreciation applied to contents claims?**\nA: Contents are settled on **market value** (not reinstatement value). Depreciation\ndepends on age and condition. Electronics older than 5 years typically attract\n50% depreciation. Furniture and appliances are assessed by the appointed surveyor.\n\n---\n\n## Health & Personal Accident Claims\n\n**Q: What is the deadline for submitting a health claim?**\nA: For **planned hospitalisation**, notify ABC Insurance 48 hours before admission.\nFor **emergency hospitalisation**, notify within 24 hours of admission. Post-discharge\nreimbursement claims must be submitted within **30 days** of discharge.\n\n**Q: Is a pre-existing condition covered?**\nA: Pre-existing conditions are covered after a **waiting period of 48 months**\n(4 years) of continuous coverage with ABC Insurance. Specific diseases such as\ncataracts and joint replacements have a **24-month waiting period**.",
+        "score": 0.5067169019924317
+      }
+    ]
+  },
+  {
+    "id": "E-04",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00124, loss date 2026-04-18. Insured under the Group Home Protect policy is asking what counts as an 'Insured' person under their specific policy wording, since they recently added a family member to the household.",
+    "summary": {
+      "claim_number": "CLM-2026-00124",
+      "date_of_loss": "2026-04-18",
+      "coverage_decision": "denied",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": "Not named as Insured Person in Schedule",
+      "summary": "The insured inquired about who qualifies as an 'Insured' person after adding a family member to their household. While family members can be eligible for coverage, the policy specifies that only those named in the Policy Schedule are covered. To add a person, an application must be accepted, additional premium paid, and an endorsement issued by the insurer. Without these formal steps, the recently added family member is not considered an 'Insured Person' under the current policy.",
+      "citations": [
+        {
+          "source": "health-elite-policy-wording.pdf",
+          "snippet": "Only those persons named as Insured Persons in the Schedule shall be covered under this Policy with exception to a newborn baby who is covered as defined under Benefit 16 (Newborn Baby Expenses). A person may be added as an Insured Person during the Policy Period after his/her application has been accepted by Us, an d additional premium has been received and Our agreement to extend cover has been indicated by Us issuing an endorsement confirming"
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "health-elite-policy-wording.pdf::140::f405fdcb91f6",
+        "source": "health-elite-policy-wording.pdf",
+        "chunk_index": 140,
+        "text": "eligible to be Insured Persons under the Policy: \n\u2022 Family can include Self, Spouse  / Live -in partner , Children, Parents, Parents in law, Dependent Siblings, Daughter in law, Son in law, Grandparents and Grandchildren. \n\u2022 Maximum of 15 members can be covered under one policy on either individual or floater Sum \ninsured basis. \n \nOnly those persons named as Insured Persons in the Schedule shall be covered under this \nPolicy with exception to a newborn baby who is covered as defined under Benefit 16 (Newborn \nBaby Expenses). A person may be added as an Insured Person during the Policy Period after \nhis/her application has been accepted by Us, an d additional premium has been received and \nOur agreement to extend cover has been indicated by Us issuing an endorsement confirming",
+        "score": 0.5164930585213701
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::0::f6a819e4b6ce",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 0,
+        "text": "GROUP HOME PROTECT POLICY \nPart II of the Policy \u2013Definitions applicable to the Policy (Except section A.1 & B.1) \nAnnexure I \n \nTerm Definition \nAccident means a sudden, unforeseen, and unexpected physical event caused by external, violent and visible means by the perils \ncovered under the policy \nTotal Loss means where the Insured Structure is so destroyed or so damaged by any fortuitous cause, due to insured perils subject to \nexclusions , so as to become completely uninhabitable \nAct of Terrorism means an a ct or series of acts, including but not limited to the use of force or violence and/or threat thereof, of any person or \ngroup(s) of persons, whether acting alone or on behalf of or in connection with any organization(s) or government(s), or \nunlawful associations, recognized under Unlawful Activities (Prevention) Amendment Act, 2008 or any other related and",
+        "score": 0.506369954836385
+      },
+      {
+        "chunk_id": "insurance_policy_overview.md::0::047dd34e18f3",
+        "source": "insurance_policy_overview.md",
+        "chunk_index": 0,
+        "text": "# ABC Insurance \u2014 Comprehensive Motor & Property Policy Overview\n\n**Policy Series:** CMP-2024 \u00b7 **Effective:** 1 January 2024 \u00b7 **Issuer:** ABC Insurance Ltd\n\n---\n\n## Section 1 \u2014 Who Is Covered\n\nThe policy covers the **named insured** and any **additional insured** listed on the\nDeclarations Page. Family members residing in the same household are automatically\ncovered under personal-lines motor policies.\n\n---\n\n## Section 2 \u2014 Motor Insurance Coverage\n\n### 2.1 Third-Party Liability\nCovers legal liability to third parties for:\n- Bodily injury or death arising from use of the insured vehicle.\n- Property damage caused to a third party's vehicle or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act.",
+        "score": 0.5023273436372512
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::15::d6b3c08e1c1d",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 15,
+        "text": "onstruction. \nSpouse Your wife or husband. \nSum Insured The amount shown as Sum Insured in the \nPolicy Schedule and as described in Clause C (4) and Clause D (2) of this Policy. It \nrepresents Our maximum liability for each \ncover or part of cover and for each loss. \nTotal Loss A situation where the Insured Property or \nitem is completely destroyed, lost or \ndamaged beyond \nWord /s Specific meaning \n retrieval or repair or the cost of repairing it is \nmore than the Sum Insured for that item or in \ntotal. \nWe, Us, Our, Insurer The ICICI Lombard General In surance \nCompany that has provided Insurance Cover \nunder this Policy; of the Company. \nYou, Your, Insured The  Insured  Person/s  who  has/have \npurchased Insurance Cover under this Policy; \nof such Insured Person/s. \nYour Home Building Your Home Building is a building consisting of a \nresidential unit, having an enclosed \nstructure and a roof, basement (if any) and \nused as a dwelling place described in detail \nas per Clause C (2) of this Policy. \nClause B. Insured Events \nWe give insurance cover for physical loss or damage, or destruction caused",
+        "score": 0.5007121209478828
+      }
+    ]
+  },
+  {
+    "id": "E-05",
+    "mode": "E",
+    "is_regression": false,
+    "source_trace_id": null,
+    "adjuster_notes": "Claim CLM-2026-00125, loss date 2026-04-20. Insured's home (covered under the Group Home Protect policy) was flooded and the ground floor was damaged. Insured wants confirmation that flood damage to the structure is covered.",
+    "summary": {
+      "claim_number": "CLM-2026-00125",
+      "date_of_loss": "2026-04-20",
+      "coverage_decision": "covered",
+      "excess_amount": 0.0,
+      "exclusion_clause_id": null,
+      "summary": "The insured's home experienced flood damage to the ground floor. The Group Home Protect policy provides Home Building Cover, and the provided policy context does not list flood damage as an exclusion. Therefore, the claim is covered. The excess/deductible amount was not specified in the provided policy context.",
+      "citations": [
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "the Home Building Cover and the Home Contents Cover that You have purchased will continue"
+        },
+        {
+          "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+          "snippet": "Subject otherwise to the coverage, exclusions, terms and conditions and the claims procedure as incorporated in the Policy and endorsed hereon"
+        }
+      ]
+    },
+    "chunks": [
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::40::3695b3f2f688",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 40,
+        "text": "urrender or release Your interest in such additional structure or \nitem of Home Content, or Your interest in these ends. \ne. Effect of death In the event of the unfortunate death of the Insured during the Policy \nPeriod, the Home Building Cover and the Home Contents Cover that You \nhave purchased will continue for the benefit of Your legal \nrepresentative/s during the Policy Period subject to all the terms and \nconditions of this Policy. \n(IV) Claims Procedure \nIf You suffer a loss because of an Insured Event, You must make a claim for \nYour financial loss at Your cost. The procedure for making a claim is given \nbelow. These include things that  You must do, and that You must not do. It is \nimportant to comply with these to ensure that it does not prejudice Your \nclaim in any manner. \n1. Immediate notice to Us \na. As soon as any physical loss or damage occurs to Your Home Building  or \nHome Contents due to an Insured Event, You must immediately give \nnotice to Us of the loss or damage. This is necessary for Us to survey/ \ninvestigate the loss or damage, as may be required.",
+        "score": 0.5310097341964796
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::74::33b1f9898836",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 74,
+        "text": "7. Coastal or river erosion; \n8. Demolition, construction, structural alterations or repair of any Dwelling \nor ground works or excavations; 9. Repair or alteration to building or premise; \n10. Removal, repair or alteration of sprinkler installation in the premises; \n11. Leakage and seepage for Dwelling older than 10 years unless specifically \ncovered \n12. Damages which are Pre-existing in nature \n13. Loss of or damage to the Insured Premises under this Policy falling under the \nterms of the maintenance agreement \n14. Loss or damage liable to be repaired or made good by a third party under \nany contract of agreement. \n15. Any loss or damage to the Insured Premises or to the general public and/ or \nlegal liability arising out of immoral or unethical use of Insured \nPremises. \n16. Loss or damage arising from detention, confiscation, nationalization, \nrequisition, occupation or willful destruction by or under the order of the \ngovernment or any public or local authority \nSubject otherwise to the coverage, exclusions, terms and conditions and the \nclaims procedure as incorporated in the Policy and endorsed hereon",
+        "score": 0.5115229151121435
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::44::e95b0f20585e",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 44,
+        "text": "form is available in any of Our branches, and on Our \nweb-site. \nii. You must state in Your claim the details of any other insurance policy that covers the damage or loss for which You have filed Your claim, \nwhether You have purchased such other insurance, or someone else \nhas purchased it for You. \nb. We shall not be liable for any loss or damage after the expiry of 12 \nmonths from the happening of the loss or damage unless the claim is the \nsubject of pending action or arbitration. If We disclaim liability for a claim You \nhave made and if the claim is not made a subject matter of a suit in a court \nof law within a period of 12 months from the date of disclaimer, the claim \nshall not be recoverable hereunder. \n5. Establish loss \na. You must prove that the Insured Event has occurred, and the extent of \nphysical loss or damage You have suffered with full details. \nb. When We request, \ni. You must support Your claim for Home Building and/or Home \nContents with plans, specification books, vouchers, invoices \npertaining to costs incurred by You for r econstruction / replacement / \nrepairs.",
+        "score": 0.5102625407336936
+      },
+      {
+        "chunk_id": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf::42::b552fc74287f",
+        "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+        "chunk_index": 42,
+        "text": "red Event, \nvi. a brief statement of the loss, \nvii. particulars of any other insurance of Your Home Building or any of \nYour Home Contents, Annexure I \n-7- UIN : IRDAN115CP0003V02202021 CIN : L67200MH2000PLC129408 \n \n \nviii. details of loss or damage under any Optional Cover or Add-ons, \nix. submit photographs of loss or physical damage, wherever \npossible. \n2. Steps to prevent loss and damage \na. You must take all reasonable steps to prevent further loss or damage \nto Your Home Building and Home Contents. \nb. Until We have inspected Your Home Building and Home Contents, and \nhave given Our consent, \ni. You must not sell, give away or dispose of any damaged items of \nany property for which You are making a claim; \nii. You must not wash or clean, or remove any damaged item or \ndebris, except for any urgent necessity; \niii. You must not carry out repairs, unless such repairs are urgent and \nYou cannot contact Us. \n3. Immediate notice to Authorities \na. As soon as any loss or damage occurs to the Insured Property, You \nmust give immediate report to appropriate legal authorities. For",
+        "score": 0.5087410683381768
+      }
+    ]
+  }
+]
