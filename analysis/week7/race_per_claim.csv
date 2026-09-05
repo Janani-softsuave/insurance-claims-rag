@@ -1,0 +1,6 @@
+claim_number,needs_policy_lookup,system,status,payout,pass,tokens,cost_usd,latency_s
+CLM-2027-00201,True,workflow,denied,0.0,True,1728,0.000145,10.37
+CLM-2027-00201,True,agent,denied,0,True,6948,0.000564,9.5
+CLM-2027-00202,False,workflow,covered,17000.0,True,1644,0.00014,9.39
+CLM-2027-00202,False,agent,covered,17000,True,7717,0.000623,17.61
+CLM-2027-00203,True,workflow,denied,0.0,True,1687,0.000143,14.74

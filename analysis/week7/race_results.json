@@ -1,0 +1,85 @@
+{
+  "workflow": {
+    "CLM-2027-00201": {
+      "claim_number": "CLM-2027-00201",
+      "status": "denied",
+      "payout": 0.0,
+      "rationale": "Engine damage resulting from water ingression/hydrostatic lock is excluded without the Engine & Gearbox Protection endorsement (IMT-29), which is not on file.",
+      "total_tokens": 1728,
+      "total_cost_usd": 0.000145125,
+      "elapsed_seconds": 10.36506380001083,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00202": {
+      "claim_number": "CLM-2027-00202",
+      "status": "covered",
+      "payout": 17000.0,
+      "rationale": "The claim covers straightforward own-damage repairs to the rear bumper and taillight from a parking collision. Since this is not a glass-only claim, the standard excess of \u20b91,000 applies.",
+      "total_tokens": 1644,
+      "total_cost_usd": 0.0001404,
+      "elapsed_seconds": 9.388484800001606,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00203": {
+      "claim_number": "CLM-2027-00203",
+      "status": "denied",
+      "payout": 0.0,
+      "rationale": "Earthquake damage is not covered under the standard home policy without an Earthquake Extension endorsement (IAP-01). As no such endorsement is on file, the claim is denied.",
+      "total_tokens": 1687,
+      "total_cost_usd": 0.00014272499999999999,
+      "elapsed_seconds": 14.742327300016768,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    }
+  },
+  "agent": {
+    "CLM-2027-00201": {
+      "claim_number": "CLM-2027-00201",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "Engine damage resulting from water ingression (hydrostatic lock) is excluded under standard motor coverage without the Engine & Gearbox Protection endorsement (IMT-29). As no such endorsement is active on this policy, the claim is denied.",
+      "total_tokens": 6948,
+      "total_cost_usd": 0.000564075,
+      "elapsed_seconds": 9.500954499933869,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00202": {
+      "claim_number": "CLM-2027-00202",
+      "status": "covered",
+      "payout": 17000,
+      "rationale": "The own-damage claim for bumper and taillight repairs following a collision with a pillar is covered under the motor policy. Payout is calculated as the claimed amount of \u20b918,000 less the compulsory deductible of \u20b91,000.",
+      "total_tokens": 7717,
+      "total_cost_usd": 0.000622875,
+      "elapsed_seconds": 17.60839109995868,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    }
+  }
+}
