@@ -4,3 +4,9 @@ CLM-2027-00201,True,agent,denied,0,True,6948,0.000564,9.5
 CLM-2027-00202,False,workflow,covered,17000.0,True,1644,0.00014,9.39
 CLM-2027-00202,False,agent,covered,17000,True,7717,0.000623,17.61
 CLM-2027-00203,True,workflow,denied,0.0,True,1687,0.000143,14.74
+CLM-2027-00203,True,agent,denied,0,True,7148,0.000575,26.33
+CLM-2027-00204,False,workflow,covered,80000.0,True,1730,0.000146,4.68
+CLM-2027-00204,False,agent,covered,80000,True,12559,0.000992,94.93
+CLM-2027-00205,True,workflow,covered,11000.0,False,1475,0.00013,22.01
+CLM-2027-00205,True,agent,partial,5500,True,36096,0.002782,74.76
+CLM-2027-00206,True,workflow,covered,55000.0,False,1826,0.00016,10.86
