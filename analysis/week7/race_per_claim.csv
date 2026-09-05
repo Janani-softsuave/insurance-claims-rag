@@ -10,3 +10,5 @@ CLM-2027-00204,False,agent,covered,80000,True,12559,0.000992,94.93
 CLM-2027-00205,True,workflow,covered,11000.0,False,1475,0.00013,22.01
 CLM-2027-00205,True,agent,partial,5500,True,36096,0.002782,74.76
 CLM-2027-00206,True,workflow,covered,55000.0,False,1826,0.00016,10.86
+CLM-2027-00206,True,agent,denied,0,True,7618,0.000614,41.75
+CLM-2027-00207,True,workflow,covered,4500.0,True,1607,0.000136,4.94

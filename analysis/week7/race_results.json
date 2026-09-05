@@ -89,6 +89,21 @@
         "compute_payout"
       ],
       "pass": false
+    },
+    "CLM-2027-00207": {
+      "claim_number": "CLM-2027-00207",
+      "status": "covered",
+      "payout": 4500.0,
+      "rationale": "The claim for windshield replacement is covered under glass breakage cover. Since no other damage is claimed simultaneously, the standard compulsory deductible is waived, resulting in an effective excess of 0.",
+      "total_tokens": 1607,
+      "total_cost_usd": 0.0001356,
+      "elapsed_seconds": 4.942256600013934,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
     }
   },
   "agent": {
@@ -176,6 +191,23 @@
         "search_policy",
         "search_policy",
         "compute_payout",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00206": {
+      "claim_number": "CLM-2027-00206",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "The claim is denied because entry to the premises was unforced (back door left unlocked with no signs of forcible and violent entry), which is not covered under Section 3.3 (Burglary & Theft) of the policy.",
+      "total_tokens": 7618,
+      "total_cost_usd": 0.00061365,
+      "elapsed_seconds": 41.74840130005032,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
         "compute_payout",
         "submit_decision"
       ],
