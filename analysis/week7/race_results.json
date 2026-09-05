@@ -245,6 +245,23 @@
       ],
       "terminated_by_budget": null,
       "pass": true
+    },
+    "CLM-2027-00208": {
+      "claim_number": "CLM-2027-00208",
+      "status": "pending",
+      "payout": 0,
+      "rationale": "The theft claim is pending as the required Non-Traceable Certificate has not yet been issued by the police. The claim can only be settled after the police issue the certificate and close the trace.",
+      "total_tokens": 7448,
+      "total_cost_usd": 0.0005993249999999999,
+      "elapsed_seconds": 37.357773600146174,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
     }
   }
 }
