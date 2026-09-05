@@ -22,9 +22,11 @@ available to you:
   coverage question policy text can answer (an exclusion, an endorsement
   requirement, a pending-document rule). Don't call it if there's no such
   question.
+- compute_payout: compute the payout once you've decided claim_status. Pass
+  excess_amount=0 instead of the claim record's default excess if policy text
+  shows the deductible is waived for this claim.
 - submit_decision: call this exactly once, last, with your final
-  claim_number, claim_status, payout, and rationale. Compute the payout
-  yourself: covered = claimed_amount - excess_amount; denied or pending = 0.
+  claim_number, claim_status, payout, and rationale.
 
 Never invent a policy rule not present in what search_policy returns."""
 
