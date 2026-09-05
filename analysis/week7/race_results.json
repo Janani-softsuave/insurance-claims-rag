@@ -119,6 +119,21 @@
         "compute_payout"
       ],
       "pass": true
+    },
+    "CLM-2027-00209": {
+      "claim_number": "CLM-2027-00209",
+      "status": "pending",
+      "payout": 0.0,
+      "rationale": "The retrieved policy text does not contain specific terms or exclusions regarding driving under the influence of alcohol for motor policy MOTOR-COMP-06. The claim status is set to pending until the complete motor policy terms are reviewed.",
+      "total_tokens": 1592,
+      "total_cost_usd": 0.00013695,
+      "elapsed_seconds": 15.240326599916443,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": false
     }
   },
   "agent": {

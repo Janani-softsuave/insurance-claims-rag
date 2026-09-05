@@ -15,3 +15,4 @@ CLM-2027-00207,True,workflow,covered,4500.0,True,1607,0.000136,4.94
 CLM-2027-00207,True,agent,covered,4500,True,7296,0.000585,15.0
 CLM-2027-00208,True,workflow,pending,0.0,True,1682,0.000142,4.34
 CLM-2027-00208,True,agent,pending,0,True,7448,0.000599,37.36
+CLM-2027-00209,True,workflow,pending,0.0,False,1592,0.000137,15.24
