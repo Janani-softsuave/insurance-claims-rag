@@ -66,14 +66,24 @@ def race(regenerate: bool = typer.Option(False, help="Ignore any existing checkp
 
         if cn not in results["workflow"]:
             console.print(f"[dim]workflow[/dim] {cn}...")
-            r = workflow.run(cn)
+            try:
+                r = workflow.run(cn)
+            except Exception as exc:
+                console.print(f"[red]workflow {cn} failed ({exc.__class__.__name__}) — stopping, checkpoint preserved.[/red]")
+                _write_reports(results, claims, partial=True)
+                raise
             r["pass"] = _grade(claim["expected_status"], claim["expected_payout"], r["status"], r["payout"])
             results["workflow"][cn] = r
             _save_results(results)
 
         if cn not in results["agent"]:
             console.print(f"[dim]agent[/dim] {cn}...")
-            ar = agent.run(cn)
+            try:
+                ar = agent.run(cn)
+            except Exception as exc:
+                console.print(f"[red]agent {cn} failed ({exc.__class__.__name__}) — stopping, checkpoint preserved.[/red]")
+                _write_reports(results, claims, partial=True)
+                raise
             r = {
                 "claim_number": cn,
                 "status": ar.status,
@@ -92,14 +102,16 @@ def race(regenerate: bool = typer.Option(False, help="Ignore any existing checkp
     _write_reports(results, claims)
 
 
-def _write_reports(results: dict, claims: list[dict]) -> None:
+def _write_reports(results: dict, claims: list[dict], partial: bool = False) -> None:
     with PER_CLAIM_CSV_PATH.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["claim_number", "needs_policy_lookup", "system", "status", "payout", "pass", "tokens", "cost_usd", "latency_s"])
         for claim in claims:
             cn = claim["claim_number"]
             for system in ("workflow", "agent"):
-                r = results[system][cn]
+                r = results[system].get(cn)
+                if r is None:
+                    continue
                 writer.writerow(
                     [cn, claim["needs_policy_lookup"], system, r["status"], r["payout"], r["pass"], r["total_tokens"], round(r["total_cost_usd"], 6), round(r["elapsed_seconds"], 2)]
                 )
@@ -108,11 +120,14 @@ def _write_reports(results: dict, claims: list[dict]) -> None:
     for system in ("workflow", "agent"):
         rows = list(results[system].values())
         n = len(rows)
+        if n == 0:
+            continue
         pass_rate = sum(r["pass"] for r in rows) / n
         p50_latency = statistics.median(r["elapsed_seconds"] for r in rows)
         total_tokens = sum(r["total_tokens"] for r in rows)
         cost_per_claim = sum(r["total_cost_usd"] for r in rows) / n
         summary[system] = {
+            "n": n,
             "pass_rate": pass_rate,
             "p50_latency_s": p50_latency,
             "total_tokens": total_tokens,
@@ -121,11 +136,12 @@ def _write_reports(results: dict, claims: list[dict]) -> None:
 
     with RACE_CSV_PATH.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["system", "pass_rate", "p50_latency_s", "total_tokens", "cost_per_claim_usd"])
+        writer.writerow(["system", "n_claims", "pass_rate", "p50_latency_s", "total_tokens", "cost_per_claim_usd"])
         for system, s in summary.items():
-            writer.writerow([system, f"{s['pass_rate']:.2f}", f"{s['p50_latency_s']:.2f}", s["total_tokens"], f"{s['cost_per_claim_usd']:.6f}"])
+            writer.writerow([system, s["n"], f"{s['pass_rate']:.2f}", f"{s['p50_latency_s']:.2f}", s["total_tokens"], f"{s['cost_per_claim_usd']:.6f}"])
 
-    table = Table(title="Week 7 Race — Agent vs Workflow")
+    title = "Week 7 Race — Agent vs Workflow" + (" (PARTIAL — a run failed mid-race)" if partial else "")
+    table = Table(title=title)
     table.add_column("System")
     table.add_column("Pass rate", justify="right")
     table.add_column("p50 latency (s)", justify="right")
