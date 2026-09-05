@@ -104,6 +104,21 @@
         "compute_payout"
       ],
       "pass": true
+    },
+    "CLM-2027-00208": {
+      "claim_number": "CLM-2027-00208",
+      "status": "pending",
+      "payout": 0.0,
+      "rationale": "The claim remains pending because the police have not yet issued the mandatory Non-Traceable Certificate for the stolen vehicle. The standard excess of 1,000 applies.",
+      "total_tokens": 1682,
+      "total_cost_usd": 0.000141675,
+      "elapsed_seconds": 4.336815000046045,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
     }
   },
   "agent": {
@@ -205,6 +220,23 @@
       "total_tokens": 7618,
       "total_cost_usd": 0.00061365,
       "elapsed_seconds": 41.74840130005032,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00207": {
+      "claim_number": "CLM-2027-00207",
+      "status": "covered",
+      "payout": 4500,
+      "rationale": "The claim for windshield replacement under glass breakage cover is fully covered with no other concurrent damage claimed, so the standard deductible of \u20b91,000 is waived.",
+      "total_tokens": 7296,
+      "total_cost_usd": 0.000585225,
+      "elapsed_seconds": 15.004564900067635,
       "tool_calls": [
         "get_claim",
         "search_policy",
