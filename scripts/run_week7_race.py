@@ -155,7 +155,7 @@ def _write_reports(results: dict, claims: list[dict], partial: bool = False) -> 
 @app.command("budget-demo")
 def budget_demo(claim_number: str = typer.Option("CLM-2027-00201"), max_iterations: int = typer.Option(2)) -> None:
     """Run the agent with a deliberately tight budget to demonstrate clean termination."""
-    tight_budgets = Budgets(max_iterations=max_iterations, max_tokens=30_000, max_cost_usd=0.05, max_wall_clock_seconds=90.0)
+    tight_budgets = Budgets(max_iterations=max_iterations, max_tokens=30_000, max_cost_usd=0.05, max_wall_clock_seconds=300.0)
     agent = ClaimsAgent(budgets=tight_budgets)
     result = agent.run(claim_number)
 
