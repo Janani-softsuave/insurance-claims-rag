@@ -134,6 +134,21 @@
         "compute_payout"
       ],
       "pass": false
+    },
+    "CLM-2027-00210": {
+      "claim_number": "CLM-2027-00210",
+      "status": "covered",
+      "payout": 140000.0,
+      "rationale": "The damage caused by a falling tree during a storm is covered under the policy as storm and impact damage by external physical objects. The standard excess of 10,000 applies as there is no deductible waiver for this cover.",
+      "total_tokens": 1655,
+      "total_cost_usd": 0.00014257499999999998,
+      "elapsed_seconds": 43.31254699989222,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
     }
   },
   "agent": {
@@ -277,6 +292,40 @@
       ],
       "terminated_by_budget": null,
       "pass": true
+    },
+    "CLM-2027-00209": {
+      "claim_number": "CLM-2027-00209",
+      "status": null,
+      "payout": null,
+      "rationale": null,
+      "total_tokens": 7795,
+      "total_cost_usd": 0.00060735,
+      "elapsed_seconds": 142.10043100011535,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "search_policy"
+      ],
+      "terminated_by_budget": "max_wall_clock_seconds",
+      "pass": false
+    },
+    "CLM-2027-00210": {
+      "claim_number": "CLM-2027-00210",
+      "status": null,
+      "payout": null,
+      "rationale": null,
+      "total_tokens": 8876,
+      "total_cost_usd": 0.000687525,
+      "elapsed_seconds": 128.13917799992487,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "search_policy"
+      ],
+      "terminated_by_budget": "max_wall_clock_seconds",
+      "pass": false
     }
   }
 }

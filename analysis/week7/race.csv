@@ -1,3 +1,3 @@
 system,n_claims,pass_rate,p50_latency_s,total_tokens,cost_per_claim_usd
-workflow,9,0.67,10.37,14971,0.000142
-agent,8,1.00,31.84,92830,0.000917
+workflow,10,0.70,10.61,16626,0.000142
+agent,10,0.80,39.55,109501,0.000863
