@@ -1,0 +1,10 @@
+Budget demo — claim CLM-2027-00201, max_iterations=2
+terminated_by_budget: max_iterations
+final status: None  payout: None
+iterations used: 3  tokens: 4434  cost: $0.000354
+
+--- log ---
+iter 1: get_claim({'claim_number': 'CLM-2027-00201'}) -> {"claim_number": "CLM-2027-00201", "policy_id": "MOTOR-COMP-01", "sum_insured": 500000, "excess_amount": 1000, "claimed_amount": 45000, "adjuster_notes": "Insured's car engine seized after being driven through a flooded street during heavy rain. No Engine & Gearbox Protection endorsement on file."}
+iter 2: search_policy({'query': 'engine seized flooded street hydrostatic lock Engine & Gearbox Protection endorsement flood damage'}) -> [{"source": "claims_faq.md", "chunk_index": 2, "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2
+iter 3: compute_payout({'claim_status': 'denied', 'claimed_amount': 45000, 'excess_amount': 1000}) -> {"payout": 0.0}
+BUDGET EXCEEDED before iteration 4: budget exceeded: max_iterations (3 > 2)
