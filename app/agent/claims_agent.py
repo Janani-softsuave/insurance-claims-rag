@@ -25,8 +25,15 @@ available to you:
 - compute_payout: compute the payout once you've decided claim_status. Pass
   excess_amount=0 instead of the claim record's default excess if policy text
   shows the deductible is waived for this claim.
+- check_claim_history: look up how many claims a policy has already had this
+  year, only if the endorsement in play has a per-year cap (e.g. IMT-28 is
+  capped at 2 claims per policy year, IMT-40 at 4 events per policy year).
 - submit_decision: call this exactly once, last, with your final
-  claim_number, claim_status, payout, and rationale.
+  claim_number, claim_status, payout, and rationale — only when you're
+  confident in the decision.
+- flag_for_review: call this instead of submit_decision, exactly once, if the
+  claim record and policy text together genuinely aren't enough to decide
+  confidently. Don't guess when you should escalate.
 
 Never invent a policy rule not present in what search_policy returns."""
 
@@ -43,6 +50,7 @@ class AgentRunResult:
     elapsed_seconds: float
     tool_calls: list[str] = field(default_factory=list)
     terminated_by_budget: str | None = None
+    flagged_for_review: bool = False
     log: list[str] = field(default_factory=list)
 
 
@@ -76,6 +84,7 @@ class ClaimsAgent:
         )
 
         final: dict | None = None
+        flagged_for_review = False
         terminated_by_budget: str | None = None
 
         while final is None:
@@ -110,6 +119,17 @@ class ClaimsAgent:
                     log.append(f"iter {tracker.iterations}: submit_decision -> {args}")
                     break
 
+                if name == "flag_for_review":
+                    flagged_for_review = True
+                    final = {
+                        "claim_number": args.get("claim_number", claim_number),
+                        "claim_status": "flagged_for_review",
+                        "payout": None,
+                        "rationale": args.get("reason"),
+                    }
+                    log.append(f"iter {tracker.iterations}: flag_for_review -> {args}")
+                    break
+
                 impl = TOOL_IMPLS.get(name)
                 result = {"error": f"unknown tool {name}"} if impl is None else impl(**args)
                 log.append(f"iter {tracker.iterations}: {name}({args}) -> {json.dumps(result, default=str)[:300]}")
@@ -130,5 +150,6 @@ class ClaimsAgent:
             elapsed_seconds=tracker.elapsed_seconds,
             tool_calls=tool_calls,
             terminated_by_budget=terminated_by_budget,
+            flagged_for_review=flagged_for_review,
             log=log,
         )

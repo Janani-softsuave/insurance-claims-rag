@@ -93,6 +93,7 @@ def race(regenerate: bool = typer.Option(False, help="Ignore any existing checkp
                 "total_cost_usd": ar.total_cost_usd,
                 "elapsed_seconds": ar.elapsed_seconds,
                 "tool_calls": ar.tool_calls,
+                "flagged_for_review": ar.flagged_for_review,
                 "terminated_by_budget": ar.terminated_by_budget,
             }
             r["pass"] = _grade(claim["expected_status"], claim["expected_payout"], r["status"], r["payout"])

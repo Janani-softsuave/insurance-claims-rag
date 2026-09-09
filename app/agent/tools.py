@@ -11,6 +11,7 @@ from app.retrieval.reranker import get_reranker
 from app.retrieval.retriever import Retriever
 
 CLAIMS_PATH = ROOT_DIR / "analysis" / "week7" / "claims.json"
+CLAIM_HISTORY_PATH = ROOT_DIR / "analysis" / "week7" / "claim_history.json"
 
 ClaimStatus = Literal["covered", "denied", "partial", "pending"]
 
@@ -19,6 +20,11 @@ ClaimStatus = Literal["covered", "denied", "partial", "pending"]
 def _claims_store() -> dict[str, dict]:
     records = json.loads(CLAIMS_PATH.read_text(encoding="utf-8"))
     return {r["claim_number"]: r for r in records}
+
+
+@lru_cache
+def _history_store() -> dict[str, dict]:
+    return json.loads(CLAIM_HISTORY_PATH.read_text(encoding="utf-8"))
 
 
 def get_claim(claim_number: str) -> dict:
@@ -47,6 +53,13 @@ def search_policy(query: str, top_k: int = 4) -> list[dict]:
         {"source": rc.chunk.source, "chunk_index": rc.chunk.chunk_index, "text": rc.chunk.text.strip()}
         for rc in reranked
     ]
+
+
+def check_claim_history(policy_id: str) -> dict:
+    record = _history_store().get(policy_id)
+    if record is None:
+        return {"error": f"No claim history found for policy '{policy_id}'."}
+    return {"policy_id": policy_id, **record}
 
 
 def compute_payout(claim_status: ClaimStatus, claimed_amount: float, excess_amount: float) -> dict:
@@ -129,6 +142,43 @@ COMPUTE_PAYOUT_DECLARATION = types.FunctionDeclaration(
     },
 )
 
+CHECK_CLAIM_HISTORY_DECLARATION = types.FunctionDeclaration(
+    name="check_claim_history",
+    description=(
+        "Look up how many claims a policy has already had this policy year, including "
+        "endorsement-specific counts (IMT-28 Zero Dep claims, IMT-40 roadside assistance events), "
+        "so you can check per-year caps such as 'IMT-28 is capped at 2 claims per policy year'. "
+        "This is the only tool that returns claim-frequency history — it does not fetch this "
+        "claim's own details or search policy text."
+    ),
+    parameters={
+        "type": "object",
+        "properties": {
+            "policy_id": {"type": "string", "description": "The policy id from the claim record, e.g. MOTOR-COMP-03."},
+        },
+        "required": ["policy_id"],
+    },
+)
+
+FLAG_FOR_REVIEW_DECLARATION = types.FunctionDeclaration(
+    name="flag_for_review",
+    description=(
+        "End the task by escalating this claim to a human adjuster instead of deciding it "
+        "yourself, when the claim record and policy text together are not enough to confidently "
+        "determine coverage (for example, genuinely contradictory or missing policy guidance). "
+        "Call this exactly once, instead of submit_decision, only when you cannot responsibly "
+        "decide. This is a finish action, not a data tool."
+    ),
+    parameters={
+        "type": "object",
+        "properties": {
+            "claim_number": {"type": "string"},
+            "reason": {"type": "string", "description": "Why this claim needs a human, in one or two sentences."},
+        },
+        "required": ["claim_number", "reason"],
+    },
+)
+
 SUBMIT_DECISION_DECLARATION = types.FunctionDeclaration(
     name="submit_decision",
     description=(
@@ -153,7 +203,9 @@ AGENT_TOOLS = types.Tool(
         GET_CLAIM_DECLARATION,
         SEARCH_POLICY_DECLARATION,
         COMPUTE_PAYOUT_DECLARATION,
+        CHECK_CLAIM_HISTORY_DECLARATION,
         SUBMIT_DECISION_DECLARATION,
+        FLAG_FOR_REVIEW_DECLARATION,
     ]
 )
 
@@ -161,6 +213,7 @@ TOOL_IMPLS = {
     "get_claim": get_claim,
     "search_policy": search_policy,
     "compute_payout": compute_payout,
+    "check_claim_history": check_claim_history,
 }
 
 
