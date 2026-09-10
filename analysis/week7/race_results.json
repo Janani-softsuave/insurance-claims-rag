@@ -1,0 +1,331 @@
+{
+  "workflow": {
+    "CLM-2027-00201": {
+      "claim_number": "CLM-2027-00201",
+      "status": "denied",
+      "payout": 0.0,
+      "rationale": "Engine damage resulting from water ingression/hydrostatic lock is excluded without the Engine & Gearbox Protection endorsement (IMT-29), which is not on file.",
+      "total_tokens": 1728,
+      "total_cost_usd": 0.000145125,
+      "elapsed_seconds": 10.36506380001083,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00202": {
+      "claim_number": "CLM-2027-00202",
+      "status": "covered",
+      "payout": 17000.0,
+      "rationale": "The claim covers straightforward own-damage repairs to the rear bumper and taillight from a parking collision. Since this is not a glass-only claim, the standard excess of \u20b91,000 applies.",
+      "total_tokens": 1644,
+      "total_cost_usd": 0.0001404,
+      "elapsed_seconds": 9.388484800001606,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00203": {
+      "claim_number": "CLM-2027-00203",
+      "status": "denied",
+      "payout": 0.0,
+      "rationale": "Earthquake damage is not covered under the standard home policy without an Earthquake Extension endorsement (IAP-01). As no such endorsement is on file, the claim is denied.",
+      "total_tokens": 1687,
+      "total_cost_usd": 0.00014272499999999999,
+      "elapsed_seconds": 14.742327300016768,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00204": {
+      "claim_number": "CLM-2027-00204",
+      "status": "covered",
+      "payout": 80000.0,
+      "rationale": "The building structure was damaged by a kitchen fire, which is covered under standard home building insurance. The standard policy excess of 10,000 applies as there is no applicable waiver.",
+      "total_tokens": 1730,
+      "total_cost_usd": 0.00014639999999999998,
+      "elapsed_seconds": 4.681005500024185,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00205": {
+      "claim_number": "CLM-2027-00205",
+      "status": "covered",
+      "payout": 11000.0,
+      "rationale": "The claim is covered as the tyre damage occurred alongside bumper damage in the same accident. However, a standard 50% depreciation applies to the tyre under IMT-28 guidelines, and the policy excess of \u20b91,000 is applicable.",
+      "total_tokens": 1475,
+      "total_cost_usd": 0.000129975,
+      "elapsed_seconds": 22.00674679991789,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": false
+    },
+    "CLM-2027-00206": {
+      "claim_number": "CLM-2027-00206",
+      "status": "covered",
+      "payout": 55000.0,
+      "rationale": "The claim for stolen electronics is covered under the Burglary Cover extension as none of the retrieved policy exclusions (such as family involvement, unoccupancy exceeding 30 days, or items kept outside) apply. The standard policy excess of 5,000 applies since no excess waiver is specified in the retrieved policy text.",
+      "total_tokens": 1826,
+      "total_cost_usd": 0.000159675,
+      "elapsed_seconds": 10.863781800027937,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": false
+    },
+    "CLM-2027-00207": {
+      "claim_number": "CLM-2027-00207",
+      "status": "covered",
+      "payout": 4500.0,
+      "rationale": "The claim for windshield replacement is covered under glass breakage cover. Since no other damage is claimed simultaneously, the standard compulsory deductible is waived, resulting in an effective excess of 0.",
+      "total_tokens": 1607,
+      "total_cost_usd": 0.0001356,
+      "elapsed_seconds": 4.942256600013934,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00208": {
+      "claim_number": "CLM-2027-00208",
+      "status": "pending",
+      "payout": 0.0,
+      "rationale": "The claim remains pending because the police have not yet issued the mandatory Non-Traceable Certificate for the stolen vehicle. The standard excess of 1,000 applies.",
+      "total_tokens": 1682,
+      "total_cost_usd": 0.000141675,
+      "elapsed_seconds": 4.336815000046045,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00209": {
+      "claim_number": "CLM-2027-00209",
+      "status": "pending",
+      "payout": 0.0,
+      "rationale": "The retrieved policy text does not contain specific terms or exclusions regarding driving under the influence of alcohol for motor policy MOTOR-COMP-06. The claim status is set to pending until the complete motor policy terms are reviewed.",
+      "total_tokens": 1592,
+      "total_cost_usd": 0.00013695,
+      "elapsed_seconds": 15.240326599916443,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": false
+    },
+    "CLM-2027-00210": {
+      "claim_number": "CLM-2027-00210",
+      "status": "covered",
+      "payout": 140000.0,
+      "rationale": "The damage caused by a falling tree during a storm is covered under the policy as storm and impact damage by external physical objects. The standard excess of 10,000 applies as there is no deductible waiver for this cover.",
+      "total_tokens": 1655,
+      "total_cost_usd": 0.00014257499999999998,
+      "elapsed_seconds": 43.31254699989222,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout"
+      ],
+      "pass": true
+    }
+  },
+  "agent": {
+    "CLM-2027-00201": {
+      "claim_number": "CLM-2027-00201",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "Engine damage resulting from water ingression (hydrostatic lock) is excluded under standard motor coverage without the Engine & Gearbox Protection endorsement (IMT-29). As no such endorsement is active on this policy, the claim is denied.",
+      "total_tokens": 6948,
+      "total_cost_usd": 0.000564075,
+      "elapsed_seconds": 9.500954499933869,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00202": {
+      "claim_number": "CLM-2027-00202",
+      "status": "covered",
+      "payout": 17000,
+      "rationale": "The own-damage claim for bumper and taillight repairs following a collision with a pillar is covered under the motor policy. Payout is calculated as the claimed amount of \u20b918,000 less the compulsory deductible of \u20b91,000.",
+      "total_tokens": 7717,
+      "total_cost_usd": 0.000622875,
+      "elapsed_seconds": 17.60839109995868,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00203": {
+      "claim_number": "CLM-2027-00203",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "Standard property policies do not cover earthquake damage without an Earthquake Extension endorsement on file. As no endorsement exists for this policy, the claim is denied.",
+      "total_tokens": 7148,
+      "total_cost_usd": 0.0005745749999999999,
+      "elapsed_seconds": 26.331916700000875,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00204": {
+      "claim_number": "CLM-2027-00204",
+      "status": "covered",
+      "payout": 80000,
+      "rationale": "The kitchen fire damaged the building structure, which is covered under standard building insurance. Applying the policy excess of 10,000 to the claimed amount of 90,000 yields a final payout of 80,000.",
+      "total_tokens": 12559,
+      "total_cost_usd": 0.000992325,
+      "elapsed_seconds": 94.93160659994464,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00205": {
+      "claim_number": "CLM-2027-00205",
+      "status": "partial",
+      "payout": 5500,
+      "rationale": "While IMT-28 Zero Dep cover removes depreciation on most parts when the vehicle is damaged in the same accident, tyres remain subject to a standard 50% depreciation exception. Subtracting 50% depreciation and the \u20b91,000 compulsory excess from the \u20b912,000 claim results in a payout of \u20b95,500.",
+      "total_tokens": 36096,
+      "total_cost_usd": 0.00278235,
+      "elapsed_seconds": 74.76302489999216,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "compute_payout",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00206": {
+      "claim_number": "CLM-2027-00206",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "The claim is denied because entry to the premises was unforced (back door left unlocked with no signs of forcible and violent entry), which is not covered under Section 3.3 (Burglary & Theft) of the policy.",
+      "total_tokens": 7618,
+      "total_cost_usd": 0.00061365,
+      "elapsed_seconds": 41.74840130005032,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00207": {
+      "claim_number": "CLM-2027-00207",
+      "status": "covered",
+      "payout": 4500,
+      "rationale": "The claim for windshield replacement under glass breakage cover is fully covered with no other concurrent damage claimed, so the standard deductible of \u20b91,000 is waived.",
+      "total_tokens": 7296,
+      "total_cost_usd": 0.000585225,
+      "elapsed_seconds": 15.004564900067635,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00208": {
+      "claim_number": "CLM-2027-00208",
+      "status": "pending",
+      "payout": 0,
+      "rationale": "The theft claim is pending as the required Non-Traceable Certificate has not yet been issued by the police. The claim can only be settled after the police issue the certificate and close the trace.",
+      "total_tokens": 7448,
+      "total_cost_usd": 0.0005993249999999999,
+      "elapsed_seconds": 37.357773600146174,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "terminated_by_budget": null,
+      "pass": true
+    },
+    "CLM-2027-00209": {
+      "claim_number": "CLM-2027-00209",
+      "status": null,
+      "payout": null,
+      "rationale": null,
+      "total_tokens": 7795,
+      "total_cost_usd": 0.00060735,
+      "elapsed_seconds": 142.10043100011535,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "search_policy"
+      ],
+      "terminated_by_budget": "max_wall_clock_seconds",
+      "pass": false
+    },
+    "CLM-2027-00210": {
+      "claim_number": "CLM-2027-00210",
+      "status": null,
+      "payout": null,
+      "rationale": null,
+      "total_tokens": 8876,
+      "total_cost_usd": 0.000687525,
+      "elapsed_seconds": 128.13917799992487,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "search_policy"
+      ],
+      "terminated_by_budget": "max_wall_clock_seconds",
+      "pass": false
+    }
+  }
+}

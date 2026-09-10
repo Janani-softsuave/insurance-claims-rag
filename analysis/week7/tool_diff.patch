@@ -1,0 +1,125 @@
+diff --git a/app/agent/claims_agent.py b/app/agent/claims_agent.py
+index 111f87d..1bc2638 100644
+--- a/app/agent/claims_agent.py
++++ b/app/agent/claims_agent.py
+@@ -22,9 +22,11 @@ available to you:
+   coverage question policy text can answer (an exclusion, an endorsement
+   requirement, a pending-document rule). Don't call it if there's no such
+   question.
++- compute_payout: compute the payout once you've decided claim_status. Pass
++  excess_amount=0 instead of the claim record's default excess if policy text
++  shows the deductible is waived for this claim.
+ - submit_decision: call this exactly once, last, with your final
+-  claim_number, claim_status, payout, and rationale. Compute the payout
+-  yourself: covered = claimed_amount - excess_amount; denied or pending = 0.
++  claim_number, claim_status, payout, and rationale.
+ 
+ Never invent a policy rule not present in what search_policy returns."""
+ 
+diff --git a/app/agent/tools.py b/app/agent/tools.py
+index 193b8e1..6ae6f0a 100644
+--- a/app/agent/tools.py
++++ b/app/agent/tools.py
+@@ -2,6 +2,7 @@ from __future__ import annotations
+ 
+ import json
+ from functools import lru_cache
++from typing import Literal
+ 
+ from google.genai import types
+ 
+@@ -11,6 +12,8 @@ from app.retrieval.retriever import Retriever
+ 
+ CLAIMS_PATH = ROOT_DIR / "analysis" / "week7" / "claims.json"
+ 
++ClaimStatus = Literal["covered", "denied", "partial", "pending"]
++
+ 
+ @lru_cache
+ def _claims_store() -> dict[str, dict]:
+@@ -46,6 +49,18 @@ def search_policy(query: str, top_k: int = 4) -> list[dict]:
+     ]
+ 
+ 
++def compute_payout(claim_status: ClaimStatus, claimed_amount: float, excess_amount: float) -> dict:
++    if claim_status in ("denied", "pending"):
++        payout = 0.0
++    elif claim_status == "covered":
++        payout = max(claimed_amount - excess_amount, 0.0)
++    elif claim_status == "partial":
++        payout = round(max((claimed_amount - excess_amount) * 0.5, 0.0), 2)
++    else:
++        return {"error": f"Unknown claim_status '{claim_status}'."}
++    return {"payout": payout}
++
++
+ GET_CLAIM_DECLARATION = types.FunctionDeclaration(
+     name="get_claim",
+     description=(
+@@ -79,13 +94,47 @@ SEARCH_POLICY_DECLARATION = types.FunctionDeclaration(
+     },
+ )
+ 
++COMPUTE_PAYOUT_DECLARATION = types.FunctionDeclaration(
++    name="compute_payout",
++    description=(
++        "Compute the payout amount owed for a claim, given a coverage decision you have already "
++        "made and the claimed and excess amounts. This is the only tool that does payout "
++        "arithmetic — it does not fetch claim records or search policy text, and it does not "
++        "decide coverage itself. Call it only after you have already determined claim_status "
++        "from the claim record and any relevant policy text."
++    ),
++    parameters={
++        "type": "object",
++        "properties": {
++            "claim_status": {
++                "type": "string",
++                "enum": ["covered", "denied", "partial", "pending"],
++                "description": (
++                    "covered = fully payable; denied = not payable, an exclusion applies; "
++                    "partial = payable at a reduced rate (e.g. a depreciation exception); "
++                    "pending = not yet payable, a required document or condition is outstanding."
++                ),
++            },
++            "claimed_amount": {"type": "number", "description": "The amount claimed."},
++            "excess_amount": {
++                "type": "number",
++                "description": (
++                    "The excess/deductible that actually applies to this payout. Usually the "
++                    "claim record's excess_amount, but pass 0 if policy text shows the deductible "
++                    "is waived for this specific claim."
++                ),
++            },
++        },
++        "required": ["claim_status", "claimed_amount", "excess_amount"],
++    },
++)
++
+ SUBMIT_DECISION_DECLARATION = types.FunctionDeclaration(
+     name="submit_decision",
+     description=(
+         "Submit your final decision for this claim and end the task. Call this exactly once, "
+-        "only after you have fetched the claim and checked policy text if needed. This is the "
+-        "task's finish action, not a data tool. You must compute the payout yourself: "
+-        "covered = claimed_amount - excess_amount; denied or pending = 0."
++        "only after you have fetched the claim, checked policy text if needed, and computed the "
++        "payout. This is the task's finish action, not a data tool."
+     ),
+     parameters={
+         "type": "object",
+@@ -103,6 +152,7 @@ AGENT_TOOLS = types.Tool(
+     function_declarations=[
+         GET_CLAIM_DECLARATION,
+         SEARCH_POLICY_DECLARATION,
++        COMPUTE_PAYOUT_DECLARATION,
+         SUBMIT_DECISION_DECLARATION,
+     ]
+ )
+@@ -110,6 +160,7 @@ AGENT_TOOLS = types.Tool(
+ TOOL_IMPLS = {
+     "get_claim": get_claim,
+     "search_policy": search_policy,
++    "compute_payout": compute_payout,
+ }
+ 
+ 

@@ -1,0 +1,112 @@
+[
+  {
+    "claim_number": "CLM-2027-00201",
+    "policy_id": "MOTOR-COMP-01",
+    "sum_insured": 500000,
+    "excess_amount": 1000,
+    "claimed_amount": 45000,
+    "adjuster_notes": "Insured's car engine seized after being driven through a flooded street during heavy rain. No Engine & Gearbox Protection endorsement on file.",
+    "needs_policy_lookup": true,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  {
+    "claim_number": "CLM-2027-00202",
+    "policy_id": "MOTOR-COMP-02",
+    "sum_insured": 600000,
+    "excess_amount": 1000,
+    "claimed_amount": 18000,
+    "adjuster_notes": "Insured reversed into a concrete pillar in a parking lot, denting the rear bumper and taillight. Straightforward own-damage repair, no third party involved.",
+    "needs_policy_lookup": false,
+    "expected_status": "covered",
+    "expected_payout": 17000
+  },
+  {
+    "claim_number": "CLM-2027-00203",
+    "policy_id": "PROP-BLDG-01",
+    "sum_insured": 3000000,
+    "excess_amount": 10000,
+    "claimed_amount": 220000,
+    "adjuster_notes": "An earthquake caused visible structural cracks in the insured's home. No Earthquake Extension endorsement is on file for this policy.",
+    "needs_policy_lookup": true,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  {
+    "claim_number": "CLM-2027-00204",
+    "policy_id": "PROP-BLDG-02",
+    "sum_insured": 2500000,
+    "excess_amount": 10000,
+    "claimed_amount": 90000,
+    "adjuster_notes": "A kitchen fire damaged part of the building structure. No neighbouring or tenant property was involved. Standard building cover only.",
+    "needs_policy_lookup": false,
+    "expected_status": "covered",
+    "expected_payout": 80000
+  },
+  {
+    "claim_number": "CLM-2027-00205",
+    "policy_id": "MOTOR-COMP-03",
+    "sum_insured": 700000,
+    "excess_amount": 1000,
+    "claimed_amount": 12000,
+    "adjuster_notes": "Insured holds IMT-28 Zero Dep cover. A pothole accident damaged the front-left tyre and the bumper in the same incident. Insured expects full reimbursement on the tyre under Zero Dep.",
+    "needs_policy_lookup": true,
+    "expected_status": "partial",
+    "expected_payout": 5500
+  },
+  {
+    "claim_number": "CLM-2027-00206",
+    "policy_id": "PROP-CONT-01",
+    "sum_insured": 400000,
+    "excess_amount": 5000,
+    "claimed_amount": 60000,
+    "adjuster_notes": "Insured's home was burgled overnight. The back door was left unlocked; there are no signs of forced or violent entry. Electronics were stolen from the living room.",
+    "needs_policy_lookup": true,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  {
+    "claim_number": "CLM-2027-00207",
+    "policy_id": "MOTOR-COMP-04",
+    "sum_insured": 550000,
+    "excess_amount": 1000,
+    "claimed_amount": 4500,
+    "adjuster_notes": "Windshield cracked from a stone chip on the highway. Insured holds glass breakage cover and is not claiming any other damage.",
+    "needs_policy_lookup": true,
+    "expected_status": "covered",
+    "expected_payout": 4500
+  },
+  {
+    "claim_number": "CLM-2027-00208",
+    "policy_id": "MOTOR-COMP-05",
+    "sum_insured": 800000,
+    "excess_amount": 1000,
+    "claimed_amount": 800000,
+    "adjuster_notes": "Insured's vehicle was stolen from a parking lot 95 days ago. Police have not yet issued a Non-Traceable Certificate.",
+    "needs_policy_lookup": true,
+    "expected_status": "pending",
+    "expected_payout": 0
+  },
+  {
+    "claim_number": "CLM-2027-00209",
+    "policy_id": "MOTOR-COMP-06",
+    "sum_insured": 450000,
+    "excess_amount": 1000,
+    "claimed_amount": 65000,
+    "adjuster_notes": "Insured collided with a divider late at night. Breathalyzer report on file confirms the insured was driving under the influence of alcohol at the time of the accident.",
+    "needs_policy_lookup": true,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  {
+    "claim_number": "CLM-2027-00210",
+    "policy_id": "PROP-BLDG-03",
+    "sum_insured": 2800000,
+    "excess_amount": 10000,
+    "claimed_amount": 150000,
+    "adjuster_notes": "A large tree fell onto the roof during a storm, causing impact damage. Standard building cover, no endorsements.",
+    "needs_policy_lookup": false,
+    "expected_status": "covered",
+    "expected_payout": 140000
+  }
+]

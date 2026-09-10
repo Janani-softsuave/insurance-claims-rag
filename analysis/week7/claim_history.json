@@ -1,0 +1,12 @@
+{
+  "MOTOR-COMP-01": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "MOTOR-COMP-02": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "PROP-BLDG-01": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "PROP-BLDG-02": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "MOTOR-COMP-03": {"claims_this_year": 2, "imt28_claims_this_year": 1, "rsa_events_this_year": 0},
+  "PROP-CONT-01": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "MOTOR-COMP-04": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "MOTOR-COMP-05": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "MOTOR-COMP-06": {"claims_this_year": 2, "imt28_claims_this_year": 0, "rsa_events_this_year": 0},
+  "PROP-BLDG-03": {"claims_this_year": 1, "imt28_claims_this_year": 0, "rsa_events_this_year": 0}
+}
