@@ -1,0 +1,269 @@
+{
+  "CLM-2027-00201": {
+    "claim_number": "CLM-2027-00201",
+    "status": "denied",
+    "payout": 0,
+    "rationale": "The claim is denied because engine hydrostatic lock/water ingression is excluded under the standard policy without the Engine & Gearbox Protection endorsement (IMT-29).",
+    "iterations": 4,
+    "total_tokens": 8631,
+    "total_cost_usd": 0.00068715,
+    "elapsed_seconds": 22.757737100007944,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00201"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00201",
+          "policy_id": "MOTOR-COMP-01",
+          "sum_insured": 500000,
+          "excess_amount": 1000,
+          "claimed_amount": 45000,
+          "adjuster_notes": "Insured's car engine seized after being driven through a flooded street during heavy rain. No Engine & Gearbox Protection endorsement on file."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "engine seized flooded street hydrostatic lock Engine Gearbox Protection endorsement exclusion"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 2,
+            "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2) Submit a representation\nto the Grievance Cell at grievance@abcinsurance.in within 15 days. 3) If unresolved,\napproach the Insurance Ombudsman in your city. 4) File a complaint on IRDAI's IGMS\nportal (igms.irda.gov.in).\n\n---\n\n## Motor Claims\n\n**Q: My car was damaged in a flood. Is it covered?**\nA: Yes, if you hold a **Comprehensive (Own-Damage)** policy. Flood is a natural\ncalamity and is covered. Engine damage due to water ingression is covered only if\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\nengine hydrostatic lock is excluded.\n\n**Q: Can I take my car to any garage?**\nA: For **reimbursement** claims, yes \u2014 any registered garage. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 1,
+            "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 2,
+            "text": "sured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price. ### IMT-40 \u2014 Roadside Assistance (RSA)\n- **Services covered:** Towing (up to 50 km), flat tyre change, emergency fuel\n  delivery, battery jump-start, key retrieval, and arrangement of alternative transport.\n- **Limit:** 4 assistance events per policy year.\n- **Exclusions:** Mechanical breakdown not resulting from an accident.\n\n### IMT-47 \u2014 Consumables Cover\n- **What it does:** Covers the cost of consumables \u2014 nuts, bolts, washers, engine\n  oil, coolant, AC gas \u2014 that are normally excluded from a standard claim.\n- **Note:** Must be availed at a network garage.\n\n---\n\n## Property Endorsements\n\n### IAP-01 \u2014 Earthquake (Fire & Shock) Extension\n- Extends the standard Fire policy to cover **direct loss or damage** caused by\n  earthquake including fire, shock, and subsequent landslide.\n- **Deductible:** 5% of claim amount, minimum \u20b925,000."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident)."
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "excess_amount": 1000,
+          "claimed_amount": 45000,
+          "claim_status": "denied"
+        },
+        "result": {
+          "payout": 0.0
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "payout": 0,
+          "claim_number": "CLM-2027-00201",
+          "claim_status": "denied",
+          "rationale": "The claim is denied because engine hydrostatic lock/water ingression is excluded under the standard policy without the Engine & Gearbox Protection endorsement (IMT-29)."
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00201'}) -> {\"claim_number\": \"CLM-2027-00201\", \"policy_id\": \"MOTOR-COMP-01\", \"sum_insured\": 500000, \"excess_amount\": 1000, \"claimed_amount\": 45000, \"adjuster_notes\": \"Insured's car engine seized after being driven through a flooded street during heavy rain. No Engine & Gearbox Protection endorsement on file.\"}",
+      "iter 2: search_policy({'query': 'engine seized flooded street hydrostatic lock Engine Gearbox Protection endorsement exclusion'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 2, \"text\": \"the\\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\\nA: 1) Request a written rejection letter with reasons. 2",
+      "iter 3: compute_payout({'excess_amount': 1000, 'claimed_amount': 45000, 'claim_status': 'denied'}) -> {\"payout\": 0.0}",
+      "iter 4: submit_decision -> {'payout': 0, 'claim_number': 'CLM-2027-00201', 'claim_status': 'denied', 'rationale': 'The claim is denied because engine hydrostatic lock/water ingression is excluded under the standard policy without the Engine & Gearbox Protection endorsement (IMT-29).'}"
+    ]
+  },
+  "CLM-2027-00202": {
+    "claim_number": "CLM-2027-00202",
+    "status": "covered",
+    "payout": 17000,
+    "rationale": " standard comprehensive motor own-damage covers accidental collision damage to the vehicle. After deducting the compulsory excess of \u20b91,000 from the claimed amount of \u20b918,000, the final payout is \u20b917,000.",
+    "iterations": 4,
+    "total_tokens": 9169,
+    "total_cost_usd": 0.000732225,
+    "elapsed_seconds": 15.32037250000576,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00202"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00202",
+          "policy_id": "MOTOR-COMP-02",
+          "sum_insured": 600000,
+          "excess_amount": 1000,
+          "claimed_amount": 18000,
+          "adjuster_notes": "Insured reversed into a concrete pillar in a parking lot, denting the rear bumper and taillight. Straightforward own-damage repair, no third party involved."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "own damage accidental collision concrete pillar parking lot bumper taillight excess deductible"
+        },
+        "result": [
+          {
+            "source": "claims_process.md",
+            "chunk_index": 1,
+            "text": "cious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended. ### Step 3 \u2014 Document the Loss\nCollect and preserve:\n- Photographs of damaged vehicle/property from multiple angles\n- Repair estimates from authorised service centres or contractors\n- Medical bills and reports (for personal accident claims)\n- Witness statements, if available\n\n### Step 4 \u2014 Submit the Claim Form\nComplete the **Claim Intimation Form** and submit within **15 days** of the incident\nalong with the following documents:\n\n**For Motor Claims:**\n- Duly signed claim form\n- Copy of Registration Certificate (RC)\n- Copy of valid Driving Licence\n- Copy of insurance policy / certificate\n- FIR copy (if applicable)\n- Repair estimate from garage\n\n**For Property Claims:**\n- Duly signed claim form\n- Copy of insurance policy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement)"
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 1,
+            "text": "or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\nCovers accidental damage, fire, theft, natural calamities (flood, earthquake,\ncyclone), malicious damage, and riots. **Not covered:** normal wear and tear,\nmechanical or electrical breakdown, consequential loss.\n\n### 2.3 Personal Accident Cover\n- Accidental death or permanent total disability of the owner-driver: **\u20b915 lakh**.\n- Hospital cash benefit: **\u20b92,000 per day** up to 30 days.\n\n---\n\n## Section 3 \u2014 Property Insurance Coverage\n\n### 3.1 Building Cover\nCovers the structure against fire, lightning, explosion/implosion, aircraft damage,\nriot and strike, storm, flood, inundation, earthquake, and impact damage.\n**Basis of settlement:** Reinstatement value (new for old).\n\n### 3.2 Contents Cover\nCovers household contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss."
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 2,
+            "text": "ousehold contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\nCovers loss of contents due to forcible and violent entry. Unforced entry is\n**not covered**. Cash limit: \u20b925,000 per incident.\n\n---\n\n## Section 4 \u2014 Policy Limits and Deductibles\n\n| Coverage | Sum Insured | Compulsory Deductible |\n|----------|-------------|----------------------|\n| Third-Party Liability | Unlimited (BI) / \u20b97.5 lakh (PD) | Nil |\n| Own-Damage Motor | As declared | \u20b91,000 (private car) |\n| Building | As declared | 1% of claim min \u20b910,000 |\n| Contents | As declared | \u20b92,500 |\n| Burglary & Theft | As declared | \u20b95,000 |\n\nA **voluntary deductible** of \u20b92,500, \u20b95,000, or \u20b910,000 may be chosen for a premium\ndiscount of 10%, 15%, or 20% respectively.\n\n---\n\n## Section 5 \u2014 Policy Period & Renewal\n\n- Motor policies: **1 year**, renewable annually.\n- Property policies: **1 year**, renewable annually.\n- Long-term motor (2 or 3 years) available for new vehicles at a 5% discount.\n- Coverage lapses if the premium is not paid within the **15-day grace period**."
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claimed_amount": 18000,
+          "claim_status": "covered",
+          "excess_amount": 1000
+        },
+        "result": {
+          "payout": 17000
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "rationale": " standard comprehensive motor own-damage covers accidental collision damage to the vehicle. After deducting the compulsory excess of \u20b91,000 from the claimed amount of \u20b918,000, the final payout is \u20b917,000.",
+          "payout": 17000,
+          "claim_status": "covered",
+          "claim_number": "CLM-2027-00202"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00202'}) -> {\"claim_number\": \"CLM-2027-00202\", \"policy_id\": \"MOTOR-COMP-02\", \"sum_insured\": 600000, \"excess_amount\": 1000, \"claimed_amount\": 18000, \"adjuster_notes\": \"Insured reversed into a concrete pillar in a parking lot, denting the rear bumper and taillight. Straightforward own-damage repair, no third part",
+      "iter 2: search_policy({'query': 'own damage accidental collision concrete pillar parking lot bumper taillight excess deductible'}) -> [{\"source\": \"claims_process.md\", \"chunk_index\": 1, \"text\": \"cious damage\\n- Burglary\\n\\nFor accidents involving only own-damage with no third-party injury, an FIR is\\n**not mandatory** but is recommended. ### Step 3 \\u2014 Document the Loss\\nCollect and preserve:\\n- Photographs of damaged vehicle/pr",
+      "iter 3: compute_payout({'claimed_amount': 18000, 'claim_status': 'covered', 'excess_amount': 1000}) -> {\"payout\": 17000}",
+      "iter 4: submit_decision -> {'rationale': ' standard comprehensive motor own-damage covers accidental collision damage to the vehicle. After deducting the compulsory excess of \u20b91,000 from the claimed amount of \u20b918,000, the final payout is \u20b917,000.', 'payout': 17000, 'claim_status': 'covered', 'claim_number': 'CLM-2027-00202'}"
+    ]
+  },
+  "CLM-2027-00203": {
+    "claim_number": "CLM-2027-00203",
+    "status": "denied",
+    "payout": 0,
+    "rationale": "Standard property policies exclude earthquake damage by default unless an Earthquake Extension endorsement (IAP-01) is active. Because no Earthquake Extension endorsement is on file for this policy, the claim is denied.",
+    "iterations": 4,
+    "total_tokens": 8888,
+    "total_cost_usd": 0.00070755,
+    "elapsed_seconds": 22.823408399999607,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00203"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00203",
+          "policy_id": "PROP-BLDG-01",
+          "sum_insured": 3000000,
+          "excess_amount": 10000,
+          "claimed_amount": 220000,
+          "adjuster_notes": "An earthquake caused visible structural cracks in the insured's home. No Earthquake Extension endorsement is on file for this policy."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "earthquake coverage exclusion endorsement home property building"
+        },
+        "result": [
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 3,
+            "text": "s or damage** caused by\n  earthquake including fire, shock, and subsequent landslide.\n- **Deductible:** 5% of claim amount, minimum \u20b925,000. ### IAP-07 \u2014 Terrorism Cover\n- Covers physical damage to the insured property arising from acts of **terrorism**\n  as defined by the Terrorism Risk Insurance Pool (TRIP).\n- **Exclusion:** War, civil war, nuclear/chemical/biological attacks.\n- Underwritten by the **National Insurance Pool** at IRDAI-approved rates.\n\n### IAP-12 \u2014 Rent for Alternative Accommodation\n- If the insured building is rendered **uninhabitable** due to an insured peril,\n  this endorsement pays actual rent for alternative accommodation up to:\n  - **\u20b925,000 per month** for up to **6 months**, or until repairs are complete,\n    whichever is earlier.\n\n### IAP-15 \u2014 Landlord's Legal Liability\n- Covers a landlord's legal liability to a **tenant** for bodily injury or property\n  damage caused by a defect in the insured building.\n- Limit: **\u20b910 lakh** per occurrence.\n\n---\n\n## How to Add an Endorsement"
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 4,
+            "text": "-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims **Q: Is my home covered for earthquake damage?**\nA: Standard fire policies **do not cover earthquake** by default. You need the\n**Earthquake Extension** endorsement (IAP-01). If you have it, both the fire\nfollowing earthquake and the shock damage are covered.\n\n**Q: My tenant's belongings were damaged in a fire. Am I liable?**\nA: A standard building policy covers the structure only. Your tenant's contents\nare the tenant's responsibility and should be covered under a separate contents\npolicy. However, if the fire originated from a defect in the building, the\n**Landlord's Legal Liability** endorsement (IAP-15) would cover your liability.\n\n**Q: My house is under renovation. Is it still covered?**\nA: Minor renovation (painting, tiling) does not affect coverage. Major structural\nwork (demolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 76,
+            "text": "purpose of this cover only, \u201cBungalow/independent houses are being \nexcluded from the definition of structure \nBasis of assessment of claim 1. Total Loss of Structure where Sum Insured is on Full Value Basis \na. In the event of an Actual T otal Loss, the Insured may at his option \nReconstruct or Reinstate the damaged structure (and not any \ninfrastructure/ support/access/supporting walls appurtenant thereto or \nannexed therewith) subject to the following Special Provisions and \nsubject also to the terms and conditions of the policy except in so far as \nthe same may be varied hereby: \ni. The work of replacement or reinstatement of the structure (Which \nmay be carried out upon another site and in any manner suitable to \nthe requirements of the insured sub ject to the liability of the Company \nnot being thereby increased) with the prior approval of the insurer \nmust be commenced and carried out with reasonable dispatch and in any \ncase must be completed within 24 months after the destruction or \ndamage or within such further time as the company may in writing allow."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 21,
+            "text": "e) solar panels, wind turbines and air conditioning systems, \ncentral heating systems and the like, if not included in Home \nContents Cover, iii. any other structure shown in the Policy Schedule. \nc. Your Home Building does not include Contents of Your Home. \n3. Use for residence \na. We will pay only if Your Home Building is used for the purpose of \nresidence of Yourself and Your family, or of Your tenant, licensee or \nemployee. \nb. We will not pay if \ni. Your Home Building is used as a holiday home, or for lodging and \nboarding, or \nii. Your Home Building or any part of Your Home Building is used for \npurposes other than residential except where it is used both for \nYour residence and for the purposes of earning Your livelihood if \nYou are self- employed or You have shifted Your office to Your \nHome Building for a temporary period due to lockdown or closure  of \nYour office ordered by a public authority. \n4. Sum Insured \na. The Sum Insured for the Home Building Cover is the prevailing Cost of \nConstruction of Your Home Building at the Commencement Date as \ndeclared by You and accepted by Us and will be the maximum"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_status": "denied",
+          "claimed_amount": 220000,
+          "excess_amount": 10000
+        },
+        "result": {
+          "payout": 0.0
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "claim_status": "denied",
+          "payout": 0,
+          "rationale": "Standard property policies exclude earthquake damage by default unless an Earthquake Extension endorsement (IAP-01) is active. Because no Earthquake Extension endorsement is on file for this policy, the claim is denied.",
+          "claim_number": "CLM-2027-00203"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00203'}) -> {\"claim_number\": \"CLM-2027-00203\", \"policy_id\": \"PROP-BLDG-01\", \"sum_insured\": 3000000, \"excess_amount\": 10000, \"claimed_amount\": 220000, \"adjuster_notes\": \"An earthquake caused visible structural cracks in the insured's home. No Earthquake Extension endorsement is on file for this policy.\"}",
+      "iter 2: search_policy({'query': 'earthquake coverage exclusion endorsement home property building'}) -> [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 3, \"text\": \"s or damage** caused by\\n  earthquake including fire, shock, and subsequent landslide.\\n- **Deductible:** 5% of claim amount, minimum \\u20b925,000. ### IAP-07 \\u2014 Terrorism Cover\\n- Covers physical damage to the insured property",
+      "iter 3: compute_payout({'claim_status': 'denied', 'claimed_amount': 220000, 'excess_amount': 10000}) -> {\"payout\": 0.0}",
+      "iter 4: submit_decision -> {'claim_status': 'denied', 'payout': 0, 'rationale': 'Standard property policies exclude earthquake damage by default unless an Earthquake Extension endorsement (IAP-01) is active. Because no Earthquake Extension endorsement is on file for this policy, the claim is denied.', 'claim_number': 'CLM-2027-00203'}"
+    ]
+  }
+}
