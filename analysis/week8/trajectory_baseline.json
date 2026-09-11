@@ -354,5 +354,181 @@
       "iter 3: compute_payout({'excess_amount': 10000, 'claimed_amount': 90000, 'claim_status': 'covered'}) -> {\"payout\": 80000}",
       "iter 4: submit_decision -> {'rationale': 'Kitchen fire damage to the building structure is covered under standard building insurance cover. Applying the standard policy excess of 10,000 to the 90,000 claimed amount yields a payout of 80,000.', 'claim_number': 'CLM-2027-00204', 'claim_status': 'covered', 'payout': 80000}"
     ]
+  },
+  "CLM-2027-00205": {
+    "claim_number": "CLM-2027-00205",
+    "status": "partial",
+    "payout": 5500,
+    "rationale": "While tyre damage is covered under IMT-28 because the bumper was damaged in the same incident, tyres carry a mandatory 50% depreciation even under Zero Dep cover. Applying 50% depreciation and the \u20b91,000 deductible results in a final payout of \u20b95,500.",
+    "iterations": 7,
+    "total_tokens": 29010,
+    "total_cost_usd": 0.002248425,
+    "elapsed_seconds": 90.81267569999909,
+    "tool_calls": [
+      "get_claim",
+      "check_claim_history",
+      "search_policy",
+      "search_policy",
+      "search_policy",
+      "compute_payout",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00205"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00205",
+          "policy_id": "MOTOR-COMP-03",
+          "sum_insured": 700000,
+          "excess_amount": 1000,
+          "claimed_amount": 12000,
+          "adjuster_notes": "Insured holds IMT-28 Zero Dep cover. A pothole accident damaged the front-left tyre and the bumper in the same incident. Insured expects full reimbursement on the tyre under Zero Dep."
+        }
+      },
+      {
+        "tool": "check_claim_history",
+        "args": {
+          "policy_id": "MOTOR-COMP-03"
+        },
+        "result": {
+          "policy_id": "MOTOR-COMP-03",
+          "claims_this_year": 2,
+          "imt28_claims_this_year": 1,
+          "rsa_events_this_year": 0
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "IMT-28 Zero Depreciation cover tyre damage pothole accident bumper"
+        },
+        "result": [
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident)."
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 1,
+            "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 2,
+            "text": "sured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price. ### IMT-40 \u2014 Roadside Assistance (RSA)\n- **Services covered:** Towing (up to 50 km), flat tyre change, emergency fuel\n  delivery, battery jump-start, key retrieval, and arrangement of alternative transport.\n- **Limit:** 4 assistance events per policy year.\n- **Exclusions:** Mechanical breakdown not resulting from an accident.\n\n### IMT-47 \u2014 Consumables Cover\n- **What it does:** Covers the cost of consumables \u2014 nuts, bolts, washers, engine\n  oil, coolant, AC gas \u2014 that are normally excluded from a standard claim.\n- **Note:** Must be availed at a network garage.\n\n---\n\n## Property Endorsements\n\n### IAP-01 \u2014 Earthquake (Fire & Shock) Extension\n- Extends the standard Fire policy to cover **direct loss or damage** caused by\n  earthquake including fire, shock, and subsequent landslide.\n- **Deductible:** 5% of claim amount, minimum \u20b925,000."
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "depreciation tyres tubes partial claim settlement amount"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident)."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 91,
+            "text": "repairs, the amount payable shall be actual value of the property \nimmediately before the occurrence of the loss , less depreciation at the rate of 2.5 % per year or part there of depending on the Age of the \n\u201cStructure\u201d less salvage, subject to the Company's Liability not \nexceeding the Sum Insured mentioned in the Schedule \n2. Partial Loss of Structure where Sum Insured is on Indemnity/Market \nValue Basis \nThe Company shall indemnify the Insured the Actual Cost of Repairs provided the \nrepairs are carried within 12 months from the date of loss or damage or \nwithin such further time as the Company may in writing allow, less \ndepreciation at the rate of 2.5% per year or part thereof depending on the age \nof the \u201cStructure\u201d provided also the company's liability shall in no case \nexceed the Sum Insured stated in the Schedule \nIn the event of any loss or damage to the under construction Structure due to \nthe insured perils, where the Insured is responsib le for the repairs, the amount \npayable shall be cost of repairs necessary to restore the property to the"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 117,
+            "text": "ny claim arising out of the perils covered \nWe will however not pay for- \ni. any mechanical and or electrical breakdown of the insured items ii. loss or damage to items in personal baggage caused by or arising from \nthe leakage, spilling or explosion within such personal baggage. \nBasis of Settlement \nWe will pay the Indemnity Value of such individual items mentioned in the \nschedule. Our liability in so far as it relates to Valuables exclu ding precious \nstones shall be limited to Indemnity Value of the metals only. We will however \nnot pay for any additional value in the form of expenses for making, decorating \nor any other incidental charges incurred for Valuables thereon. \nAll declarations of Valuables of individual value over Rs. 50,000/-, and all \nprecious stones irrespective of their value, must necessarily be accompanied \nby a Valuation certificate from a professional valuator. \nB.7 Extension: Contents on an alternative location basis cover \nIn consideration of payment of additional premium, we will reimburse You, \nsubject to the Sum Insured as specifically mentioned in Schedule, for the"
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "\"partial\" \"depreciation\" motor policy payout status"
+        },
+        "result": [
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident)."
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 1,
+            "text": "count\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\nA: IDV (Insured Declared Value) is the current market value of your vehicle and\nrepresents the maximum amount payable in case of total loss or theft. IDV is\ncalculated as the ex-showroom price minus depreciation based on vehicle age:\n- Up to 6 months: 5% depreciation\n- 6 months to 1 year: 15%\n- 1\u20132 years: 20%\n- 2\u20133 years: 30%\n- 3\u20134 years: 40%\n- 4\u20135 years: 50%\nVehicles over 5 years: IDV is mutually agreed upon.\n\n**Q: What is a total loss claim?**\nA: A claim is declared a **total loss** when the cost of repair exceeds 75% of the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage."
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 2,
+            "text": "ousehold contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\nCovers loss of contents due to forcible and violent entry. Unforced entry is\n**not covered**. Cash limit: \u20b925,000 per incident.\n\n---\n\n## Section 4 \u2014 Policy Limits and Deductibles\n\n| Coverage | Sum Insured | Compulsory Deductible |\n|----------|-------------|----------------------|\n| Third-Party Liability | Unlimited (BI) / \u20b97.5 lakh (PD) | Nil |\n| Own-Damage Motor | As declared | \u20b91,000 (private car) |\n| Building | As declared | 1% of claim min \u20b910,000 |\n| Contents | As declared | \u20b92,500 |\n| Burglary & Theft | As declared | \u20b95,000 |\n\nA **voluntary deductible** of \u20b92,500, \u20b95,000, or \u20b910,000 may be chosen for a premium\ndiscount of 10%, 15%, or 20% respectively.\n\n---\n\n## Section 5 \u2014 Policy Period & Renewal\n\n- Motor policies: **1 year**, renewable annually.\n- Property policies: **1 year**, renewable annually.\n- Long-term motor (2 or 3 years) available for new vehicles at a 5% discount.\n- Coverage lapses if the premium is not paid within the **15-day grace period**."
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claimed_amount": 12000,
+          "claim_status": "partial",
+          "excess_amount": 1000
+        },
+        "result": {
+          "payout": 5500.0
+        }
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_status": "covered",
+          "excess_amount": 1000,
+          "claimed_amount": 12000
+        },
+        "result": {
+          "payout": 11000
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "payout": 5500,
+          "claim_number": "CLM-2027-00205",
+          "claim_status": "partial",
+          "rationale": "While tyre damage is covered under IMT-28 because the bumper was damaged in the same incident, tyres carry a mandatory 50% depreciation even under Zero Dep cover. Applying 50% depreciation and the \u20b91,000 deductible results in a final payout of \u20b95,500."
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00205'}) -> {\"claim_number\": \"CLM-2027-00205\", \"policy_id\": \"MOTOR-COMP-03\", \"sum_insured\": 700000, \"excess_amount\": 1000, \"claimed_amount\": 12000, \"adjuster_notes\": \"Insured holds IMT-28 Zero Dep cover. A pothole accident damaged the front-left tyre and the bumper in the same incident. Insured expects full rei",
+      "iter 2: check_claim_history({'policy_id': 'MOTOR-COMP-03'}) -> {\"policy_id\": \"MOTOR-COMP-03\", \"claims_this_year\": 2, \"imt28_claims_this_year\": 1, \"rsa_events_this_year\": 0}",
+      "iter 2: search_policy({'query': 'IMT-28 Zero Depreciation cover tyre damage pothole accident bumper'}) -> [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 0, \"text\": \"# ABC Insurance \\u2014 Endorsements & Policy Riders (Addendum Pack 2024)\\n\\nEndorsements modify the standard policy wording. Each endorsement is identified\\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) ",
+      "iter 3: search_policy({'query': 'depreciation tyres tubes partial claim settlement amount'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 3, \"text\": \"ge. For **cashless**\\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\\nA: If you have **glass breakage** cover",
+      "iter 4: search_policy({'query': '\"partial\" \"depreciation\" motor policy payout status'}) -> [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 0, \"text\": \"# ABC Insurance \\u2014 Endorsements & Policy Riders (Addendum Pack 2024)\\n\\nEndorsements modify the standard policy wording. Each endorsement is identified\\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) ",
+      "iter 5: compute_payout({'claimed_amount': 12000, 'claim_status': 'partial', 'excess_amount': 1000}) -> {\"payout\": 5500.0}",
+      "iter 6: compute_payout({'claim_status': 'covered', 'excess_amount': 1000, 'claimed_amount': 12000}) -> {\"payout\": 11000}",
+      "iter 7: submit_decision -> {'payout': 5500, 'claim_number': 'CLM-2027-00205', 'claim_status': 'partial', 'rationale': 'While tyre damage is covered under IMT-28 because the bumper was damaged in the same incident, tyres carry a mandatory 50% depreciation even under Zero Dep cover. Applying 50% depreciation and the \u20b91,000 deductible results in a final payout of \u20b95,500.'}"
+    ]
   }
 }
