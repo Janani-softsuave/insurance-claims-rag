@@ -265,5 +265,94 @@
       "iter 3: compute_payout({'claim_status': 'denied', 'claimed_amount': 220000, 'excess_amount': 10000}) -> {\"payout\": 0.0}",
       "iter 4: submit_decision -> {'claim_status': 'denied', 'payout': 0, 'rationale': 'Standard property policies exclude earthquake damage by default unless an Earthquake Extension endorsement (IAP-01) is active. Because no Earthquake Extension endorsement is on file for this policy, the claim is denied.', 'claim_number': 'CLM-2027-00203'}"
     ]
+  },
+  "CLM-2027-00204": {
+    "claim_number": "CLM-2027-00204",
+    "status": "covered",
+    "payout": 80000,
+    "rationale": "Kitchen fire damage to the building structure is covered under standard building insurance cover. Applying the standard policy excess of 10,000 to the 90,000 claimed amount yields a payout of 80,000.",
+    "iterations": 4,
+    "total_tokens": 9195,
+    "total_cost_usd": 0.00073305,
+    "elapsed_seconds": 64.80524049999076,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00204"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00204",
+          "policy_id": "PROP-BLDG-02",
+          "sum_insured": 2500000,
+          "excess_amount": 10000,
+          "claimed_amount": 90000,
+          "adjuster_notes": "A kitchen fire damaged part of the building structure. No neighbouring or tenant property was involved. Standard building cover only."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "kitchen fire building damage standard building cover"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 4,
+            "text": "-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims **Q: Is my home covered for earthquake damage?**\nA: Standard fire policies **do not cover earthquake** by default. You need the\n**Earthquake Extension** endorsement (IAP-01). If you have it, both the fire\nfollowing earthquake and the shock damage are covered.\n\n**Q: My tenant's belongings were damaged in a fire. Am I liable?**\nA: A standard building policy covers the structure only. Your tenant's contents\nare the tenant's responsibility and should be covered under a separate contents\npolicy. However, if the fire originated from a defect in the building, the\n**Landlord's Legal Liability** endorsement (IAP-15) would cover your liability.\n\n**Q: My house is under renovation. Is it still covered?**\nA: Minor renovation (painting, tiling) does not affect coverage. Major structural\nwork (demolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period."
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 1,
+            "text": "or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\nCovers accidental damage, fire, theft, natural calamities (flood, earthquake,\ncyclone), malicious damage, and riots. **Not covered:** normal wear and tear,\nmechanical or electrical breakdown, consequential loss.\n\n### 2.3 Personal Accident Cover\n- Accidental death or permanent total disability of the owner-driver: **\u20b915 lakh**.\n- Hospital cash benefit: **\u20b92,000 per day** up to 30 days.\n\n---\n\n## Section 3 \u2014 Property Insurance Coverage\n\n### 3.1 Building Cover\nCovers the structure against fire, lightning, explosion/implosion, aircraft damage,\nriot and strike, storm, flood, inundation, earthquake, and impact damage.\n**Basis of settlement:** Reinstatement value (new for old).\n\n### 3.2 Contents Cover\nCovers household contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 73,
+            "text": "under the Policy. \nExclusions specific to Section A 2: All Risk: Structure related Coverage \nLoss or damage to the Structure on account of- 1. Its own natural heating or spontaneous combustion or undergoing any \nheating or drying process; \n2. any process of cleaning, dyeing or bleaching, restoring, repairing or \nrenovation or deterioration arising from wear and tear, moth, vermin , \nbirds, rodents, insects or mildew or any other gradually operating cause; \n3. breakage, cracking or scratching of glass (exce pt for breakage of fixed \nglass due to Accident), and similar articles of fragile nature; \n4. Total or partial cessation/retardation of any work, delay or other \nconsequential losses; \n5. Permanent or temporary dispossession resulting from confiscation, \nrequisition or destruction by any public authority or from unlawful \noccupation of such Dwelling or prevention of access to the same; \n6. Pressure waves by aircraft or other aerial devices; \n7. Coastal or river erosion; \n8. Demolition, construction, structural alterations or repair of any Dwelling \nor ground works or excavations;"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 17,
+            "text": "destruction caused \nto the Insured Property \n6 Subsidence of the land on which \nYour Home Building stands, \nLandslide, Rockslide \ncaused by a. normal cracking, settlement \nor bedding down of new \nstructures, \nb. the settlement or \nmovement of made up \nground, \nc. coastal or river erosion, \nd. defective design or \nworkmanship or use of \ndefective materials, or \ne. demolition, construction, \nstructural alterations or \nrepair of any property, or \ngroundworks or xcavations. \n7 Bush fire, Forest fire, Jungle fire - \n8 Impact damage of any kind, i.e., \ndamage caused by impact of, or \ncollision caused by any external \nphysical object (e.g. vehicle, \nfalling trees, aircraft, wall etc.) \ncaused by pressure waves \ncaused by aircraft or other aerial \nor space devices travelling at \nsonic or supersonic speeds. \n9 Missile testing operations - \n10 Riot, Strikes, Malicious Damages caused by \na. temporary or permanent \ndispossession, \nconfiscation, \ncommandeering, requisition \nor destruction by order of \nthe government or any \nlawful authority, \nor \nb. temporary or permanent \ndispossession of Your Home \nby unlawful occupation by"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "excess_amount": 10000,
+          "claimed_amount": 90000,
+          "claim_status": "covered"
+        },
+        "result": {
+          "payout": 80000
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "rationale": "Kitchen fire damage to the building structure is covered under standard building insurance cover. Applying the standard policy excess of 10,000 to the 90,000 claimed amount yields a payout of 80,000.",
+          "claim_number": "CLM-2027-00204",
+          "claim_status": "covered",
+          "payout": 80000
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00204'}) -> {\"claim_number\": \"CLM-2027-00204\", \"policy_id\": \"PROP-BLDG-02\", \"sum_insured\": 2500000, \"excess_amount\": 10000, \"claimed_amount\": 90000, \"adjuster_notes\": \"A kitchen fire damaged part of the building structure. No neighbouring or tenant property was involved. Standard building cover only.\"}",
+      "iter 2: search_policy({'query': 'kitchen fire building damage standard building cover'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 4, \"text\": \"-Traceable Certificate** from the police\\nafter 90 days. The claim is settled only after the police close the trace.\\n\\n---\\n\\n## Property Claims **Q: Is my home covered for earthquake damage?**\\nA: Standard fire policies **do not cover earthqu",
+      "iter 3: compute_payout({'excess_amount': 10000, 'claimed_amount': 90000, 'claim_status': 'covered'}) -> {\"payout\": 80000}",
+      "iter 4: submit_decision -> {'rationale': 'Kitchen fire damage to the building structure is covered under standard building insurance cover. Applying the standard policy excess of 10,000 to the 90,000 claimed amount yields a payout of 80,000.', 'claim_number': 'CLM-2027-00204', 'claim_status': 'covered', 'payout': 80000}"
+    ]
   }
 }
