@@ -530,5 +530,547 @@
       "iter 6: compute_payout({'claim_status': 'covered', 'excess_amount': 1000, 'claimed_amount': 12000}) -> {\"payout\": 11000}",
       "iter 7: submit_decision -> {'payout': 5500, 'claim_number': 'CLM-2027-00205', 'claim_status': 'partial', 'rationale': 'While tyre damage is covered under IMT-28 because the bumper was damaged in the same incident, tyres carry a mandatory 50% depreciation even under Zero Dep cover. Applying 50% depreciation and the \u20b91,000 deductible results in a final payout of \u20b95,500.'}"
     ]
+  },
+  "CLM-2027-00206": {
+    "claim_number": "CLM-2027-00206",
+    "status": "denied",
+    "payout": 0,
+    "rationale": "The claim is denied because Section 3.3 of the policy wording explicitly excludes unforced entry, requiring forcible and violent entry for Burglary & Theft coverage. Since the back door was left unlocked with no signs of forced entry, no coverage applies.",
+    "iterations": 4,
+    "total_tokens": 9356,
+    "total_cost_usd": 0.000745575,
+    "elapsed_seconds": 32.54699590000382,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00206"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00206",
+          "policy_id": "PROP-CONT-01",
+          "sum_insured": 400000,
+          "excess_amount": 5000,
+          "claimed_amount": 60000,
+          "adjuster_notes": "Insured's home was burgled overnight. The back door was left unlocked; there are no signs of forced or violent entry. Electronics were stolen from the living room."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "burglary theft forced and violent entry unlocked door contents insurance"
+        },
+        "result": [
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 2,
+            "text": "ousehold contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\nCovers loss of contents due to forcible and violent entry. Unforced entry is\n**not covered**. Cash limit: \u20b925,000 per incident.\n\n---\n\n## Section 4 \u2014 Policy Limits and Deductibles\n\n| Coverage | Sum Insured | Compulsory Deductible |\n|----------|-------------|----------------------|\n| Third-Party Liability | Unlimited (BI) / \u20b97.5 lakh (PD) | Nil |\n| Own-Damage Motor | As declared | \u20b91,000 (private car) |\n| Building | As declared | 1% of claim min \u20b910,000 |\n| Contents | As declared | \u20b92,500 |\n| Burglary & Theft | As declared | \u20b95,000 |\n\nA **voluntary deductible** of \u20b92,500, \u20b95,000, or \u20b910,000 may be chosen for a premium\ndiscount of 10%, 15%, or 20% respectively.\n\n---\n\n## Section 5 \u2014 Policy Period & Renewal\n\n- Motor policies: **1 year**, renewable annually.\n- Property policies: **1 year**, renewable annually.\n- Long-term motor (2 or 3 years) available for new vehicles at a 5% discount.\n- Coverage lapses if the premium is not paid within the **15-day grace period**."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 109,
+            "text": "Company\u2019s liability under this benefit is limited as follows: \n1. Damage due to burglary shall be limited to the amount actually payable for repair or replacement of locks, damage to door, or windows, if any. \n2. The insurance cover under the extension shall automatically include all \ncontents acquired by the insured during the policy period, provided that \nall articles of individual value more than or equal to Rs.10,000/-, shall be \nimmediately declared by the insured to the Company, failing which the \nvalue of such item/s for the purposes of this benefit and claim settlement \nshall be taken as equivalent to Rs. 10,000/-. \n3. Insurance as regards jewelry, gold ornaments, silver articles and precious \nstones is only against burglary and does not cover theft where theft is \ndefined as burglary without any forceable entry of exit in the premises \n4. Insurance for jewelry, gold ornaments, silver articles and precious stones, \nshall also extend to cover such items whilst kept stored in Bank vault/s. \nAs regards jewelry, gold ornaments, silver articles and precious stones of"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 108,
+            "text": "e event of a loss the Company shall indemnify th e Insured for the \nReplacement Value of the insured items as new at the time of damage less due allowance for Betterment, wear and tear and or depreciation as \nmentioned in the depreciation schedule or the value which can be realized \nfrom the market for such insured item immediately before occurrence of \ndamage whichever is lower \nPermanent Exclusions under the Section B \nWe will not pay for any loss or damage caused by or attributable to \u2013 \n1. Burglary or Theft where the Insured or any of the Insured\u2019s family is \nalleged to be concerned or implicated. \n2. Theft and Burglary Claims, if the premise is left unoccupied for more than \ncontinuous 30 days. \nExtensions specific to Section B \nB.3 Extension: Burglary Cover \nIn consideration of payment of additional premium,the benefit pro vided under \nthis extension is for any loss and/or damage caused by burglary and/or \nattempted burglary, to the contents of insured\u2019s structure. \nThe Company\u2019s liability under this benefit is limited as follows: \n1. Damage due to burglary shall be limited to the amount actually payable for"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 134,
+            "text": "cause \n21. Mysterious disappearance and Unexplained Losses \n22. Any loss or damage to the insured property or to the general public and/ or legal liability arising out of immoral or unethical use of insured property \n23. Damage to property not belonging to or held in trust by or in the custody or \ncontrol of the Insured \n24. Loss or damage to Livestock, Pedal Cycles, Motor Cycles and Vehicles of \nany description \n25. Loss or damage to contents due to Burglary or Theft where the insured or \nany of the insured\u2019s family is alleged to be concerned or implicated. \n26. Expenses incurred for maintenance of Electronic and Electrical \nEquipment and Domestic Appliances \n27. Contents kept in the open or outside the premises other than generator \nset, dish antennae, solar equipment \n28. Theft and Burglary Claims, if the premise is left unoccupied for more than \ncontinuous 30 days. \n29. Loss, destruction or damage to the contents or items in \nRefrigerator/Fridge or similar type of Cold Storage caused by change of \ntemperature. \n30. Ionizing radiations or contamination by radioactivity from any nuclear fuel or"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "excess_amount": 5000,
+          "claimed_amount": 60000,
+          "claim_status": "denied"
+        },
+        "result": {
+          "payout": 0.0
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "rationale": "The claim is denied because Section 3.3 of the policy wording explicitly excludes unforced entry, requiring forcible and violent entry for Burglary & Theft coverage. Since the back door was left unlocked with no signs of forced entry, no coverage applies.",
+          "payout": 0,
+          "claim_number": "CLM-2027-00206",
+          "claim_status": "denied"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00206'}) -> {\"claim_number\": \"CLM-2027-00206\", \"policy_id\": \"PROP-CONT-01\", \"sum_insured\": 400000, \"excess_amount\": 5000, \"claimed_amount\": 60000, \"adjuster_notes\": \"Insured's home was burgled overnight. The back door was left unlocked; there are no signs of forced or violent entry. Electronics were stolen from",
+      "iter 2: search_policy({'query': 'burglary theft forced and violent entry unlocked door contents insurance'}) -> [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 2, \"text\": \"ousehold contents including furniture, electronics, appliances, and\\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\\nCovers loss of contents due to forcible and violent entry. Un",
+      "iter 3: compute_payout({'excess_amount': 5000, 'claimed_amount': 60000, 'claim_status': 'denied'}) -> {\"payout\": 0.0}",
+      "iter 4: submit_decision -> {'rationale': 'The claim is denied because Section 3.3 of the policy wording explicitly excludes unforced entry, requiring forcible and violent entry for Burglary & Theft coverage. Since the back door was left unlocked with no signs of forced entry, no coverage applies.', 'payout': 0, 'claim_number': 'CLM-2027-00206', 'claim_status': 'denied'}"
+    ]
+  },
+  "CLM-2027-00207": {
+    "claim_number": "CLM-2027-00207",
+    "status": "covered",
+    "payout": 4500,
+    "rationale": "The claim is covered under glass breakage cover for a cracked windshield caused by a stone chip. Per policy guidelines, the standard \u20b91,000 compulsory deductible is waived since no other damage is claimed simultaneously.",
+    "iterations": 5,
+    "total_tokens": 14402,
+    "total_cost_usd": 0.0011242499999999998,
+    "elapsed_seconds": 45.50026020000223,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00207"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00207",
+          "policy_id": "MOTOR-COMP-04",
+          "sum_insured": 550000,
+          "excess_amount": 1000,
+          "claimed_amount": 4500,
+          "adjuster_notes": "Windshield cracked from a stone chip on the highway. Insured holds glass breakage cover and is not claiming any other damage."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "glass breakage cover deductible excess waiver windshield"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 73,
+            "text": "under the Policy. \nExclusions specific to Section A 2: All Risk: Structure related Coverage \nLoss or damage to the Structure on account of- 1. Its own natural heating or spontaneous combustion or undergoing any \nheating or drying process; \n2. any process of cleaning, dyeing or bleaching, restoring, repairing or \nrenovation or deterioration arising from wear and tear, moth, vermin , \nbirds, rodents, insects or mildew or any other gradually operating cause; \n3. breakage, cracking or scratching of glass (exce pt for breakage of fixed \nglass due to Accident), and similar articles of fragile nature; \n4. Total or partial cessation/retardation of any work, delay or other \nconsequential losses; \n5. Permanent or temporary dispossession resulting from confiscation, \nrequisition or destruction by any public authority or from unlawful \noccupation of such Dwelling or prevention of access to the same; \n6. Pressure waves by aircraft or other aerial devices; \n7. Coastal or river erosion; \n8. Demolition, construction, structural alterations or repair of any Dwelling \nor ground works or excavations;"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 120,
+            "text": "loading/unloading shall be excluded from the \nscope of cover \nIt is Your duty to provide prior written notice of the transit of Contents of the Dwelling insured being undertaken to Us, citing details of mode of \nconveyance, nature of packing, and other relevant details (including Lorry \nReceipt No./Airway Bill, etc. as may be applicable), prior to \ncommencement of such transit. \nWe will however not pay for loss or damage solely attributable to \ninsufficiency of packing. \nSubject otherwise to the coverage, terms and conditions and the claims \nprocedure as incorporated in the Policy and endorsed hereon \nLimits : the Contents cover under Section B \nDeductible : INR 5,000 on each and every claim \nClaims Documents specific to this add on cover \n1. Lorry receipt/airway bill/ Bill of lading \n2. Any other document as may be reasonably required by Us \nClaims Documents \n3. Immediate  intimation \n4. First Information  Report \n5. Any other document as may be reasonably required by Us \nB.9 Extension: Work from Home cover of Employer Assets in custody of Insured \nIn consideration of payment of additional premium, we will reimburse"
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident)."
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "glass breakage cover"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 102,
+            "text": "cover, the Contents covered hereunder are covered against all loss or \ndamage due to and resulting from an Accident subject, however, to the general exclusions as applicable under the Policy. \nExclusions specific to Section B 2: All Risk: Content related Coverage \n1. Mechanical and/or electrical breakdown to any contents; \n2. Manufacturing defects in electrical, mechanical and electronic Items for \nwhich the manufacturer is responsible. \n3. Improper handling, dismantling, fitting adjustment, repair alteration or \nmodification not approved by the makers/ manufacturers  and/or the \nagents of makers /manufacturers or use of such property contrary to the \ndirectives of the makers /manufacturers  and/or his agents. \n4. Breakage, cracking or scratching of crockery, glass, cameras, binoculars, \nlenses, musical instruments, sports gear and similar articles of brittle or \nfragile nature, unless caused by fire or accidental external means \n5. Over winding, denting or internal damage of watches and clocks \n6. Loss of Insured Premises from safe inside insured \u201cBuilding\u201d, following"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 73,
+            "text": "under the Policy. \nExclusions specific to Section A 2: All Risk: Structure related Coverage \nLoss or damage to the Structure on account of- 1. Its own natural heating or spontaneous combustion or undergoing any \nheating or drying process; \n2. any process of cleaning, dyeing or bleaching, restoring, repairing or \nrenovation or deterioration arising from wear and tear, moth, vermin , \nbirds, rodents, insects or mildew or any other gradually operating cause; \n3. breakage, cracking or scratching of glass (exce pt for breakage of fixed \nglass due to Accident), and similar articles of fragile nature; \n4. Total or partial cessation/retardation of any work, delay or other \nconsequential losses; \n5. Permanent or temporary dispossession resulting from confiscation, \nrequisition or destruction by any public authority or from unlawful \noccupation of such Dwelling or prevention of access to the same; \n6. Pressure waves by aircraft or other aerial devices; \n7. Coastal or river erosion; \n8. Demolition, construction, structural alterations or repair of any Dwelling \nor ground works or excavations;"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 131,
+            "text": "is policy falling under \nthe terms of the maintenance agreement \n6. Improper handling, dismantling, fitting adjustment, repair alteration or modification not approved by the makers/manufacturers and/or the \nagents of makers/manufacturers or use of such property contrary to the \ndirectives of the makers/manufacturers  and/or his agents \n7. Breakage, Cracking or Scratching of Crockery, Glass, Cameras, \nBinoculars, Lenses, Musical Instruments, Sports Gear and similar articles \nof brittle or fragile nature, unless caused by fire or accidental external \nmeans. \n8. Any kind of willful negligence or misconduct or contractual liability or \nindirect and/or consequential  losses; \n9. Overloading or Strain, Overrunning E xcessive Pressure, Short Circuiting \nand / Self Heating or test requiring imposition of abnormal conditions. \n10. Over Winding, Denting or Internal Damage of Watches and Clocks. \n11. Loss or Damage liable to be repaired or made good by a third party under \nany contract of agreement \n12. Loss or damage to Money, Securities, Manuscript, Deeds, Bonds, Bills of"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_status": "covered",
+          "excess_amount": 0,
+          "claimed_amount": 4500
+        },
+        "result": {
+          "payout": 4500
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "claim_number": "CLM-2027-00207",
+          "claim_status": "covered",
+          "rationale": "The claim is covered under glass breakage cover for a cracked windshield caused by a stone chip. Per policy guidelines, the standard \u20b91,000 compulsory deductible is waived since no other damage is claimed simultaneously.",
+          "payout": 4500
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00207'}) -> {\"claim_number\": \"CLM-2027-00207\", \"policy_id\": \"MOTOR-COMP-04\", \"sum_insured\": 550000, \"excess_amount\": 1000, \"claimed_amount\": 4500, \"adjuster_notes\": \"Windshield cracked from a stone chip on the highway. Insured holds glass breakage cover and is not claiming any other damage.\"}",
+      "iter 2: search_policy({'query': 'glass breakage cover deductible excess waiver windshield'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 3, \"text\": \"ge. For **cashless**\\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\\nA: If you have **glass breakage** cover",
+      "iter 3: search_policy({'query': 'glass breakage cover'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 3, \"text\": \"ge. For **cashless**\\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\\nA: If you have **glass breakage** cover",
+      "iter 4: compute_payout({'claim_status': 'covered', 'excess_amount': 0, 'claimed_amount': 4500}) -> {\"payout\": 4500}",
+      "iter 5: submit_decision -> {'claim_number': 'CLM-2027-00207', 'claim_status': 'covered', 'rationale': 'The claim is covered under glass breakage cover for a cracked windshield caused by a stone chip. Per policy guidelines, the standard \u20b91,000 compulsory deductible is waived since no other damage is claimed simultaneously.', 'payout': 4500}"
+    ]
+  },
+  "CLM-2027-00208": {
+    "claim_number": "CLM-2027-00208",
+    "status": "pending",
+    "payout": 0,
+    "rationale": "The vehicle theft claim cannot be settled without a Non-Traceable Certificate from the police. As this required document has not yet been issued, the claim status is set to pending until it is provided.",
+    "iterations": 4,
+    "total_tokens": 9056,
+    "total_cost_usd": 0.0007201499999999999,
+    "elapsed_seconds": 73.30804820000776,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00208"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00208",
+          "policy_id": "MOTOR-COMP-05",
+          "sum_insured": 800000,
+          "excess_amount": 1000,
+          "claimed_amount": 800000,
+          "adjuster_notes": "Insured's vehicle was stolen from a parking lot 95 days ago. Police have not yet issued a Non-Traceable Certificate."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "theft vehicle Non-Traceable Certificate police missing stolen"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 134,
+            "text": "cause \n21. Mysterious disappearance and Unexplained Losses \n22. Any loss or damage to the insured property or to the general public and/ or legal liability arising out of immoral or unethical use of insured property \n23. Damage to property not belonging to or held in trust by or in the custody or \ncontrol of the Insured \n24. Loss or damage to Livestock, Pedal Cycles, Motor Cycles and Vehicles of \nany description \n25. Loss or damage to contents due to Burglary or Theft where the insured or \nany of the insured\u2019s family is alleged to be concerned or implicated. \n26. Expenses incurred for maintenance of Electronic and Electrical \nEquipment and Domestic Appliances \n27. Contents kept in the open or outside the premises other than generator \nset, dish antennae, solar equipment \n28. Theft and Burglary Claims, if the premise is left unoccupied for more than \ncontinuous 30 days. \n29. Loss, destruction or damage to the contents or items in \nRefrigerator/Fridge or similar type of Cold Storage caused by change of \ntemperature. \n30. Ionizing radiations or contamination by radioactivity from any nuclear fuel or"
+          },
+          {
+            "source": "claims_process.md",
+            "chunk_index": 1,
+            "text": "cious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended. ### Step 3 \u2014 Document the Loss\nCollect and preserve:\n- Photographs of damaged vehicle/property from multiple angles\n- Repair estimates from authorised service centres or contractors\n- Medical bills and reports (for personal accident claims)\n- Witness statements, if available\n\n### Step 4 \u2014 Submit the Claim Form\nComplete the **Claim Intimation Form** and submit within **15 days** of the incident\nalong with the following documents:\n\n**For Motor Claims:**\n- Duly signed claim form\n- Copy of Registration Certificate (RC)\n- Copy of valid Driving Licence\n- Copy of insurance policy / certificate\n- FIR copy (if applicable)\n- Repair estimate from garage\n\n**For Property Claims:**\n- Duly signed claim form\n- Copy of insurance policy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement)"
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 2,
+            "text": "ousehold contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\nCovers loss of contents due to forcible and violent entry. Unforced entry is\n**not covered**. Cash limit: \u20b925,000 per incident.\n\n---\n\n## Section 4 \u2014 Policy Limits and Deductibles\n\n| Coverage | Sum Insured | Compulsory Deductible |\n|----------|-------------|----------------------|\n| Third-Party Liability | Unlimited (BI) / \u20b97.5 lakh (PD) | Nil |\n| Own-Damage Motor | As declared | \u20b91,000 (private car) |\n| Building | As declared | 1% of claim min \u20b910,000 |\n| Contents | As declared | \u20b92,500 |\n| Burglary & Theft | As declared | \u20b95,000 |\n\nA **voluntary deductible** of \u20b92,500, \u20b95,000, or \u20b910,000 may be chosen for a premium\ndiscount of 10%, 15%, or 20% respectively.\n\n---\n\n## Section 5 \u2014 Policy Period & Renewal\n\n- Motor policies: **1 year**, renewable annually.\n- Property policies: **1 year**, renewable annually.\n- Long-term motor (2 or 3 years) available for new vehicles at a 5% discount.\n- Coverage lapses if the premium is not paid within the **15-day grace period**."
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claim_status": "pending",
+          "claimed_amount": 800000,
+          "excess_amount": 1000
+        },
+        "result": {
+          "payout": 0.0
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "payout": 0,
+          "claim_status": "pending",
+          "rationale": "The vehicle theft claim cannot be settled without a Non-Traceable Certificate from the police. As this required document has not yet been issued, the claim status is set to pending until it is provided.",
+          "claim_number": "CLM-2027-00208"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00208'}) -> {\"claim_number\": \"CLM-2027-00208\", \"policy_id\": \"MOTOR-COMP-05\", \"sum_insured\": 800000, \"excess_amount\": 1000, \"claimed_amount\": 800000, \"adjuster_notes\": \"Insured's vehicle was stolen from a parking lot 95 days ago. Police have not yet issued a Non-Traceable Certificate.\"}",
+      "iter 2: search_policy({'query': 'theft vehicle Non-Traceable Certificate police missing stolen'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 3, \"text\": \"ge. For **cashless**\\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\\nA: If you have **glass breakage** cover",
+      "iter 3: compute_payout({'claim_status': 'pending', 'claimed_amount': 800000, 'excess_amount': 1000}) -> {\"payout\": 0.0}",
+      "iter 4: submit_decision -> {'payout': 0, 'claim_status': 'pending', 'rationale': 'The vehicle theft claim cannot be settled without a Non-Traceable Certificate from the police. As this required document has not yet been issued, the claim status is set to pending until it is provided.', 'claim_number': 'CLM-2027-00208'}"
+    ]
+  },
+  "CLM-2027-00209": {
+    "claim_number": "CLM-2027-00209",
+    "status": null,
+    "payout": null,
+    "rationale": null,
+    "iterations": 8,
+    "total_tokens": 36151,
+    "total_cost_usd": 0.002757,
+    "elapsed_seconds": 53.13865879998775,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "search_policy",
+      "search_policy",
+      "search_policy",
+      "search_policy",
+      "search_policy",
+      "search_policy"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00209"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00209",
+          "policy_id": "MOTOR-COMP-06",
+          "sum_insured": 450000,
+          "excess_amount": 1000,
+          "claimed_amount": 65000,
+          "adjuster_notes": "Insured collided with a divider late at night. Breathalyzer report on file confirms the insured was driving under the influence of alcohol at the time of the accident."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "driving under the influence alcohol exclusion"
+        },
+        "result": [
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 64,
+            "text": "cover also includes loss, damage, cost or expense directly caused by, \nresulting from or in connection with any action taken in suppressing, controlling, preventing or minimizing the cons equences of an act of terrorism by \nthe duly empowered government or Military Authority. \nProvided that if the Insured is eligible for indemnity under any government \ncompensation plan or other similar scheme in respect of the damage \ndescribed above, this Pol icy shall be excess of any recovery due from such \nplan or scheme. \nFor the purpose of the aforesaid inclusion clause, \"Military Authority\" shall \nmean armed forces, para military forces, police or any other authority \nconstituted by the government for maintaining law and order. \nLOSSES EXCLUDED \nThis cover shall not indemnify loss of or damage to property caused by any or \nall of the following:- \n1. Loss by seizure or legal or illegal occupation; \n2. Loss or damage caused by: \na. Voluntary abandonment or vacation, \nb. Confiscation, commandeering, nationalisation, requisition, \ndetention, embargo, quarantine, or any result of any order of public or"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 94,
+            "text": "orism  by \nthe duly empowered government or Military Authority. \nProvided that If the Insured is eligible for indemnity under any government compensation plan or other similar scheme in respect of the damage \ndescribed above, this Policy shall be excess of any recovery due from such \nplan or scheme. \nFor the purpose of the aforesaid inclusion clause, \"Military Authority\" shall \nmean armed forces, para military forces, police or any  other authority \nconstituted by the government for maintaining law and order. \nExclusions specific to Section A3: Terrorism Cover \nThis cover shall not indemnify loss of or damage to property caused by any or \nall of the following:- \n1. loss by seizure or legal or illegal occupation; \n2. loss or damage caused by: \ni. voluntary  abandonment  or vacation, \nii. confiscation, commandeering, nationalisation, requisition, detention, \nembargo, quarantine, or any result of any order of public or \ngovernment authority, which deprives the Insured of the use or value of \nits property; \n3. loss or damage arising from acts of contraband or illegal transportation or \nillegal trade;"
+          },
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 117,
+            "text": "er vertebral disc unless arising from Accident \nl) Surgery of varicose veins and varicose ulcers \nm) Any types of gastric or duodenal ulcers n) Stones in the urinary and biliary systems \no) Surgery on ears and tonsils. \np) Genetic Disorders  \n \nc) 30 days waiting period Excl -03 \na) Expenses related to the treatment of any illness within 30 days from the first policy \ncommencement date shall be excluded except claims arising due to an accident, provided the \nsame are covered. \nb) This exclusion shall not, however, apply if the Insured Person has Continuous Coverage for more \nthan twelve months. \nc) The within referred waiting period is made applicable to the enhanced sum insured in the event \nof granting higher sum insured subsequently."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 1,
+            "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price."
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "motor policy exclusions alcohol intoxication under influence"
+        },
+        "result": [
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 121,
+            "text": "a -jumping, rock climbing, \nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \ndeep-sea diving Health Elite I Policy Wordings \nUIN: GCIHLIP22234V012122                                                                                    Page No. 33 \ng) Breach of law: Code- Excl10 \nExpenses for treatment directly arising from or consequent upon any Insured Person committing \nor attempting to commit a breach of law with criminal intent. \n \nh) Excluded Providers: Code- Excl11 \nExpenses incurred towards treatment in any hospital or by any Medical Practitioner or any other \nprovider specifically excluded by Us and disclosed in Our website/ notified to the policyholders \nare not admissible. However, in case of life-threatening situations or following an accident, \nexpenses up to the stage of stabilization are payable but not the complete claim.  \n \ni) Code- Excl12 \nTreatment for, Alcoholism, drug or substance abuse or any addictive condition and \nconsequences thereof. \n \nj) Code- Excl13 \nTreatments received in heath hydros, nature cure clinics, spas or similar establishments or"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 64,
+            "text": "cover also includes loss, damage, cost or expense directly caused by, \nresulting from or in connection with any action taken in suppressing, controlling, preventing or minimizing the cons equences of an act of terrorism by \nthe duly empowered government or Military Authority. \nProvided that if the Insured is eligible for indemnity under any government \ncompensation plan or other similar scheme in respect of the damage \ndescribed above, this Pol icy shall be excess of any recovery due from such \nplan or scheme. \nFor the purpose of the aforesaid inclusion clause, \"Military Authority\" shall \nmean armed forces, para military forces, police or any other authority \nconstituted by the government for maintaining law and order. \nLOSSES EXCLUDED \nThis cover shall not indemnify loss of or damage to property caused by any or \nall of the following:- \n1. Loss by seizure or legal or illegal occupation; \n2. Loss or damage caused by: \na. Voluntary abandonment or vacation, \nb. Confiscation, commandeering, nationalisation, requisition, \ndetention, embargo, quarantine, or any result of any order of public or"
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Comprehensive Motor & Property Policy Overview\n\n**Policy Series:** CMP-2024 \u00b7 **Effective:** 1 January 2024 \u00b7 **Issuer:** ABC Insurance Ltd\n\n---\n\n## Section 1 \u2014 Who Is Covered\n\nThe policy covers the **named insured** and any **additional insured** listed on the\nDeclarations Page. Family members residing in the same household are automatically\ncovered under personal-lines motor policies.\n\n---\n\n## Section 2 \u2014 Motor Insurance Coverage\n\n### 2.1 Third-Party Liability\nCovers legal liability to third parties for:\n- Bodily injury or death arising from use of the insured vehicle.\n- Property damage caused to a third party's vehicle or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 94,
+            "text": "orism  by \nthe duly empowered government or Military Authority. \nProvided that If the Insured is eligible for indemnity under any government compensation plan or other similar scheme in respect of the damage \ndescribed above, this Policy shall be excess of any recovery due from such \nplan or scheme. \nFor the purpose of the aforesaid inclusion clause, \"Military Authority\" shall \nmean armed forces, para military forces, police or any  other authority \nconstituted by the government for maintaining law and order. \nExclusions specific to Section A3: Terrorism Cover \nThis cover shall not indemnify loss of or damage to property caused by any or \nall of the following:- \n1. loss by seizure or legal or illegal occupation; \n2. loss or damage caused by: \ni. voluntary  abandonment  or vacation, \nii. confiscation, commandeering, nationalisation, requisition, detention, \nembargo, quarantine, or any result of any order of public or \ngovernment authority, which deprives the Insured of the use or value of \nits property; \n3. loss or damage arising from acts of contraband or illegal transportation or \nillegal trade;"
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "Motor Insurance Coverage exclusions intoxicating liquor drugs"
+        },
+        "result": [
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 165,
+            "text": "ric conditions would be restricted either up to the sum insured, or \nmaximum of Rs. 1,00,00,000, which ever lower  \na) F01 Vascular dementia Health Elite I Policy Wordings \nUIN: GCIHLIP22234V012122                                                                                    Page No. 44 \nb) F20 Schizophrenia \nc) F30 Manic episode \nd) F31 Bipolar affective disorder \ne) F32-33 Depressive disorders \nf) F41 Other anxiety disorders \ng) F50 Eating disorders \nh) F60 Specific personality disorders \ni) F84 Pervasive developmental disorders \nj) F40.9 Phobic anxiety disorder, unspecified \nk) F05 Delirium, not induced by alcohol and other psychoactive substances \n  \nd) Claims related to Any One Illness: All claims relating to Any One Illness shall be deemed to be \npart of the same original claim. \n \ne) Claims for Day Care Treatment: The Day Care Treatments listed at Annexure II are subject to \nthe exclusions, terms and conditions of the Policy and will not be treated as independent \ncoverage under the Policy. \n \nf) The payment of any claim under Benefit 2 (Medical Treatment Abroad), Benefit 3 (Emergency"
+          },
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 121,
+            "text": "a -jumping, rock climbing, \nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \ndeep-sea diving Health Elite I Policy Wordings \nUIN: GCIHLIP22234V012122                                                                                    Page No. 33 \ng) Breach of law: Code- Excl10 \nExpenses for treatment directly arising from or consequent upon any Insured Person committing \nor attempting to commit a breach of law with criminal intent. \n \nh) Excluded Providers: Code- Excl11 \nExpenses incurred towards treatment in any hospital or by any Medical Practitioner or any other \nprovider specifically excluded by Us and disclosed in Our website/ notified to the policyholders \nare not admissible. However, in case of life-threatening situations or following an accident, \nexpenses up to the stage of stabilization are payable but not the complete claim.  \n \ni) Code- Excl12 \nTreatment for, Alcoholism, drug or substance abuse or any addictive condition and \nconsequences thereof. \n \nj) Code- Excl13 \nTreatments received in heath hydros, nature cure clinics, spas or similar establishments or"
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Comprehensive Motor & Property Policy Overview\n\n**Policy Series:** CMP-2024 \u00b7 **Effective:** 1 January 2024 \u00b7 **Issuer:** ABC Insurance Ltd\n\n---\n\n## Section 1 \u2014 Who Is Covered\n\nThe policy covers the **named insured** and any **additional insured** listed on the\nDeclarations Page. Family members residing in the same household are automatically\ncovered under personal-lines motor policies.\n\n---\n\n## Section 2 \u2014 Motor Insurance Coverage\n\n### 2.1 Third-Party Liability\nCovers legal liability to third parties for:\n- Bodily injury or death arising from use of the insured vehicle.\n- Property damage caused to a third party's vehicle or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 1,
+            "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price."
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "General Exclusions motor vehicle driver influence alcohol drugs"
+        },
+        "result": [
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 1,
+            "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 64,
+            "text": "cover also includes loss, damage, cost or expense directly caused by, \nresulting from or in connection with any action taken in suppressing, controlling, preventing or minimizing the cons equences of an act of terrorism by \nthe duly empowered government or Military Authority. \nProvided that if the Insured is eligible for indemnity under any government \ncompensation plan or other similar scheme in respect of the damage \ndescribed above, this Pol icy shall be excess of any recovery due from such \nplan or scheme. \nFor the purpose of the aforesaid inclusion clause, \"Military Authority\" shall \nmean armed forces, para military forces, police or any other authority \nconstituted by the government for maintaining law and order. \nLOSSES EXCLUDED \nThis cover shall not indemnify loss of or damage to property caused by any or \nall of the following:- \n1. Loss by seizure or legal or illegal occupation; \n2. Loss or damage caused by: \na. Voluntary abandonment or vacation, \nb. Confiscation, commandeering, nationalisation, requisition, \ndetention, embargo, quarantine, or any result of any order of public or"
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Comprehensive Motor & Property Policy Overview\n\n**Policy Series:** CMP-2024 \u00b7 **Effective:** 1 January 2024 \u00b7 **Issuer:** ABC Insurance Ltd\n\n---\n\n## Section 1 \u2014 Who Is Covered\n\nThe policy covers the **named insured** and any **additional insured** listed on the\nDeclarations Page. Family members residing in the same household are automatically\ncovered under personal-lines motor policies.\n\n---\n\n## Section 2 \u2014 Motor Insurance Coverage\n\n### 2.1 Third-Party Liability\nCovers legal liability to third parties for:\n- Bodily injury or death arising from use of the insured vehicle.\n- Property damage caused to a third party's vehicle or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act."
+          },
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 117,
+            "text": "er vertebral disc unless arising from Accident \nl) Surgery of varicose veins and varicose ulcers \nm) Any types of gastric or duodenal ulcers n) Stones in the urinary and biliary systems \no) Surgery on ears and tonsils. \np) Genetic Disorders  \n \nc) 30 days waiting period Excl -03 \na) Expenses related to the treatment of any illness within 30 days from the first policy \ncommencement date shall be excluded except claims arising due to an accident, provided the \nsame are covered. \nb) This exclusion shall not, however, apply if the Insured Person has Continuous Coverage for more \nthan twelve months. \nc) The within referred waiting period is made applicable to the enhanced sum insured in the event \nof granting higher sum insured subsequently."
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "CMP-2024 Motor Insurance Coverage Own Damage Section 2.2 Exclusions"
+        },
+        "result": [
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Comprehensive Motor & Property Policy Overview\n\n**Policy Series:** CMP-2024 \u00b7 **Effective:** 1 January 2024 \u00b7 **Issuer:** ABC Insurance Ltd\n\n---\n\n## Section 1 \u2014 Who Is Covered\n\nThe policy covers the **named insured** and any **additional insured** listed on the\nDeclarations Page. Family members residing in the same household are automatically\ncovered under personal-lines motor policies.\n\n---\n\n## Section 2 \u2014 Motor Insurance Coverage\n\n### 2.1 Third-Party Liability\nCovers legal liability to third parties for:\n- Bodily injury or death arising from use of the insured vehicle.\n- Property damage caused to a third party's vehicle or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act."
+          },
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 1,
+            "text": "or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\nCovers accidental damage, fire, theft, natural calamities (flood, earthquake,\ncyclone), malicious damage, and riots. **Not covered:** normal wear and tear,\nmechanical or electrical breakdown, consequential loss.\n\n### 2.3 Personal Accident Cover\n- Accidental death or permanent total disability of the owner-driver: **\u20b915 lakh**.\n- Hospital cash benefit: **\u20b92,000 per day** up to 30 days.\n\n---\n\n## Section 3 \u2014 Property Insurance Coverage\n\n### 3.1 Building Cover\nCovers the structure against fire, lightning, explosion/implosion, aircraft damage,\nriot and strike, storm, flood, inundation, earthquake, and impact damage.\n**Basis of settlement:** Reinstatement value (new for old).\n\n### 3.2 Contents Cover\nCovers household contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident)."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 64,
+            "text": "cover also includes loss, damage, cost or expense directly caused by, \nresulting from or in connection with any action taken in suppressing, controlling, preventing or minimizing the cons equences of an act of terrorism by \nthe duly empowered government or Military Authority. \nProvided that if the Insured is eligible for indemnity under any government \ncompensation plan or other similar scheme in respect of the damage \ndescribed above, this Pol icy shall be excess of any recovery due from such \nplan or scheme. \nFor the purpose of the aforesaid inclusion clause, \"Military Authority\" shall \nmean armed forces, para military forces, police or any other authority \nconstituted by the government for maintaining law and order. \nLOSSES EXCLUDED \nThis cover shall not indemnify loss of or damage to property caused by any or \nall of the following:- \n1. Loss by seizure or legal or illegal occupation; \n2. Loss or damage caused by: \na. Voluntary abandonment or vacation, \nb. Confiscation, commandeering, nationalisation, requisition, \ndetention, embargo, quarantine, or any result of any order of public or"
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "Section General Exclusions CMP-2024 ABC Insurance"
+        },
+        "result": [
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Comprehensive Motor & Property Policy Overview\n\n**Policy Series:** CMP-2024 \u00b7 **Effective:** 1 January 2024 \u00b7 **Issuer:** ABC Insurance Ltd\n\n---\n\n## Section 1 \u2014 Who Is Covered\n\nThe policy covers the **named insured** and any **additional insured** listed on the\nDeclarations Page. Family members residing in the same household are automatically\ncovered under personal-lines motor policies.\n\n---\n\n## Section 2 \u2014 Motor Insurance Coverage\n\n### 2.1 Third-Party Liability\nCovers legal liability to third parties for:\n- Bodily injury or death arising from use of the insured vehicle.\n- Property damage caused to a third party's vehicle or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act."
+          },
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 127,
+            "text": "ization period and attendant \nnursing charges, except to the extent covered under  Benefit 4 (OPD Treatment) and  Benefit 5 \n(Patient Care). n) Intentional self-Injury. \no) Standard list of excluded items as mentioned in Annexure III and on our \nwebsite  https://generalicentralinsurance.com  \np) Any specific exclusion(s) applied by Us, specified in the Schedule and accepted by the Insured \nPerson. \nq) Treatment outside India except as specified under Benefit 2 (Medical Treatment abroad), Benefit 3 \n(Emergency Ambulance Expenses) and Benefit 14 (Repatriation of mortal remains) \n \nV. GENERAL TERMS AND CLAUSES \n \n1) Standard General Terms and Clauses  \n \n1. Disclosure to Information Norm \nThe policy shall be void and all premium paid thereon shall be forfeited to the Company in the event \nof misrepresentation, mis-description or non-disclosure of any material fact. \n(Explanation: \"Material facts\" for the purpose of this policy shall mean all relevant information sought \nby the company in the proposal form and other connected documents to enable it to take informed \ndecision in the context of underwriting the risk)"
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 6,
+            "text": "s) of continuous coverage with ABC Insurance. Specific diseases such as\ncataracts and joint replacements have a **24-month waiting period**. **Q: What is covered under the Personal Accident policy?**\nA: The policy covers Accidental Death (100% sum insured), Permanent Total Disability\n(100%), Permanent Partial Disability (as per schedule), and Temporary Total\nDisability (1% of sum insured per week, up to 100 weeks). Medical expenses\nfollowing an accident are covered up to 40% of the sum insured."
+          },
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 118,
+            "text": "The within referred waiting period is made applicable to the enhanced sum insured in the event \nof granting higher sum insured subsequently. Health Elite I Policy Wordings \nUIN: GCIHLIP22234V012122                                                                                    Page No. 32 \nB. Standard Exclusions \n1. Exclusions applicable for all Benefits \nWe will not pay for any claims made under the Policy in respect of the Insured Person, caused by, \narising out of or howsoever related to any of the following: \n \na) Investigation & Evaluation- Code- Excl04 \ni. Expenses related to any admission primarily for diagnostics and evaluation purposes only \nare excluded. \nii. Any diagnostic expenses which are not related or not incidental to the current diagnosis and \ntreatment are excluded.  \n       Please note that this exclusion will not be applicable for Benefit 4 (OPD Treatment). \n \nb) Rest Cure, rehabilitation and respite care- Code- Excl05 \nExpenses related to any admission primarily for enforced bed rest and not for receiving \ntreatment. This also includes:"
+          }
+        ]
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "claims_faq.md alcohol drink driving drunk influence"
+        },
+        "result": [
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 121,
+            "text": "a -jumping, rock climbing, \nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \ndeep-sea diving Health Elite I Policy Wordings \nUIN: GCIHLIP22234V012122                                                                                    Page No. 33 \ng) Breach of law: Code- Excl10 \nExpenses for treatment directly arising from or consequent upon any Insured Person committing \nor attempting to commit a breach of law with criminal intent. \n \nh) Excluded Providers: Code- Excl11 \nExpenses incurred towards treatment in any hospital or by any Medical Practitioner or any other \nprovider specifically excluded by Us and disclosed in Our website/ notified to the policyholders \nare not admissible. However, in case of life-threatening situations or following an accident, \nexpenses up to the stage of stabilization are payable but not the complete claim.  \n \ni) Code- Excl12 \nTreatment for, Alcoholism, drug or substance abuse or any addictive condition and \nconsequences thereof. \n \nj) Code- Excl13 \nTreatments received in heath hydros, nature cure clinics, spas or similar establishments or"
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Claims FAQ\n\n## General Claims\n\n**Q: How soon must I report a claim?**\nA: For theft, report within 24 hours. For all other claims (accident, fire, flood,\nburglary), report within 7 days of the incident. Delayed reporting may lead to\nrepudiation unless you provide a valid written reason for the delay.\n\n**Q: Can I get a claim settled in cash?**\nA: Yes, via the reimbursement route. You pay the repairer, then submit original\nbills to ABC Insurance. Settlement is by NEFT to your registered bank account\nwithin 30 days of document submission. Alternatively, use a network garage for a\ncashless settlement where we pay the garage directly."
+          },
+          {
+            "source": "claims_process.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Claims Process Guide\n\n---\n\n## How to File a Claim\n\n### Step 1 \u2014 Notify the Insurer Immediately\nReport the incident to ABC Insurance within **24 hours** for theft claims and\nwithin **7 days** for all other claims. You can notify via:\n- **Toll-free helpline:** 1800-XXX-XXXX (24 \u00d7 7)\n- **Mobile app:** \"ABC Insurance\" \u2192 Raise a Claim\n- **Email:** claims@abcinsurance.in\n- **Nearest branch office**\n\nFailure to notify within the stipulated period may result in the claim being\n**repudiated** unless a valid reason for delay is provided.\n\n### Step 2 \u2014 File an FIR (where applicable)\nAn FIR (First Information Report) with the local police is **mandatory** for:\n- Theft of vehicle or property\n- Third-party bodily injury or death\n- Riots, malicious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended."
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 2,
+            "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2) Submit a representation\nto the Grievance Cell at grievance@abcinsurance.in within 15 days. 3) If unresolved,\napproach the Insurance Ombudsman in your city. 4) File a complaint on IRDAI's IGMS\nportal (igms.irda.gov.in).\n\n---\n\n## Motor Claims\n\n**Q: My car was damaged in a flood. Is it covered?**\nA: Yes, if you hold a **Comprehensive (Own-Damage)** policy. Flood is a natural\ncalamity and is covered. Engine damage due to water ingression is covered only if\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\nengine hydrostatic lock is excluded.\n\n**Q: Can I take my car to any garage?**\nA: For **reimbursement** claims, yes \u2014 any registered garage. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website."
+          }
+        ]
+      }
+    ],
+    "terminated_by_budget": "max_tokens",
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00209'}) -> {\"claim_number\": \"CLM-2027-00209\", \"policy_id\": \"MOTOR-COMP-06\", \"sum_insured\": 450000, \"excess_amount\": 1000, \"claimed_amount\": 65000, \"adjuster_notes\": \"Insured collided with a divider late at night. Breathalyzer report on file confirms the insured was driving under the influence of alcohol at the",
+      "iter 2: search_policy({'query': 'driving under the influence alcohol exclusion'}) -> [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 64, \"text\": \"cover also includes loss, damage, cost or expense directly caused by, \\nresulting from or in connection with any action taken in suppressing, controlling, preventing or",
+      "iter 3: search_policy({'query': 'motor policy exclusions alcohol intoxication under influence'}) -> [{\"source\": \"health-elite-policy-wording.pdf\", \"chunk_index\": 121, \"text\": \"a -jumping, rock climbing, \\nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \\ndeep-sea diving Health Elite I Policy Wordings \\nUIN: GCIHLIP22234V012122                        ",
+      "iter 4: search_policy({'query': 'Motor Insurance Coverage exclusions intoxicating liquor drugs'}) -> [{\"source\": \"health-elite-policy-wording.pdf\", \"chunk_index\": 165, \"text\": \"ric conditions would be restricted either up to the sum insured, or \\nmaximum of Rs. 1,00,00,000, which ever lower  \\na) F01 Vascular dementia Health Elite I Policy Wordings \\nUIN: GCIHLIP22234V012122                        ",
+      "iter 5: search_policy({'query': 'General Exclusions motor vehicle driver influence alcohol drugs'}) -> [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 1, \"text\": \"damage due to water ingression, mechanical/electrical failure,\\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \\u2014 Engine & Gearbox Protection\\n- **What it does:** Covers damage to the en",
+      "iter 6: search_policy({'query': 'CMP-2024 Motor Insurance Coverage Own Damage Section 2.2 Exclusions'}) -> [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 0, \"text\": \"# ABC Insurance \\u2014 Comprehensive Motor & Property Policy Overview\\n\\n**Policy Series:** CMP-2024 \\u00b7 **Effective:** 1 January 2024 \\u00b7 **Issuer:** ABC Insurance Ltd\\n\\n---\\n\\n## Section 1 \\u2014 Who Is Covered\\n\\nThe po",
+      "iter 7: search_policy({'query': 'Section General Exclusions CMP-2024 ABC Insurance'}) -> [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 0, \"text\": \"# ABC Insurance \\u2014 Comprehensive Motor & Property Policy Overview\\n\\n**Policy Series:** CMP-2024 \\u00b7 **Effective:** 1 January 2024 \\u00b7 **Issuer:** ABC Insurance Ltd\\n\\n---\\n\\n## Section 1 \\u2014 Who Is Covered\\n\\nThe po",
+      "iter 8: search_policy({'query': 'claims_faq.md alcohol drink driving drunk influence'}) -> [{\"source\": \"health-elite-policy-wording.pdf\", \"chunk_index\": 121, \"text\": \"a -jumping, rock climbing, \\nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \\ndeep-sea diving Health Elite I Policy Wordings \\nUIN: GCIHLIP22234V012122                        ",
+      "BUDGET EXCEEDED before iteration 9: budget exceeded: max_tokens (36151 > 30000)"
+    ]
   }
 }
