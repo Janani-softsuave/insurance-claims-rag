@@ -1072,5 +1072,94 @@
       "iter 8: search_policy({'query': 'claims_faq.md alcohol drink driving drunk influence'}) -> [{\"source\": \"health-elite-policy-wording.pdf\", \"chunk_index\": 121, \"text\": \"a -jumping, rock climbing, \\nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \\ndeep-sea diving Health Elite I Policy Wordings \\nUIN: GCIHLIP22234V012122                        ",
       "BUDGET EXCEEDED before iteration 9: budget exceeded: max_tokens (36151 > 30000)"
     ]
+  },
+  "CLM-2027-00210": {
+    "claim_number": "CLM-2027-00210",
+    "status": "covered",
+    "payout": 140000,
+    "rationale": "Impact damage from a falling tree during a storm is covered under standard building cover. The claimed amount of \u20b9150,000 less the deductible excess of \u20b910,000 yields a net payout of \u20b9140,000.",
+    "iterations": 4,
+    "total_tokens": 9573,
+    "total_cost_usd": 0.00076275,
+    "elapsed_seconds": 33.05670050001936,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00210"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00210",
+          "policy_id": "PROP-BLDG-03",
+          "sum_insured": 2800000,
+          "excess_amount": 10000,
+          "claimed_amount": 150000,
+          "adjuster_notes": "A large tree fell onto the roof during a storm, causing impact damage. Standard building cover, no endorsements."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "storm falling tree roof impact damage building cover"
+        },
+        "result": [
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 1,
+            "text": "or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\nCovers accidental damage, fire, theft, natural calamities (flood, earthquake,\ncyclone), malicious damage, and riots. **Not covered:** normal wear and tear,\nmechanical or electrical breakdown, consequential loss.\n\n### 2.3 Personal Accident Cover\n- Accidental death or permanent total disability of the owner-driver: **\u20b915 lakh**.\n- Hospital cash benefit: **\u20b92,000 per day** up to 30 days.\n\n---\n\n## Section 3 \u2014 Property Insurance Coverage\n\n### 3.1 Building Cover\nCovers the structure against fire, lightning, explosion/implosion, aircraft damage,\nriot and strike, storm, flood, inundation, earthquake, and impact damage.\n**Basis of settlement:** Reinstatement value (new for old).\n\n### 3.2 Contents Cover\nCovers household contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 17,
+            "text": "destruction caused \nto the Insured Property \n6 Subsidence of the land on which \nYour Home Building stands, \nLandslide, Rockslide \ncaused by a. normal cracking, settlement \nor bedding down of new \nstructures, \nb. the settlement or \nmovement of made up \nground, \nc. coastal or river erosion, \nd. defective design or \nworkmanship or use of \ndefective materials, or \ne. demolition, construction, \nstructural alterations or \nrepair of any property, or \ngroundworks or xcavations. \n7 Bush fire, Forest fire, Jungle fire - \n8 Impact damage of any kind, i.e., \ndamage caused by impact of, or \ncollision caused by any external \nphysical object (e.g. vehicle, \nfalling trees, aircraft, wall etc.) \ncaused by pressure waves \ncaused by aircraft or other aerial \nor space devices travelling at \nsonic or supersonic speeds. \n9 Missile testing operations - \n10 Riot, Strikes, Malicious Damages caused by \na. temporary or permanent \ndispossession, \nconfiscation, \ncommandeering, requisition \nor destruction by order of \nthe government or any \nlawful authority, \nor \nb. temporary or permanent \ndispossession of Your Home \nby unlawful occupation by"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 19,
+            "text": "h Your Home is located, \nb. repairs, removal or \nextension of any sprinkler \ninstallation, or \nc. defects in the construction \nknown to You. Annexure I \n-4- UIN : IRDAN115CP0003V02202021 CIN : L67200MH2000PLC129408 \n \n \n \n14 Theft within 7 (seven) days from \nthe occurrence of and \nproximately caused by any of the \nabove Insured Events. \nif it is \na. of any article or thing \noutside Your Home, or \nb. of any article or thing \nattached from the outside of \nthe outer walls or the roof of \nYour Home, unless securely \nmounted \nClause C: Home Building Cover \n1. What We cover \nWe cover physical loss or damage, or destruction of Your Home Building \nbecause of any Insured Event listed in Clause B of this Policy. We also \ncover architect\u2019s, surveyor\u2019s, consulting engineer\u2019s fees, cost of \nremoving debris as specified under Clause C (5) (f) of this Policy. Further, \nWe pay for Loss of rent and Rent for Alternative Accommodation, which \nwill be paid to the extent declared by You and agreed by Us as specified \nunder Clause C (6) of this Policy while Your Home Building is not fit for"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 73,
+            "text": "under the Policy. \nExclusions specific to Section A 2: All Risk: Structure related Coverage \nLoss or damage to the Structure on account of- 1. Its own natural heating or spontaneous combustion or undergoing any \nheating or drying process; \n2. any process of cleaning, dyeing or bleaching, restoring, repairing or \nrenovation or deterioration arising from wear and tear, moth, vermin , \nbirds, rodents, insects or mildew or any other gradually operating cause; \n3. breakage, cracking or scratching of glass (exce pt for breakage of fixed \nglass due to Accident), and similar articles of fragile nature; \n4. Total or partial cessation/retardation of any work, delay or other \nconsequential losses; \n5. Permanent or temporary dispossession resulting from confiscation, \nrequisition or destruction by any public authority or from unlawful \noccupation of such Dwelling or prevention of access to the same; \n6. Pressure waves by aircraft or other aerial devices; \n7. Coastal or river erosion; \n8. Demolition, construction, structural alterations or repair of any Dwelling \nor ground works or excavations;"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claimed_amount": 150000,
+          "claim_status": "covered",
+          "excess_amount": 10000
+        },
+        "result": {
+          "payout": 140000
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "rationale": "Impact damage from a falling tree during a storm is covered under standard building cover. The claimed amount of \u20b9150,000 less the deductible excess of \u20b910,000 yields a net payout of \u20b9140,000.",
+          "payout": 140000,
+          "claim_number": "CLM-2027-00210",
+          "claim_status": "covered"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00210'}) -> {\"claim_number\": \"CLM-2027-00210\", \"policy_id\": \"PROP-BLDG-03\", \"sum_insured\": 2800000, \"excess_amount\": 10000, \"claimed_amount\": 150000, \"adjuster_notes\": \"A large tree fell onto the roof during a storm, causing impact damage. Standard building cover, no endorsements.\"}",
+      "iter 2: search_policy({'query': 'storm falling tree roof impact damage building cover'}) -> [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 1, \"text\": \"or property.\\n- Legal defence costs up to the policy limit.\\n\\n**Minimum cover:** \\u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\\nCovers accidental damage, fire, theft, natura",
+      "iter 3: compute_payout({'claimed_amount': 150000, 'claim_status': 'covered', 'excess_amount': 10000}) -> {\"payout\": 140000}",
+      "iter 4: submit_decision -> {'rationale': 'Impact damage from a falling tree during a storm is covered under standard building cover. The claimed amount of \u20b9150,000 less the deductible excess of \u20b910,000 yields a net payout of \u20b9140,000.', 'payout': 140000, 'claim_number': 'CLM-2027-00210', 'claim_status': 'covered'}"
+    ]
   }
 }
