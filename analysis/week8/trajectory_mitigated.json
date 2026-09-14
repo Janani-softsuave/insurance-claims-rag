@@ -457,5 +457,94 @@
       "iter 4: compute_payout({'excess_amount': 1000, 'claim_status': 'partial', 'claimed_amount': 12000}) -> {\"payout\": 5500.0}",
       "iter 5: submit_decision -> {'rationale': 'IMT-28 Zero Dep cover waives depreciation on most parts, but tyres remain subject to a standard 50% depreciation regardless of IMT-28 cover. With 1 previous IMT-28 claim this year, this claim is within the annual limit of 2 claims and is settled at a partial payout after applying tyre depreciation and the standard \u20b91,000 excess.', 'claim_number': 'CLM-2027-00205', 'claim_status': 'partial', 'payout': 5500}"
     ]
+  },
+  "CLM-2027-00206": {
+    "claim_number": "CLM-2027-00206",
+    "status": "denied",
+    "payout": 0,
+    "rationale": "The claim is denied because the incident involved unforced entry through an unlocked back door without signs of forcible and violent entry, which is excluded under Section 3.3 of the policy wording.",
+    "iterations": 4,
+    "total_tokens": 9690,
+    "total_cost_usd": 0.0007676999999999998,
+    "elapsed_seconds": 33.67693759998656,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00206"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00206",
+          "policy_id": "PROP-CONT-01",
+          "sum_insured": 400000,
+          "excess_amount": 5000,
+          "claimed_amount": 60000,
+          "adjuster_notes": "Insured's home was burgled overnight. The back door was left unlocked; there are no signs of forced or violent entry. Electronics were stolen from the living room."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "burglary theft unlocked door forced violent entry exclusion contents policy"
+        },
+        "result": [
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 2,
+            "text": "ousehold contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\nCovers loss of contents due to forcible and violent entry. Unforced entry is\n**not covered**. Cash limit: \u20b925,000 per incident.\n\n---\n\n## Section 4 \u2014 Policy Limits and Deductibles\n\n| Coverage | Sum Insured | Compulsory Deductible |\n|----------|-------------|----------------------|\n| Third-Party Liability | Unlimited (BI) / \u20b97.5 lakh (PD) | Nil |\n| Own-Damage Motor | As declared | \u20b91,000 (private car) |\n| Building | As declared | 1% of claim min \u20b910,000 |\n| Contents | As declared | \u20b92,500 |\n| Burglary & Theft | As declared | \u20b95,000 |\n\nA **voluntary deductible** of \u20b92,500, \u20b95,000, or \u20b910,000 may be chosen for a premium\ndiscount of 10%, 15%, or 20% respectively.\n\n---\n\n## Section 5 \u2014 Policy Period & Renewal\n\n- Motor policies: **1 year**, renewable annually.\n- Property policies: **1 year**, renewable annually.\n- Long-term motor (2 or 3 years) available for new vehicles at a 5% discount.\n- Coverage lapses if the premium is not paid within the **15-day grace period**."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 109,
+            "text": "Company\u2019s liability under this benefit is limited as follows: \n1. Damage due to burglary shall be limited to the amount actually payable for repair or replacement of locks, damage to door, or windows, if any. \n2. The insurance cover under the extension shall automatically include all \ncontents acquired by the insured during the policy period, provided that \nall articles of individual value more than or equal to Rs.10,000/-, shall be \nimmediately declared by the insured to the Company, failing which the \nvalue of such item/s for the purposes of this benefit and claim settlement \nshall be taken as equivalent to Rs. 10,000/-. \n3. Insurance as regards jewelry, gold ornaments, silver articles and precious \nstones is only against burglary and does not cover theft where theft is \ndefined as burglary without any forceable entry of exit in the premises \n4. Insurance for jewelry, gold ornaments, silver articles and precious stones, \nshall also extend to cover such items whilst kept stored in Bank vault/s. \nAs regards jewelry, gold ornaments, silver articles and precious stones of"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 111,
+            "text": "le to the policy, for any and all claims \narising in a particular year. \nThe Company\u2019s liability under this benefit shall not exceed the sum insured as specified in the Schedule to the policy. \nExclusions \nThe Company shall not be liable to make any payment under this polic y in \nconnection with or in respect of any expenses whatsoever incurred by any \ninsured in connection with or in respect of: \n1. loss or damage caused by the insured\u2019s and/or insured\u2019s domestic staff \ndirect and / or indirect involvement in the actual or attempted burglary; \n2. any loss or damage to, or on account of loss of, livestock, motor vehicles, \npedal cycles, money, securities for money, stamp, bullion, deeds, bonds, \nbills of exchange, promissory notes, stock or share certificates, business \nbooks, manuscripts, documents of any kind, ATM debit or credit cards \n(unless previously specifically declared to, and accepted by, the \nCompany); \n3 the loss or damage occurring while insured\u2019s structure is unoccupied, for \na period of more than 30 days consecutively, and if the insured had not"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 108,
+            "text": "e event of a loss the Company shall indemnify th e Insured for the \nReplacement Value of the insured items as new at the time of damage less due allowance for Betterment, wear and tear and or depreciation as \nmentioned in the depreciation schedule or the value which can be realized \nfrom the market for such insured item immediately before occurrence of \ndamage whichever is lower \nPermanent Exclusions under the Section B \nWe will not pay for any loss or damage caused by or attributable to \u2013 \n1. Burglary or Theft where the Insured or any of the Insured\u2019s family is \nalleged to be concerned or implicated. \n2. Theft and Burglary Claims, if the premise is left unoccupied for more than \ncontinuous 30 days. \nExtensions specific to Section B \nB.3 Extension: Burglary Cover \nIn consideration of payment of additional premium,the benefit pro vided under \nthis extension is for any loss and/or damage caused by burglary and/or \nattempted burglary, to the contents of insured\u2019s structure. \nThe Company\u2019s liability under this benefit is limited as follows: \n1. Damage due to burglary shall be limited to the amount actually payable for"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claimed_amount": 60000,
+          "excess_amount": 5000,
+          "claim_status": "denied"
+        },
+        "result": {
+          "payout": 0.0
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "claim_status": "denied",
+          "payout": 0,
+          "claim_number": "CLM-2027-00206",
+          "rationale": "The claim is denied because the incident involved unforced entry through an unlocked back door without signs of forcible and violent entry, which is excluded under Section 3.3 of the policy wording."
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00206'}) -> {\"claim_number\": \"CLM-2027-00206\", \"policy_id\": \"PROP-CONT-01\", \"sum_insured\": 400000, \"excess_amount\": 5000, \"claimed_amount\": 60000, \"adjuster_notes\": \"Insured's home was burgled overnight. The back door was left unlocked; there are no signs of forced or violent entry. Electronics were stolen from",
+      "iter 2: search_policy({'query': 'burglary theft unlocked door forced violent entry exclusion contents policy'}) -> [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 2, \"text\": \"ousehold contents including furniture, electronics, appliances, and\\npersonal effects. **Basis of settlement:** Market value at time of loss. ### 3.3 Burglary & Theft\\nCovers loss of contents due to forcible and violent entry. Un",
+      "iter 3: compute_payout({'claimed_amount': 60000, 'excess_amount': 5000, 'claim_status': 'denied'}) -> {\"payout\": 0.0}",
+      "iter 4: submit_decision -> {'claim_status': 'denied', 'payout': 0, 'claim_number': 'CLM-2027-00206', 'rationale': 'The claim is denied because the incident involved unforced entry through an unlocked back door without signs of forcible and violent entry, which is excluded under Section 3.3 of the policy wording.'}"
+    ]
   }
 }
