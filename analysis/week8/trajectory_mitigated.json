@@ -546,5 +546,183 @@
       "iter 3: compute_payout({'claimed_amount': 60000, 'excess_amount': 5000, 'claim_status': 'denied'}) -> {\"payout\": 0.0}",
       "iter 4: submit_decision -> {'claim_status': 'denied', 'payout': 0, 'claim_number': 'CLM-2027-00206', 'rationale': 'The claim is denied because the incident involved unforced entry through an unlocked back door without signs of forcible and violent entry, which is excluded under Section 3.3 of the policy wording.'}"
     ]
+  },
+  "CLM-2027-00207": {
+    "claim_number": "CLM-2027-00207",
+    "status": "covered",
+    "payout": 4500,
+    "rationale": "The claim is fully covered under the glass breakage add-on cover. Since no other damage was claimed simultaneously, the standard compulsory deductible is waived, resulting in a full payout of 4,500.",
+    "iterations": 4,
+    "total_tokens": 9689,
+    "total_cost_usd": 0.0007671749999999999,
+    "elapsed_seconds": 24.031484600011026,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00207"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00207",
+          "policy_id": "MOTOR-COMP-04",
+          "sum_insured": 550000,
+          "excess_amount": 1000,
+          "claimed_amount": 4500,
+          "adjuster_notes": "Windshield cracked from a stone chip on the highway. Insured holds glass breakage cover and is not claiming any other damage."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "glass breakage cover windshield stone chip excess deductible waiver"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 73,
+            "text": "under the Policy. \nExclusions specific to Section A 2: All Risk: Structure related Coverage \nLoss or damage to the Structure on account of- 1. Its own natural heating or spontaneous combustion or undergoing any \nheating or drying process; \n2. any process of cleaning, dyeing or bleaching, restoring, repairing or \nrenovation or deterioration arising from wear and tear, moth, vermin , \nbirds, rodents, insects or mildew or any other gradually operating cause; \n3. breakage, cracking or scratching of glass (exce pt for breakage of fixed \nglass due to Accident), and similar articles of fragile nature; \n4. Total or partial cessation/retardation of any work, delay or other \nconsequential losses; \n5. Permanent or temporary dispossession resulting from confiscation, \nrequisition or destruction by any public authority or from unlawful \noccupation of such Dwelling or prevention of access to the same; \n6. Pressure waves by aircraft or other aerial devices; \n7. Coastal or river erosion; \n8. Demolition, construction, structural alterations or repair of any Dwelling \nor ground works or excavations;"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 120,
+            "text": "loading/unloading shall be excluded from the \nscope of cover \nIt is Your duty to provide prior written notice of the transit of Contents of the Dwelling insured being undertaken to Us, citing details of mode of \nconveyance, nature of packing, and other relevant details (including Lorry \nReceipt No./Airway Bill, etc. as may be applicable), prior to \ncommencement of such transit. \nWe will however not pay for loss or damage solely attributable to \ninsufficiency of packing. \nSubject otherwise to the coverage, terms and conditions and the claims \nprocedure as incorporated in the Policy and endorsed hereon \nLimits : the Contents cover under Section B \nDeductible : INR 5,000 on each and every claim \nClaims Documents specific to this add on cover \n1. Lorry receipt/airway bill/ Bill of lading \n2. Any other document as may be reasonably required by Us \nClaims Documents \n3. Immediate  intimation \n4. First Information  Report \n5. Any other document as may be reasonably required by Us \nB.9 Extension: Work from Home cover of Employer Assets in custody of Insured \nIn consideration of payment of additional premium, we will reimburse"
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Endorsements & Policy Riders (Addendum Pack 2024)\n\nEndorsements modify the standard policy wording. Each endorsement is identified\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\n\n---\n\n## Motor Endorsements\n\n### IMT-28 \u2014 Nil Depreciation (Zero Dep) Cover\n- **What it does:** Removes depreciation deduction on plastic, rubber, fibre,\n  and metal parts during own-damage claims. You receive the **full repair cost**\n  without depreciation cuts.\n- **Eligibility:** Vehicles up to **5 years old**; maximum **2 claims** per policy year.\n- **Additional premium:** Approximately 20\u201325% of own-damage premium.\n- **Not included:** Engine damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident)."
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "excess_amount": 0,
+          "claim_status": "covered",
+          "claimed_amount": 4500
+        },
+        "result": {
+          "payout": 4500
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "rationale": "The claim is fully covered under the glass breakage add-on cover. Since no other damage was claimed simultaneously, the standard compulsory deductible is waived, resulting in a full payout of 4,500.",
+          "claim_number": "CLM-2027-00207",
+          "payout": 4500,
+          "claim_status": "covered"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00207'}) -> {\"claim_number\": \"CLM-2027-00207\", \"policy_id\": \"MOTOR-COMP-04\", \"sum_insured\": 550000, \"excess_amount\": 1000, \"claimed_amount\": 4500, \"adjuster_notes\": \"Windshield cracked from a stone chip on the highway. Insured holds glass breakage cover and is not claiming any other damage.\"}",
+      "iter 2: search_policy({'query': 'glass breakage cover windshield stone chip excess deductible waiver'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 3, \"text\": \"ge. For **cashless**\\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\\nA: If you have **glass breakage** cover",
+      "iter 3: compute_payout({'excess_amount': 0, 'claim_status': 'covered', 'claimed_amount': 4500}) -> {\"payout\": 4500}",
+      "iter 4: submit_decision -> {'rationale': 'The claim is fully covered under the glass breakage add-on cover. Since no other damage was claimed simultaneously, the standard compulsory deductible is waived, resulting in a full payout of 4,500.', 'claim_number': 'CLM-2027-00207', 'payout': 4500, 'claim_status': 'covered'}"
+    ]
+  },
+  "CLM-2027-00208": {
+    "claim_number": "CLM-2027-00208",
+    "status": "pending",
+    "payout": 0,
+    "rationale": "The vehicle theft claim is placed on pending status because the required police Non-Traceable Certificate has not yet been issued.",
+    "iterations": 4,
+    "total_tokens": 9450,
+    "total_cost_usd": 0.0007465499999999999,
+    "elapsed_seconds": 72.9623630999995,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00208"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00208",
+          "policy_id": "MOTOR-COMP-05",
+          "sum_insured": 800000,
+          "excess_amount": 1000,
+          "claimed_amount": 800000,
+          "adjuster_notes": "Insured's vehicle was stolen from a parking lot 95 days ago. Police have not yet issued a Non-Traceable Certificate."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "vehicle theft police non-traceable certificate document requirements pending claim coverage"
+        },
+        "result": [
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 3,
+            "text": "ge. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\nA: If you have **glass breakage** cover, the windshield replacement is settled\nwithout the standard compulsory deductible of \u20b91,000, provided no other damage\nis claimed simultaneously.\n\n**Q: I have Zero Dep cover (IMT-28). Will I get a full reimbursement?**\nA: Yes, depreciation on most parts is waived. However, tyres, tubes, and batteries\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\n2 claims per policy year.\n\n**Q: My vehicle was stolen. What documents do I need?**\nA: FIR from the police, Form 28/29/30 (NOC and transfer forms), original vehicle\nkeys, RC book, policy document, and a **Non-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims"
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 136,
+            "text": "Loss \n3. In event of a claim arising under this Policy, the Insured shall arrange for \nsubmission of the following documents to the Company a. Duly completed claim form signed by the insured, de tailing the loss or \ndamage that has occurred and an estimate of the quantum of any \nclaim along with all documentation required to support and \nsubstantiate the amount sought from the Company, and; \nb. Police report (FIR) for Theft and Burglary Claims \nc. Police Final Investigation Report for Theft and Burglary Claims \nd. Bills and invoices, valuation reports etc required to support and \nsubstantiate the claim amount \u2013 \ne. NEFT details/cancelled cheque and KYC/AML document wherever \nrequired \nf. Any other document deemed necessary to establish the loss or its \nquantum depending upon the nature of claim. \n4. On receipt of all the required information along with the claim form, the \nCompany shall appoint a surveyor for assessing the loss/ claim within 24 \nhours of the receipt of intimation from the Insured. The Insured shall allow \nthe surveyor to inspect the lost/ damaged properties/ goods. The Insured"
+          },
+          {
+            "source": "claims_process.md",
+            "chunk_index": 0,
+            "text": "# ABC Insurance \u2014 Claims Process Guide\n\n---\n\n## How to File a Claim\n\n### Step 1 \u2014 Notify the Insurer Immediately\nReport the incident to ABC Insurance within **24 hours** for theft claims and\nwithin **7 days** for all other claims. You can notify via:\n- **Toll-free helpline:** 1800-XXX-XXXX (24 \u00d7 7)\n- **Mobile app:** \"ABC Insurance\" \u2192 Raise a Claim\n- **Email:** claims@abcinsurance.in\n- **Nearest branch office**\n\nFailure to notify within the stipulated period may result in the claim being\n**repudiated** unless a valid reason for delay is provided.\n\n### Step 2 \u2014 File an FIR (where applicable)\nAn FIR (First Information Report) with the local police is **mandatory** for:\n- Theft of vehicle or property\n- Third-party bodily injury or death\n- Riots, malicious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended."
+          },
+          {
+            "source": "claims_process.md",
+            "chunk_index": 1,
+            "text": "cious damage\n- Burglary\n\nFor accidents involving only own-damage with no third-party injury, an FIR is\n**not mandatory** but is recommended. ### Step 3 \u2014 Document the Loss\nCollect and preserve:\n- Photographs of damaged vehicle/property from multiple angles\n- Repair estimates from authorised service centres or contractors\n- Medical bills and reports (for personal accident claims)\n- Witness statements, if available\n\n### Step 4 \u2014 Submit the Claim Form\nComplete the **Claim Intimation Form** and submit within **15 days** of the incident\nalong with the following documents:\n\n**For Motor Claims:**\n- Duly signed claim form\n- Copy of Registration Certificate (RC)\n- Copy of valid Driving Licence\n- Copy of insurance policy / certificate\n- FIR copy (if applicable)\n- Repair estimate from garage\n\n**For Property Claims:**\n- Duly signed claim form\n- Copy of insurance policy\n- Photographs of damage\n- Repair estimate / contractor's quote\n- FIR copy (if applicable)\n- Ownership proof (sale deed / rent agreement)"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "excess_amount": 1000,
+          "claimed_amount": 800000,
+          "claim_status": "pending"
+        },
+        "result": {
+          "payout": 0.0
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "payout": 0,
+          "claim_status": "pending",
+          "rationale": "The vehicle theft claim is placed on pending status because the required police Non-Traceable Certificate has not yet been issued.",
+          "claim_number": "CLM-2027-00208"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00208'}) -> {\"claim_number\": \"CLM-2027-00208\", \"policy_id\": \"MOTOR-COMP-05\", \"sum_insured\": 800000, \"excess_amount\": 1000, \"claimed_amount\": 800000, \"adjuster_notes\": \"Insured's vehicle was stolen from a parking lot 95 days ago. Police have not yet issued a Non-Traceable Certificate.\"}",
+      "iter 2: search_policy({'query': 'vehicle theft police non-traceable certificate document requirements pending claim coverage'}) -> [{\"source\": \"claims_faq.md\", \"chunk_index\": 3, \"text\": \"ge. For **cashless**\\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\\non the ABC Insurance app and website. **Q: My windshield cracked. Do I need to pay a deductible?**\\nA: If you have **glass breakage** cover",
+      "iter 3: compute_payout({'excess_amount': 1000, 'claimed_amount': 800000, 'claim_status': 'pending'}) -> {\"payout\": 0.0}",
+      "iter 4: submit_decision -> {'payout': 0, 'claim_status': 'pending', 'rationale': 'The vehicle theft claim is placed on pending status because the required police Non-Traceable Certificate has not yet been issued.', 'claim_number': 'CLM-2027-00208'}"
+    ]
   }
 }
