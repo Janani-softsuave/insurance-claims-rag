@@ -351,8 +351,8 @@ def report(variant: str = typer.Option("baseline")) -> None:
         cn = s["claim_number"]
         table.add_row(
             cn,
-            "✅" if outcome_pass[cn] else "❌",
-            "✅" if s["trajectory_pass"] else "❌",
+            "PASS" if outcome_pass[cn] else "FAIL",
+            "PASS" if s["trajectory_pass"] else "FAIL",
             s["mode"],
             f"{s['steps_taken']}/{s['min_steps']}",
             f"${s['cost_usd']:.6f}",
