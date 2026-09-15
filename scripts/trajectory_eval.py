@@ -437,9 +437,9 @@ def compare(before: str = typer.Option("baseline"), after: str = typer.Option("m
         ac = a["mode_counts"].get(mode, 0)
         delta = ac - bc
         table.add_row(mode, str(bc), str(ac), f"{delta:+d}")
-        if delta > 0:
+        if delta > 0 and mode != "none":
             worsened.append(mode)
-        if bc == 0 and ac > 0:
+        if bc == 0 and ac > 0 and mode != "none":
             new_modes.append(mode)
     console.print(table)
 
