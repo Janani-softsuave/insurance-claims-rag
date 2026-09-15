@@ -724,5 +724,183 @@
       "iter 3: compute_payout({'excess_amount': 1000, 'claimed_amount': 800000, 'claim_status': 'pending'}) -> {\"payout\": 0.0}",
       "iter 4: submit_decision -> {'payout': 0, 'claim_status': 'pending', 'rationale': 'The vehicle theft claim is placed on pending status because the required police Non-Traceable Certificate has not yet been issued.', 'claim_number': 'CLM-2027-00208'}"
     ]
+  },
+  "CLM-2027-00209": {
+    "claim_number": "CLM-2027-00209",
+    "status": "denied",
+    "payout": 0,
+    "rationale": "The claim is denied as the breathalyzer report confirms the driver was operating the vehicle under the influence of alcohol at the time of the accident, which violates statutory regulations and standard motor policy exclusions.",
+    "iterations": 4,
+    "total_tokens": 9518,
+    "total_cost_usd": 0.000754125,
+    "elapsed_seconds": 42.995289200000116,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00209"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00209",
+          "policy_id": "MOTOR-COMP-06",
+          "sum_insured": 450000,
+          "excess_amount": 1000,
+          "claimed_amount": 65000,
+          "adjuster_notes": "Insured collided with a divider late at night. Breathalyzer report on file confirms the insured was driving under the influence of alcohol at the time of the accident."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "driving under the influence of alcohol intoxication exclusion"
+        },
+        "result": [
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 121,
+            "text": "a -jumping, rock climbing, \nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \ndeep-sea diving Health Elite I Policy Wordings \nUIN: GCIHLIP22234V012122                                                                                    Page No. 33 \ng) Breach of law: Code- Excl10 \nExpenses for treatment directly arising from or consequent upon any Insured Person committing \nor attempting to commit a breach of law with criminal intent. \n \nh) Excluded Providers: Code- Excl11 \nExpenses incurred towards treatment in any hospital or by any Medical Practitioner or any other \nprovider specifically excluded by Us and disclosed in Our website/ notified to the policyholders \nare not admissible. However, in case of life-threatening situations or following an accident, \nexpenses up to the stage of stabilization are payable but not the complete claim.  \n \ni) Code- Excl12 \nTreatment for, Alcoholism, drug or substance abuse or any addictive condition and \nconsequences thereof. \n \nj) Code- Excl13 \nTreatments received in heath hydros, nature cure clinics, spas or similar establishments or"
+          },
+          {
+            "source": "health-elite-policy-wording.pdf",
+            "chunk_index": 117,
+            "text": "er vertebral disc unless arising from Accident \nl) Surgery of varicose veins and varicose ulcers \nm) Any types of gastric or duodenal ulcers n) Stones in the urinary and biliary systems \no) Surgery on ears and tonsils. \np) Genetic Disorders  \n \nc) 30 days waiting period Excl -03 \na) Expenses related to the treatment of any illness within 30 days from the first policy \ncommencement date shall be excluded except claims arising due to an accident, provided the \nsame are covered. \nb) This exclusion shall not, however, apply if the Insured Person has Continuous Coverage for more \nthan twelve months. \nc) The within referred waiting period is made applicable to the enhanced sum insured in the event \nof granting higher sum insured subsequently."
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 2,
+            "text": "the\nIDV. In this case, the insurer pays the IDV (or invoice value if RTI endorsement\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\nA: 1) Request a written rejection letter with reasons. 2) Submit a representation\nto the Grievance Cell at grievance@abcinsurance.in within 15 days. 3) If unresolved,\napproach the Insurance Ombudsman in your city. 4) File a complaint on IRDAI's IGMS\nportal (igms.irda.gov.in).\n\n---\n\n## Motor Claims\n\n**Q: My car was damaged in a flood. Is it covered?**\nA: Yes, if you hold a **Comprehensive (Own-Damage)** policy. Flood is a natural\ncalamity and is covered. Engine damage due to water ingression is covered only if\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\nengine hydrostatic lock is excluded.\n\n**Q: Can I take my car to any garage?**\nA: For **reimbursement** claims, yes \u2014 any registered garage. For **cashless**\nsettlement, the vehicle must go to an **ABC network garage**. A list is available\non the ABC Insurance app and website."
+          },
+          {
+            "source": "endorsements_and_riders.md",
+            "chunk_index": 1,
+            "text": "damage due to water ingression, mechanical/electrical failure,\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \u2014 Engine & Gearbox Protection\n- **What it does:** Covers damage to the engine and gearbox caused by water\n  ingression (flooding), hydrostatic lock, or oil leakage due to an accident.\n- **Eligibility:** Comprehensive policy holders only.\n- **Note:** Applicable only when the vehicle is stationary or driven through flood water.\n  Driving into a flooded area knowingly may lead to repudiation.\n\n### IMT-34 \u2014 Return to Invoice (RTI) Cover\n- **What it does:** In case of total loss or theft, the insurer pays the **original\n  invoice value** of the vehicle (including registration fees and road tax),\n  rather than the Insured Declared Value (IDV).\n- **Eligibility:** Vehicles up to **3 years old**.\n- **Benefit:** Bridges the gap between IDV and on-road price."
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claimed_amount": 65000,
+          "claim_status": "denied",
+          "excess_amount": 1000
+        },
+        "result": {
+          "payout": 0.0
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "rationale": "The claim is denied as the breathalyzer report confirms the driver was operating the vehicle under the influence of alcohol at the time of the accident, which violates statutory regulations and standard motor policy exclusions.",
+          "claim_number": "CLM-2027-00209",
+          "payout": 0,
+          "claim_status": "denied"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00209'}) -> {\"claim_number\": \"CLM-2027-00209\", \"policy_id\": \"MOTOR-COMP-06\", \"sum_insured\": 450000, \"excess_amount\": 1000, \"claimed_amount\": 65000, \"adjuster_notes\": \"Insured collided with a divider late at night. Breathalyzer report on file confirms the insured was driving under the influence of alcohol at the",
+      "iter 2: search_policy({'query': 'driving under the influence of alcohol intoxication exclusion'}) -> [{\"source\": \"health-elite-policy-wording.pdf\", \"chunk_index\": 121, \"text\": \"a -jumping, rock climbing, \\nmountaineering, rafting, motor racing, horse racing or scuba diving, hand gli ding, sky diving, \\ndeep-sea diving Health Elite I Policy Wordings \\nUIN: GCIHLIP22234V012122                        ",
+      "iter 3: compute_payout({'claimed_amount': 65000, 'claim_status': 'denied', 'excess_amount': 1000}) -> {\"payout\": 0.0}",
+      "iter 4: submit_decision -> {'rationale': 'The claim is denied as the breathalyzer report confirms the driver was operating the vehicle under the influence of alcohol at the time of the accident, which violates statutory regulations and standard motor policy exclusions.', 'claim_number': 'CLM-2027-00209', 'payout': 0, 'claim_status': 'denied'}"
+    ]
+  },
+  "CLM-2027-00210": {
+    "claim_number": "CLM-2027-00210",
+    "status": "covered",
+    "payout": 140000,
+    "rationale": "The claim for impact damage from a fallen tree during a storm is covered under standard building cover. Applying the standard policy excess of \u20b910,000 to the \u20b9150,000 claimed amount results in a payout of \u20b9140,000.",
+    "iterations": 4,
+    "total_tokens": 9784,
+    "total_cost_usd": 0.0007799249999999999,
+    "elapsed_seconds": 26.27942140000232,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout",
+      "submit_decision"
+    ],
+    "trajectory": [
+      {
+        "tool": "get_claim",
+        "args": {
+          "claim_number": "CLM-2027-00210"
+        },
+        "result": {
+          "claim_number": "CLM-2027-00210",
+          "policy_id": "PROP-BLDG-03",
+          "sum_insured": 2800000,
+          "excess_amount": 10000,
+          "claimed_amount": 150000,
+          "adjuster_notes": "A large tree fell onto the roof during a storm, causing impact damage. Standard building cover, no endorsements."
+        }
+      },
+      {
+        "tool": "search_policy",
+        "args": {
+          "query": "standard building cover storm impact damage falling tree cover exclusions"
+        },
+        "result": [
+          {
+            "source": "insurance_policy_overview.md",
+            "chunk_index": 1,
+            "text": "or property.\n- Legal defence costs up to the policy limit.\n\n**Minimum cover:** \u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\nCovers accidental damage, fire, theft, natural calamities (flood, earthquake,\ncyclone), malicious damage, and riots. **Not covered:** normal wear and tear,\nmechanical or electrical breakdown, consequential loss.\n\n### 2.3 Personal Accident Cover\n- Accidental death or permanent total disability of the owner-driver: **\u20b915 lakh**.\n- Hospital cash benefit: **\u20b92,000 per day** up to 30 days.\n\n---\n\n## Section 3 \u2014 Property Insurance Coverage\n\n### 3.1 Building Cover\nCovers the structure against fire, lightning, explosion/implosion, aircraft damage,\nriot and strike, storm, flood, inundation, earthquake, and impact damage.\n**Basis of settlement:** Reinstatement value (new for old).\n\n### 3.2 Contents Cover\nCovers household contents including furniture, electronics, appliances, and\npersonal effects. **Basis of settlement:** Market value at time of loss."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 16,
+            "text": "l \nas per Clause C (2) of this Policy. \nClause B. Insured Events \nWe give insurance cover for physical loss or damage, or destruction caused to Insured Property by the following unforeseen events occurring during the \n \nThe events covered are given in Column A and those not covered in respect of \nthese events are given in Column B. \n \n Column A Column B \n We cover phys ical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n1 Fire caused by burning of Insured \nProperty by order of any Public \nAuthority. \n2 Explosion or Implosion - \n3 Lightning - \n4 Earthquake, volcanic e r uption, \nor other convulsions of nature \n- \nPolicy Period. \n5 Storm,  Cyclone,  Typhoon, \nTempest, Hurricane, Tornado, \nTsunami, Flood and Inundation \n- \n Column A Column B \n We cover physical loss or \ndamage, or destruction caused to \nthe Insured Property by \nWe do not cover any loss or \ndamage, or destruction caused \nto the Insured Property \n6 Subsidence of the land on which \nYour Home Building stands, \nLandslide, Rockslide \ncaused by"
+          },
+          {
+            "source": "claims_faq.md",
+            "chunk_index": 4,
+            "text": "-Traceable Certificate** from the police\nafter 90 days. The claim is settled only after the police close the trace.\n\n---\n\n## Property Claims **Q: Is my home covered for earthquake damage?**\nA: Standard fire policies **do not cover earthquake** by default. You need the\n**Earthquake Extension** endorsement (IAP-01). If you have it, both the fire\nfollowing earthquake and the shock damage are covered.\n\n**Q: My tenant's belongings were damaged in a fire. Am I liable?**\nA: A standard building policy covers the structure only. Your tenant's contents\nare the tenant's responsibility and should be covered under a separate contents\npolicy. However, if the fire originated from a defect in the building, the\n**Landlord's Legal Liability** endorsement (IAP-15) would cover your liability.\n\n**Q: My house is under renovation. Is it still covered?**\nA: Minor renovation (painting, tiling) does not affect coverage. Major structural\nwork (demolishing walls, adding floors) must be **declared** to ABC Insurance.\nFailure to declare may void the policy during the renovation period."
+          },
+          {
+            "source": "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf",
+            "chunk_index": 73,
+            "text": "under the Policy. \nExclusions specific to Section A 2: All Risk: Structure related Coverage \nLoss or damage to the Structure on account of- 1. Its own natural heating or spontaneous combustion or undergoing any \nheating or drying process; \n2. any process of cleaning, dyeing or bleaching, restoring, repairing or \nrenovation or deterioration arising from wear and tear, moth, vermin , \nbirds, rodents, insects or mildew or any other gradually operating cause; \n3. breakage, cracking or scratching of glass (exce pt for breakage of fixed \nglass due to Accident), and similar articles of fragile nature; \n4. Total or partial cessation/retardation of any work, delay or other \nconsequential losses; \n5. Permanent or temporary dispossession resulting from confiscation, \nrequisition or destruction by any public authority or from unlawful \noccupation of such Dwelling or prevention of access to the same; \n6. Pressure waves by aircraft or other aerial devices; \n7. Coastal or river erosion; \n8. Demolition, construction, structural alterations or repair of any Dwelling \nor ground works or excavations;"
+          }
+        ]
+      },
+      {
+        "tool": "compute_payout",
+        "args": {
+          "claimed_amount": 150000,
+          "claim_status": "covered",
+          "excess_amount": 10000
+        },
+        "result": {
+          "payout": 140000
+        }
+      },
+      {
+        "tool": "submit_decision",
+        "args": {
+          "rationale": "The claim for impact damage from a fallen tree during a storm is covered under standard building cover. Applying the standard policy excess of \u20b910,000 to the \u20b9150,000 claimed amount results in a payout of \u20b9140,000.",
+          "claim_number": "CLM-2027-00210",
+          "payout": 140000,
+          "claim_status": "covered"
+        },
+        "result": null
+      }
+    ],
+    "terminated_by_budget": null,
+    "flagged_for_review": false,
+    "log": [
+      "iter 1: get_claim({'claim_number': 'CLM-2027-00210'}) -> {\"claim_number\": \"CLM-2027-00210\", \"policy_id\": \"PROP-BLDG-03\", \"sum_insured\": 2800000, \"excess_amount\": 10000, \"claimed_amount\": 150000, \"adjuster_notes\": \"A large tree fell onto the roof during a storm, causing impact damage. Standard building cover, no endorsements.\"}",
+      "iter 2: search_policy({'query': 'standard building cover storm impact damage falling tree cover exclusions'}) -> [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 1, \"text\": \"or property.\\n- Legal defence costs up to the policy limit.\\n\\n**Minimum cover:** \\u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\\nCovers accidental damage, fire, theft, natura",
+      "iter 3: compute_payout({'claimed_amount': 150000, 'claim_status': 'covered', 'excess_amount': 10000}) -> {\"payout\": 140000}",
+      "iter 4: submit_decision -> {'rationale': 'The claim for impact damage from a fallen tree during a storm is covered under standard building cover. Applying the standard policy excess of \u20b910,000 to the \u20b9150,000 claimed amount results in a payout of \u20b9140,000.', 'claim_number': 'CLM-2027-00210', 'payout': 140000, 'claim_status': 'covered'}"
+    ]
   }
 }
