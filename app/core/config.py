@@ -10,6 +10,7 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 
 class Settings(BaseSettings):
     gemini_api_key: str = ""
+    gemini_api_keys: str = ""
     gemini_model: str = "gemini-flash-latest"
 
     embedding_model: str = "BAAI/bge-small-en-v1.5"
@@ -48,6 +49,17 @@ class Settings(BaseSettings):
         env_file_encoding="utf-8",
         extra="ignore",
     )
+
+    def gemini_api_key_pool(self) -> list[str]:
+        keys = [self.gemini_api_key] + self.gemini_api_keys.split(",")
+        seen: set[str] = set()
+        pool: list[str] = []
+        for key in keys:
+            key = key.strip()
+            if key and key not in seen:
+                seen.add(key)
+                pool.append(key)
+        return pool
 
 
 @lru_cache

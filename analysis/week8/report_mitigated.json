@@ -1,0 +1,592 @@
+{
+  "variant": "mitigated",
+  "tool_choice_accuracy": 1.0,
+  "argument_validity_rate": 1.0,
+  "mean_step_efficiency": 1.125,
+  "cost_p50_usd": 0.0007674374999999999,
+  "cost_max_usd": 0.0011814,
+  "outcome_pass_rate": 1.0,
+  "trajectory_pass_rate": 1.0,
+  "gap": 0.0,
+  "mode_counts": {
+    "none": 10
+  },
+  "named_case": null,
+  "per_claim": [
+    {
+      "claim_number": "CLM-2027-00201",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 4,
+      "step_efficiency": 1.0,
+      "cost_usd": 0.00075795,
+      "tokens": 9557,
+      "latency_s": 24.018868000013754,
+      "outcome_status": "denied",
+      "outcome_payout": 0
+    },
+    {
+      "claim_number": "CLM-2027-00202",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "compute_payout",
+          "submit_decision"
+        ],
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 3,
+      "step_efficiency": 1.3333333333333333,
+      "cost_usd": 0.0007943249999999999,
+      "tokens": 9973,
+      "latency_s": 42.51380360001349,
+      "outcome_status": "covered",
+      "outcome_payout": 17000
+    },
+    {
+      "claim_number": "CLM-2027-00203",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 4,
+      "step_efficiency": 1.0,
+      "cost_usd": 0.000759975,
+      "tokens": 9602,
+      "latency_s": 11.590311300009489,
+      "outcome_status": "denied",
+      "outcome_payout": 0
+    },
+    {
+      "claim_number": "CLM-2027-00204",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "compute_payout",
+          "submit_decision"
+        ],
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 3,
+      "step_efficiency": 1.3333333333333333,
+      "cost_usd": 0.000779175,
+      "tokens": 9777,
+      "latency_s": 73.00660849999986,
+      "outcome_status": "covered",
+      "outcome_payout": 80000
+    },
+    {
+      "claim_number": "CLM-2027-00205",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "check_claim_history",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "check_claim_history",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "check_claim_history",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ],
+        [
+          "get_claim",
+          "search_policy",
+          "check_claim_history",
+          "compute_payout",
+          "submit_decision"
+        ],
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "check_claim_history",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 4,
+      "valid_arg_calls": 4,
+      "invalid_arg_details": [],
+      "steps_taken": 5,
+      "min_steps": 4,
+      "step_efficiency": 1.25,
+      "cost_usd": 0.0011814,
+      "tokens": 14984,
+      "latency_s": 54.345631600008346,
+      "outcome_status": "partial",
+      "outcome_payout": 5500
+    },
+    {
+      "claim_number": "CLM-2027-00206",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 4,
+      "step_efficiency": 1.0,
+      "cost_usd": 0.0007676999999999998,
+      "tokens": 9690,
+      "latency_s": 33.67693759998656,
+      "outcome_status": "denied",
+      "outcome_payout": 0
+    },
+    {
+      "claim_number": "CLM-2027-00207",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 4,
+      "step_efficiency": 1.0,
+      "cost_usd": 0.0007671749999999999,
+      "tokens": 9689,
+      "latency_s": 24.031484600011026,
+      "outcome_status": "covered",
+      "outcome_payout": 4500
+    },
+    {
+      "claim_number": "CLM-2027-00208",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 4,
+      "step_efficiency": 1.0,
+      "cost_usd": 0.0007465499999999999,
+      "tokens": 9450,
+      "latency_s": 72.9623630999995,
+      "outcome_status": "pending",
+      "outcome_payout": 0
+    },
+    {
+      "claim_number": "CLM-2027-00209",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 4,
+      "step_efficiency": 1.0,
+      "cost_usd": 0.000754125,
+      "tokens": 9518,
+      "latency_s": 42.995289200000116,
+      "outcome_status": "denied",
+      "outcome_payout": 0
+    },
+    {
+      "claim_number": "CLM-2027-00210",
+      "actual_sequence": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "canonical": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "accepted_paths": [
+        [
+          "get_claim",
+          "compute_payout",
+          "submit_decision"
+        ],
+        [
+          "get_claim",
+          "search_policy",
+          "compute_payout",
+          "submit_decision"
+        ]
+      ],
+      "mode": "none",
+      "trajectory_pass": true,
+      "scored_calls": [
+        [
+          "get_claim",
+          true
+        ],
+        [
+          "search_policy",
+          true
+        ],
+        [
+          "compute_payout",
+          true
+        ],
+        [
+          "submit_decision",
+          true
+        ]
+      ],
+      "checkable_arg_calls": 3,
+      "valid_arg_calls": 3,
+      "invalid_arg_details": [],
+      "steps_taken": 4,
+      "min_steps": 3,
+      "step_efficiency": 1.3333333333333333,
+      "cost_usd": 0.0007799249999999999,
+      "tokens": 9784,
+      "latency_s": 26.27942140000232,
+      "outcome_status": "covered",
+      "outcome_payout": 140000
+    }
+  ]
+}
