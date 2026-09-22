@@ -36,6 +36,13 @@ class Settings(BaseSettings):
     collection_name: str = "insurance_claims"
     data_raw_dir: str = str(ROOT_DIR / "data" / "raw")
 
+    # Placeholder Gemini Flash-tier pricing (Gemini 1.5 Flash public rate) — not verified
+    # against current pricing for whichever model GEMINI_MODEL resolves to. Used only for
+    # the Week 7 agent-vs-workflow cost comparison, where what matters is a consistent rate
+    # applied identically to both systems, not the absolute dollar figure.
+    price_input_per_million: float = 0.075
+    price_output_per_million: float = 0.30
+
     model_config = SettingsConfigDict(
         env_file=str(ROOT_DIR / ".env"),
         env_file_encoding="utf-8",

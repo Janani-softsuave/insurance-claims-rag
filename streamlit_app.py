@@ -73,11 +73,12 @@ with st.sidebar:
         st.rerun()
 
 
-tab_upload, tab_ask, tab_inspect, tab_eval = st.tabs([
+tab_upload, tab_ask, tab_inspect, tab_eval, tab_agent = st.tabs([
     "📁 Upload & Ingest",
     "💬 Ask Questions",
     "🔍 Inspection View",
     "📊 Evaluation",
+    "🤖 Agent vs Workflow",
 ])
 
 with tab_upload:
@@ -122,7 +123,7 @@ with tab_upload:
     if "ingesting" not in st.session_state:
         st.session_state.ingesting = False
 
-    if col_btn.button("⚡ Run Ingestion", use_container_width=True, type="primary",
+    if col_btn.button("⚡ Run Ingestion", width="stretch", type="primary",
                       disabled=st.session_state.ingesting):
         st.session_state.ingesting = True
         st.rerun()
@@ -370,7 +371,7 @@ with tab_eval:
 
                 import pandas as pd
                 df = pd.DataFrame(rows)
-                st.dataframe(df, use_container_width=True)
+                st.dataframe(df, width="stretch")
 
                 dense_hr = sum(1 for r in rows if r[f"Dense hit@{K}"] == "✅") / len(rows)
                 hybrid_hr = sum(1 for r in rows if r[f"Hybrid hit@{K}"] == "✅") / len(rows)
@@ -409,3 +410,173 @@ with tab_eval:
 
             except Exception as e:
                 st.error(f"Evaluation failed: {e}")
+
+
+with tab_agent:
+    st.header("🤖 Agent vs Workflow — Week 7")
+    st.markdown(
+        "Triage one claim with the **hand-built agent loop**, the **fixed 4-step workflow**, "
+        "or both side by side. Both use the same tools, same model, same output contract — "
+        "the agent decides what to call next; the workflow's steps are hard-coded."
+    )
+
+    from app.agent.tools import load_claims
+
+    claims = load_claims()
+    claim_options = {f"{c['claim_number']} — {c['adjuster_notes'][:60]}...": c for c in claims}
+    selected_label = st.selectbox("Claim", list(claim_options.keys()))
+    selected_claim = claim_options[selected_label]
+
+    with st.expander("📄 Claim record & ground truth"):
+        c1, c2 = st.columns(2)
+        c1.json({
+            "claim_number": selected_claim["claim_number"],
+            "policy_id": selected_claim["policy_id"],
+            "sum_insured": selected_claim["sum_insured"],
+            "excess_amount": selected_claim["excess_amount"],
+            "claimed_amount": selected_claim["claimed_amount"],
+        })
+        c2.markdown(f"**Adjuster notes:**\n\n{selected_claim['adjuster_notes']}")
+        st.caption(
+            f"Expected (ground truth, not shown to either system): "
+            f"**{selected_claim['expected_status']}**, payout ₹{selected_claim['expected_payout']:,.0f}"
+        )
+
+    mode = st.radio(
+        "Mode",
+        ["Agent only", "Workflow only", "Both (side by side)"],
+        horizontal=True,
+    )
+
+    with st.expander("⚙️ Agent budgets"):
+        b1, b2, b3, b4 = st.columns(4)
+        max_iterations = b1.number_input("Max iterations", 1, 30, 8)
+        max_tokens = b2.number_input("Max tokens", 1000, 200_000, 30_000, step=1000)
+        max_cost = b3.number_input("Max cost (USD)", 0.001, 1.0, 0.05, step=0.001, format="%.3f")
+        max_wall_clock = b4.number_input("Max wall-clock (s)", 5, 600, 90)
+
+    def _run_agent():
+        from app.agent.claims_agent import ClaimsAgent
+        from app.agent.budgets import Budgets
+        budgets = Budgets(
+            max_iterations=max_iterations,
+            max_tokens=max_tokens,
+            max_cost_usd=max_cost,
+            max_wall_clock_seconds=max_wall_clock,
+        )
+        return ClaimsAgent(budgets=budgets).run(selected_claim["claim_number"])
+
+    def _run_workflow():
+        from app.agent.claims_workflow import ClaimsWorkflow
+        return ClaimsWorkflow().run(selected_claim["claim_number"])
+
+    def _grade(status, payout) -> bool | None:
+        if status is None:
+            return None
+        if payout is None:
+            return False
+        return status == selected_claim["expected_status"] and abs(payout - selected_claim["expected_payout"]) < 1.0
+
+    def _render_agent_result(result) -> None:
+        passed = _grade(result.status, result.payout)
+        if result.terminated_by_budget:
+            st.warning(f"⏱️ Budget terminated the run: **{result.terminated_by_budget}** — no decision reached.")
+        elif passed:
+            st.success(f"✅ {result.status} — payout ₹{result.payout:,.0f}" if result.payout is not None else f"✅ {result.status}")
+        elif result.flagged_for_review:
+            st.info(f"🚩 Flagged for human review: {result.rationale}")
+        else:
+            st.error(f"❌ {result.status} — payout {result.payout} (expected {selected_claim['expected_status']} / ₹{selected_claim['expected_payout']:,.0f})")
+
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Iterations", result.iterations)
+        m2.metric("Tokens", result.total_tokens)
+        m3.metric("Cost (USD)", f"${result.total_cost_usd:.6f}")
+        m4.metric("Latency (s)", f"{result.elapsed_seconds:.1f}")
+
+        if result.rationale and not result.flagged_for_review:
+            st.caption(result.rationale)
+
+        with st.expander(f"🪜 Step-by-step log ({len(result.tool_calls)} tool call(s))"):
+            for line in result.log:
+                st.text(line)
+
+    def _render_workflow_result(result: dict) -> None:
+        passed = _grade(result["status"], result["payout"])
+        if passed:
+            st.success(f"✅ {result['status']} — payout ₹{result['payout']:,.0f}")
+        else:
+            st.error(
+                f"❌ {result['status']} — payout ₹{result['payout']:,.0f} "
+                f"(expected {selected_claim['expected_status']} / ₹{selected_claim['expected_payout']:,.0f})"
+            )
+
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Steps", len(result["tool_calls"]))
+        m2.metric("Tokens", result["total_tokens"])
+        m3.metric("Cost (USD)", f"${result['total_cost_usd']:.6f}")
+        m4.metric("Latency (s)", f"{result['elapsed_seconds']:.1f}")
+
+        st.caption(result["rationale"])
+        with st.expander("🪜 Fixed steps"):
+            for i, step in enumerate(result["tool_calls"], 1):
+                st.text(f"{i}. {step}")
+
+    if st.button("▶ Run", type="primary"):
+        try:
+            if mode == "Agent only":
+                with st.spinner("Agent looping…"):
+                    agent_result = _run_agent()
+                st.subheader("🤖 Agent")
+                _render_agent_result(agent_result)
+
+            elif mode == "Workflow only":
+                with st.spinner("Running fixed workflow…"):
+                    workflow_result = _run_workflow()
+                st.subheader("📋 Workflow")
+                _render_workflow_result(workflow_result)
+
+            else:
+                col_wf, col_ag = st.columns(2)
+                with st.spinner("Running workflow, then agent…"):
+                    workflow_result = _run_workflow()
+                    agent_result = _run_agent()
+                with col_wf:
+                    st.subheader("📋 Workflow")
+                    _render_workflow_result(workflow_result)
+                with col_ag:
+                    st.subheader("🤖 Agent")
+                    _render_agent_result(agent_result)
+
+                st.divider()
+                st.subheader("Comparison")
+                import pandas as pd
+                agent_passed = _grade(agent_result.status, agent_result.payout)
+                workflow_passed = _grade(workflow_result["status"], workflow_result["payout"])
+                st.dataframe(
+                    pd.DataFrame([
+                        {"System": "workflow", "Status": workflow_result["status"], "Payout": workflow_result["payout"],
+                         "Pass": "✅" if workflow_passed else "❌", "Tokens": workflow_result["total_tokens"],
+                         "Cost (USD)": f"${workflow_result['total_cost_usd']:.6f}", "Latency (s)": round(workflow_result["elapsed_seconds"], 1)},
+                        {"System": "agent", "Status": agent_result.status, "Payout": agent_result.payout,
+                         "Pass": "✅" if agent_passed else ("🚩" if agent_result.flagged_for_review else "❌"),
+                         "Tokens": agent_result.total_tokens, "Cost (USD)": f"${agent_result.total_cost_usd:.6f}",
+                         "Latency (s)": round(agent_result.elapsed_seconds, 1)},
+                    ]),
+                    width="stretch",
+                )
+                if agent_result.status != workflow_result["status"]:
+                    st.info("⚡ The two systems disagreed on this claim's status — a real signal worth reading the rationale for.")
+
+        except Exception as e:
+            st.error(f"Run failed: {e}")
+
+    st.divider()
+    st.subheader("📈 Last full race (analysis/week7/race.csv)")
+    race_csv = ROOT / "analysis" / "week7" / "race.csv"
+    if race_csv.exists():
+        import pandas as pd
+        st.dataframe(pd.read_csv(race_csv), width="stretch")
+        st.caption("From the last `python -m scripts.run_week7_race race` run over all 10 claims.")
+    else:
+        st.info("No race results yet — run `python -m scripts.run_week7_race race` from the CLI.")
