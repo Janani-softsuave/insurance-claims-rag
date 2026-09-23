@@ -1,0 +1,10 @@
+{
+  "servers": [
+    {
+      "name": "claims-gateway",
+      "command": "python",
+      "args": ["-m", "app.mcp_servers.gateway_server"],
+      "env": {"GATEWAY_TOKEN": "claims-status-only"}
+    }
+  ]
+}

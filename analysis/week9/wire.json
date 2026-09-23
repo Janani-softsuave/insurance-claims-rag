@@ -1,0 +1,136 @@
+[
+  {
+    "direction": "client_to_server",
+    "message": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-06-18",
+        "capabilities": {},
+        "clientInfo": {
+          "name": "wire-capture-client",
+          "version": "1.0.0"
+        }
+      }
+    }
+  },
+  {
+    "direction": "server_to_client",
+    "message": {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": {
+        "capabilities": {
+          "experimental": {},
+          "prompts": {
+            "listChanged": false
+          },
+          "resources": {
+            "listChanged": false,
+            "subscribe": false
+          },
+          "tools": {
+            "listChanged": false
+          }
+        },
+        "protocolVersion": "2025-06-18",
+        "serverInfo": {
+          "name": "claims-system",
+          "version": "1.0.0"
+        }
+      }
+    }
+  },
+  {
+    "direction": "client_to_server",
+    "message": {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+    }
+  },
+  {
+    "direction": "client_to_server",
+    "message": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "tools/list",
+      "params": {}
+    }
+  },
+  {
+    "direction": "server_to_client",
+    "message": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": {
+        "tools": [
+          {
+            "description": "Look up the current processing status of a claim in the claims-processing system\n(submitted, under_review, settled, denied, or closed). This reflects the live workflow\nstate as tracked by claims operations, separate from any coverage decision an assistant\nmight compute itself. Claim numbers look like CLM-YYYY-nnnnn.",
+            "inputSchema": {
+              "properties": {
+                "claim_number": {
+                  "title": "Claim Number",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "claim_number"
+              ],
+              "type": "object",
+              "title": "get_claim_statusArguments"
+            },
+            "name": "get_claim_status"
+          },
+          {
+            "description": "Return the dated history of adjuster notes logged against a claim in the\nclaims-processing system, oldest first. Use this to see how a claim has actually been\nhandled over time, not just its current status. Claim numbers look like CLM-YYYY-nnnnn.",
+            "inputSchema": {
+              "properties": {
+                "claim_number": {
+                  "title": "Claim Number",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "claim_number"
+              ],
+              "type": "object",
+              "title": "get_adjuster_note_historyArguments"
+            },
+            "name": "get_adjuster_note_history"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "direction": "client_to_server",
+    "message": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "tools/call",
+      "params": {
+        "name": "get_claim_status",
+        "arguments": {
+          "claim_number": "CLM-2027-00201"
+        }
+      }
+    }
+  },
+  {
+    "direction": "server_to_client",
+    "message": {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": {
+        "content": [
+          {
+            "text": "{\n  \"claim_number\": \"CLM-2027-00201\",\n  \"status\": \"denied\"\n}",
+            "type": "text"
+          }
+        ],
+        "isError": false
+      }
+    }
+  }
+]

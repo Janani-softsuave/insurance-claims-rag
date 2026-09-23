@@ -1,0 +1,12 @@
+2026-09-22T11:09:47 | caller=full | tool=get_claim | claim_number=CLM-2027-00206 | allowed=True
+2026-09-22T11:09:47 | caller=full | tool=get_claim_status | claim_number=CLM-2027-00206 | allowed=True
+2026-09-22T11:09:49 | caller=full | tool=get_adjuster_note_history | claim_number=CLM-2027-00206 | allowed=True
+2026-09-22T11:09:49 | caller=full | tool=search_policy_text | claim_number= | allowed=True
+2026-09-22T11:10:12 | caller=full | tool=compute_claim_payout | claim_number= | allowed=True
+2026-09-22T11:10:17 | caller=full | tool=submit_decision | claim_number=CLM-2027-00206 | allowed=True
+2026-09-22T11:10:50 | caller=claims-status-only | tool=get_claim | claim_number=CLM-2027-00206 | allowed=True
+2026-09-22T11:10:50 | caller=claims-status-only | tool=get_claim_status | claim_number=CLM-2027-00206 | allowed=True
+2026-09-22T11:10:53 | caller=claims-status-only | tool=get_adjuster_note_history | claim_number=CLM-2027-00206 | allowed=False
+2026-09-22T11:10:53 | caller=claims-status-only | tool=search_policy_text | claim_number= | allowed=True
+2026-09-22T11:11:09 | caller=claims-status-only | tool=compute_claim_payout | claim_number= | allowed=True
+2026-09-22T11:11:13 | caller=claims-status-only | tool=submit_decision | claim_number=CLM-2027-00206 | allowed=True

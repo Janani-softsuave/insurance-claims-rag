@@ -1,0 +1,77 @@
+{
+  "CLM-2027-00201": {
+    "status": "denied",
+    "adjuster_notes_history": [
+      {"date": "2027-01-05", "author": "R. Iyer", "note": "Initial review opened. Requesting workshop diagnostic report for engine seizure."},
+      {"date": "2027-01-08", "author": "R. Iyer", "note": "No Engine & Gearbox Protection endorsement (IMT-29) found on policy. Flagged for likely denial."},
+      {"date": "2027-01-10", "author": "System", "note": "Claim denied - water ingress exclusion applies, no endorsement on file."}
+    ]
+  },
+  "CLM-2027-00202": {
+    "status": "settled",
+    "adjuster_notes_history": [
+      {"date": "2027-01-12", "author": "M. Fernandes", "note": "Parking lot collision, own damage only. Photos on file confirm bumper and taillight damage."},
+      {"date": "2027-01-14", "author": "M. Fernandes", "note": "Straightforward own-damage repair, no third party involved. Approved for standard payout."},
+      {"date": "2027-01-15", "author": "System", "note": "Settled: R17,000 (claimed R18,000 less R1,000 compulsory excess)."}
+    ]
+  },
+  "CLM-2027-00203": {
+    "status": "denied",
+    "adjuster_notes_history": [
+      {"date": "2027-02-02", "author": "S. Rao", "note": "Structural cracking reported after earthquake. Site inspection scheduled."},
+      {"date": "2027-02-06", "author": "S. Rao", "note": "No Earthquake Extension endorsement on file for this policy."},
+      {"date": "2027-02-08", "author": "System", "note": "Claim denied - earthquake peril not covered without endorsement."}
+    ]
+  },
+  "CLM-2027-00204": {
+    "status": "settled",
+    "adjuster_notes_history": [
+      {"date": "2027-02-10", "author": "T. Naidoo", "note": "Kitchen fire, building structure damaged. No neighbouring or tenant property involved."},
+      {"date": "2027-02-13", "author": "System", "note": "Settled: R80,000 (claimed R90,000 less R10,000 standard excess)."}
+    ]
+  },
+  "CLM-2027-00205": {
+    "status": "settled",
+    "adjuster_notes_history": [
+      {"date": "2027-03-01", "author": "A. Khan", "note": "Pothole incident, front-left tyre and bumper damaged in same event. Insured holds IMT-28 Zero Dep cover."},
+      {"date": "2027-03-03", "author": "A. Khan", "note": "Tyre depreciation exception applies under IMT-28 - 50% depreciation on tyre only, bumper covered in full."},
+      {"date": "2027-03-04", "author": "System", "note": "Settled: R5,500 after depreciation and compulsory excess."}
+    ]
+  },
+  "CLM-2027-00206": {
+    "status": "denied",
+    "adjuster_notes_history": [
+      {"date": "2027-03-10", "author": "P. Singh", "note": "Overnight burglary reported. Electronics stolen from living room."},
+      {"date": "2027-03-12", "author": "P. Singh", "note": "Back door found unlocked, no signs of forced or violent entry. Burglary section requires forcible and violent entry."},
+      {"date": "2027-03-13", "author": "System", "note": "Claim denied - entry condition not met under Section 3.3 (Burglary & Theft)."}
+    ]
+  },
+  "CLM-2027-00207": {
+    "status": "settled",
+    "adjuster_notes_history": [
+      {"date": "2027-03-20", "author": "R. Iyer", "note": "Windshield cracked by stone chip on highway. Insured holds glass breakage cover, no other damage claimed."},
+      {"date": "2027-03-21", "author": "System", "note": "Settled: R4,500 in full, compulsory deductible waived for glass-only claim."}
+    ]
+  },
+  "CLM-2027-00208": {
+    "status": "under_review",
+    "adjuster_notes_history": [
+      {"date": "2027-04-01", "author": "M. Fernandes", "note": "Vehicle reported stolen from parking lot 95 days ago. Awaiting police Non-Traceable Certificate."},
+      {"date": "2027-04-15", "author": "M. Fernandes", "note": "Certificate still outstanding. Claim held pending, follow up with insured in 30 days."}
+    ]
+  },
+  "CLM-2027-00209": {
+    "status": "denied",
+    "adjuster_notes_history": [
+      {"date": "2027-04-05", "author": "S. Rao", "note": "Collision with median late at night. Breathalyzer report on file confirms driver was over the legal alcohol limit."},
+      {"date": "2027-04-07", "author": "System", "note": "Claim denied - driving under the influence exclusion applies."}
+    ]
+  },
+  "CLM-2027-00210": {
+    "status": "settled",
+    "adjuster_notes_history": [
+      {"date": "2027-04-18", "author": "T. Naidoo", "note": "Large tree fell on roof during storm, impact damage to structure. Standard building cover, no endorsements."},
+      {"date": "2027-04-20", "author": "System", "note": "Settled: R140,000 (claimed R150,000 less R10,000 standard excess)."}
+    ]
+  }
+}
