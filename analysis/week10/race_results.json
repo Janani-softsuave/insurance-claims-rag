@@ -1,0 +1,713 @@
+{
+  "single": {
+    "CLM-2027-00201": {
+      "claim_number": "CLM-2027-00201",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "Engine damage caused by water ingression/hydrostatic lock is excluded from standard comprehensive coverage without the Engine & Gearbox Protection endorsement (IMT-29). As no such endorsement is on file, the claim is denied.",
+      "total_tokens": 9050,
+      "total_cost_usd": 0.00072105,
+      "elapsed_seconds": 17.06656230002409,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "pass": true
+    },
+    "CLM-2027-00202": {
+      "claim_number": "CLM-2027-00202",
+      "status": "covered",
+      "payout": 17000,
+      "rationale": "The claim is for accidental own-damage resulting from collision with a pillar, which is covered under the comprehensive motor policy. The final payout is the claimed amount of \u20b918,000 less the \u20b91,000 deductible.",
+      "total_tokens": 13987,
+      "total_cost_usd": 0.001097625,
+      "elapsed_seconds": 44.26584700000001,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "pass": true
+    },
+    "CLM-2027-00203": {
+      "claim_number": "CLM-2027-00203",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "Standard property policies do not cover earthquake damage without an Earthquake Extension endorsement (IAP-01). Since this policy lacks the endorsement, the claim is denied.",
+      "total_tokens": 8791,
+      "total_cost_usd": 0.0006980249999999999,
+      "elapsed_seconds": 75.6285941000001,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "pass": true
+    },
+    "CLM-2027-00204": {
+      "claim_number": "CLM-2027-00204",
+      "status": "covered",
+      "payout": 80000,
+      "rationale": "Fire damage to the building structure is covered under standard building cover. The payout is calculated by deducting the policy excess from the claimed amount.",
+      "total_tokens": 14990,
+      "total_cost_usd": 0.00116745,
+      "elapsed_seconds": 13.342314499997883,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "pass": true
+    },
+    "CLM-2027-00205": {
+      "claim_number": "CLM-2027-00205",
+      "status": null,
+      "payout": null,
+      "rationale": null,
+      "total_tokens": 10021,
+      "total_cost_usd": 0.0007754249999999999,
+      "elapsed_seconds": 87065.19175659999,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "check_claim_history"
+      ],
+      "flagged_for_review": false,
+      "pass": false
+    },
+    "CLM-2027-00206": {
+      "claim_number": "CLM-2027-00206",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "The policy covers burglary and theft resulting from forcible and violent entry, explicitly excluding unforced entry. As the back door was left unlocked and there was no forced entry, the claim is denied.",
+      "total_tokens": 9400,
+      "total_cost_usd": 0.00074595,
+      "elapsed_seconds": 11.927025399985723,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "pass": true
+    },
+    "CLM-2027-00207": {
+      "claim_number": "CLM-2027-00207",
+      "status": "covered",
+      "payout": 4500,
+      "rationale": "The claim for windshield replacement due to a stone chip is covered under glass breakage cover. Because no other damage was claimed simultaneously, the standard compulsory deductible of \u20b91,000 is waived.",
+      "total_tokens": 14563,
+      "total_cost_usd": 0.001136775,
+      "elapsed_seconds": 80.64959860002273,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "pass": true
+    },
+    "CLM-2027-00208": {
+      "claim_number": "CLM-2027-00208",
+      "status": null,
+      "payout": null,
+      "rationale": null,
+      "total_tokens": 29176,
+      "total_cost_usd": 0.002232525,
+      "elapsed_seconds": 97.55225830001291,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "search_policy",
+        "compute_payout"
+      ],
+      "flagged_for_review": false,
+      "pass": false
+    },
+    "CLM-2027-00209": {
+      "claim_number": "CLM-2027-00209",
+      "status": null,
+      "payout": null,
+      "rationale": null,
+      "total_tokens": 1358,
+      "total_cost_usd": 0.000108375,
+      "elapsed_seconds": 3785.418756900006,
+      "tool_calls": [
+        "get_claim"
+      ],
+      "flagged_for_review": false,
+      "pass": false
+    },
+    "CLM-2027-00210": {
+      "claim_number": "CLM-2027-00210",
+      "status": "covered",
+      "payout": 140000,
+      "rationale": "Impact damage caused by a falling tree during a storm is covered under standard building insurance. The payout is \u20b9140,000 after deducting the policy excess of \u20b910,000 from the claimed amount of \u20b9150,000.",
+      "total_tokens": 15293,
+      "total_cost_usd": 0.0011967,
+      "elapsed_seconds": 84.28327240003273,
+      "tool_calls": [
+        "get_claim",
+        "search_policy",
+        "search_policy",
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "pass": true
+    }
+  },
+  "multi": {
+    "CLM-2027-00201": {
+      "claim_number": "CLM-2027-00201",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "The claim is denied because engine damage caused by water ingression/hydrostatic lock is excluded under the policy unless the Engine & Gearbox Protection endorsement (IMT-29) is present. There is no such endorsement on file for this policy.",
+      "total_tokens": 5391,
+      "total_cost_usd": 0.000470475,
+      "elapsed_seconds": 43.6278787,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00201",
+          "prompt_tokens": 2148,
+          "output_tokens": 112,
+          "total_tokens": 2260,
+          "cost_usd": 0.00019470000000000002
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00201",
+          "prompt_tokens": 473,
+          "output_tokens": 44,
+          "total_tokens": 517,
+          "cost_usd": 4.8675000000000004e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00201",
+          "prompt_tokens": 971,
+          "output_tokens": 39,
+          "total_tokens": 1010,
+          "cost_usd": 8.4525e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00201",
+          "prompt_tokens": 1505,
+          "output_tokens": 99,
+          "total_tokens": 1604,
+          "cost_usd": 0.00014257499999999998
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00201",
+        "exclusions worker tool_calls=['search_policy'] -> COVERAGE_OPINION: denied\nEXCLUSION_OR_ENDORSEMENT: Engine damage due to water ingression/hydrostatic lock excluded without Engine & Gearbox Protection endorsement (IMT-29)\nCITED_TEXT: Engine damage due to water ingression is covered only if you have the Engine & Gearbox Protection endorsement (IMT-2",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: The insured's car engine seized after being driven through a flooded street during heavy rain.\nENDORSEMENT_OR_CAP_FLAGS: none\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'excess_amount': 1000, 'claimed_amount': 45000, 'claim_status': 'denied'}) -> {'payout': 0.0}",
+        "manager synthesis: submit_decision -> {'rationale': 'The claim is denied because engine damage caused by water ingression/hydrostatic lock is excluded under the policy unless the Engine & Gearbox Protection endorsement (IMT-29) is present. There is no such endorsement on file for this policy.', 'payout': 0, 'claim_number': 'CLM-2027-00201', 'claim_status': 'denied'}"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00202": {
+      "claim_number": "CLM-2027-00202",
+      "status": "covered",
+      "payout": 17000,
+      "rationale": "The claim is fully covered under accidental damage as the insured reversed into a concrete pillar causing own-vehicle damage to the rear bumper and taillight. No exclusions or specific policy caps apply. Deducting the standard policy excess of $1,000 from the claimed amount of $18,000 yields a final payout of $17,000.",
+      "total_tokens": 7958,
+      "total_cost_usd": 0.000672675,
+      "elapsed_seconds": 53.924542299999985,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00202",
+          "prompt_tokens": 4770,
+          "output_tokens": 123,
+          "total_tokens": 4893,
+          "cost_usd": 0.00039464999999999997
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00202",
+          "prompt_tokens": 478,
+          "output_tokens": 48,
+          "total_tokens": 526,
+          "cost_usd": 5.0249999999999995e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00202",
+          "prompt_tokens": 959,
+          "output_tokens": 38,
+          "total_tokens": 997,
+          "cost_usd": 8.3325e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00202",
+          "prompt_tokens": 1414,
+          "output_tokens": 128,
+          "total_tokens": 1542,
+          "cost_usd": 0.00014445
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00202",
+        "exclusions worker tool_calls=['search_policy', 'search_policy'] -> COVERAGE_OPINION: covered\nEXCLUSION_OR_ENDORSEMENT: none found\nCITED_TEXT: Covers accidental damage, fire, theft, natural calamities (flood, earthquake, cyclone), malicious damage, and riots. Not covered: normal wear and tear, mechanical or electrical breakdown, consequential loss.",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: The insured reversed into a concrete pillar in a parking lot, causing damage to the rear bumper and taillight.\nENDORSEMENT_OR_CAP_FLAGS: none\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'claim_status': 'covered', 'excess_amount': 1000, 'claimed_amount': 18000}) -> {'payout': 17000}",
+        "manager synthesis: submit_decision -> {'claim_number': 'CLM-2027-00202', 'rationale': 'The claim is fully covered under accidental damage as the insured reversed into a concrete pillar causing own-vehicle damage to the rear bumper and taillight. No exclusions or specific policy caps apply. Deducting the standard policy excess of $1,000 from the claimed amount of $18,000 yields a final payout of $17,000.', 'payout': 17000, 'claim_status': 'covered'}"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00203": {
+      "claim_number": "CLM-2027-00203",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "The claim for structural damage caused by an earthquake is denied. Standard fire policies exclude earthquake damage by default, requiring an Earthquake Extension endorsement (IAP-01) for coverage. No Earthquake Extension endorsement is on file for this policy.",
+      "total_tokens": 8264,
+      "total_cost_usd": 0.0006873000000000001,
+      "elapsed_seconds": 64389.1061452,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00203",
+          "prompt_tokens": 5133,
+          "output_tokens": 118,
+          "total_tokens": 5251,
+          "cost_usd": 0.000420375
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00203",
+          "prompt_tokens": 473,
+          "output_tokens": 45,
+          "total_tokens": 518,
+          "cost_usd": 4.8975000000000005e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00203",
+          "prompt_tokens": 960,
+          "output_tokens": 41,
+          "total_tokens": 1001,
+          "cost_usd": 8.43e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00203",
+          "prompt_tokens": 1398,
+          "output_tokens": 96,
+          "total_tokens": 1494,
+          "cost_usd": 0.00013365
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00203",
+        "exclusions worker tool_calls=['search_policy', 'search_policy'] -> COVERAGE_OPINION: denied\nEXCLUSION_OR_ENDORSEMENT: Earthquake Extension endorsement (IAP-01)\nCITED_TEXT: Standard fire policies do not cover earthquake by default. You need the Earthquake Extension endorsement (IAP-01). If you have it, both the fire following earthquake and the shock damage are cove",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: An earthquake caused visible structural cracks in the insured's home.\nENDORSEMENT_OR_CAP_FLAGS: No Earthquake Extension endorsement on file.\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'excess_amount': 10000, 'claimed_amount': 220000, 'claim_status': 'denied'}) -> {'payout': 0.0}",
+        "manager synthesis: submit_decision -> {'claim_status': 'denied', 'payout': 0, 'claim_number': 'CLM-2027-00203', 'rationale': 'The claim for structural damage caused by an earthquake is denied. Standard fire policies exclude earthquake damage by default, requiring an Earthquake Extension endorsement (IAP-01) for coverage. No Earthquake Extension endorsement is on file for this policy.'}"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00204": {
+      "claim_number": "CLM-2027-00204",
+      "status": "covered",
+      "payout": 80000,
+      "rationale": "The coverage/exclusions specialist confirmed the claim is covered with no exclusions or endorsements found. The incident summary confirms kitchen fire damage to the building structure with standard building cover. Applying the standard policy excess of $10,000 to the claimed amount of $90,000 results in a final payout of $80,000.",
+      "total_tokens": 8553,
+      "total_cost_usd": 0.000705375,
+      "elapsed_seconds": 80.06793099999777,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00204",
+          "prompt_tokens": 5518,
+          "output_tokens": 77,
+          "total_tokens": 5595,
+          "cost_usd": 0.00043694999999999997
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00204",
+          "prompt_tokens": 471,
+          "output_tokens": 44,
+          "total_tokens": 515,
+          "cost_usd": 4.8525e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00204",
+          "prompt_tokens": 910,
+          "output_tokens": 39,
+          "total_tokens": 949,
+          "cost_usd": 7.994999999999999e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00204",
+          "prompt_tokens": 1370,
+          "output_tokens": 124,
+          "total_tokens": 1494,
+          "cost_usd": 0.00013995
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00204",
+        "exclusions worker tool_calls=['search_policy', 'search_policy'] -> COVERAGE_OPINION: covered\nEXCLUSION_OR_ENDORSEMENT: none found\nCITED_TEXT: none",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: A kitchen fire damaged part of the building structure, with no neighbouring or tenant property involved.\nENDORSEMENT_OR_CAP_FLAGS: none\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'claim_status': 'covered', 'claimed_amount': 90000, 'excess_amount': 10000}) -> {'payout': 80000}",
+        "manager synthesis: submit_decision -> {'payout': 80000, 'claim_status': 'covered', 'claim_number': 'CLM-2027-00204', 'rationale': 'The coverage/exclusions specialist confirmed the claim is covered with no exclusions or endorsements found. The incident summary confirms kitchen fire damage to the building structure with standard building cover. Applying the standard policy excess of $10,000 to the claimed amount of $90,000 results in a final payout of $80,000.'}"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00205": {
+      "claim_number": "CLM-2027-00205",
+      "status": "partial",
+      "payout": 5500,
+      "rationale": "The claim is partially covered. Although the insured holds IMT-28 (Nil Depreciation Cover), policy terms state that tyres, tubes, and batteries carry a standard 50% depreciation regardless of IMT-28. Applying 50% depreciation to the claim and deducting the standard excess of 1,000 yields a final payout of 5,500.",
+      "total_tokens": 9546,
+      "total_cost_usd": 0.0008052749999999999,
+      "elapsed_seconds": 71.43843339997693,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00205",
+          "prompt_tokens": 5312,
+          "output_tokens": 125,
+          "total_tokens": 5437,
+          "cost_usd": 0.0004358999999999999
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00205",
+          "prompt_tokens": 1310,
+          "output_tokens": 104,
+          "total_tokens": 1414,
+          "cost_usd": 0.00012944999999999998
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00205",
+          "prompt_tokens": 1002,
+          "output_tokens": 38,
+          "total_tokens": 1040,
+          "cost_usd": 8.655e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00205",
+          "prompt_tokens": 1525,
+          "output_tokens": 130,
+          "total_tokens": 1655,
+          "cost_usd": 0.000153375
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00205",
+        "exclusions worker tool_calls=['search_policy', 'search_policy'] -> COVERAGE_OPINION: partial\nEXCLUSION_OR_ENDORSEMENT: IMT-28 (Nil Depreciation Cover) - 50% Depreciation on Tyres Rule\nCITED_TEXT: However, tyres, tubes, and batteries carry a standard 50% depreciation regardless of IMT-28.",
+        "summary worker tool_calls=['check_claim_history'] -> INCIDENT_SUMMARY: A pothole accident damaged the front-left tyre and bumper in a single incident.\nENDORSEMENT_OR_CAP_FLAGS: IMT-28 Zero Dep cover\nCLAIM_HISTORY_NOTE: Policy MOTOR-COMP-03 has had 2 claims this policy year, including 1 IMT-28 claim and 0 RSA events.",
+        "manager synthesis: compute_payout({'claimed_amount': 12000, 'claim_status': 'partial', 'excess_amount': 1000}) -> {'payout': 5500.0}",
+        "manager synthesis: submit_decision -> {'payout': 5500, 'claim_number': 'CLM-2027-00205', 'rationale': 'The claim is partially covered. Although the insured holds IMT-28 (Nil Depreciation Cover), policy terms state that tyres, tubes, and batteries carry a standard 50% depreciation regardless of IMT-28. Applying 50% depreciation to the claim and deducting the standard excess of 1,000 yields a final payout of 5,500.', 'claim_status': 'partial'}"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00206": {
+      "claim_number": "CLM-2027-00206",
+      "status": "flagged_for_review",
+      "payout": null,
+      "rationale": "exclusions/coverage check unavailable (upstream returned 500 twice (injected fault) \u2014 not recoverable via retry); escalating rather than deciding coverage without it.",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "elapsed_seconds": 0.026220599975204095,
+      "tool_calls": [],
+      "flagged_for_review": true,
+      "worker_failure": "upstream returned 500 twice (injected fault) \u2014 not recoverable via retry",
+      "handoffs": [],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00206",
+        "manager -> exclusions worker (attempt 1): injected 500 (simulated upstream failure)",
+        "manager -> exclusions worker (attempt 2): injected 500 (simulated upstream failure)",
+        "manager: exclusions worker unrecoverable (upstream returned 500 twice (injected fault) \u2014 not recoverable via retry) \u2014 degrading to flag_for_review, NOT guessing coverage"
+      ],
+      "pass": false
+    },
+    "CLM-2027-00207": {
+      "claim_number": "CLM-2027-00207",
+      "status": "covered",
+      "payout": 3500,
+      "rationale": "The claim for windshield damage caused by a stone chip is covered under the policy's glass breakage cover with no applicable exclusions or endorsements. Applying the policy deductible of $1,000 to the claimed amount of $4,500 results in a final payout of $3,500.",
+      "total_tokens": 7849,
+      "total_cost_usd": 0.0006494249999999999,
+      "elapsed_seconds": 53021.88313469995,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00207",
+          "prompt_tokens": 4856,
+          "output_tokens": 77,
+          "total_tokens": 4933,
+          "cost_usd": 0.0003873
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00207",
+          "prompt_tokens": 469,
+          "output_tokens": 43,
+          "total_tokens": 512,
+          "cost_usd": 4.8075e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00207",
+          "prompt_tokens": 907,
+          "output_tokens": 37,
+          "total_tokens": 944,
+          "cost_usd": 7.9125e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00207",
+          "prompt_tokens": 1347,
+          "output_tokens": 113,
+          "total_tokens": 1460,
+          "cost_usd": 0.00013492499999999999
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00207",
+        "exclusions worker tool_calls=['search_policy', 'search_policy'] -> COVERAGE_OPINION: covered\nEXCLUSION_OR_ENDORSEMENT: none found\nCITED_TEXT: none",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: The vehicle's windshield was cracked by a stone chip while driving on the highway.\nENDORSEMENT_OR_CAP_FLAGS: none\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'claimed_amount': 4500, 'excess_amount': 1000, 'claim_status': 'covered'}) -> {'payout': 3500}",
+        "manager synthesis: submit_decision -> {'claim_number': 'CLM-2027-00207', 'claim_status': 'covered', 'payout': 3500, 'rationale': \"The claim for windshield damage caused by a stone chip is covered under the policy's glass breakage cover with no applicable exclusions or endorsements. Applying the policy deductible of $1,000 to the claimed amount of $4,500 results in a final payout of $3,500.\"}"
+      ],
+      "pass": false
+    },
+    "CLM-2027-00208": {
+      "claim_number": "CLM-2027-00208",
+      "status": "pending",
+      "payout": 0,
+      "rationale": "The coverage/exclusions specialist determined the claim status is pending because the required Non-Traceable Certificate from the police has not yet been issued following the vehicle theft 95 days ago. The summary specialist confirmed the incident details and noted no endorsement or cap flags. Therefore, the claim remains pending pending receipt of the necessary police documentation, resulting in a current payout of 0.",
+      "total_tokens": 8124,
+      "total_cost_usd": 0.0006759,
+      "elapsed_seconds": 31.891028799989726,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00208",
+          "prompt_tokens": 4634,
+          "output_tokens": 78,
+          "total_tokens": 4712,
+          "cost_usd": 0.00037095
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00208",
+          "prompt_tokens": 475,
+          "output_tokens": 56,
+          "total_tokens": 531,
+          "cost_usd": 5.2425e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00208",
+          "prompt_tokens": 926,
+          "output_tokens": 39,
+          "total_tokens": 965,
+          "cost_usd": 8.115e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00208",
+          "prompt_tokens": 1793,
+          "output_tokens": 123,
+          "total_tokens": 1916,
+          "cost_usd": 0.000171375
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00208",
+        "exclusions worker tool_calls=['search_policy', 'search_policy'] -> COVERAGE_OPINION: pending\nEXCLUSION_OR_ENDORSEMENT: none found\nCITED_TEXT: none",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: The insured's vehicle was stolen from a parking lot 95 days ago, and police have not yet issued a Non-Traceable Certificate.\nENDORSEMENT_OR_CAP_FLAGS: none\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'excess_amount': 1000, 'claimed_amount': 800000, 'claim_status': 'pending'}) -> {'payout': 0.0}",
+        "manager synthesis: submit_decision -> {'claim_status': 'pending', 'claim_number': 'CLM-2027-00208', 'rationale': 'The coverage/exclusions specialist determined the claim status is pending because the required Non-Traceable Certificate from the police has not yet been issued following the vehicle theft 95 days ago. The summary specialist confirmed the incident details and noted no endorsement or cap flags. Therefore, the claim remains pending pending receipt of the necessary police documentation, resulting in a current payout of 0.', 'payout': 0}"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00209": {
+      "claim_number": "CLM-2027-00209",
+      "status": "denied",
+      "payout": 0,
+      "rationale": "The claim is denied based on the exclusions specialist finding and supporting adjuster notes. The breathalyzer report on file confirms the driver was under the influence of alcohol at the time of the collision, which falls directly under the policy exclusion for damage caused while driving under the influence of alcohol or drugs.",
+      "total_tokens": 7976,
+      "total_cost_usd": 0.00066345,
+      "elapsed_seconds": 89.71564029995352,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00209",
+          "prompt_tokens": 4795,
+          "output_tokens": 98,
+          "total_tokens": 4893,
+          "cost_usd": 0.000389025
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00209",
+          "prompt_tokens": 478,
+          "output_tokens": 46,
+          "total_tokens": 524,
+          "cost_usd": 4.965e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00209",
+          "prompt_tokens": 938,
+          "output_tokens": 39,
+          "total_tokens": 977,
+          "cost_usd": 8.205e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00209",
+          "prompt_tokens": 1475,
+          "output_tokens": 107,
+          "total_tokens": 1582,
+          "cost_usd": 0.00014272499999999999
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00209",
+        "exclusions worker tool_calls=['search_policy', 'search_policy'] -> COVERAGE_OPINION: denied\nEXCLUSION_OR_ENDORSEMENT: Exclusion for driving under the influence of alcohol or drugs\nCITED_TEXT: Damage caused while driving under the influence of alcohol or drugs.",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: The insured vehicle collided with a divider late at night while the driver was under the influence of alcohol.\nENDORSEMENT_OR_CAP_FLAGS: none\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'excess_amount': 1000, 'claimed_amount': 65000, 'claim_status': 'denied'}) -> {'payout': 0.0}",
+        "manager synthesis: submit_decision -> {'claim_status': 'denied', 'rationale': 'The claim is denied based on the exclusions specialist finding and supporting adjuster notes. The breathalyzer report on file confirms the driver was under the influence of alcohol at the time of the collision, which falls directly under the policy exclusion for damage caused while driving under the influence of alcohol or drugs.', 'payout': 0, 'claim_number': 'CLM-2027-00209'}"
+      ],
+      "pass": true
+    },
+    "CLM-2027-00210": {
+      "claim_number": "CLM-2027-00210",
+      "status": "covered",
+      "payout": 140000,
+      "rationale": "The claim is fully covered under Clause B Insured Events (Storm and Impact damage by falling trees). Applying the policy excess of $10,000 to the claimed amount of $150,000 yields a net payout of $140,000.",
+      "total_tokens": 5663,
+      "total_cost_usd": 0.0004953749999999999,
+      "elapsed_seconds": 16.727149799990002,
+      "tool_calls": [
+        "compute_payout",
+        "submit_decision"
+      ],
+      "flagged_for_review": false,
+      "worker_failure": null,
+      "handoffs": [
+        {
+          "label": "manager -> exclusions worker",
+          "claim_number": "CLM-2027-00210",
+          "prompt_tokens": 2439,
+          "output_tokens": 121,
+          "total_tokens": 2560,
+          "cost_usd": 0.000219225
+        },
+        {
+          "label": "manager -> summary worker",
+          "claim_number": "CLM-2027-00210",
+          "prompt_tokens": 471,
+          "output_tokens": 41,
+          "total_tokens": 512,
+          "cost_usd": 4.7625e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00210",
+          "prompt_tokens": 977,
+          "output_tokens": 40,
+          "total_tokens": 1017,
+          "cost_usd": 8.5275e-05
+        },
+        {
+          "label": "workers -> manager synthesis",
+          "claim_number": "CLM-2027-00210",
+          "prompt_tokens": 1462,
+          "output_tokens": 112,
+          "total_tokens": 1574,
+          "cost_usd": 0.00014324999999999999
+        }
+      ],
+      "log": [
+        "manager: fetched claim record for CLM-2027-00210",
+        "exclusions worker tool_calls=['search_policy'] -> COVERAGE_OPINION: covered\nEXCLUSION_OR_ENDORSEMENT: none found\nCITED_TEXT: Clause B. Insured Events: 5 Storm, Cyclone, Typhoon, Tempest, Hurricane, Tornado, Tsunami, Flood and Inundation; 8 Impact damage of any kind, i.e., damage caused by impact of, or collision caused by any external physical obje",
+        "summary worker tool_calls=[] -> INCIDENT_SUMMARY: A large tree fell onto the roof during a storm, causing impact damage.\nENDORSEMENT_OR_CAP_FLAGS: none\nCLAIM_HISTORY_NOTE: not checked",
+        "manager synthesis: compute_payout({'claimed_amount': 150000, 'excess_amount': 10000, 'claim_status': 'covered'}) -> {'payout': 140000}",
+        "manager synthesis: submit_decision -> {'claim_status': 'covered', 'claim_number': 'CLM-2027-00210', 'rationale': 'The claim is fully covered under Clause B Insured Events (Storm and Impact damage by falling trees). Applying the policy excess of $10,000 to the claimed amount of $150,000 yields a net payout of $140,000.', 'payout': 140000}"
+      ],
+      "pass": true
+    }
+  }
+}

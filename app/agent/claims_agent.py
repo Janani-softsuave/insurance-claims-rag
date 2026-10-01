@@ -1,14 +1,12 @@
 from __future__ import annotations
 
 import json
-import time
 from dataclasses import dataclass, field
 
-from google import genai
-from google.genai import errors as genai_errors
 from google.genai import types
 
 from app.agent.budgets import Budgets, BudgetExceeded, BudgetTracker
+from app.agent.llm_client import GeminiKeyRotatingClient
 from app.agent.tools import AGENT_TOOLS, TOOL_IMPLS
 from app.core.config import settings
 from app.core.logging import get_logger
@@ -80,19 +78,6 @@ class AgentRunResult:
     log: list[str] = field(default_factory=list)
 
 
-def _retry_delay_seconds(exc: genai_errors.ClientError) -> float | None:
-    details = exc.details if isinstance(exc.details, dict) else {}
-    for item in details.get("details", []) or []:
-        if item.get("@type", "").endswith("RetryInfo"):
-            raw = item.get("retryDelay", "")
-            if raw.endswith("s"):
-                try:
-                    return float(raw[:-1])
-                except ValueError:
-                    return None
-    return None
-
-
 def _call_cost(usage) -> tuple[int, float]:
     if usage is None:
         return 0, 0.0
@@ -112,59 +97,11 @@ class ClaimsAgent:
         tool_impls: dict | None = None,
         output_guardrail=None,
     ):
-        self._key_pool = [api_key] if api_key else settings.gemini_api_key_pool()
-        if not self._key_pool:
-            self._key_pool = [""]
-        self._key_index = 0
-        self.model = model or settings.gemini_model
-        self.client = genai.Client(api_key=self._key_pool[self._key_index])
+        self._llm = GeminiKeyRotatingClient(api_key=api_key, model=model)
         self.budgets = budgets or Budgets()
         self.system_prompt = system_prompt or SYSTEM_PROMPT
         self.tool_impls = tool_impls or TOOL_IMPLS
         self.output_guardrail = output_guardrail
-
-    def _generate_with_key_rotation(self, contents, config):
-        same_key_retries = 0
-        max_same_key_retries = 6
-        server_error_retries = 0
-        max_server_error_retries = 5
-        while True:
-            try:
-                return self.client.models.generate_content(model=self.model, contents=contents, config=config)
-            except genai_errors.ServerError as exc:
-                if server_error_retries >= max_server_error_retries:
-                    raise
-                server_error_retries += 1
-                delay = min(30, 5 * server_error_retries)
-                logger.warning(
-                    "Gemini returned %s (server-side); backing off %.1fs (attempt %d/%d)",
-                    exc.code, delay, server_error_retries, max_server_error_retries,
-                )
-                time.sleep(delay)
-            except genai_errors.ClientError as exc:
-                is_quota_error = exc.code == 429 or (exc.status or "").upper() == "RESOURCE_EXHAUSTED"
-                if not is_quota_error:
-                    raise
-
-                if same_key_retries < max_same_key_retries:
-                    same_key_retries += 1
-                    delay = _retry_delay_seconds(exc) or min(60, 2 * (2**same_key_retries))
-                    logger.warning(
-                        "Gemini key %d/%d rate-limited (429); backing off %.1fs (attempt %d/%d)",
-                        self._key_index + 1, len(self._key_pool), delay, same_key_retries, max_same_key_retries,
-                    )
-                    time.sleep(delay)
-                    continue
-
-                if self._key_index + 1 >= len(self._key_pool):
-                    raise
-                self._key_index += 1
-                same_key_retries = 0
-                logger.warning(
-                    "Gemini key %d/%d still rate-limited, rotating to key %d/%d",
-                    self._key_index, len(self._key_pool), self._key_index + 1, len(self._key_pool),
-                )
-                self.client = genai.Client(api_key=self._key_pool[self._key_index])
 
     def run(self, claim_number: str) -> AgentRunResult:
         tracker = BudgetTracker(budgets=self.budgets)
@@ -193,7 +130,7 @@ class ClaimsAgent:
                 logger.warning("Agent for %s terminated cleanly: %s", claim_number, exc)
                 break
 
-            response = self._generate_with_key_rotation(contents, config)
+            response = self._llm.generate(contents, config)
             tokens, cost = _call_cost(response.usage_metadata)
             tracker.record_call(tokens=tokens, cost_usd=cost)
 
