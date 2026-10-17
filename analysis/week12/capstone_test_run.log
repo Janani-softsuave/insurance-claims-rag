@@ -1,0 +1,14 @@
+discovered tools: ['get_claim', 'check_coverage_in_force', 
+'search_policy_wording', 'compute_amounts', 'refer_to_adjuster']
+20:56:31 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+20:56:31 | WARNING | app.agent.llm_client | Gemini returned 503 (server-side); backing off 5.0s (attempt 1/5)
+20:56:38 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+20:56:38 | WARNING | app.agent.llm_client | Gemini returned 503 (server-side); backing off 10.0s (attempt 2/5)
+20:56:50 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+20:56:50 | WARNING | app.agent.llm_client | Gemini returned 503 (server-side); backing off 15.0s (attempt 3/5)
+20:57:09 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+20:57:09 | WARNING | app.agent.llm_client | Gemini returned 503 (server-side); backing off 20.0s (attempt 4/5)
+20:57:32 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+20:57:32 | WARNING | app.agent.llm_client | Gemini returned 503 (server-side); backing off 25.0s (attempt 5/5)
+20:58:03 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+20:58:03 | WARNING | app.agent.llm_client | Gemini still returning 503 after 5 attempts (cycle 1) — sleeping 3600s then retrying.

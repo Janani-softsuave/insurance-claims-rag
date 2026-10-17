@@ -1,0 +1,10 @@
+{
+  "servers": [
+    {
+      "name": "claims-triage-coverage",
+      "command": "python",
+      "args": ["-m", "app.mcp_servers.capstone_server"],
+      "env": {}
+    }
+  ]
+}

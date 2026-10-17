@@ -1,0 +1,102 @@
+{
+  "CLM-2027-00301": {
+    "faithful": true,
+    "rationale": "The referral accurately cites available clauses from the base policy text, correctly aligns with the exclusion signal given the lack of IMT-29 endorsement, presents distinct financial figures, and avoids making a final coverage decision in the summary."
+  },
+  "CLM-2027-00302": {
+    "faithful": false,
+    "rationale": "The cited clause \"Section 2.2 Own-Damage (Comprehensive)\" is not present in the retrieved policy text."
+  },
+  "CLM-2027-00303": {
+    "faithful": true,
+    "rationale": "The referral accurately cites an existing clause and endorsement version, aligns coverage_signal with the policy conditions regarding joint tyre and vehicle damage, maintains distinct money figures, and avoids making a definitive coverage decision in the summary."
+  },
+  "CLM-2027-00304": {
+    "faithful": false,
+    "rationale": "The cited clause regarding driving under the influence of alcohol or drugs is not present anywhere in the retrieved policy text."
+  },
+  "CLM-2027-00305": {
+    "faithful": true,
+    "rationale": "The referral output is fully supported by the retrieved policy text and claims facts, cites clauses and endorsement versions present in the text, reports distinct financial terms, and does not state a coverage decision."
+  },
+  "CLM-2027-00306": {
+    "faithful": false,
+    "rationale": "The cited clause and endorsement version are not present in the retrieved policy text, and the summary cites hallucinated policy details (e.g., policy MOTOR-COMP-106 and effective dates) not provided in the claim facts or retrieved context."
+  },
+  "CLM-2027-00307": {
+    "faithful": false,
+    "rationale": "The referral output contains sub-limit figures, policy limits, claimed amounts, and policy dates that are unsupported by the retrieved policy text and FNOL claim facts."
+  },
+  "CLM-2027-00308": {
+    "faithful": false,
+    "rationale": "The referral introduces hallucinated money figures and sub-limits (such as a ₹90,000 claimed amount and ₹750,000 sub-limit) that are not supported by the retrieved policy text or claim facts."
+  },
+  "CLM-2027-00309": {
+    "faithful": false,
+    "rationale": "The referral cites a policy lapse and specific policy dates/numbers that are not present in the retrieved policy text or claim facts."
+  },
+  "CLM-2027-00310": {
+    "faithful": false,
+    "rationale": "Clause 7(a) is cited in the output but is not present in the retrieved policy text."
+  },
+  "CLM-2027-00311": {
+    "faithful": true,
+    "rationale": "The referral accurately cites Clause 9(a) under endorsement version 2025-R1 from the retrieved text, aligns with the exclusion signal, reports distinct money figures, and refrains from declaring a definitive coverage approval."
+  },
+  "CLM-2027-00312": {
+    "faithful": true,
+    "rationale": "The referral accurately cites Clause 9(a) from endorsement version 2025-R1, aligns its coverage signal with the flood exclusion facts, maintains distinct money figures, and avoids declaring a definitive coverage determination in the summary."
+  },
+  "CLM-2027-00313": {
+    "faithful": false,
+    "rationale": "The cited clause includes Clause 7(a), which is not present as a clause in the retrieved policy text."
+  },
+  "CLM-2027-00314": {
+    "faithful": true,
+    "rationale": "The referral accurately cites Clause 9(c) from endorsement version 2025-R1, aligns its exclusion signal with the gradual seepage facts, reports distinct monetary values, and avoids declaring a coverage decision in the summary."
+  },
+  "CLM-2027-00315": {
+    "faithful": false,
+    "rationale": "The deductible figure of 10,000 and the claimed/payable figures mentioned in the summary are not supported by the retrieved policy text or claim facts."
+  },
+  "CLM-2027-00316": {
+    "faithful": true,
+    "rationale": "The coverage signal, cited clause, endorsement version, distinct money values, and summary are all faithfully supported by the retrieved policy wording and claim facts, and no coverage decision is stated."
+  },
+  "CLM-2027-00317": {
+    "faithful": false,
+    "rationale": "The referral cites 'Section 3.3 Burglary & Theft', which does not exist in the retrieved policy text, and misstates the policy deductible as 2,500 instead of INR 25,000."
+  },
+  "CLM-2027-00318": {
+    "faithful": false,
+    "rationale": "The cited clause 'Peril 12 (Bursting or overflowing of water tanks, apparatus and pipes)' does not appear in the retrieved policy text provided."
+  },
+  "CLM-2027-00319": {
+    "faithful": false,
+    "rationale": "The summary cites a non-existent 'Base policy Item 12' regarding bursting or overflowing of water tanks that is not present in the retrieved policy text."
+  },
+  "CLM-2027-00320": {
+    "faithful": false,
+    "rationale": "The cited clause 'N/A - Policy Lapsed / Not in Force' and the policy lapse details in the summary are not present in the retrieved policy text or FNOL facts provided."
+  },
+  "CLM-2027-00321": {
+    "faithful": false,
+    "rationale": "The cited clause \"Clause 7(a)\" is not present as a defined clause heading or text section in the retrieved policy text."
+  },
+  "CLM-2027-00322": {
+    "faithful": true,
+    "rationale": "The referral correctly cites Clause 9(a) and Endorsement Version 2025-R1 from the retrieved text, aligns with the supports_exclusion signal without declaring a final coverage decision, and distinctly reports the financial parameters."
+  },
+  "CLM-2027-00323": {
+    "faithful": false,
+    "rationale": "The cited clause from claims_faq.md is not present in the retrieved policy text provided."
+  },
+  "CLM-2027-00324": {
+    "faithful": false,
+    "rationale": "The referral output hallucinates a deductible of 1000.0 and a claimed amount of 1,200,000, neither of which appears in the FNOL notes or the retrieved policy text."
+  },
+  "CLM-2027-00325": {
+    "faithful": false,
+    "rationale": "The deductible figure of 2,500 and claimed amount of 15,000 reported in the referral summary are not supported by the retrieved policy text (which specifies a deductible of INR 25,000) or the claim facts."
+  }
+}

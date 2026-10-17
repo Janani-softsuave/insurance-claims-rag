@@ -1,0 +1,2171 @@
+{
+  "CLM-2027-00301": {
+    "claim_number": "CLM-2027-00301",
+    "trace_id": "72c20b1565b4",
+    "iterations": 6,
+    "total_tokens": 20925,
+    "total_cost_usd": 0.001702575,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00301"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "72c20b1565b4",
+          "policy_number": "MOTOR-COMP-101",
+          "loss_date": "2024-08-11"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "engine damage flood water ingress hydro locking engine gearbox protection IMT-29 consequential loss",
+          "trace_id": "72c20b1565b4",
+          "loss_date": "2024-08-11"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "motor comprehensive section I exclusions water ingression hydrostatic lock engine damage",
+          "trace_id": "72c20b1565b4",
+          "loss_date": "2024-08-11"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "72c20b1565b4",
+          "deductible": 1000,
+          "claimed_amount": 220000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_limit": "as declared (IDV)",
+          "deductible": 1000,
+          "cited_clause": "IMT-29 — Engine & Gearbox Protection / Motor Claims FAQ",
+          "sub_limit": null,
+          "trace_id": "72c20b1565b4",
+          "loss_date_resolved_against": "2024-08-11",
+          "endorsement_version": "base",
+          "claim_number": "CLM-2027-00301",
+          "summary": "The insured vehicle experienced engine seizure after driving through a flooded underpass on 2024-08-11. Policy coverage was in force from 2024-02-01 to 2025-01-31. Retreived policy wording under base endorsement version (IMT-29 Engine & Gearbox Protection / Motor Claims FAQ) specifies that engine damage from water ingression or hydrostatic lock requires the IMT-29 endorsement. Adjuster notes indicate no IMT-29 endorsement is on file for policy MOTOR-COMP-101. Reference amounts: Claimed Amount: 220,000; Deductible: 1,000; Policy Limit: as declared (IDV); Sub-limit: none.",
+          "coverage_signal": "supports_exclusion"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00301",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "IMT-29 — Engine & Gearbox Protection / Motor Claims FAQ",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-08-11",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "The insured vehicle experienced engine seizure after driving through a flooded underpass on 2024-08-11. Policy coverage was in force from 2024-02-01 to 2025-01-31. Retreived policy wording under base endorsement version (IMT-29 Engine & Gearbox Protection / Motor Claims FAQ) specifies that engine damage from water ingression or hydrostatic lock requires the IMT-29 endorsement. Adjuster notes indicate no IMT-29 endorsement is on file for policy MOTOR-COMP-101. Reference amounts: Claimed Amount: 220,000; Deductible: 1,000; Policy Limit: as declared (IDV); Sub-limit: none.",
+      "final": true,
+      "trace_id": "72c20b1565b4"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00301'}) -> {\"trace_id\": \"72c20b1565b4\", \"claim_number\": \"CLM-2027-00301\", \"policy_number\": \"MOTOR-COMP-101\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2024-08-11\", \"claimed_amount\": 220000, \"fnol_text\": \"Insured reports vehicle engine seized after driving through a flooded underpass during heavy rain.\", ",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': '72c20b1565b4', 'policy_number': 'MOTOR-COMP-101', 'loss_date': '2024-08-11'}) -> {\"policy_number\": \"MOTOR-COMP-101\", \"loss_date\": \"2024-08-11\", \"coverage_start_date\": \"2024-02-01\", \"coverage_end_date\": \"2025-01-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'query': 'engine damage flood water ingress hydro locking engine gearbox protection IMT-29 consequential loss', 'trace_id': '72c20b1565b4', 'loss_date': '2024-08-11'}) -> {\"loss_date\": \"2024-08-11\", \"chunks\": [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 2, \"text\": \"ingression, mechanical/electrical failure,\\n  tyres and tubes (unless the vehicle is also damaged in the same accident). ### IMT-29 \\u2014 Engine & Gearbox Protection\\n- **What it does:** Cover",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'query': 'motor comprehensive section I exclusions water ingression hydrostatic lock engine damage', 'trace_id': '72c20b1565b4', 'loss_date': '2024-08-11'}) -> {\"loss_date\": \"2024-08-11\", \"chunks\": [{\"source\": \"claims_faq.md\", \"chunk_index\": 2, \"text\": \"se, the insurer pays the IDV (or invoice value if RTI endorsement\\nIMT-34 is active) and takes possession of the salvage. **Q: My claim was rejected. What can I do?**\\nA: 1) Request a written rejection lett",
+      "iter 5: [claims-triage-coverage] compute_amounts({'trace_id': '72c20b1565b4', 'deductible': 1000, 'claimed_amount': 220000}) -> {\"claimed_amount\": 220000.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 219000.0, \"payable_after_sub_limit\": 219000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 6: [claims-triage-coverage] refer_to_adjuster({'policy_limit': 'as declared (IDV)', 'deductible': 1000, 'cited_clause': 'IMT-29 — Engine & Gearbox Protection / Motor Claims FAQ', 'sub_limit': None, 'trace_id': '72c20b1565b4', 'loss_date_resolved_against': '2024-08-11', 'endorsement_version': 'base', 'claim_number': 'CLM-2027-00301', 'summary': 'The insured vehicle experienced engine seizure after driving through a flooded underpass on 2024-08-11. Policy coverage was in force from 2024-02-01 to 2025-01-31. Retreived policy wording under base endorsement version (IMT-29 Engine & Gearbox Protection / Motor Claims FAQ) specifies that engine damage from water ingression or hydrostatic lock requires the IMT-29 endorsement. Adjuster notes indicate no IMT-29 endorsement is on file for policy MOTOR-COMP-101. Reference amounts: Claimed Amount: 220,000; Deductible: 1,000; Policy Limit: as declared (IDV); Sub-limit: none.', 'coverage_signal': 'supports_exclusion'}) -> {\"claim_number\": \"CLM-2027-00301\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"IMT-29 \\u2014 Engine & Gearbox Protection / Motor Claims FAQ\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2024-08-11\", \"deductible\": 1000.0, \"sub_limit\": "
+    ]
+  },
+  "CLM-2027-00302": {
+    "claim_number": "CLM-2027-00302",
+    "trace_id": "c09a80ff74d9",
+    "iterations": 7,
+    "total_tokens": 28351,
+    "total_cost_usd": 0.002260875,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00302"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "c09a80ff74d9",
+          "loss_date": "2025-02-03",
+          "policy_number": "MOTOR-COMP-102"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "c09a80ff74d9",
+          "loss_date": "2025-02-03",
+          "query": "accidental damage collision stationary object bumper pillar own damage"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "c09a80ff74d9",
+          "loss_date": "2025-02-03",
+          "query": "motor comprehensive Section 2.2 own damage accidental damage collision"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "c09a80ff74d9",
+          "query": "motor own damage exclusions wear tear breakdown",
+          "loss_date": "2025-02-03"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 18500,
+          "deductible": 1000,
+          "trace_id": "c09a80ff74d9"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 1000,
+          "coverage_signal": "supports_coverage",
+          "trace_id": "c09a80ff74d9",
+          "summary": "Policy MOTOR-COMP-102 was in force on the loss date of 2025-02-03 (active 2024-06-01 to 2025-05-31). The insured vehicle sustained rear bumper and taillight damage after reversing into a parking pillar. Section 2.2 Own-Damage (Comprehensive) from endorsement version base includes accidental damage to the vehicle. Claimed amount: 18,500; Deductible: 1,000; Sub-limit: None; Policy Limit: as declared (IDV).",
+          "loss_date_resolved_against": "2025-02-03",
+          "endorsement_version": "base",
+          "policy_limit": "as declared (IDV)",
+          "cited_clause": "Section 2.2 Own-Damage (Comprehensive)",
+          "sub_limit": null,
+          "claim_number": "CLM-2027-00302"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00302",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Section 2.2 Own-Damage (Comprehensive)",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2025-02-03",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "Policy MOTOR-COMP-102 was in force on the loss date of 2025-02-03 (active 2024-06-01 to 2025-05-31). The insured vehicle sustained rear bumper and taillight damage after reversing into a parking pillar. Section 2.2 Own-Damage (Comprehensive) from endorsement version base includes accidental damage to the vehicle. Claimed amount: 18,500; Deductible: 1,000; Sub-limit: None; Policy Limit: as declared (IDV).",
+      "final": true,
+      "trace_id": "c09a80ff74d9"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00302'}) -> {\"trace_id\": \"c09a80ff74d9\", \"claim_number\": \"CLM-2027-00302\", \"policy_number\": \"MOTOR-COMP-102\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2025-02-03\", \"claimed_amount\": 18500, \"fnol_text\": \"Insured reversed into a concrete pillar in a mall parking lot, denting the rear bumper and taillight.\"",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': 'c09a80ff74d9', 'loss_date': '2025-02-03', 'policy_number': 'MOTOR-COMP-102'}) -> {\"policy_number\": \"MOTOR-COMP-102\", \"loss_date\": \"2025-02-03\", \"coverage_start_date\": \"2024-06-01\", \"coverage_end_date\": \"2025-05-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'trace_id': 'c09a80ff74d9', 'loss_date': '2025-02-03', 'query': 'accidental damage collision stationary object bumper pillar own damage'}) -> {\"loss_date\": \"2025-02-03\", \"chunks\": [{\"source\": \"claims_process.md\", \"chunk_index\": 1, \"text\": \"andatory** for:\\n- Theft of vehicle or property\\n- Third-party bodily injury or death\\n- Riots, malicious damage\\n- Burglary For accidents involving only own-damage with no third-party injury, an FIR is",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'trace_id': 'c09a80ff74d9', 'loss_date': '2025-02-03', 'query': 'motor comprehensive Section 2.2 own damage accidental damage collision'}) -> {\"loss_date\": \"2025-02-03\", \"chunks\": [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 1, \"text\": \"l defence costs up to the policy limit.\\n\\n**Minimum cover:** \\u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\\nCovers accidental damage, f",
+      "iter 5: [claims-triage-coverage] search_policy_wording({'trace_id': 'c09a80ff74d9', 'query': 'motor own damage exclusions wear tear breakdown', 'loss_date': '2025-02-03'}) -> {\"loss_date\": \"2025-02-03\", \"chunks\": [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 1, \"text\": \"l defence costs up to the policy limit.\\n\\n**Minimum cover:** \\u20b915 lakh per accident as required by the Motor Vehicles Act. ### 2.2 Own-Damage (Comprehensive)\\nCovers accidental damage, f",
+      "iter 6: [claims-triage-coverage] compute_amounts({'claimed_amount': 18500, 'deductible': 1000, 'trace_id': 'c09a80ff74d9'}) -> {\"claimed_amount\": 18500.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 17500.0, \"payable_after_sub_limit\": 17500.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 7: [claims-triage-coverage] refer_to_adjuster({'deductible': 1000, 'coverage_signal': 'supports_coverage', 'trace_id': 'c09a80ff74d9', 'summary': 'Policy MOTOR-COMP-102 was in force on the loss date of 2025-02-03 (active 2024-06-01 to 2025-05-31). The insured vehicle sustained rear bumper and taillight damage after reversing into a parking pillar. Section 2.2 Own-Damage (Comprehensive) from endorsement version base includes accidental damage to the vehicle. Claimed amount: 18,500; Deductible: 1,000; Sub-limit: None; Policy Limit: as declared (IDV).', 'loss_date_resolved_against': '2025-02-03', 'endorsement_version': 'base', 'policy_limit': 'as declared (IDV)', 'cited_clause': 'Section 2.2 Own-Damage (Comprehensive)', 'sub_limit': None, 'claim_number': 'CLM-2027-00302'}) -> {\"claim_number\": \"CLM-2027-00302\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Section 2.2 Own-Damage (Comprehensive)\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2025-02-03\", \"deductible\": 1000.0, \"sub_limit\": null, \"policy_limit\": \""
+    ]
+  },
+  "CLM-2027-00303": {
+    "claim_number": "CLM-2027-00303",
+    "trace_id": "40fd65bca3f7",
+    "iterations": 7,
+    "total_tokens": 29876,
+    "total_cost_usd": 0.00238965,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00303"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_number": "MOTOR-COMP-103",
+          "trace_id": "40fd65bca3f7",
+          "loss_date": "2024-03-15"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "40fd65bca3f7",
+          "top_k": 4,
+          "loss_date": "2024-03-15",
+          "query": "tyre damage zero depreciation IMT-28 pothole accompanying damage"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "top_k": 4,
+          "loss_date": "2024-03-15",
+          "query": "tyre damage exclusion depreciation rubber parts vehicle damage same accident",
+          "trace_id": "40fd65bca3f7"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "top_k": 4,
+          "trace_id": "40fd65bca3f7",
+          "query": "motor comprehensive section I damage to tyres and tubes deductible",
+          "loss_date": "2024-03-15"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "40fd65bca3f7",
+          "deductible": 1000,
+          "claimed_amount": 12000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date_resolved_against": "2024-03-15",
+          "claim_number": "CLM-2027-00303",
+          "deductible": 1000,
+          "endorsement_version": "base",
+          "summary": "The claim was filed for tyre and bumper damage resulting from a pothole incident on 2024-03-15 under policy MOTOR-COMP-103. Policy coverage was active from 2023-09-01 to 2024-08-31. Under endorsement version base, clause 'IMT-28 — Nil Depreciation (Zero Dep) Cover', tyre damage is excluded unless accompanied by damage to the vehicle in the same accident. Because the bumper was damaged alongside the front-left tyre in the same incident, the claim aligns with the condition for IMT-28. The total claimed amount is 12,000, with a compulsory deductible of 1,000, no sub-limit applicable, and a policy limit of as declared (IDV).",
+          "sub_limit": null,
+          "coverage_signal": "supports_coverage",
+          "trace_id": "40fd65bca3f7",
+          "policy_limit": "as declared (IDV)",
+          "cited_clause": "IMT-28 — Nil Depreciation (Zero Dep) Cover"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00303",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "IMT-28 — Nil Depreciation (Zero Dep) Cover",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-03-15",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "The claim was filed for tyre and bumper damage resulting from a pothole incident on 2024-03-15 under policy MOTOR-COMP-103. Policy coverage was active from 2023-09-01 to 2024-08-31. Under endorsement version base, clause 'IMT-28 — Nil Depreciation (Zero Dep) Cover', tyre damage is excluded unless accompanied by damage to the vehicle in the same accident. Because the bumper was damaged alongside the front-left tyre in the same incident, the claim aligns with the condition for IMT-28. The total claimed amount is 12,000, with a compulsory deductible of 1,000, no sub-limit applicable, and a policy limit of as declared (IDV).",
+      "final": true,
+      "trace_id": "40fd65bca3f7"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00303'}) -> {\"trace_id\": \"40fd65bca3f7\", \"claim_number\": \"CLM-2027-00303\", \"policy_number\": \"MOTOR-COMP-103\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2024-03-15\", \"claimed_amount\": 12000, \"fnol_text\": \"Insured holds IMT-28 Zero Dep cover; pothole accident damaged the front-left tyre and bumper in the sa",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'policy_number': 'MOTOR-COMP-103', 'trace_id': '40fd65bca3f7', 'loss_date': '2024-03-15'}) -> {\"policy_number\": \"MOTOR-COMP-103\", \"loss_date\": \"2024-03-15\", \"coverage_start_date\": \"2023-09-01\", \"coverage_end_date\": \"2024-08-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'trace_id': '40fd65bca3f7', 'top_k': 4, 'loss_date': '2024-03-15', 'query': 'tyre damage zero depreciation IMT-28 pothole accompanying damage'}) -> {\"loss_date\": \"2024-03-15\", \"chunks\": [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 1, \"text\": \"identified\\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\\n\\n---\\n\\n## Motor Endorsements ### IMT-28 \\u2014 Nil Depreciation (Zero Dep) Cover\\n- **What it do",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'top_k': 4, 'loss_date': '2024-03-15', 'query': 'tyre damage exclusion depreciation rubber parts vehicle damage same accident', 'trace_id': '40fd65bca3f7'}) -> {\"loss_date\": \"2024-03-15\", \"chunks\": [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 1, \"text\": \"identified\\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\\n\\n---\\n\\n## Motor Endorsements ### IMT-28 \\u2014 Nil Depreciation (Zero Dep) Cover\\n- **What it do",
+      "iter 5: [claims-triage-coverage] search_policy_wording({'top_k': 4, 'trace_id': '40fd65bca3f7', 'query': 'motor comprehensive section I damage to tyres and tubes deductible', 'loss_date': '2024-03-15'}) -> {\"loss_date\": \"2024-03-15\", \"chunks\": [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 1, \"text\": \"identified\\nby a unique **IMT** (India Motor Tariff) or **IAP** (India Addendum Pack) number.\\n\\n---\\n\\n## Motor Endorsements ### IMT-28 \\u2014 Nil Depreciation (Zero Dep) Cover\\n- **What it do",
+      "iter 6: [claims-triage-coverage] compute_amounts({'trace_id': '40fd65bca3f7', 'deductible': 1000, 'claimed_amount': 12000}) -> {\"claimed_amount\": 12000.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 11000.0, \"payable_after_sub_limit\": 11000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 7: [claims-triage-coverage] refer_to_adjuster({'loss_date_resolved_against': '2024-03-15', 'claim_number': 'CLM-2027-00303', 'deductible': 1000, 'endorsement_version': 'base', 'summary': \"The claim was filed for tyre and bumper damage resulting from a pothole incident on 2024-03-15 under policy MOTOR-COMP-103. Policy coverage was active from 2023-09-01 to 2024-08-31. Under endorsement version base, clause 'IMT-28 — Nil Depreciation (Zero Dep) Cover', tyre damage is excluded unless accompanied by damage to the vehicle in the same accident. Because the bumper was damaged alongside the front-left tyre in the same incident, the claim aligns with the condition for IMT-28. The total claimed amount is 12,000, with a compulsory deductible of 1,000, no sub-limit applicable, and a policy limit of as declared (IDV).\", 'sub_limit': None, 'coverage_signal': 'supports_coverage', 'trace_id': '40fd65bca3f7', 'policy_limit': 'as declared (IDV)', 'cited_clause': 'IMT-28 — Nil Depreciation (Zero Dep) Cover'}) -> {\"claim_number\": \"CLM-2027-00303\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"IMT-28 \\u2014 Nil Depreciation (Zero Dep) Cover\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2024-03-15\", \"deductible\": 1000.0, \"sub_limit\": null, \"policy_"
+    ]
+  },
+  "CLM-2027-00304": {
+    "claim_number": "CLM-2027-00304",
+    "trace_id": "2cb34804a416",
+    "iterations": 6,
+    "total_tokens": 20883,
+    "total_cost_usd": 0.0017009999999999998,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00304"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_number": "MOTOR-COMP-104",
+          "trace_id": "2cb34804a416",
+          "loss_date": "2025-03-20"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "top_k": 4,
+          "trace_id": "2cb34804a416",
+          "query": "driving under the influence alcohol intoxication liquor",
+          "loss_date": "2025-03-20"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "motor comprehensive general exclusions alcohol influence driving",
+          "top_k": 4,
+          "loss_date": "2025-03-20",
+          "trace_id": "2cb34804a416"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 65000,
+          "trace_id": "2cb34804a416",
+          "deductible": 1000,
+          "sub_limit": null
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "summary": "Policy MOTOR-COMP-104 was in force on the loss date of 2025-03-20 (effective 2025-01-01 to 2025-12-31). The claim involves a vehicle collision with a road divider resulting in a claimed amount of 65,000 INR. A breathalyzer report on file confirms that the driver was operating the vehicle under the influence of alcohol at the time of the accident. Under Key Exclusions Across All Endorsements (version base), damage caused while driving under the influence of alcohol or drugs is listed as a key exclusion. Reference figures: claimed amount 65,000 INR, deductible 1,000 INR, sub-limit null, policy limit as declared (IDV).",
+          "loss_date_resolved_against": "2025-03-20",
+          "policy_limit": "as declared (IDV)",
+          "deductible": 1000,
+          "coverage_signal": "supports_exclusion",
+          "sub_limit": null,
+          "trace_id": "2cb34804a416",
+          "claim_number": "CLM-2027-00304",
+          "cited_clause": "Key Exclusions Across All Endorsements - Damage caused while driving under the influence of alcohol or drugs",
+          "endorsement_version": "base"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00304",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Key Exclusions Across All Endorsements - Damage caused while driving under the influence of alcohol or drugs",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2025-03-20",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "Policy MOTOR-COMP-104 was in force on the loss date of 2025-03-20 (effective 2025-01-01 to 2025-12-31). The claim involves a vehicle collision with a road divider resulting in a claimed amount of 65,000 INR. A breathalyzer report on file confirms that the driver was operating the vehicle under the influence of alcohol at the time of the accident. Under Key Exclusions Across All Endorsements (version base), damage caused while driving under the influence of alcohol or drugs is listed as a key exclusion. Reference figures: claimed amount 65,000 INR, deductible 1,000 INR, sub-limit null, policy limit as declared (IDV).",
+      "final": true,
+      "trace_id": "2cb34804a416"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00304'}) -> {\"trace_id\": \"2cb34804a416\", \"claim_number\": \"CLM-2027-00304\", \"policy_number\": \"MOTOR-COMP-104\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2025-03-20\", \"claimed_amount\": 65000, \"fnol_text\": \"Insured collided with a road divider late at night.\", \"adjuster_notes\": \"Caller: Vikram Singh, 5 Civil",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'policy_number': 'MOTOR-COMP-104', 'trace_id': '2cb34804a416', 'loss_date': '2025-03-20'}) -> {\"policy_number\": \"MOTOR-COMP-104\", \"loss_date\": \"2025-03-20\", \"coverage_start_date\": \"2025-01-01\", \"coverage_end_date\": \"2025-12-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'top_k': 4, 'trace_id': '2cb34804a416', 'query': 'driving under the influence alcohol intoxication liquor', 'loss_date': '2025-03-20'}) -> {\"loss_date\": \"2025-03-20\", \"chunks\": [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 6, \"text\": \"period; pro-rata premium applies.\\n- Contact your agent, visit a branch, or use the ABC Insurance app \\u2192 \\\"Modify Policy\\\". Endorsements take effect on the date of payment confirmation. Bac",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'query': 'motor comprehensive general exclusions alcohol influence driving', 'top_k': 4, 'loss_date': '2025-03-20', 'trace_id': '2cb34804a416'}) -> {\"loss_date\": \"2025-03-20\", \"chunks\": [{\"source\": \"endorsements_and_riders.md\", \"chunk_index\": 6, \"text\": \"period; pro-rata premium applies.\\n- Contact your agent, visit a branch, or use the ABC Insurance app \\u2192 \\\"Modify Policy\\\". Endorsements take effect on the date of payment confirmation. Bac",
+      "iter 5: [claims-triage-coverage] compute_amounts({'claimed_amount': 65000, 'trace_id': '2cb34804a416', 'deductible': 1000, 'sub_limit': None}) -> {\"claimed_amount\": 65000.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 64000.0, \"payable_after_sub_limit\": 64000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 6: [claims-triage-coverage] refer_to_adjuster({'summary': 'Policy MOTOR-COMP-104 was in force on the loss date of 2025-03-20 (effective 2025-01-01 to 2025-12-31). The claim involves a vehicle collision with a road divider resulting in a claimed amount of 65,000 INR. A breathalyzer report on file confirms that the driver was operating the vehicle under the influence of alcohol at the time of the accident. Under Key Exclusions Across All Endorsements (version base), damage caused while driving under the influence of alcohol or drugs is listed as a key exclusion. Reference figures: claimed amount 65,000 INR, deductible 1,000 INR, sub-limit null, policy limit as declared (IDV).', 'loss_date_resolved_against': '2025-03-20', 'policy_limit': 'as declared (IDV)', 'deductible': 1000, 'coverage_signal': 'supports_exclusion', 'sub_limit': None, 'trace_id': '2cb34804a416', 'claim_number': 'CLM-2027-00304', 'cited_clause': 'Key Exclusions Across All Endorsements - Damage caused while driving under the influence of alcohol or drugs', 'endorsement_version': 'base'}) -> {\"claim_number\": \"CLM-2027-00304\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Key Exclusions Across All Endorsements - Damage caused while driving under the influence of alcohol or drugs\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \""
+    ]
+  },
+  "CLM-2027-00305": {
+    "claim_number": "CLM-2027-00305",
+    "trace_id": "1696e49f2ad7",
+    "iterations": 6,
+    "total_tokens": 21176,
+    "total_cost_usd": 0.0017292750000000002,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00305"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "1696e49f2ad7",
+          "policy_number": "MOTOR-COMP-105",
+          "loss_date": "2024-12-28"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "top_k": 4,
+          "trace_id": "1696e49f2ad7",
+          "loss_date": "2024-12-28",
+          "query": "theft vehicle stolen police report non traceable certificate notice delay"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "top_k": 4,
+          "query": "motor comprehensive theft 24 hours condition requirement notice",
+          "trace_id": "1696e49f2ad7",
+          "loss_date": "2024-12-28"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 800000,
+          "trace_id": "1696e49f2ad7",
+          "deductible": 1000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "1696e49f2ad7",
+          "claim_number": "CLM-2027-00305",
+          "summary": "Coverage was in force on the loss date of 2024-12-28 under policy MOTOR-COMP-105 (in force 2024-03-01 to 2025-02-28). The insured reported vehicle theft 3 days after discovery, and the police Non-Traceable Certificate (NTC) remains pending. According to claims_process.md Step 1 and claims_faq.md (endorsement version base), theft claims must be reported within 24 hours, and failure to notify within this period may lead to repudiation unless a valid written reason for delay is provided. Furthermore, theft settlement requires a Non-Traceable Certificate from the police. Claimed amount: 800,000; Deductible: 1,000; Sub-limit: None; Policy limit: as declared (IDV).",
+          "policy_limit": "as declared (IDV)",
+          "loss_date_resolved_against": "2024-12-28",
+          "endorsement_version": "base",
+          "sub_limit": null,
+          "coverage_signal": "supports_exclusion",
+          "cited_clause": "Step 1 — Notify the Insurer Immediately (claims_process.md) and General Claims FAQ (claims_faq.md)",
+          "deductible": 1000
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00305",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Step 1 — Notify the Insurer Immediately (claims_process.md) and General Claims FAQ (claims_faq.md)",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-12-28",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "Coverage was in force on the loss date of 2024-12-28 under policy MOTOR-COMP-105 (in force 2024-03-01 to 2025-02-28). The insured reported vehicle theft 3 days after discovery, and the police Non-Traceable Certificate (NTC) remains pending. According to claims_process.md Step 1 and claims_faq.md (endorsement version base), theft claims must be reported within 24 hours, and failure to notify within this period may lead to repudiation unless a valid written reason for delay is provided. Furthermore, theft settlement requires a Non-Traceable Certificate from the police. Claimed amount: 800,000; Deductible: 1,000; Sub-limit: None; Policy limit: as declared (IDV).",
+      "final": true,
+      "trace_id": "1696e49f2ad7"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00305'}) -> {\"trace_id\": \"1696e49f2ad7\", \"claim_number\": \"CLM-2027-00305\", \"policy_number\": \"MOTOR-COMP-105\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2024-12-28\", \"claimed_amount\": 800000, \"fnol_text\": \"Insured's vehicle was stolen from a parking lot; police have not yet issued a Non-Traceable Certifica",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': '1696e49f2ad7', 'policy_number': 'MOTOR-COMP-105', 'loss_date': '2024-12-28'}) -> {\"policy_number\": \"MOTOR-COMP-105\", \"loss_date\": \"2024-12-28\", \"coverage_start_date\": \"2024-03-01\", \"coverage_end_date\": \"2025-02-28\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'top_k': 4, 'trace_id': '1696e49f2ad7', 'loss_date': '2024-12-28', 'query': 'theft vehicle stolen police report non traceable certificate notice delay'}) -> {\"loss_date\": \"2024-12-28\", \"chunks\": [{\"source\": \"claims_faq.md\", \"chunk_index\": 4, \"text\": \"nd batteries\\ncarry a standard 50% depreciation regardless of IMT-28. Also, IMT-28 is capped at\\n2 claims per policy year. **Q: My vehicle was stolen. What documents do I need?**\\nA: FIR from the police, Fo",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'top_k': 4, 'query': 'motor comprehensive theft 24 hours condition requirement notice', 'trace_id': '1696e49f2ad7', 'loss_date': '2024-12-28'}) -> {\"loss_date\": \"2024-12-28\", \"chunks\": [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 167, \"text\": \"f any \\nclaim along with all documentation required to support and \\nsubstantiate the amount sought from the Company, and; b. Pol",
+      "iter 5: [claims-triage-coverage] compute_amounts({'claimed_amount': 800000, 'trace_id': '1696e49f2ad7', 'deductible': 1000}) -> {\"claimed_amount\": 800000.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 799000.0, \"payable_after_sub_limit\": 799000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 6: [claims-triage-coverage] refer_to_adjuster({'trace_id': '1696e49f2ad7', 'claim_number': 'CLM-2027-00305', 'summary': 'Coverage was in force on the loss date of 2024-12-28 under policy MOTOR-COMP-105 (in force 2024-03-01 to 2025-02-28). The insured reported vehicle theft 3 days after discovery, and the police Non-Traceable Certificate (NTC) remains pending. According to claims_process.md Step 1 and claims_faq.md (endorsement version base), theft claims must be reported within 24 hours, and failure to notify within this period may lead to repudiation unless a valid written reason for delay is provided. Furthermore, theft settlement requires a Non-Traceable Certificate from the police. Claimed amount: 800,000; Deductible: 1,000; Sub-limit: None; Policy limit: as declared (IDV).', 'policy_limit': 'as declared (IDV)', 'loss_date_resolved_against': '2024-12-28', 'endorsement_version': 'base', 'sub_limit': None, 'coverage_signal': 'supports_exclusion', 'cited_clause': 'Step 1 — Notify the Insurer Immediately (claims_process.md) and General Claims FAQ (claims_faq.md)', 'deductible': 1000}) -> {\"claim_number\": \"CLM-2027-00305\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Step 1 \\u2014 Notify the Insurer Immediately (claims_process.md) and General Claims FAQ (claims_faq.md)\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2024-"
+    ]
+  },
+  "CLM-2027-00306": {
+    "claim_number": "CLM-2027-00306",
+    "trace_id": "a4abc39d90a1",
+    "iterations": 4,
+    "total_tokens": 9081,
+    "total_cost_usd": 0.0007712999999999999,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00306"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2026-01-10",
+          "trace_id": "a4abc39d90a1",
+          "policy_number": "MOTOR-COMP-106"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 45000,
+          "trace_id": "a4abc39d90a1",
+          "sub_limit": null,
+          "deductible": 1000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 1000,
+          "claim_number": "CLM-2027-00306",
+          "summary": "The policy MOTOR-COMP-106 was not in force on the loss date of 2026-01-10. Policy effective dates were 2024-01-01 to 2024-12-31. Because the policy lapsed prior to the loss date, policy wording was not searched. The claim involves vehicle damage from a falling tree branch during a storm, with a claimed amount of 45,000, deductible of 1,000, and policy limit as declared (IDV).",
+          "policy_limit": "as declared (IDV)",
+          "cited_clause": "N/A - Policy not in force",
+          "sub_limit": null,
+          "endorsement_version": "N/A",
+          "loss_date_resolved_against": "2026-01-10",
+          "coverage_signal": "supports_exclusion",
+          "trace_id": "a4abc39d90a1"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00306",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "N/A - Policy not in force",
+      "endorsement_version": "N/A",
+      "loss_date_resolved_against": "2026-01-10",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "The policy MOTOR-COMP-106 was not in force on the loss date of 2026-01-10. Policy effective dates were 2024-01-01 to 2024-12-31. Because the policy lapsed prior to the loss date, policy wording was not searched. The claim involves vehicle damage from a falling tree branch during a storm, with a claimed amount of 45,000, deductible of 1,000, and policy limit as declared (IDV).",
+      "final": true,
+      "trace_id": "a4abc39d90a1"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00306'}) -> {\"trace_id\": \"a4abc39d90a1\", \"claim_number\": \"CLM-2027-00306\", \"policy_number\": \"MOTOR-COMP-106\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2026-01-10\", \"claimed_amount\": 45000, \"fnol_text\": \"Insured's car was hit by a falling tree branch during a storm.\", \"adjuster_notes\": \"Caller: Deepa Kris",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2026-01-10', 'trace_id': 'a4abc39d90a1', 'policy_number': 'MOTOR-COMP-106'}) -> {\"policy_number\": \"MOTOR-COMP-106\", \"loss_date\": \"2026-01-10\", \"coverage_start_date\": \"2024-01-01\", \"coverage_end_date\": \"2024-12-31\", \"in_force\": false}",
+      "iter 3: [claims-triage-coverage] compute_amounts({'claimed_amount': 45000, 'trace_id': 'a4abc39d90a1', 'sub_limit': None, 'deductible': 1000}) -> {\"claimed_amount\": 45000.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 44000.0, \"payable_after_sub_limit\": 44000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 4: [claims-triage-coverage] refer_to_adjuster({'deductible': 1000, 'claim_number': 'CLM-2027-00306', 'summary': 'The policy MOTOR-COMP-106 was not in force on the loss date of 2026-01-10. Policy effective dates were 2024-01-01 to 2024-12-31. Because the policy lapsed prior to the loss date, policy wording was not searched. The claim involves vehicle damage from a falling tree branch during a storm, with a claimed amount of 45,000, deductible of 1,000, and policy limit as declared (IDV).', 'policy_limit': 'as declared (IDV)', 'cited_clause': 'N/A - Policy not in force', 'sub_limit': None, 'endorsement_version': 'N/A', 'loss_date_resolved_against': '2026-01-10', 'coverage_signal': 'supports_exclusion', 'trace_id': 'a4abc39d90a1'}) -> {\"claim_number\": \"CLM-2027-00306\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"N/A - Policy not in force\", \"endorsement_version\": \"N/A\", \"loss_date_resolved_against\": \"2026-01-10\", \"deductible\": 1000.0, \"sub_limit\": null, \"policy_limit\": \"as declared ("
+    ]
+  },
+  "CLM-2027-00307": {
+    "claim_number": "CLM-2027-00307",
+    "trace_id": "51ea11a3ae79",
+    "iterations": 5,
+    "total_tokens": 14163,
+    "total_cost_usd": 0.0011711249999999999,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00307"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "51ea11a3ae79",
+          "loss_date": "2024-09-05",
+          "policy_number": "MOTOR-TP-201"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "51ea11a3ae79",
+          "query": "third party bodily injury pedestrian crosswalk motor third party",
+          "loss_date": "2024-09-05"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "sub_limit": 750000,
+          "trace_id": "51ea11a3ae79",
+          "deductible": 0,
+          "claimed_amount": 500000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "sub_limit": 750000,
+          "loss_date_resolved_against": "2024-09-05",
+          "deductible": 0,
+          "summary": "The insured vehicle was involved in an accident striking a pedestrian on 2024-09-05, resulting in third-party bodily injury. Policy coverage was active from 2024-04-01 to 2025-03-31. Section 2.1 (Third-Party Liability) of endorsement version base provides for legal liability to third parties for bodily injury arising from the use of the insured vehicle. Claimed amount is 500,000 against a deductible of 0, a sub-limit of 750,000, and an unlimited (bodily injury) policy limit.",
+          "cited_clause": "Section 2.1",
+          "claim_number": "CLM-2027-00307",
+          "trace_id": "51ea11a3ae79",
+          "endorsement_version": "base",
+          "policy_limit": "unlimited (bodily injury)",
+          "coverage_signal": "supports_coverage"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00307",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Section 2.1",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-09-05",
+      "deductible": 0.0,
+      "sub_limit": 750000.0,
+      "policy_limit": "unlimited (bodily injury)",
+      "summary": "The insured vehicle was involved in an accident striking a pedestrian on 2024-09-05, resulting in third-party bodily injury. Policy coverage was active from 2024-04-01 to 2025-03-31. Section 2.1 (Third-Party Liability) of endorsement version base provides for legal liability to third parties for bodily injury arising from the use of the insured vehicle. Claimed amount is 500,000 against a deductible of 0, a sub-limit of 750,000, and an unlimited (bodily injury) policy limit.",
+      "final": true,
+      "trace_id": "51ea11a3ae79"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00307'}) -> {\"trace_id\": \"51ea11a3ae79\", \"claim_number\": \"CLM-2027-00307\", \"policy_number\": \"MOTOR-TP-201\", \"product\": \"motor_third_party\", \"loss_date\": \"2024-09-05\", \"claimed_amount\": 500000, \"fnol_text\": \"Insured's vehicle struck a pedestrian at a crosswalk; third-party bodily injury claim filed.\", \"adjuster_",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': '51ea11a3ae79', 'loss_date': '2024-09-05', 'policy_number': 'MOTOR-TP-201'}) -> {\"policy_number\": \"MOTOR-TP-201\", \"loss_date\": \"2024-09-05\", \"coverage_start_date\": \"2024-04-01\", \"coverage_end_date\": \"2025-03-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'trace_id': '51ea11a3ae79', 'query': 'third party bodily injury pedestrian crosswalk motor third party', 'loss_date': '2024-09-05'}) -> {\"loss_date\": \"2024-09-05\", \"chunks\": [{\"source\": \"claims_process.md\", \"chunk_index\": 1, \"text\": \"andatory** for:\\n- Theft of vehicle or property\\n- Third-party bodily injury or death\\n- Riots, malicious damage\\n- Burglary For accidents involving only own-damage with no third-party injury, an FIR is",
+      "iter 4: [claims-triage-coverage] compute_amounts({'sub_limit': 750000, 'trace_id': '51ea11a3ae79', 'deductible': 0, 'claimed_amount': 500000}) -> {\"claimed_amount\": 500000.0, \"deductible\": 0.0, \"sub_limit\": 750000.0, \"payable_before_sub_limit\": 500000.0, \"payable_after_sub_limit\": 500000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'sub_limit': 750000, 'loss_date_resolved_against': '2024-09-05', 'deductible': 0, 'summary': 'The insured vehicle was involved in an accident striking a pedestrian on 2024-09-05, resulting in third-party bodily injury. Policy coverage was active from 2024-04-01 to 2025-03-31. Section 2.1 (Third-Party Liability) of endorsement version base provides for legal liability to third parties for bodily injury arising from the use of the insured vehicle. Claimed amount is 500,000 against a deductible of 0, a sub-limit of 750,000, and an unlimited (bodily injury) policy limit.', 'cited_clause': 'Section 2.1', 'claim_number': 'CLM-2027-00307', 'trace_id': '51ea11a3ae79', 'endorsement_version': 'base', 'policy_limit': 'unlimited (bodily injury)', 'coverage_signal': 'supports_coverage'}) -> {\"claim_number\": \"CLM-2027-00307\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Section 2.1\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2024-09-05\", \"deductible\": 0.0, \"sub_limit\": 750000.0, \"policy_limit\": \"unlimited (bodily injury)\""
+    ]
+  },
+  "CLM-2027-00308": {
+    "claim_number": "CLM-2027-00308",
+    "trace_id": "920108ae8fcf",
+    "iterations": 5,
+    "total_tokens": 14754,
+    "total_cost_usd": 0.0012156749999999998,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00308"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-05-12",
+          "trace_id": "920108ae8fcf",
+          "policy_number": "MOTOR-TP-202"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-05-12",
+          "trace_id": "920108ae8fcf",
+          "query": "third party property damage vehicle reversing collision"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 0,
+          "sub_limit": 750000,
+          "claimed_amount": 90000,
+          "trace_id": "920108ae8fcf"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date_resolved_against": "2025-05-12",
+          "deductible": 0,
+          "sub_limit": 750000,
+          "endorsement_version": "base",
+          "policy_limit": "unlimited (bodily injury)",
+          "summary": "The insured vehicle scraped a parked third-party car while reversing on May 12, 2025, resulting in third-party property damage (dented door) with no bodily injuries reported. Coverage was in force on the loss date (2024-07-01 to 2025-06-30). Section 2.1 of the policy wording (endorsement version base) addresses third-party property damage liability. The claimed amount is ₹90,000, deductible is ₹0, property damage sub-limit is ₹750,000, and policy limit is unlimited for bodily injury.",
+          "cited_clause": "Section 2.1 (Third-Party Liability)",
+          "claim_number": "CLM-2027-00308",
+          "coverage_signal": "supports_coverage",
+          "trace_id": "920108ae8fcf"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00308",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Section 2.1 (Third-Party Liability)",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2025-05-12",
+      "deductible": 0.0,
+      "sub_limit": 750000.0,
+      "policy_limit": "unlimited (bodily injury)",
+      "summary": "The insured vehicle scraped a parked third-party car while reversing on May 12, 2025, resulting in third-party property damage (dented door) with no bodily injuries reported. Coverage was in force on the loss date (2024-07-01 to 2025-06-30). Section 2.1 of the policy wording (endorsement version base) addresses third-party property damage liability. The claimed amount is ₹90,000, deductible is ₹0, property damage sub-limit is ₹750,000, and policy limit is unlimited for bodily injury.",
+      "final": true,
+      "trace_id": "920108ae8fcf"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00308'}) -> {\"trace_id\": \"920108ae8fcf\", \"claim_number\": \"CLM-2027-00308\", \"policy_number\": \"MOTOR-TP-202\", \"product\": \"motor_third_party\", \"loss_date\": \"2025-05-12\", \"claimed_amount\": 90000, \"fnol_text\": \"Insured's vehicle scraped a parked third-party car while reversing.\", \"adjuster_notes\": \"Caller: Meera Pil",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2025-05-12', 'trace_id': '920108ae8fcf', 'policy_number': 'MOTOR-TP-202'}) -> {\"policy_number\": \"MOTOR-TP-202\", \"loss_date\": \"2025-05-12\", \"coverage_start_date\": \"2024-07-01\", \"coverage_end_date\": \"2025-06-30\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2025-05-12', 'trace_id': '920108ae8fcf', 'query': 'third party property damage vehicle reversing collision'}) -> {\"loss_date\": \"2025-05-12\", \"chunks\": [{\"source\": \"claims_process.md\", \"chunk_index\": 1, \"text\": \"andatory** for:\\n- Theft of vehicle or property\\n- Third-party bodily injury or death\\n- Riots, malicious damage\\n- Burglary For accidents involving only own-damage with no third-party injury, an FIR is",
+      "iter 4: [claims-triage-coverage] compute_amounts({'deductible': 0, 'sub_limit': 750000, 'claimed_amount': 90000, 'trace_id': '920108ae8fcf'}) -> {\"claimed_amount\": 90000.0, \"deductible\": 0.0, \"sub_limit\": 750000.0, \"payable_before_sub_limit\": 90000.0, \"payable_after_sub_limit\": 90000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'loss_date_resolved_against': '2025-05-12', 'deductible': 0, 'sub_limit': 750000, 'endorsement_version': 'base', 'policy_limit': 'unlimited (bodily injury)', 'summary': 'The insured vehicle scraped a parked third-party car while reversing on May 12, 2025, resulting in third-party property damage (dented door) with no bodily injuries reported. Coverage was in force on the loss date (2024-07-01 to 2025-06-30). Section 2.1 of the policy wording (endorsement version base) addresses third-party property damage liability. The claimed amount is ₹90,000, deductible is ₹0, property damage sub-limit is ₹750,000, and policy limit is unlimited for bodily injury.', 'cited_clause': 'Section 2.1 (Third-Party Liability)', 'claim_number': 'CLM-2027-00308', 'coverage_signal': 'supports_coverage', 'trace_id': '920108ae8fcf'}) -> {\"claim_number\": \"CLM-2027-00308\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Section 2.1 (Third-Party Liability)\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2025-05-12\", \"deductible\": 0.0, \"sub_limit\": 750000.0, \"policy_limit\": \"un"
+    ]
+  },
+  "CLM-2027-00309": {
+    "claim_number": "CLM-2027-00309",
+    "trace_id": "b92e5de9ab46",
+    "iterations": 4,
+    "total_tokens": 9359,
+    "total_cost_usd": 0.0007953,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00309"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "b92e5de9ab46",
+          "policy_number": "PROP-BLDG-301",
+          "loss_date": "2024-07-28"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 10000,
+          "trace_id": "b92e5de9ab46",
+          "claimed_amount": 350000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_limit": "as declared (reinstatement value)",
+          "sub_limit": null,
+          "summary": "Policy PROP-BLDG-301 was in force from 2023-06-01 to 2024-05-31. The reported loss occurred on 2024-07-28, which is after the policy end date. Because coverage was not in force on the loss date, the claim falls outside the active policy period. Claimed amount: 350,000; Deductible: 10,000; Policy limit: as declared (reinstatement value); Sub-limit: None.",
+          "deductible": 10000,
+          "endorsement_version": "N/A - Policy lapsed prior to loss date",
+          "loss_date_resolved_against": "2024-07-28",
+          "coverage_signal": "supports_exclusion",
+          "cited_clause": "N/A - Policy lapsed prior to loss date",
+          "trace_id": "b92e5de9ab46",
+          "claim_number": "CLM-2027-00309"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00309",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "N/A - Policy lapsed prior to loss date",
+      "endorsement_version": "N/A - Policy lapsed prior to loss date",
+      "loss_date_resolved_against": "2024-07-28",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "Policy PROP-BLDG-301 was in force from 2023-06-01 to 2024-05-31. The reported loss occurred on 2024-07-28, which is after the policy end date. Because coverage was not in force on the loss date, the claim falls outside the active policy period. Claimed amount: 350,000; Deductible: 10,000; Policy limit: as declared (reinstatement value); Sub-limit: None.",
+      "final": true,
+      "trace_id": "b92e5de9ab46"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00309'}) -> {\"trace_id\": \"b92e5de9ab46\", \"claim_number\": \"CLM-2027-00309\", \"policy_number\": \"PROP-BLDG-301\", \"product\": \"property_building\", \"loss_date\": \"2024-07-28\", \"claimed_amount\": 350000, \"fnol_text\": \"Sudden flash flood following cyclonic rainfall inundated the ground floor of the insured building.\", \"ad",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': 'b92e5de9ab46', 'policy_number': 'PROP-BLDG-301', 'loss_date': '2024-07-28'}) -> {\"policy_number\": \"PROP-BLDG-301\", \"loss_date\": \"2024-07-28\", \"coverage_start_date\": \"2023-06-01\", \"coverage_end_date\": \"2024-05-31\", \"in_force\": false}",
+      "iter 3: [claims-triage-coverage] compute_amounts({'deductible': 10000, 'trace_id': 'b92e5de9ab46', 'claimed_amount': 350000}) -> {\"claimed_amount\": 350000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 340000.0, \"payable_after_sub_limit\": 340000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 4: [claims-triage-coverage] refer_to_adjuster({'policy_limit': 'as declared (reinstatement value)', 'sub_limit': None, 'summary': 'Policy PROP-BLDG-301 was in force from 2023-06-01 to 2024-05-31. The reported loss occurred on 2024-07-28, which is after the policy end date. Because coverage was not in force on the loss date, the claim falls outside the active policy period. Claimed amount: 350,000; Deductible: 10,000; Policy limit: as declared (reinstatement value); Sub-limit: None.', 'deductible': 10000, 'endorsement_version': 'N/A - Policy lapsed prior to loss date', 'loss_date_resolved_against': '2024-07-28', 'coverage_signal': 'supports_exclusion', 'cited_clause': 'N/A - Policy lapsed prior to loss date', 'trace_id': 'b92e5de9ab46', 'claim_number': 'CLM-2027-00309'}) -> {\"claim_number\": \"CLM-2027-00309\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"N/A - Policy lapsed prior to loss date\", \"endorsement_version\": \"N/A - Policy lapsed prior to loss date\", \"loss_date_resolved_against\": \"2024-07-28\", \"deductible\": 10000.0, "
+    ]
+  },
+  "CLM-2027-00310": {
+    "claim_number": "CLM-2027-00310",
+    "trace_id": "e69f5b7a0fc4",
+    "iterations": 5,
+    "total_tokens": 15647,
+    "total_cost_usd": 0.0013038,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00310"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "e69f5b7a0fc4",
+          "loss_date": "2024-08-11",
+          "policy_number": "PROP-BLDG-302"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-08-11",
+          "query": "flood river overflow monsoon rain inundation exclusion rider",
+          "trace_id": "e69f5b7a0fc4"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 420000,
+          "sub_limit": null,
+          "deductible": 10000,
+          "trace_id": "e69f5b7a0fc4"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "summary": "Policy PROP-BLDG-302 was in force on the loss date of 2024-08-11 (coverage period 2024-06-01 to 2025-05-31). The claim arises from sudden river overflow damage following heavy monsoon rain. Under Endorsement Version 2023-R1, Clause 7(a) provides standard flood and inundation protection for the insured building, and Clause 7(b) specifies that this includes sudden and accidental events such as river overflow without requiring a separate endorsement rider. Clause 7(c) excludes gradual seepage over 72 hours, which does not appear to apply based on the reported facts. Claimed amount: 420,000; Deductible: 10,000; Sub-limit: None; Policy limit: as declared (reinstatement value). Reference payable amount post-deductible is 410,000.",
+          "loss_date_resolved_against": "2024-08-11",
+          "sub_limit": null,
+          "deductible": 10000,
+          "cited_clause": "Clause 7(a), Clause 7(b), Clause 7(c)",
+          "claim_number": "CLM-2027-00310",
+          "trace_id": "e69f5b7a0fc4",
+          "policy_limit": "as declared (reinstatement value)",
+          "coverage_signal": "supports_coverage",
+          "endorsement_version": "2023-R1"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00310",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Clause 7(a), Clause 7(b), Clause 7(c)",
+      "endorsement_version": "2023-R1",
+      "loss_date_resolved_against": "2024-08-11",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "Policy PROP-BLDG-302 was in force on the loss date of 2024-08-11 (coverage period 2024-06-01 to 2025-05-31). The claim arises from sudden river overflow damage following heavy monsoon rain. Under Endorsement Version 2023-R1, Clause 7(a) provides standard flood and inundation protection for the insured building, and Clause 7(b) specifies that this includes sudden and accidental events such as river overflow without requiring a separate endorsement rider. Clause 7(c) excludes gradual seepage over 72 hours, which does not appear to apply based on the reported facts. Claimed amount: 420,000; Deductible: 10,000; Sub-limit: None; Policy limit: as declared (reinstatement value). Reference payable amount post-deductible is 410,000.",
+      "final": true,
+      "trace_id": "e69f5b7a0fc4"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00310'}) -> {\"trace_id\": \"e69f5b7a0fc4\", \"claim_number\": \"CLM-2027-00310\", \"policy_number\": \"PROP-BLDG-302\", \"product\": \"property_building\", \"loss_date\": \"2024-08-11\", \"claimed_amount\": 420000, \"fnol_text\": \"Flooding from a nearby river overflow during heavy monsoon rain damaged the ground floor of the insured ",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': 'e69f5b7a0fc4', 'loss_date': '2024-08-11', 'policy_number': 'PROP-BLDG-302'}) -> {\"policy_number\": \"PROP-BLDG-302\", \"loss_date\": \"2024-08-11\", \"coverage_start_date\": \"2024-06-01\", \"coverage_end_date\": \"2025-05-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2024-08-11', 'query': 'flood river overflow monsoon rain inundation exclusion rider', 'trace_id': 'e69f5b7a0fc4'}) -> {\"loss_date\": \"2024-08-11\", \"chunks\": [{\"source\": \"exclusions_schedule_2023.md\", \"chunk_index\": 1, \"text\": \"Contents Cover described in Section 3,\\nwithout need for a separate endorsement, subject to Clauses 7(b) and 7(c) below. ### Clause 7(b) \\u2014 Sudden and Accidental Events\\nCover under Clause",
+      "iter 4: [claims-triage-coverage] compute_amounts({'claimed_amount': 420000, 'sub_limit': None, 'deductible': 10000, 'trace_id': 'e69f5b7a0fc4'}) -> {\"claimed_amount\": 420000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 410000.0, \"payable_after_sub_limit\": 410000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'summary': 'Policy PROP-BLDG-302 was in force on the loss date of 2024-08-11 (coverage period 2024-06-01 to 2025-05-31). The claim arises from sudden river overflow damage following heavy monsoon rain. Under Endorsement Version 2023-R1, Clause 7(a) provides standard flood and inundation protection for the insured building, and Clause 7(b) specifies that this includes sudden and accidental events such as river overflow without requiring a separate endorsement rider. Clause 7(c) excludes gradual seepage over 72 hours, which does not appear to apply based on the reported facts. Claimed amount: 420,000; Deductible: 10,000; Sub-limit: None; Policy limit: as declared (reinstatement value). Reference payable amount post-deductible is 410,000.', 'loss_date_resolved_against': '2024-08-11', 'sub_limit': None, 'deductible': 10000, 'cited_clause': 'Clause 7(a), Clause 7(b), Clause 7(c)', 'claim_number': 'CLM-2027-00310', 'trace_id': 'e69f5b7a0fc4', 'policy_limit': 'as declared (reinstatement value)', 'coverage_signal': 'supports_coverage', 'endorsement_version': '2023-R1'}) -> {\"claim_number\": \"CLM-2027-00310\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Clause 7(a), Clause 7(b), Clause 7(c)\", \"endorsement_version\": \"2023-R1\", \"loss_date_resolved_against\": \"2024-08-11\", \"deductible\": 10000.0, \"sub_limit\": null, \"policy_limit\""
+    ]
+  },
+  "CLM-2027-00311": {
+    "claim_number": "CLM-2027-00311",
+    "trace_id": "fc910ce11cef",
+    "iterations": 5,
+    "total_tokens": 14743,
+    "total_cost_usd": 0.001224525,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00311"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "fc910ce11cef",
+          "loss_date": "2025-02-14",
+          "policy_number": "PROP-BLDG-303"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-02-14",
+          "trace_id": "fc910ce11cef",
+          "query": "flooding burst drain municipal water damage flood rider"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 10000,
+          "claimed_amount": 280000,
+          "trace_id": "fc910ce11cef"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "fc910ce11cef",
+          "sub_limit": null,
+          "cited_clause": "Clause 9(a) — Exclusion: Flood and Inundation",
+          "policy_limit": "as declared (reinstatement value)",
+          "deductible": 10000,
+          "coverage_signal": "supports_exclusion",
+          "summary": "The claimant reported ground floor water damage resulting from a burst municipal drain on 2025-02-14. Policy PROP-BLDG-303 was in force from 2024-11-01 to 2025-10-31. Under Endorsement Version 2025-R1, Clause 9(a) excludes flood and inundation damage from standard Building Cover whether the event is sudden or gradual, requiring the IAP-20 Flood Extension Rider under Clause 9(b) for flood protection. Adjuster notes indicate no IAP-20 Rider is on file. Claimed amount is 280,000 with a deductible of 10,000, leaving a pre-limit reference amount of 270,000. No sub-limit applies.",
+          "claim_number": "CLM-2027-00311",
+          "endorsement_version": "2025-R1",
+          "loss_date_resolved_against": "2025-02-14"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00311",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Clause 9(a) — Exclusion: Flood and Inundation",
+      "endorsement_version": "2025-R1",
+      "loss_date_resolved_against": "2025-02-14",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "The claimant reported ground floor water damage resulting from a burst municipal drain on 2025-02-14. Policy PROP-BLDG-303 was in force from 2024-11-01 to 2025-10-31. Under Endorsement Version 2025-R1, Clause 9(a) excludes flood and inundation damage from standard Building Cover whether the event is sudden or gradual, requiring the IAP-20 Flood Extension Rider under Clause 9(b) for flood protection. Adjuster notes indicate no IAP-20 Rider is on file. Claimed amount is 280,000 with a deductible of 10,000, leaving a pre-limit reference amount of 270,000. No sub-limit applies.",
+      "final": true,
+      "trace_id": "fc910ce11cef"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00311'}) -> {\"trace_id\": \"fc910ce11cef\", \"claim_number\": \"CLM-2027-00311\", \"policy_number\": \"PROP-BLDG-303\", \"product\": \"property_building\", \"loss_date\": \"2025-02-14\", \"claimed_amount\": 280000, \"fnol_text\": \"Sudden flooding from a burst municipal drain inundated the insured building's ground floor.\", \"adjuster_",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': 'fc910ce11cef', 'loss_date': '2025-02-14', 'policy_number': 'PROP-BLDG-303'}) -> {\"policy_number\": \"PROP-BLDG-303\", \"loss_date\": \"2025-02-14\", \"coverage_start_date\": \"2024-11-01\", \"coverage_end_date\": \"2025-10-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2025-02-14', 'trace_id': 'fc910ce11cef', 'query': 'flooding burst drain municipal water damage flood rider'}) -> {\"loss_date\": \"2025-02-14\", \"chunks\": [{\"source\": \"exclusions_schedule_2025.md\", \"chunk_index\": 1, \"text\": \"ent Version 2023-R1, not this\\n> document, regardless of which version the policyholder's current renewal\\n> carries.\\n\\n--- ## Clause 9 \\u2014 Water, Flood and Inundation (renumbered and rewr",
+      "iter 4: [claims-triage-coverage] compute_amounts({'deductible': 10000, 'claimed_amount': 280000, 'trace_id': 'fc910ce11cef'}) -> {\"claimed_amount\": 280000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 270000.0, \"payable_after_sub_limit\": 270000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'trace_id': 'fc910ce11cef', 'sub_limit': None, 'cited_clause': 'Clause 9(a) — Exclusion: Flood and Inundation', 'policy_limit': 'as declared (reinstatement value)', 'deductible': 10000, 'coverage_signal': 'supports_exclusion', 'summary': 'The claimant reported ground floor water damage resulting from a burst municipal drain on 2025-02-14. Policy PROP-BLDG-303 was in force from 2024-11-01 to 2025-10-31. Under Endorsement Version 2025-R1, Clause 9(a) excludes flood and inundation damage from standard Building Cover whether the event is sudden or gradual, requiring the IAP-20 Flood Extension Rider under Clause 9(b) for flood protection. Adjuster notes indicate no IAP-20 Rider is on file. Claimed amount is 280,000 with a deductible of 10,000, leaving a pre-limit reference amount of 270,000. No sub-limit applies.', 'claim_number': 'CLM-2027-00311', 'endorsement_version': '2025-R1', 'loss_date_resolved_against': '2025-02-14'}) -> {\"claim_number\": \"CLM-2027-00311\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Clause 9(a) \\u2014 Exclusion: Flood and Inundation\", \"endorsement_version\": \"2025-R1\", \"loss_date_resolved_against\": \"2025-02-14\", \"deductible\": 10000.0, \"sub_limit\": null, "
+    ]
+  },
+  "CLM-2027-00312": {
+    "claim_number": "CLM-2027-00312",
+    "trace_id": "493294d16eba",
+    "iterations": 5,
+    "total_tokens": 14693,
+    "total_cost_usd": 0.00122685,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00312"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-01-02",
+          "policy_number": "PROP-BLDG-304",
+          "trace_id": "493294d16eba"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "493294d16eba",
+          "query": "flood flash flood exclusion water damage rider",
+          "loss_date": "2025-01-02"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 10000,
+          "trace_id": "493294d16eba",
+          "claimed_amount": 310000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "endorsement_version": "2025-R1",
+          "sub_limit": null,
+          "cited_clause": "Clause 9(a) — Exclusion: Flood and Inundation",
+          "policy_limit": "as declared (reinstatement value)",
+          "deductible": 10000,
+          "loss_date_resolved_against": "2025-01-02",
+          "trace_id": "493294d16eba",
+          "summary": "Policy PROP-BLDG-304 was in force on the loss date of 2025-01-02 (active 2024-01-15 to 2025-01-14). The FNOL indicates ground-floor damage caused by a sudden flash flood, with a claimed amount of 310,000. Under Endorsement Version 2025-R1, Clause 9(a) excludes flood and inundation damage from standard Building and Contents Cover, regardless of whether the event is sudden, accidental, or gradual. Clause 9(b) specifies that flood protection is applicable only if the policy includes the IAP-20 Flood Extension Rider, which adjuster notes indicate is not on file. Therefore, the cited wording supports exclusion. Reference figures: Deductible = 10,000; Sub-limit = None; Policy Limit = as declared (reinstatement value).",
+          "claim_number": "CLM-2027-00312",
+          "coverage_signal": "supports_exclusion"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00312",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Clause 9(a) — Exclusion: Flood and Inundation",
+      "endorsement_version": "2025-R1",
+      "loss_date_resolved_against": "2025-01-02",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "Policy PROP-BLDG-304 was in force on the loss date of 2025-01-02 (active 2024-01-15 to 2025-01-14). The FNOL indicates ground-floor damage caused by a sudden flash flood, with a claimed amount of 310,000. Under Endorsement Version 2025-R1, Clause 9(a) excludes flood and inundation damage from standard Building and Contents Cover, regardless of whether the event is sudden, accidental, or gradual. Clause 9(b) specifies that flood protection is applicable only if the policy includes the IAP-20 Flood Extension Rider, which adjuster notes indicate is not on file. Therefore, the cited wording supports exclusion. Reference figures: Deductible = 10,000; Sub-limit = None; Policy Limit = as declared (reinstatement value).",
+      "final": true,
+      "trace_id": "493294d16eba"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00312'}) -> {\"trace_id\": \"493294d16eba\", \"claim_number\": \"CLM-2027-00312\", \"policy_number\": \"PROP-BLDG-304\", \"product\": \"property_building\", \"loss_date\": \"2025-01-02\", \"claimed_amount\": 310000, \"fnol_text\": \"Sudden flash flood damaged the ground floor of the insured building two days into the new year.\", \"adjus",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2025-01-02', 'policy_number': 'PROP-BLDG-304', 'trace_id': '493294d16eba'}) -> {\"policy_number\": \"PROP-BLDG-304\", \"loss_date\": \"2025-01-02\", \"coverage_start_date\": \"2024-01-15\", \"coverage_end_date\": \"2025-01-14\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'trace_id': '493294d16eba', 'query': 'flood flash flood exclusion water damage rider', 'loss_date': '2025-01-02'}) -> {\"loss_date\": \"2025-01-02\", \"chunks\": [{\"source\": \"exclusions_schedule_2025.md\", \"chunk_index\": 1, \"text\": \"ent Version 2023-R1, not this\\n> document, regardless of which version the policyholder's current renewal\\n> carries.\\n\\n--- ## Clause 9 \\u2014 Water, Flood and Inundation (renumbered and rewr",
+      "iter 4: [claims-triage-coverage] compute_amounts({'deductible': 10000, 'trace_id': '493294d16eba', 'claimed_amount': 310000}) -> {\"claimed_amount\": 310000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 300000.0, \"payable_after_sub_limit\": 300000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'endorsement_version': '2025-R1', 'sub_limit': None, 'cited_clause': 'Clause 9(a) — Exclusion: Flood and Inundation', 'policy_limit': 'as declared (reinstatement value)', 'deductible': 10000, 'loss_date_resolved_against': '2025-01-02', 'trace_id': '493294d16eba', 'summary': 'Policy PROP-BLDG-304 was in force on the loss date of 2025-01-02 (active 2024-01-15 to 2025-01-14). The FNOL indicates ground-floor damage caused by a sudden flash flood, with a claimed amount of 310,000. Under Endorsement Version 2025-R1, Clause 9(a) excludes flood and inundation damage from standard Building and Contents Cover, regardless of whether the event is sudden, accidental, or gradual. Clause 9(b) specifies that flood protection is applicable only if the policy includes the IAP-20 Flood Extension Rider, which adjuster notes indicate is not on file. Therefore, the cited wording supports exclusion. Reference figures: Deductible = 10,000; Sub-limit = None; Policy Limit = as declared (reinstatement value).', 'claim_number': 'CLM-2027-00312', 'coverage_signal': 'supports_exclusion'}) -> {\"claim_number\": \"CLM-2027-00312\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Clause 9(a) \\u2014 Exclusion: Flood and Inundation\", \"endorsement_version\": \"2025-R1\", \"loss_date_resolved_against\": \"2025-01-02\", \"deductible\": 10000.0, \"sub_limit\": null, "
+    ]
+  },
+  "CLM-2027-00313": {
+    "claim_number": "CLM-2027-00313",
+    "trace_id": "09929f7541bc",
+    "iterations": 5,
+    "total_tokens": 14780,
+    "total_cost_usd": 0.0012291,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00313"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "09929f7541bc",
+          "loss_date": "2024-12-30",
+          "policy_number": "PROP-BLDG-304"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "flash flood ground floor water damage property building flood coverage exclusion",
+          "trace_id": "09929f7541bc",
+          "loss_date": "2024-12-30"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 10000,
+          "trace_id": "09929f7541bc",
+          "sub_limit": null,
+          "claimed_amount": 305000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date_resolved_against": "2024-12-30",
+          "coverage_signal": "supports_coverage",
+          "policy_limit": "as declared (reinstatement value)",
+          "summary": "Claim CLM-2027-00313 under policy PROP-BLDG-304 involved ground-floor water damage resulting from a sudden flash flood on 2024-12-30. Policy was in force on the loss date (2024-01-15 to 2025-01-14). Policy wording under Endorsement Version 2023-R1, Clause 7(a) and Clause 7(b), applies to sudden and accidental flood events. Claimed amount: 305,000; Deductible: 10,000; Sub-limit: None; Policy Limit: as declared (reinstatement value). Reference net calculation is 295,000.",
+          "sub_limit": null,
+          "claim_number": "CLM-2027-00313",
+          "cited_clause": "Clause 7(a) & Clause 7(b)",
+          "trace_id": "09929f7541bc",
+          "endorsement_version": "2023-R1",
+          "deductible": 10000
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00313",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Clause 7(a) & Clause 7(b)",
+      "endorsement_version": "2023-R1",
+      "loss_date_resolved_against": "2024-12-30",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "Claim CLM-2027-00313 under policy PROP-BLDG-304 involved ground-floor water damage resulting from a sudden flash flood on 2024-12-30. Policy was in force on the loss date (2024-01-15 to 2025-01-14). Policy wording under Endorsement Version 2023-R1, Clause 7(a) and Clause 7(b), applies to sudden and accidental flood events. Claimed amount: 305,000; Deductible: 10,000; Sub-limit: None; Policy Limit: as declared (reinstatement value). Reference net calculation is 295,000.",
+      "final": true,
+      "trace_id": "09929f7541bc"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00313'}) -> {\"trace_id\": \"09929f7541bc\", \"claim_number\": \"CLM-2027-00313\", \"policy_number\": \"PROP-BLDG-304\", \"product\": \"property_building\", \"loss_date\": \"2024-12-30\", \"claimed_amount\": 305000, \"fnol_text\": \"Sudden flash flood damaged the ground floor of the insured building two days before year end.\", \"adjuste",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': '09929f7541bc', 'loss_date': '2024-12-30', 'policy_number': 'PROP-BLDG-304'}) -> {\"policy_number\": \"PROP-BLDG-304\", \"loss_date\": \"2024-12-30\", \"coverage_start_date\": \"2024-01-15\", \"coverage_end_date\": \"2025-01-14\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'query': 'flash flood ground floor water damage property building flood coverage exclusion', 'trace_id': '09929f7541bc', 'loss_date': '2024-12-30'}) -> {\"loss_date\": \"2024-12-30\", \"chunks\": [{\"source\": \"exclusions_schedule_2023.md\", \"chunk_index\": 1, \"text\": \"Contents Cover described in Section 3,\\nwithout need for a separate endorsement, subject to Clauses 7(b) and 7(c) below. ### Clause 7(b) \\u2014 Sudden and Accidental Events\\nCover under Clause",
+      "iter 4: [claims-triage-coverage] compute_amounts({'deductible': 10000, 'trace_id': '09929f7541bc', 'sub_limit': None, 'claimed_amount': 305000}) -> {\"claimed_amount\": 305000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 295000.0, \"payable_after_sub_limit\": 295000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'loss_date_resolved_against': '2024-12-30', 'coverage_signal': 'supports_coverage', 'policy_limit': 'as declared (reinstatement value)', 'summary': 'Claim CLM-2027-00313 under policy PROP-BLDG-304 involved ground-floor water damage resulting from a sudden flash flood on 2024-12-30. Policy was in force on the loss date (2024-01-15 to 2025-01-14). Policy wording under Endorsement Version 2023-R1, Clause 7(a) and Clause 7(b), applies to sudden and accidental flood events. Claimed amount: 305,000; Deductible: 10,000; Sub-limit: None; Policy Limit: as declared (reinstatement value). Reference net calculation is 295,000.', 'sub_limit': None, 'claim_number': 'CLM-2027-00313', 'cited_clause': 'Clause 7(a) & Clause 7(b)', 'trace_id': '09929f7541bc', 'endorsement_version': '2023-R1', 'deductible': 10000}) -> {\"claim_number\": \"CLM-2027-00313\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Clause 7(a) & Clause 7(b)\", \"endorsement_version\": \"2023-R1\", \"loss_date_resolved_against\": \"2024-12-30\", \"deductible\": 10000.0, \"sub_limit\": null, \"policy_limit\": \"as declar"
+    ]
+  },
+  "CLM-2027-00314": {
+    "claim_number": "CLM-2027-00314",
+    "trace_id": "7541a9a03ab6",
+    "iterations": 5,
+    "total_tokens": 14954,
+    "total_cost_usd": 0.001245525,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00314"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-06-01",
+          "policy_number": "PROP-BLDG-305",
+          "trace_id": "7541a9a03ab6"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-06-01",
+          "query": "gradual seepage dampness foundation water damage mould",
+          "trace_id": "7541a9a03ab6"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "7541a9a03ab6",
+          "sub_limit": null,
+          "claimed_amount": 190000,
+          "deductible": 10000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "cited_clause": "Clause 9(c)",
+          "trace_id": "7541a9a03ab6",
+          "policy_limit": "as declared (reinstatement value)",
+          "endorsement_version": "2025-R1",
+          "loss_date_resolved_against": "2025-06-01",
+          "coverage_signal": "supports_exclusion",
+          "sub_limit": null,
+          "deductible": 10000,
+          "claim_number": "CLM-2027-00314",
+          "summary": "Claim CLM-2027-00314 involves reported damage from gradual seepage through the foundation over several weeks, resulting in damp staining and mould along interior walls. Policy PROP-BLDG-305 was in force on the loss date of 2025-06-01 (effective 2025-01-01 to 2025-12-31). Retrieval of policy wording for endorsement version 2025-R1 identifies Clause 9(c) (Exclusion: Gradual Seepage), which states that damage arising from gradual seepage, rising damp, or slow water ingress over more than 72 hours remains excluded. Reference financial figures: Claimed Amount = 190,000; Deductible = 10,000; Sub-limit = None (null); Policy Limit = as declared (reinstatement value)."
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00314",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Clause 9(c)",
+      "endorsement_version": "2025-R1",
+      "loss_date_resolved_against": "2025-06-01",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "Claim CLM-2027-00314 involves reported damage from gradual seepage through the foundation over several weeks, resulting in damp staining and mould along interior walls. Policy PROP-BLDG-305 was in force on the loss date of 2025-06-01 (effective 2025-01-01 to 2025-12-31). Retrieval of policy wording for endorsement version 2025-R1 identifies Clause 9(c) (Exclusion: Gradual Seepage), which states that damage arising from gradual seepage, rising damp, or slow water ingress over more than 72 hours remains excluded. Reference financial figures: Claimed Amount = 190,000; Deductible = 10,000; Sub-limit = None (null); Policy Limit = as declared (reinstatement value).",
+      "final": true,
+      "trace_id": "7541a9a03ab6"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00314'}) -> {\"trace_id\": \"7541a9a03ab6\", \"claim_number\": \"CLM-2027-00314\", \"policy_number\": \"PROP-BLDG-305\", \"product\": \"property_building\", \"loss_date\": \"2025-06-01\", \"claimed_amount\": 190000, \"fnol_text\": \"Gradual seepage through the foundation over several weeks caused damage to the ground floor.\", \"adjuster",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2025-06-01', 'policy_number': 'PROP-BLDG-305', 'trace_id': '7541a9a03ab6'}) -> {\"policy_number\": \"PROP-BLDG-305\", \"loss_date\": \"2025-06-01\", \"coverage_start_date\": \"2025-01-01\", \"coverage_end_date\": \"2025-12-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2025-06-01', 'query': 'gradual seepage dampness foundation water damage mould', 'trace_id': '7541a9a03ab6'}) -> {\"loss_date\": \"2025-06-01\", \"chunks\": [{\"source\": \"exclusions_schedule_2025.md\", \"chunk_index\": 2, \"text\": \"its own sub-limit shown on the Declarations Page. IAP-20\\ndoes not reinstate cover for gradual seepage (see Clause 9(c)). ### Clause 9(c) \\u2014 Exclusion: Gradual Seepage (unchanged from 2023",
+      "iter 4: [claims-triage-coverage] compute_amounts({'trace_id': '7541a9a03ab6', 'sub_limit': None, 'claimed_amount': 190000, 'deductible': 10000}) -> {\"claimed_amount\": 190000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 180000.0, \"payable_after_sub_limit\": 180000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'cited_clause': 'Clause 9(c)', 'trace_id': '7541a9a03ab6', 'policy_limit': 'as declared (reinstatement value)', 'endorsement_version': '2025-R1', 'loss_date_resolved_against': '2025-06-01', 'coverage_signal': 'supports_exclusion', 'sub_limit': None, 'deductible': 10000, 'claim_number': 'CLM-2027-00314', 'summary': 'Claim CLM-2027-00314 involves reported damage from gradual seepage through the foundation over several weeks, resulting in damp staining and mould along interior walls. Policy PROP-BLDG-305 was in force on the loss date of 2025-06-01 (effective 2025-01-01 to 2025-12-31). Retrieval of policy wording for endorsement version 2025-R1 identifies Clause 9(c) (Exclusion: Gradual Seepage), which states that damage arising from gradual seepage, rising damp, or slow water ingress over more than 72 hours remains excluded. Reference financial figures: Claimed Amount = 190,000; Deductible = 10,000; Sub-limit = None (null); Policy Limit = as declared (reinstatement value).'}) -> {\"claim_number\": \"CLM-2027-00314\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Clause 9(c)\", \"endorsement_version\": \"2025-R1\", \"loss_date_resolved_against\": \"2025-06-01\", \"deductible\": 10000.0, \"sub_limit\": null, \"policy_limit\": \"as declared (reinstate"
+    ]
+  },
+  "CLM-2027-00315": {
+    "claim_number": "CLM-2027-00315",
+    "trace_id": "689bc472a4d4",
+    "iterations": 6,
+    "total_tokens": 21147,
+    "total_cost_usd": 0.001705275,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00315"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "689bc472a4d4",
+          "loss_date": "2024-09-22",
+          "policy_number": "PROP-BLDG-306"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "kitchen fire building structure damage fire cover",
+          "loss_date": "2024-09-22",
+          "trace_id": "689bc472a4d4"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "689bc472a4d4",
+          "loss_date": "2024-09-22",
+          "query": "Fire physical loss damage or destruction caused to Insured Property"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 150000,
+          "sub_limit": null,
+          "deductible": 10000,
+          "trace_id": "689bc472a4d4"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00315",
+          "endorsement_version": "base",
+          "summary": "The policy was in force on the loss date of 2024-09-22. FNOL describes physical damage to the building structure from a kitchen fire. Policy wording under Clause B, Item 1 (Fire) supports response for physical loss or damage caused by fire, excluding fire caused by burning by order of any Public Authority. Deductible is 10,000 on a 150,000 claimed amount, resulting in a reference payable amount of 140,000 against policy limits as declared.",
+          "sub_limit": null,
+          "cited_clause": "Clause B, Item 1 (Fire)",
+          "loss_date_resolved_against": "2024-09-22",
+          "policy_limit": "as declared (reinstatement value)",
+          "coverage_signal": "supports_coverage",
+          "trace_id": "689bc472a4d4",
+          "deductible": 10000
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00315",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Clause B, Item 1 (Fire)",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-09-22",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "The policy was in force on the loss date of 2024-09-22. FNOL describes physical damage to the building structure from a kitchen fire. Policy wording under Clause B, Item 1 (Fire) supports response for physical loss or damage caused by fire, excluding fire caused by burning by order of any Public Authority. Deductible is 10,000 on a 150,000 claimed amount, resulting in a reference payable amount of 140,000 against policy limits as declared.",
+      "final": true,
+      "trace_id": "689bc472a4d4"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00315'}) -> {\"trace_id\": \"689bc472a4d4\", \"claim_number\": \"CLM-2027-00315\", \"policy_number\": \"PROP-BLDG-306\", \"product\": \"property_building\", \"loss_date\": \"2024-09-22\", \"claimed_amount\": 150000, \"fnol_text\": \"A kitchen fire damaged part of the building structure; no neighbouring or tenant property was involved.\"",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': '689bc472a4d4', 'loss_date': '2024-09-22', 'policy_number': 'PROP-BLDG-306'}) -> {\"policy_number\": \"PROP-BLDG-306\", \"loss_date\": \"2024-09-22\", \"coverage_start_date\": \"2024-02-01\", \"coverage_end_date\": \"2025-01-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'query': 'kitchen fire building structure damage fire cover', 'loss_date': '2024-09-22', 'trace_id': '689bc472a4d4'}) -> {\"loss_date\": \"2024-09-22\", \"chunks\": [{\"source\": \"claims_faq.md\", \"chunk_index\": 5, \"text\": \"e Extension** endorsement (IAP-01). If you have it, both the fire\\nfollowing earthquake and the shock damage are covered. **Q: My tenant's belongings were damaged in a fire. Am I liable?**\\nA: A standard bu",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'trace_id': '689bc472a4d4', 'loss_date': '2024-09-22', 'query': 'Fire physical loss damage or destruction caused to Insured Property'}) -> {\"loss_date\": \"2024-09-22\", \"chunks\": [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 19, \"text\": \"caused to \\nthe Insured Property by \\nWe do not cover any loss or \\ndamage, or destruction caused \\nto the Insured Property 1 Fire",
+      "iter 5: [claims-triage-coverage] compute_amounts({'claimed_amount': 150000, 'sub_limit': None, 'deductible': 10000, 'trace_id': '689bc472a4d4'}) -> {\"claimed_amount\": 150000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 140000.0, \"payable_after_sub_limit\": 140000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 6: [claims-triage-coverage] refer_to_adjuster({'claim_number': 'CLM-2027-00315', 'endorsement_version': 'base', 'summary': 'The policy was in force on the loss date of 2024-09-22. FNOL describes physical damage to the building structure from a kitchen fire. Policy wording under Clause B, Item 1 (Fire) supports response for physical loss or damage caused by fire, excluding fire caused by burning by order of any Public Authority. Deductible is 10,000 on a 150,000 claimed amount, resulting in a reference payable amount of 140,000 against policy limits as declared.', 'sub_limit': None, 'cited_clause': 'Clause B, Item 1 (Fire)', 'loss_date_resolved_against': '2024-09-22', 'policy_limit': 'as declared (reinstatement value)', 'coverage_signal': 'supports_coverage', 'trace_id': '689bc472a4d4', 'deductible': 10000}) -> {\"claim_number\": \"CLM-2027-00315\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Clause B, Item 1 (Fire)\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2024-09-22\", \"deductible\": 10000.0, \"sub_limit\": null, \"policy_limit\": \"as declared (r"
+    ]
+  },
+  "CLM-2027-00316": {
+    "claim_number": "CLM-2027-00316",
+    "trace_id": "42c28e5da744",
+    "iterations": 6,
+    "total_tokens": 21689,
+    "total_cost_usd": 0.001749525,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00316"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "42c28e5da744",
+          "loss_date": "2024-10-05",
+          "policy_number": "PROP-CONT-401"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-10-05",
+          "query": "burglary forced and violent entry theft unlocked door electronics",
+          "trace_id": "42c28e5da744",
+          "top_k": 4
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "Burglary & Theft forcible and violent entry unforced entry",
+          "top_k": 4,
+          "loss_date": "2024-10-05",
+          "trace_id": "42c28e5da744"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 60000,
+          "deductible": 2500,
+          "trace_id": "42c28e5da744"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_limit": "as declared (market value)",
+          "cited_clause": "Section 3.3 (Burglary & Theft)",
+          "loss_date_resolved_against": "2024-10-05",
+          "claim_number": "CLM-2027-00316",
+          "coverage_signal": "supports_exclusion",
+          "deductible": 2500,
+          "endorsement_version": "base",
+          "summary": "The claim involves reported theft of electronics (television and laptop) valued at ₹60,000. FNOL text and photo details indicate the back door was left unlocked with no signs of forced or violent entry. Policy wording under Section 3.3 requires forcible and violent entry for burglary and theft claims, supporting exclusion where entry is unforced. Coverage was in force on the loss date of 2024-10-05. Deductible is ₹2,500; policy limit is as declared (market value); no applicable sub-limit was identified for this item category.",
+          "trace_id": "42c28e5da744",
+          "sub_limit": null
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00316",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Section 3.3 (Burglary & Theft)",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-10-05",
+      "deductible": 2500.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (market value)",
+      "summary": "The claim involves reported theft of electronics (television and laptop) valued at ₹60,000. FNOL text and photo details indicate the back door was left unlocked with no signs of forced or violent entry. Policy wording under Section 3.3 requires forcible and violent entry for burglary and theft claims, supporting exclusion where entry is unforced. Coverage was in force on the loss date of 2024-10-05. Deductible is ₹2,500; policy limit is as declared (market value); no applicable sub-limit was identified for this item category.",
+      "final": true,
+      "trace_id": "42c28e5da744"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00316'}) -> {\"trace_id\": \"42c28e5da744\", \"claim_number\": \"CLM-2027-00316\", \"policy_number\": \"PROP-CONT-401\", \"product\": \"property_contents\", \"loss_date\": \"2024-10-05\", \"claimed_amount\": 60000, \"fnol_text\": \"Insured's home was burgled overnight; the back door was left unlocked, no signs of forced or violent entr",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': '42c28e5da744', 'loss_date': '2024-10-05', 'policy_number': 'PROP-CONT-401'}) -> {\"policy_number\": \"PROP-CONT-401\", \"loss_date\": \"2024-10-05\", \"coverage_start_date\": \"2024-05-01\", \"coverage_end_date\": \"2025-04-30\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2024-10-05', 'query': 'burglary forced and violent entry theft unlocked door electronics', 'trace_id': '42c28e5da744', 'top_k': 4}) -> {\"loss_date\": \"2024-10-05\", \"chunks\": [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 163, \"text\": \"or functionality whether partial or entire of data, coding, \\nprogram, software, any computer or computer system or other device ",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'query': 'Burglary & Theft forcible and violent entry unforced entry', 'top_k': 4, 'loss_date': '2024-10-05', 'trace_id': '42c28e5da744'}) -> {\"loss_date\": \"2024-10-05\", \"chunks\": [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 2, \"text\": \"ke, storm, flood, inundation, earthquake, and impact damage.\\n**Basis of settlement:** Reinstatement value (new for old). ### 3.2 Contents Cover\\nCovers household contents including furniture",
+      "iter 5: [claims-triage-coverage] compute_amounts({'claimed_amount': 60000, 'deductible': 2500, 'trace_id': '42c28e5da744'}) -> {\"claimed_amount\": 60000.0, \"deductible\": 2500.0, \"sub_limit\": null, \"payable_before_sub_limit\": 57500.0, \"payable_after_sub_limit\": 57500.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 6: [claims-triage-coverage] refer_to_adjuster({'policy_limit': 'as declared (market value)', 'cited_clause': 'Section 3.3 (Burglary & Theft)', 'loss_date_resolved_against': '2024-10-05', 'claim_number': 'CLM-2027-00316', 'coverage_signal': 'supports_exclusion', 'deductible': 2500, 'endorsement_version': 'base', 'summary': 'The claim involves reported theft of electronics (television and laptop) valued at ₹60,000. FNOL text and photo details indicate the back door was left unlocked with no signs of forced or violent entry. Policy wording under Section 3.3 requires forcible and violent entry for burglary and theft claims, supporting exclusion where entry is unforced. Coverage was in force on the loss date of 2024-10-05. Deductible is ₹2,500; policy limit is as declared (market value); no applicable sub-limit was identified for this item category.', 'trace_id': '42c28e5da744', 'sub_limit': None}) -> {\"claim_number\": \"CLM-2027-00316\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Section 3.3 (Burglary & Theft)\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2024-10-05\", \"deductible\": 2500.0, \"sub_limit\": null, \"policy_limit\": \"as decl"
+    ]
+  },
+  "CLM-2027-00317": {
+    "claim_number": "CLM-2027-00317",
+    "trace_id": "2d3bfef7ae9c",
+    "iterations": 5,
+    "total_tokens": 15221,
+    "total_cost_usd": 0.001253625,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00317"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_number": "PROP-CONT-402",
+          "loss_date": "2025-04-18",
+          "trace_id": "2d3bfef7ae9c"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-04-18",
+          "query": "burglary forced entry property contents theft window glass",
+          "trace_id": "2d3bfef7ae9c"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "2d3bfef7ae9c",
+          "claimed_amount": 45000,
+          "deductible": 2500
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00317",
+          "sub_limit": null,
+          "coverage_signal": "supports_coverage",
+          "summary": "Policy PROP-CONT-402 was active on the loss date 2025-04-18 (in force 2024-08-01 to 2025-07-31). FNOL and adjuster records indicate forced entry through a broken window with missing jewelry and broken glass, corroborated by police report and photo documentation. Section 3.3 (Burglary & Theft) and Section B.3 (Burglary Cover Extension) support loss of contents and jewelry resulting from forcible and violent entry. Claimed amount: 45,000; Deductible: 2,500; Sub-limit: None; Policy limit: as declared (market value).",
+          "endorsement_version": "base",
+          "policy_limit": "as declared (market value)",
+          "loss_date_resolved_against": "2025-04-18",
+          "cited_clause": "Section 3.3 Burglary & Theft / Section B.3 Burglary Cover Extension",
+          "deductible": 2500,
+          "trace_id": "2d3bfef7ae9c"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00317",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Section 3.3 Burglary & Theft / Section B.3 Burglary Cover Extension",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2025-04-18",
+      "deductible": 2500.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (market value)",
+      "summary": "Policy PROP-CONT-402 was active on the loss date 2025-04-18 (in force 2024-08-01 to 2025-07-31). FNOL and adjuster records indicate forced entry through a broken window with missing jewelry and broken glass, corroborated by police report and photo documentation. Section 3.3 (Burglary & Theft) and Section B.3 (Burglary Cover Extension) support loss of contents and jewelry resulting from forcible and violent entry. Claimed amount: 45,000; Deductible: 2,500; Sub-limit: None; Policy limit: as declared (market value).",
+      "final": true,
+      "trace_id": "2d3bfef7ae9c"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00317'}) -> {\"trace_id\": \"2d3bfef7ae9c\", \"claim_number\": \"CLM-2027-00317\", \"policy_number\": \"PROP-CONT-402\", \"product\": \"property_contents\", \"loss_date\": \"2025-04-18\", \"claimed_amount\": 45000, \"fnol_text\": \"Insured's home was burgled overnight; forced entry via a broken window.\", \"adjuster_notes\": \"Caller: Shal",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'policy_number': 'PROP-CONT-402', 'loss_date': '2025-04-18', 'trace_id': '2d3bfef7ae9c'}) -> {\"policy_number\": \"PROP-CONT-402\", \"loss_date\": \"2025-04-18\", \"coverage_start_date\": \"2024-08-01\", \"coverage_end_date\": \"2025-07-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2025-04-18', 'query': 'burglary forced entry property contents theft window glass', 'trace_id': '2d3bfef7ae9c'}) -> {\"loss_date\": \"2025-04-18\", \"chunks\": [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 2, \"text\": \"ke, storm, flood, inundation, earthquake, and impact damage.\\n**Basis of settlement:** Reinstatement value (new for old). ### 3.2 Contents Cover\\nCovers household contents including furniture",
+      "iter 4: [claims-triage-coverage] compute_amounts({'trace_id': '2d3bfef7ae9c', 'claimed_amount': 45000, 'deductible': 2500}) -> {\"claimed_amount\": 45000.0, \"deductible\": 2500.0, \"sub_limit\": null, \"payable_before_sub_limit\": 42500.0, \"payable_after_sub_limit\": 42500.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'claim_number': 'CLM-2027-00317', 'sub_limit': None, 'coverage_signal': 'supports_coverage', 'summary': 'Policy PROP-CONT-402 was active on the loss date 2025-04-18 (in force 2024-08-01 to 2025-07-31). FNOL and adjuster records indicate forced entry through a broken window with missing jewelry and broken glass, corroborated by police report and photo documentation. Section 3.3 (Burglary & Theft) and Section B.3 (Burglary Cover Extension) support loss of contents and jewelry resulting from forcible and violent entry. Claimed amount: 45,000; Deductible: 2,500; Sub-limit: None; Policy limit: as declared (market value).', 'endorsement_version': 'base', 'policy_limit': 'as declared (market value)', 'loss_date_resolved_against': '2025-04-18', 'cited_clause': 'Section 3.3 Burglary & Theft / Section B.3 Burglary Cover Extension', 'deductible': 2500, 'trace_id': '2d3bfef7ae9c'}) -> {\"claim_number\": \"CLM-2027-00317\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Section 3.3 Burglary & Theft / Section B.3 Burglary Cover Extension\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2025-04-18\", \"deductible\": 2500.0, \"sub_li"
+    ]
+  },
+  "CLM-2027-00318": {
+    "claim_number": "CLM-2027-00318",
+    "trace_id": "1f6d739516c4",
+    "iterations": 7,
+    "total_tokens": 29183,
+    "total_cost_usd": 0.002345325,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00318"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-11-30",
+          "policy_number": "PROP-CONT-403",
+          "trace_id": "1f6d739516c4"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-11-30",
+          "trace_id": "1f6d739516c4",
+          "query": "burst water tank contents water damage flood"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "1f6d739516c4",
+          "query": "burst water tank apparatus pipes escape of water flood inundation Clause",
+          "loss_date": "2024-11-30"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "1f6d739516c4",
+          "query": "sub-limit contents water damage sublimit limit",
+          "loss_date": "2024-11-30"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 2500,
+          "claimed_amount": 38000,
+          "trace_id": "1f6d739516c4"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "cited_clause": "Peril 12 (Bursting or overflowing of water tanks, apparatus and pipes) and Clause 7(b) (Sudden and Accidental Events)",
+          "summary": "The policy was in force on the loss date of 2024-11-30 under policy PROP-CONT-403. The claimant reported sudden damage to ground floor household contents (furniture and electronics) caused by a burst water tank, with a claimed amount of ₹38,000. Under Peril 12 of the base policy wording ('Bursting or overflowing of water tanks, apparatus and pipes') and Clause 7(b) of Endorsement Version 2023-R1 ('Sudden and Accidental Events'), loss resulting from sudden water tank bursting falls within policy terms, provided it is not gradual seepage over 72 hours as excluded under Clause 7(c). Deductible is ₹2,500, sub-limit is None, and policy limit is As declared (market value), resulting in a pre-assessment calculation of ₹35,500.",
+          "sub_limit": null,
+          "deductible": 2500,
+          "policy_limit": "As declared (market value)",
+          "loss_date_resolved_against": "2024-11-30",
+          "endorsement_version": "base / 2023-R1",
+          "trace_id": "1f6d739516c4",
+          "claim_number": "CLM-2027-00318",
+          "coverage_signal": "supports_coverage"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00318",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Peril 12 (Bursting or overflowing of water tanks, apparatus and pipes) and Clause 7(b) (Sudden and Accidental Events)",
+      "endorsement_version": "base / 2023-R1",
+      "loss_date_resolved_against": "2024-11-30",
+      "deductible": 2500.0,
+      "sub_limit": null,
+      "policy_limit": "As declared (market value)",
+      "summary": "The policy was in force on the loss date of 2024-11-30 under policy PROP-CONT-403. The claimant reported sudden damage to ground floor household contents (furniture and electronics) caused by a burst water tank, with a claimed amount of ₹38,000. Under Peril 12 of the base policy wording ('Bursting or overflowing of water tanks, apparatus and pipes') and Clause 7(b) of Endorsement Version 2023-R1 ('Sudden and Accidental Events'), loss resulting from sudden water tank bursting falls within policy terms, provided it is not gradual seepage over 72 hours as excluded under Clause 7(c). Deductible is ₹2,500, sub-limit is None, and policy limit is As declared (market value), resulting in a pre-assessment calculation of ₹35,500.",
+      "final": true,
+      "trace_id": "1f6d739516c4"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00318'}) -> {\"trace_id\": \"1f6d739516c4\", \"claim_number\": \"CLM-2027-00318\", \"policy_number\": \"PROP-CONT-403\", \"product\": \"property_contents\", \"loss_date\": \"2024-11-30\", \"claimed_amount\": 38000, \"fnol_text\": \"Sudden flood from a burst water tank damaged household contents on the ground floor.\", \"adjuster_notes\": ",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2024-11-30', 'policy_number': 'PROP-CONT-403', 'trace_id': '1f6d739516c4'}) -> {\"policy_number\": \"PROP-CONT-403\", \"loss_date\": \"2024-11-30\", \"coverage_start_date\": \"2023-12-01\", \"coverage_end_date\": \"2024-11-30\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2024-11-30', 'trace_id': '1f6d739516c4', 'query': 'burst water tank contents water damage flood'}) -> {\"loss_date\": \"2024-11-30\", \"chunks\": [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 2, \"text\": \"ke, storm, flood, inundation, earthquake, and impact damage.\\n**Basis of settlement:** Reinstatement value (new for old). ### 3.2 Contents Cover\\nCovers household contents including furniture",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'trace_id': '1f6d739516c4', 'query': 'burst water tank apparatus pipes escape of water flood inundation Clause', 'loss_date': '2024-11-30'}) -> {\"loss_date\": \"2024-11-30\", \"chunks\": [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 21, \"text\": \"vernment or any \\nlawful authority, \\nor \\nb. temporary or permanent \\ndispossession of Your Home \\nby unlawful occupation by any ",
+      "iter 5: [claims-triage-coverage] search_policy_wording({'trace_id': '1f6d739516c4', 'query': 'sub-limit contents water damage sublimit limit', 'loss_date': '2024-11-30'}) -> {\"loss_date\": \"2024-11-30\", \"chunks\": [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 7, \"text\": \"or killing and eradicating the bacteria, germs, pathogenic, and non-pathogenic microorganisms that might grow on various surface to",
+      "iter 6: [claims-triage-coverage] compute_amounts({'deductible': 2500, 'claimed_amount': 38000, 'trace_id': '1f6d739516c4'}) -> {\"claimed_amount\": 38000.0, \"deductible\": 2500.0, \"sub_limit\": null, \"payable_before_sub_limit\": 35500.0, \"payable_after_sub_limit\": 35500.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 7: [claims-triage-coverage] refer_to_adjuster({'cited_clause': 'Peril 12 (Bursting or overflowing of water tanks, apparatus and pipes) and Clause 7(b) (Sudden and Accidental Events)', 'summary': \"The policy was in force on the loss date of 2024-11-30 under policy PROP-CONT-403. The claimant reported sudden damage to ground floor household contents (furniture and electronics) caused by a burst water tank, with a claimed amount of ₹38,000. Under Peril 12 of the base policy wording ('Bursting or overflowing of water tanks, apparatus and pipes') and Clause 7(b) of Endorsement Version 2023-R1 ('Sudden and Accidental Events'), loss resulting from sudden water tank bursting falls within policy terms, provided it is not gradual seepage over 72 hours as excluded under Clause 7(c). Deductible is ₹2,500, sub-limit is None, and policy limit is As declared (market value), resulting in a pre-assessment calculation of ₹35,500.\", 'sub_limit': None, 'deductible': 2500, 'policy_limit': 'As declared (market value)', 'loss_date_resolved_against': '2024-11-30', 'endorsement_version': 'base / 2023-R1', 'trace_id': '1f6d739516c4', 'claim_number': 'CLM-2027-00318', 'coverage_signal': 'supports_coverage'}) -> {\"claim_number\": \"CLM-2027-00318\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Peril 12 (Bursting or overflowing of water tanks, apparatus and pipes) and Clause 7(b) (Sudden and Accidental Events)\", \"endorsement_version\": \"base / 2023-R1\", \"loss_date_re"
+    ]
+  },
+  "CLM-2027-00319": {
+    "claim_number": "CLM-2027-00319",
+    "trace_id": "5b0044e49499",
+    "iterations": 6,
+    "total_tokens": 22939,
+    "total_cost_usd": 0.0018599250000000001,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00319"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_number": "PROP-CONT-404",
+          "trace_id": "5b0044e49499",
+          "loss_date": "2025-07-19"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-07-19",
+          "trace_id": "5b0044e49499",
+          "query": "burst water tank flood household contents"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "5b0044e49499",
+          "loss_date": "2025-07-19",
+          "query": "Clause 9 water tank burst water pipe leakage flood"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 42000,
+          "trace_id": "5b0044e49499",
+          "sub_limit": null,
+          "deductible": 2500
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_limit": "as declared (market value)",
+          "loss_date_resolved_against": "2025-07-19",
+          "summary": "Policy PROP-CONT-404 was in force on the loss date of 2025-07-19 (in force from 2024-09-01 to 2025-08-31). Household contents damage of ₹42,000 was claimed due to sudden flooding from a burst water tank. Endorsement Version 2025-R1 Clause 9(a) excludes flood and inundation damage to Contents whether sudden, accidental, or gradual. Clause 9(b) specifies that flood protection requires the IAP-20 Flood Extension Rider, which is not present on this policy. Base policy Item 12 lists bursting or overflowing of water tanks as an insured event. Deductible: ₹2,500; Sub-limit: none; Policy limit: as declared (market value). Computed reference payable amount after deductible: ₹39,500.",
+          "claim_number": "CLM-2027-00319",
+          "cited_clause": "Clause 9(a) and Clause 9(b)",
+          "deductible": 2500,
+          "trace_id": "5b0044e49499",
+          "sub_limit": null,
+          "coverage_signal": "supports_exclusion",
+          "endorsement_version": "2025-R1"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00319",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Clause 9(a) and Clause 9(b)",
+      "endorsement_version": "2025-R1",
+      "loss_date_resolved_against": "2025-07-19",
+      "deductible": 2500.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (market value)",
+      "summary": "Policy PROP-CONT-404 was in force on the loss date of 2025-07-19 (in force from 2024-09-01 to 2025-08-31). Household contents damage of ₹42,000 was claimed due to sudden flooding from a burst water tank. Endorsement Version 2025-R1 Clause 9(a) excludes flood and inundation damage to Contents whether sudden, accidental, or gradual. Clause 9(b) specifies that flood protection requires the IAP-20 Flood Extension Rider, which is not present on this policy. Base policy Item 12 lists bursting or overflowing of water tanks as an insured event. Deductible: ₹2,500; Sub-limit: none; Policy limit: as declared (market value). Computed reference payable amount after deductible: ₹39,500.",
+      "final": true,
+      "trace_id": "5b0044e49499"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00319'}) -> {\"trace_id\": \"5b0044e49499\", \"claim_number\": \"CLM-2027-00319\", \"policy_number\": \"PROP-CONT-404\", \"product\": \"property_contents\", \"loss_date\": \"2025-07-19\", \"claimed_amount\": 42000, \"fnol_text\": \"Sudden flood from a burst water tank damaged household contents on the ground floor.\", \"adjuster_notes\": ",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'policy_number': 'PROP-CONT-404', 'trace_id': '5b0044e49499', 'loss_date': '2025-07-19'}) -> {\"policy_number\": \"PROP-CONT-404\", \"loss_date\": \"2025-07-19\", \"coverage_start_date\": \"2024-09-01\", \"coverage_end_date\": \"2025-08-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2025-07-19', 'trace_id': '5b0044e49499', 'query': 'burst water tank flood household contents'}) -> {\"loss_date\": \"2025-07-19\", \"chunks\": [{\"source\": \"insurance_policy_overview.md\", \"chunk_index\": 2, \"text\": \"ke, storm, flood, inundation, earthquake, and impact damage.\\n**Basis of settlement:** Reinstatement value (new for old). ### 3.2 Contents Cover\\nCovers household contents including furniture",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'trace_id': '5b0044e49499', 'loss_date': '2025-07-19', 'query': 'Clause 9 water tank burst water pipe leakage flood'}) -> {\"loss_date\": \"2025-07-19\", \"chunks\": [{\"source\": \"exclusions_schedule_2025.md\", \"chunk_index\": 1, \"text\": \"ent Version 2023-R1, not this\\n> document, regardless of which version the policyholder's current renewal\\n> carries.\\n\\n--- ## Clause 9 \\u2014 Water, Flood and Inundation (renumbered and rewr",
+      "iter 5: [claims-triage-coverage] compute_amounts({'claimed_amount': 42000, 'trace_id': '5b0044e49499', 'sub_limit': None, 'deductible': 2500}) -> {\"claimed_amount\": 42000.0, \"deductible\": 2500.0, \"sub_limit\": null, \"payable_before_sub_limit\": 39500.0, \"payable_after_sub_limit\": 39500.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 6: [claims-triage-coverage] refer_to_adjuster({'policy_limit': 'as declared (market value)', 'loss_date_resolved_against': '2025-07-19', 'summary': 'Policy PROP-CONT-404 was in force on the loss date of 2025-07-19 (in force from 2024-09-01 to 2025-08-31). Household contents damage of ₹42,000 was claimed due to sudden flooding from a burst water tank. Endorsement Version 2025-R1 Clause 9(a) excludes flood and inundation damage to Contents whether sudden, accidental, or gradual. Clause 9(b) specifies that flood protection requires the IAP-20 Flood Extension Rider, which is not present on this policy. Base policy Item 12 lists bursting or overflowing of water tanks as an insured event. Deductible: ₹2,500; Sub-limit: none; Policy limit: as declared (market value). Computed reference payable amount after deductible: ₹39,500.', 'claim_number': 'CLM-2027-00319', 'cited_clause': 'Clause 9(a) and Clause 9(b)', 'deductible': 2500, 'trace_id': '5b0044e49499', 'sub_limit': None, 'coverage_signal': 'supports_exclusion', 'endorsement_version': '2025-R1'}) -> {\"claim_number\": \"CLM-2027-00319\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Clause 9(a) and Clause 9(b)\", \"endorsement_version\": \"2025-R1\", \"loss_date_resolved_against\": \"2025-07-19\", \"deductible\": 2500.0, \"sub_limit\": null, \"policy_limit\": \"as decl"
+    ]
+  },
+  "CLM-2027-00320": {
+    "claim_number": "CLM-2027-00320",
+    "trace_id": "f72710e52235",
+    "iterations": 4,
+    "total_tokens": 9885,
+    "total_cost_usd": 0.0008306999999999999,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00320"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "f72710e52235",
+          "policy_number": "PROP-BLDG-306",
+          "loss_date": "2026-03-01"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "sub_limit": null,
+          "trace_id": "f72710e52235",
+          "deductible": 10000,
+          "claimed_amount": 500000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "f72710e52235",
+          "cited_clause": "N/A - Policy Lapsed / Not in Force",
+          "loss_date_resolved_against": "2026-03-01",
+          "sub_limit": null,
+          "claim_number": "CLM-2027-00320",
+          "coverage_signal": "supports_exclusion",
+          "deductible": 10000,
+          "summary": "Claim CLM-2027-00320 specifies a loss date of 2026-03-01 for a claimed amount of 500,000. Policy PROP-BLDG-306 had an active coverage period from 2024-02-01 to 2025-01-31. Verification confirms coverage was not in force on the loss date because the policy had lapsed.",
+          "policy_limit": "as declared (reinstatement value)",
+          "endorsement_version": "N/A"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00320",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "N/A - Policy Lapsed / Not in Force",
+      "endorsement_version": "N/A",
+      "loss_date_resolved_against": "2026-03-01",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "Claim CLM-2027-00320 specifies a loss date of 2026-03-01 for a claimed amount of 500,000. Policy PROP-BLDG-306 had an active coverage period from 2024-02-01 to 2025-01-31. Verification confirms coverage was not in force on the loss date because the policy had lapsed.",
+      "final": true,
+      "trace_id": "f72710e52235"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00320'}) -> {\"trace_id\": \"f72710e52235\", \"claim_number\": \"CLM-2027-00320\", \"policy_number\": \"PROP-BLDG-306\", \"product\": \"property_building\", \"loss_date\": \"2026-03-01\", \"claimed_amount\": 500000, \"fnol_text\": \"Earthquake caused structural cracks in the insured building.\", \"adjuster_notes\": \"Caller: Harish Nambiar",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': 'f72710e52235', 'policy_number': 'PROP-BLDG-306', 'loss_date': '2026-03-01'}) -> {\"policy_number\": \"PROP-BLDG-306\", \"loss_date\": \"2026-03-01\", \"coverage_start_date\": \"2024-02-01\", \"coverage_end_date\": \"2025-01-31\", \"in_force\": false}",
+      "iter 3: [claims-triage-coverage] compute_amounts({'sub_limit': None, 'trace_id': 'f72710e52235', 'deductible': 10000, 'claimed_amount': 500000}) -> {\"claimed_amount\": 500000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 490000.0, \"payable_after_sub_limit\": 490000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 4: [claims-triage-coverage] refer_to_adjuster({'trace_id': 'f72710e52235', 'cited_clause': 'N/A - Policy Lapsed / Not in Force', 'loss_date_resolved_against': '2026-03-01', 'sub_limit': None, 'claim_number': 'CLM-2027-00320', 'coverage_signal': 'supports_exclusion', 'deductible': 10000, 'summary': 'Claim CLM-2027-00320 specifies a loss date of 2026-03-01 for a claimed amount of 500,000. Policy PROP-BLDG-306 had an active coverage period from 2024-02-01 to 2025-01-31. Verification confirms coverage was not in force on the loss date because the policy had lapsed.', 'policy_limit': 'as declared (reinstatement value)', 'endorsement_version': 'N/A'}) -> {\"claim_number\": \"CLM-2027-00320\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"N/A - Policy Lapsed / Not in Force\", \"endorsement_version\": \"N/A\", \"loss_date_resolved_against\": \"2026-03-01\", \"deductible\": 10000.0, \"sub_limit\": null, \"policy_limit\": \"as "
+    ]
+  },
+  "CLM-2027-00321": {
+    "claim_number": "CLM-2027-00321",
+    "trace_id": "0eae0179d8fa",
+    "iterations": 5,
+    "total_tokens": 15053,
+    "total_cost_usd": 0.0012491249999999998,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00321"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "0eae0179d8fa",
+          "loss_date": "2024-12-31",
+          "policy_number": "PROP-BLDG-302"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "0eae0179d8fa",
+          "query": "flood flash flood water damage ground floor exclusion rider",
+          "loss_date": "2024-12-31"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "0eae0179d8fa",
+          "deductible": 10000,
+          "sub_limit": null,
+          "claimed_amount": 260000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "0eae0179d8fa",
+          "policy_limit": "as declared (reinstatement value)",
+          "claim_number": "CLM-2027-00321",
+          "endorsement_version": "2023-R1",
+          "loss_date_resolved_against": "2024-12-31",
+          "sub_limit": null,
+          "coverage_signal": "supports_coverage",
+          "summary": "The policy PROP-BLDG-302 was in force on the loss date of 2024-12-31 (active period 2024-06-01 to 2025-05-31). The claim involves ground-floor water damage caused by a sudden flash flood. Under Endorsement Version 2023-R1 (effective 2023-01-01 to 2024-12-31), Clause 7(a) and Clause 7(b) indicate that sudden and accidental flood events fall under standard policy terms without requiring an additional rider. Reference figures: claimed amount 260,000 INR, deductible 10,000 INR, sub-limit null, policy limit as declared (reinstatement value).",
+          "cited_clause": "Clause 7(a) and Clause 7(b)",
+          "deductible": 10000
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00321",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Clause 7(a) and Clause 7(b)",
+      "endorsement_version": "2023-R1",
+      "loss_date_resolved_against": "2024-12-31",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "The policy PROP-BLDG-302 was in force on the loss date of 2024-12-31 (active period 2024-06-01 to 2025-05-31). The claim involves ground-floor water damage caused by a sudden flash flood. Under Endorsement Version 2023-R1 (effective 2023-01-01 to 2024-12-31), Clause 7(a) and Clause 7(b) indicate that sudden and accidental flood events fall under standard policy terms without requiring an additional rider. Reference figures: claimed amount 260,000 INR, deductible 10,000 INR, sub-limit null, policy limit as declared (reinstatement value).",
+      "final": true,
+      "trace_id": "0eae0179d8fa"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00321'}) -> {\"trace_id\": \"0eae0179d8fa\", \"claim_number\": \"CLM-2027-00321\", \"policy_number\": \"PROP-BLDG-302\", \"product\": \"property_building\", \"loss_date\": \"2024-12-31\", \"claimed_amount\": 260000, \"fnol_text\": \"Sudden flash flood damaged the ground floor on the last day of the year.\", \"adjuster_notes\": \"Caller: Su",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'trace_id': '0eae0179d8fa', 'loss_date': '2024-12-31', 'policy_number': 'PROP-BLDG-302'}) -> {\"policy_number\": \"PROP-BLDG-302\", \"loss_date\": \"2024-12-31\", \"coverage_start_date\": \"2024-06-01\", \"coverage_end_date\": \"2025-05-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'trace_id': '0eae0179d8fa', 'query': 'flood flash flood water damage ground floor exclusion rider', 'loss_date': '2024-12-31'}) -> {\"loss_date\": \"2024-12-31\", \"chunks\": [{\"source\": \"exclusions_schedule_2023.md\", \"chunk_index\": 1, \"text\": \"Contents Cover described in Section 3,\\nwithout need for a separate endorsement, subject to Clauses 7(b) and 7(c) below. ### Clause 7(b) \\u2014 Sudden and Accidental Events\\nCover under Clause",
+      "iter 4: [claims-triage-coverage] compute_amounts({'trace_id': '0eae0179d8fa', 'deductible': 10000, 'sub_limit': None, 'claimed_amount': 260000}) -> {\"claimed_amount\": 260000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 250000.0, \"payable_after_sub_limit\": 250000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'trace_id': '0eae0179d8fa', 'policy_limit': 'as declared (reinstatement value)', 'claim_number': 'CLM-2027-00321', 'endorsement_version': '2023-R1', 'loss_date_resolved_against': '2024-12-31', 'sub_limit': None, 'coverage_signal': 'supports_coverage', 'summary': 'The policy PROP-BLDG-302 was in force on the loss date of 2024-12-31 (active period 2024-06-01 to 2025-05-31). The claim involves ground-floor water damage caused by a sudden flash flood. Under Endorsement Version 2023-R1 (effective 2023-01-01 to 2024-12-31), Clause 7(a) and Clause 7(b) indicate that sudden and accidental flood events fall under standard policy terms without requiring an additional rider. Reference figures: claimed amount 260,000 INR, deductible 10,000 INR, sub-limit null, policy limit as declared (reinstatement value).', 'cited_clause': 'Clause 7(a) and Clause 7(b)', 'deductible': 10000}) -> {\"claim_number\": \"CLM-2027-00321\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Clause 7(a) and Clause 7(b)\", \"endorsement_version\": \"2023-R1\", \"loss_date_resolved_against\": \"2024-12-31\", \"deductible\": 10000.0, \"sub_limit\": null, \"policy_limit\": \"as decl"
+    ]
+  },
+  "CLM-2027-00322": {
+    "claim_number": "CLM-2027-00322",
+    "trace_id": "4dd194612d44",
+    "iterations": 5,
+    "total_tokens": 15308,
+    "total_cost_usd": 0.0012662250000000002,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00322"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-01-01",
+          "policy_number": "PROP-BLDG-305",
+          "trace_id": "4dd194612d44"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "flash flood flood water damage exclusion rider",
+          "trace_id": "4dd194612d44",
+          "loss_date": "2025-01-01"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 10000,
+          "claimed_amount": 265000,
+          "sub_limit": null,
+          "trace_id": "4dd194612d44"
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_limit": "as declared (reinstatement value)",
+          "trace_id": "4dd194612d44",
+          "endorsement_version": "2025-R1",
+          "claim_number": "CLM-2027-00322",
+          "summary": "The policy PROP-BLDG-305 was in force on the loss date of 2025-01-01. The loss was reported as ground-floor flash flood damage on the first day of the 2025 policy year. Under Endorsement Version 2025-R1 Clause 9(a), flood and inundation damage is excluded from standard policy terms, and requires the IAP-20 Flood Extension Rider under Clause 9(b). Adjuster notes indicate that no IAP-20 Flood Extension Rider is on file for this policy. Claimed amount: 265,000; deductible: 10,000; sub-limit: none; policy limit: as declared (reinstatement value).",
+          "sub_limit": null,
+          "deductible": 10000,
+          "coverage_signal": "supports_exclusion",
+          "cited_clause": "Clause 9(a) — Exclusion: Flood and Inundation",
+          "loss_date_resolved_against": "2025-01-01"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00322",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Clause 9(a) — Exclusion: Flood and Inundation",
+      "endorsement_version": "2025-R1",
+      "loss_date_resolved_against": "2025-01-01",
+      "deductible": 10000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (reinstatement value)",
+      "summary": "The policy PROP-BLDG-305 was in force on the loss date of 2025-01-01. The loss was reported as ground-floor flash flood damage on the first day of the 2025 policy year. Under Endorsement Version 2025-R1 Clause 9(a), flood and inundation damage is excluded from standard policy terms, and requires the IAP-20 Flood Extension Rider under Clause 9(b). Adjuster notes indicate that no IAP-20 Flood Extension Rider is on file for this policy. Claimed amount: 265,000; deductible: 10,000; sub-limit: none; policy limit: as declared (reinstatement value).",
+      "final": true,
+      "trace_id": "4dd194612d44"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00322'}) -> {\"trace_id\": \"4dd194612d44\", \"claim_number\": \"CLM-2027-00322\", \"policy_number\": \"PROP-BLDG-305\", \"product\": \"property_building\", \"loss_date\": \"2025-01-01\", \"claimed_amount\": 265000, \"fnol_text\": \"Sudden flash flood damaged the ground floor on the first day the new policy year's wording applies.\", \"a",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2025-01-01', 'policy_number': 'PROP-BLDG-305', 'trace_id': '4dd194612d44'}) -> {\"policy_number\": \"PROP-BLDG-305\", \"loss_date\": \"2025-01-01\", \"coverage_start_date\": \"2025-01-01\", \"coverage_end_date\": \"2025-12-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'query': 'flash flood flood water damage exclusion rider', 'trace_id': '4dd194612d44', 'loss_date': '2025-01-01'}) -> {\"loss_date\": \"2025-01-01\", \"chunks\": [{\"source\": \"exclusions_schedule_2025.md\", \"chunk_index\": 1, \"text\": \"ent Version 2023-R1, not this\\n> document, regardless of which version the policyholder's current renewal\\n> carries.\\n\\n--- ## Clause 9 \\u2014 Water, Flood and Inundation (renumbered and rewr",
+      "iter 4: [claims-triage-coverage] compute_amounts({'deductible': 10000, 'claimed_amount': 265000, 'sub_limit': None, 'trace_id': '4dd194612d44'}) -> {\"claimed_amount\": 265000.0, \"deductible\": 10000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 255000.0, \"payable_after_sub_limit\": 255000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'policy_limit': 'as declared (reinstatement value)', 'trace_id': '4dd194612d44', 'endorsement_version': '2025-R1', 'claim_number': 'CLM-2027-00322', 'summary': 'The policy PROP-BLDG-305 was in force on the loss date of 2025-01-01. The loss was reported as ground-floor flash flood damage on the first day of the 2025 policy year. Under Endorsement Version 2025-R1 Clause 9(a), flood and inundation damage is excluded from standard policy terms, and requires the IAP-20 Flood Extension Rider under Clause 9(b). Adjuster notes indicate that no IAP-20 Flood Extension Rider is on file for this policy. Claimed amount: 265,000; deductible: 10,000; sub-limit: none; policy limit: as declared (reinstatement value).', 'sub_limit': None, 'deductible': 10000, 'coverage_signal': 'supports_exclusion', 'cited_clause': 'Clause 9(a) — Exclusion: Flood and Inundation', 'loss_date_resolved_against': '2025-01-01'}) -> {\"claim_number\": \"CLM-2027-00322\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Clause 9(a) \\u2014 Exclusion: Flood and Inundation\", \"endorsement_version\": \"2025-R1\", \"loss_date_resolved_against\": \"2025-01-01\", \"deductible\": 10000.0, \"sub_limit\": null, "
+    ]
+  },
+  "CLM-2027-00323": {
+    "claim_number": "CLM-2027-00323",
+    "trace_id": "42a5247eafc1",
+    "iterations": 6,
+    "total_tokens": 21043,
+    "total_cost_usd": 0.0016988249999999997,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00323"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "policy_number": "MOTOR-COMP-102",
+          "trace_id": "42a5247eafc1",
+          "loss_date": "2025-03-10"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2025-03-10",
+          "query": "glass breakage windshield damage stone chip",
+          "trace_id": "42a5247eafc1"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "query": "motor comprehensive glass breakage deductible IMT",
+          "loss_date": "2025-03-10",
+          "trace_id": "42a5247eafc1"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "deductible": 1000,
+          "trace_id": "42a5247eafc1",
+          "claimed_amount": 15000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date_resolved_against": "2025-03-10",
+          "sub_limit": null,
+          "claim_number": "CLM-2027-00323",
+          "deductible": 1000,
+          "summary": "The policy was in force on the loss date of 2025-03-10 (coverage period: 2024-06-01 to 2025-05-31). The claim stems from a windshield cracked by a stone chip on the highway, with no accompanying damage reported. According to base policy documentation (source: claims_faq.md), glass breakage protection provides for windshield replacement without applying the standard ₹1,000 compulsory deductible when no other damage is claimed concurrently. Adjuster notes confirm the insured holds glass breakage protection and is claiming glass damage only.",
+          "trace_id": "42a5247eafc1",
+          "policy_limit": "as declared (IDV)",
+          "coverage_signal": "supports_coverage",
+          "endorsement_version": "base",
+          "cited_clause": "Claims FAQ - Glass Breakage Cover ('My windshield cracked. Do I need to pay a deductible?')"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00323",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "Claims FAQ - Glass Breakage Cover ('My windshield cracked. Do I need to pay a deductible?')",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2025-03-10",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "The policy was in force on the loss date of 2025-03-10 (coverage period: 2024-06-01 to 2025-05-31). The claim stems from a windshield cracked by a stone chip on the highway, with no accompanying damage reported. According to base policy documentation (source: claims_faq.md), glass breakage protection provides for windshield replacement without applying the standard ₹1,000 compulsory deductible when no other damage is claimed concurrently. Adjuster notes confirm the insured holds glass breakage protection and is claiming glass damage only.",
+      "final": true,
+      "trace_id": "42a5247eafc1"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00323'}) -> {\"trace_id\": \"42a5247eafc1\", \"claim_number\": \"CLM-2027-00323\", \"policy_number\": \"MOTOR-COMP-102\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2025-03-10\", \"claimed_amount\": 15000, \"fnol_text\": \"Windshield cracked from a stone chip on the highway.\", \"adjuster_notes\": \"Caller: Priya Nair, 22 Green",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'policy_number': 'MOTOR-COMP-102', 'trace_id': '42a5247eafc1', 'loss_date': '2025-03-10'}) -> {\"policy_number\": \"MOTOR-COMP-102\", \"loss_date\": \"2025-03-10\", \"coverage_start_date\": \"2024-06-01\", \"coverage_end_date\": \"2025-05-31\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2025-03-10', 'query': 'glass breakage windshield damage stone chip', 'trace_id': '42a5247eafc1'}) -> {\"loss_date\": \"2025-03-10\", \"chunks\": [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 80, \"text\": \"rectly or indirectly from or in consequence of \\nchemical or biological emission, release, discharge, dispersal or escape or chemi",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'query': 'motor comprehensive glass breakage deductible IMT', 'loss_date': '2025-03-10', 'trace_id': '42a5247eafc1'}) -> {\"loss_date\": \"2025-03-10\", \"chunks\": [{\"source\": \"claims_faq.md\", \"chunk_index\": 3, \"text\": \"y if\\nyou have the **Engine & Gearbox Protection** endorsement (IMT-29). Without it,\\nengine hydrostatic lock is excluded. **Q: Can I take my car to any garage?**\\nA: For **reimbursement** claims, yes \\u201",
+      "iter 5: [claims-triage-coverage] compute_amounts({'deductible': 1000, 'trace_id': '42a5247eafc1', 'claimed_amount': 15000}) -> {\"claimed_amount\": 15000.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 14000.0, \"payable_after_sub_limit\": 14000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 6: [claims-triage-coverage] refer_to_adjuster({'loss_date_resolved_against': '2025-03-10', 'sub_limit': None, 'claim_number': 'CLM-2027-00323', 'deductible': 1000, 'summary': 'The policy was in force on the loss date of 2025-03-10 (coverage period: 2024-06-01 to 2025-05-31). The claim stems from a windshield cracked by a stone chip on the highway, with no accompanying damage reported. According to base policy documentation (source: claims_faq.md), glass breakage protection provides for windshield replacement without applying the standard ₹1,000 compulsory deductible when no other damage is claimed concurrently. Adjuster notes confirm the insured holds glass breakage protection and is claiming glass damage only.', 'trace_id': '42a5247eafc1', 'policy_limit': 'as declared (IDV)', 'coverage_signal': 'supports_coverage', 'endorsement_version': 'base', 'cited_clause': \"Claims FAQ - Glass Breakage Cover ('My windshield cracked. Do I need to pay a deductible?')\"}) -> {\"claim_number\": \"CLM-2027-00323\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"Claims FAQ - Glass Breakage Cover ('My windshield cracked. Do I need to pay a deductible?')\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2025-03-10\", \"dedu"
+    ]
+  },
+  "CLM-2027-00324": {
+    "claim_number": "CLM-2027-00324",
+    "trace_id": "3a748b4e4a2e",
+    "iterations": 7,
+    "total_tokens": 29169,
+    "total_cost_usd": 0.0023388750000000002,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00324"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-11-14",
+          "policy_number": "MOTOR-COMP-105",
+          "trace_id": "3a748b4e4a2e"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-11-14",
+          "query": "total loss repair estimate vehicle declared value collision payout calculation",
+          "trace_id": "3a748b4e4a2e",
+          "top_k": 4
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "top_k": 4,
+          "loss_date": "2024-11-14",
+          "trace_id": "3a748b4e4a2e",
+          "query": "motor comprehensive total loss IDV IMT collision repair estimate exceeds declared value"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "3a748b4e4a2e",
+          "query": "Section I Own Damage Motor Comprehensive total loss collision vehicle declared value IDV deductible",
+          "top_k": 4,
+          "loss_date": "2024-11-14"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "trace_id": "3a748b4e4a2e",
+          "deductible": 1000,
+          "claimed_amount": 1200000
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "endorsement_version": "base",
+          "sub_limit": null,
+          "summary": "Policy coverage was in force on the loss date (2024-11-14). The vehicle sustained severe frame and crumple zone damage following a collision with a third-party truck, and repair estimates exceed the vehicle's declared value. According to base endorsement wording in claims_faq.md (Total Loss Provision), a total loss is declared when repair costs exceed 75% of the Insured Declared Value (IDV), payable up to the IDV (or original invoice value if RTI IMT-34 applies) minus the deductible, with the salvage retained by the insurer. Claimed amount: 1,200,000; Deductible: 1,000; Sub-limit: None; Policy limit: as declared (IDV).",
+          "trace_id": "3a748b4e4a2e",
+          "loss_date_resolved_against": "2024-11-14",
+          "coverage_signal": "supports_coverage",
+          "cited_clause": "claims_faq.md, Total Loss Provision (Chunk 1)",
+          "claim_number": "CLM-2027-00324",
+          "deductible": 1000,
+          "policy_limit": "as declared (IDV)"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00324",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_coverage",
+      "cited_clause": "claims_faq.md, Total Loss Provision (Chunk 1)",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-11-14",
+      "deductible": 1000.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (IDV)",
+      "summary": "Policy coverage was in force on the loss date (2024-11-14). The vehicle sustained severe frame and crumple zone damage following a collision with a third-party truck, and repair estimates exceed the vehicle's declared value. According to base endorsement wording in claims_faq.md (Total Loss Provision), a total loss is declared when repair costs exceed 75% of the Insured Declared Value (IDV), payable up to the IDV (or original invoice value if RTI IMT-34 applies) minus the deductible, with the salvage retained by the insurer. Claimed amount: 1,200,000; Deductible: 1,000; Sub-limit: None; Policy limit: as declared (IDV).",
+      "final": true,
+      "trace_id": "3a748b4e4a2e"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00324'}) -> {\"trace_id\": \"3a748b4e4a2e\", \"claim_number\": \"CLM-2027-00324\", \"policy_number\": \"MOTOR-COMP-105\", \"product\": \"motor_comprehensive\", \"loss_date\": \"2024-11-14\", \"claimed_amount\": 1200000, \"fnol_text\": \"Insured's car was hit by a truck; repair estimate exceeds the vehicle's declared value.\", \"adjuster_",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2024-11-14', 'policy_number': 'MOTOR-COMP-105', 'trace_id': '3a748b4e4a2e'}) -> {\"policy_number\": \"MOTOR-COMP-105\", \"loss_date\": \"2024-11-14\", \"coverage_start_date\": \"2024-03-01\", \"coverage_end_date\": \"2025-02-28\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2024-11-14', 'query': 'total loss repair estimate vehicle declared value collision payout calculation', 'trace_id': '3a748b4e4a2e', 'top_k': 4}) -> {\"loss_date\": \"2024-11-14\", \"chunks\": [{\"source\": \"claims_faq.md\", \"chunk_index\": 1, \"text\": \"of document submission. Alternatively, use a network garage for a\\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\\nA: IDV (Insured Declared Value) ",
+      "iter 4: [claims-triage-coverage] search_policy_wording({'top_k': 4, 'loss_date': '2024-11-14', 'trace_id': '3a748b4e4a2e', 'query': 'motor comprehensive total loss IDV IMT collision repair estimate exceeds declared value'}) -> {\"loss_date\": \"2024-11-14\", \"chunks\": [{\"source\": \"claims_faq.md\", \"chunk_index\": 1, \"text\": \"of document submission. Alternatively, use a network garage for a\\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\\nA: IDV (Insured Declared Value) ",
+      "iter 5: [claims-triage-coverage] search_policy_wording({'trace_id': '3a748b4e4a2e', 'query': 'Section I Own Damage Motor Comprehensive total loss collision vehicle declared value IDV deductible', 'top_k': 4, 'loss_date': '2024-11-14'}) -> {\"loss_date\": \"2024-11-14\", \"chunks\": [{\"source\": \"claims_faq.md\", \"chunk_index\": 1, \"text\": \"of document submission. Alternatively, use a network garage for a\\ncashless settlement where we pay the garage directly. **Q: What is IDV and how does it affect my claim?**\\nA: IDV (Insured Declared Value) ",
+      "iter 6: [claims-triage-coverage] compute_amounts({'trace_id': '3a748b4e4a2e', 'deductible': 1000, 'claimed_amount': 1200000}) -> {\"claimed_amount\": 1200000.0, \"deductible\": 1000.0, \"sub_limit\": null, \"payable_before_sub_limit\": 1199000.0, \"payable_after_sub_limit\": 1199000.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 7: [claims-triage-coverage] refer_to_adjuster({'endorsement_version': 'base', 'sub_limit': None, 'summary': \"Policy coverage was in force on the loss date (2024-11-14). The vehicle sustained severe frame and crumple zone damage following a collision with a third-party truck, and repair estimates exceed the vehicle's declared value. According to base endorsement wording in claims_faq.md (Total Loss Provision), a total loss is declared when repair costs exceed 75% of the Insured Declared Value (IDV), payable up to the IDV (or original invoice value if RTI IMT-34 applies) minus the deductible, with the salvage retained by the insurer. Claimed amount: 1,200,000; Deductible: 1,000; Sub-limit: None; Policy limit: as declared (IDV).\", 'trace_id': '3a748b4e4a2e', 'loss_date_resolved_against': '2024-11-14', 'coverage_signal': 'supports_coverage', 'cited_clause': 'claims_faq.md, Total Loss Provision (Chunk 1)', 'claim_number': 'CLM-2027-00324', 'deductible': 1000, 'policy_limit': 'as declared (IDV)'}) -> {\"claim_number\": \"CLM-2027-00324\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_coverage\", \"cited_clause\": \"claims_faq.md, Total Loss Provision (Chunk 1)\", \"endorsement_version\": \"base\", \"loss_date_resolved_against\": \"2024-11-14\", \"deductible\": 1000.0, \"sub_limit\": null, \"policy_li"
+    ]
+  },
+  "CLM-2027-00325": {
+    "claim_number": "CLM-2027-00325",
+    "trace_id": "aaaf6a5184d2",
+    "iterations": 5,
+    "total_tokens": 15356,
+    "total_cost_usd": 0.0012655499999999998,
+    "tool_calls": [
+      {
+        "tool": "get_claim",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claim_number": "CLM-2027-00325"
+        }
+      },
+      {
+        "tool": "check_coverage_in_force",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-06-03",
+          "trace_id": "aaaf6a5184d2",
+          "policy_number": "PROP-CONT-401"
+        }
+      },
+      {
+        "tool": "search_policy_wording",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date": "2024-06-03",
+          "trace_id": "aaaf6a5184d2",
+          "query": "jewellery missing mysterious disappearance theft forced entry"
+        }
+      },
+      {
+        "tool": "compute_amounts",
+        "server": "claims-triage-coverage",
+        "args": {
+          "claimed_amount": 15000,
+          "trace_id": "aaaf6a5184d2",
+          "deductible": 2500
+        }
+      },
+      {
+        "tool": "refer_to_adjuster",
+        "server": "claims-triage-coverage",
+        "args": {
+          "loss_date_resolved_against": "2024-06-03",
+          "trace_id": "aaaf6a5184d2",
+          "deductible": 2500,
+          "policy_limit": "as declared (market value)",
+          "claim_number": "CLM-2027-00325",
+          "coverage_signal": "supports_exclusion",
+          "sub_limit": null,
+          "summary": "The insured reported missing jewellery from the home with no evidence of forced entry, indicating a mysterious disappearance. The policy was in force on the loss date of 2024-06-03 (effective 2024-05-01 to 2025-04-30). Policy wording search under endorsement version 'base' retrieved Exclusion 10, which excludes 'Mysterious disappearance and Unexplained Losses', and Item 3, which specifies that insurance for jewelry applies only against burglary with forcible entry or exit. Claimed amount: 15,000; Deductible: 2,500; Policy limit: as declared (market value).",
+          "endorsement_version": "base",
+          "cited_clause": "Exclusion 10 (Mysterious disappearance and Unexplained Losses) & Item 3 (Jewelry insurance restricted to burglary; excludes theft without forcible entry/exit)"
+        }
+      }
+    ],
+    "final": {
+      "claim_number": "CLM-2027-00325",
+      "action": "referred_to_adjuster",
+      "coverage_signal": "supports_exclusion",
+      "cited_clause": "Exclusion 10 (Mysterious disappearance and Unexplained Losses) & Item 3 (Jewelry insurance restricted to burglary; excludes theft without forcible entry/exit)",
+      "endorsement_version": "base",
+      "loss_date_resolved_against": "2024-06-03",
+      "deductible": 2500.0,
+      "sub_limit": null,
+      "policy_limit": "as declared (market value)",
+      "summary": "The insured reported missing jewellery from the home with no evidence of forced entry, indicating a mysterious disappearance. The policy was in force on the loss date of 2024-06-03 (effective 2024-05-01 to 2025-04-30). Policy wording search under endorsement version 'base' retrieved Exclusion 10, which excludes 'Mysterious disappearance and Unexplained Losses', and Item 3, which specifies that insurance for jewelry applies only against burglary with forcible entry or exit. Claimed amount: 15,000; Deductible: 2,500; Policy limit: as declared (market value).",
+      "final": true,
+      "trace_id": "aaaf6a5184d2"
+    },
+    "terminated_by_budget": null,
+    "log": [
+      "iter 1: [claims-triage-coverage] get_claim({'claim_number': 'CLM-2027-00325'}) -> {\"trace_id\": \"aaaf6a5184d2\", \"claim_number\": \"CLM-2027-00325\", \"policy_number\": \"PROP-CONT-401\", \"product\": \"property_contents\", \"loss_date\": \"2024-06-03\", \"claimed_amount\": 15000, \"fnol_text\": \"Jewellery reported missing from the home; insured cannot say exactly when it disappeared.\", \"adjuster_not",
+      "iter 2: [claims-triage-coverage] check_coverage_in_force({'loss_date': '2024-06-03', 'trace_id': 'aaaf6a5184d2', 'policy_number': 'PROP-CONT-401'}) -> {\"policy_number\": \"PROP-CONT-401\", \"loss_date\": \"2024-06-03\", \"coverage_start_date\": \"2024-05-01\", \"coverage_end_date\": \"2025-04-30\", \"in_force\": true}",
+      "iter 3: [claims-triage-coverage] search_policy_wording({'loss_date': '2024-06-03', 'trace_id': 'aaaf6a5184d2', 'query': 'jewellery missing mysterious disappearance theft forced entry'}) -> {\"loss_date\": \"2024-06-03\", \"chunks\": [{\"source\": \"20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf\", \"chunk_index\": 115, \"text\": \"hority \\nconstituted by the government for maintaining law and order. \\nExclusions specific to Section A3: Terrorism Cover This c",
+      "iter 4: [claims-triage-coverage] compute_amounts({'claimed_amount': 15000, 'trace_id': 'aaaf6a5184d2', 'deductible': 2500}) -> {\"claimed_amount\": 15000.0, \"deductible\": 2500.0, \"sub_limit\": null, \"payable_before_sub_limit\": 12500.0, \"payable_after_sub_limit\": 12500.0, \"note\": \"These are reference figures for the adjuster, not a coverage decision.\"}",
+      "iter 5: [claims-triage-coverage] refer_to_adjuster({'loss_date_resolved_against': '2024-06-03', 'trace_id': 'aaaf6a5184d2', 'deductible': 2500, 'policy_limit': 'as declared (market value)', 'claim_number': 'CLM-2027-00325', 'coverage_signal': 'supports_exclusion', 'sub_limit': None, 'summary': \"The insured reported missing jewellery from the home with no evidence of forced entry, indicating a mysterious disappearance. The policy was in force on the loss date of 2024-06-03 (effective 2024-05-01 to 2025-04-30). Policy wording search under endorsement version 'base' retrieved Exclusion 10, which excludes 'Mysterious disappearance and Unexplained Losses', and Item 3, which specifies that insurance for jewelry applies only against burglary with forcible entry or exit. Claimed amount: 15,000; Deductible: 2,500; Policy limit: as declared (market value).\", 'endorsement_version': 'base', 'cited_clause': 'Exclusion 10 (Mysterious disappearance and Unexplained Losses) & Item 3 (Jewelry insurance restricted to burglary; excludes theft without forcible entry/exit)'}) -> {\"claim_number\": \"CLM-2027-00325\", \"action\": \"referred_to_adjuster\", \"coverage_signal\": \"supports_exclusion\", \"cited_clause\": \"Exclusion 10 (Mysterious disappearance and Unexplained Losses) & Item 3 (Jewelry insurance restricted to burglary; excludes theft without forcible entry/exit)\", \"endorsement"
+    ]
+  }
+}

@@ -5,6 +5,7 @@ from pathlib import Path
 from pypdf import PdfReader
 
 from app.core.logging import get_logger
+from app.ingestion.doc_metadata import metadata_for
 from app.models.schemas import Document
 
 logger = get_logger(__name__)
@@ -42,7 +43,7 @@ def load_file(path: Path) -> Document | None:
         text=text,
         source=path.name,
         source_path=str(path.resolve()),
-        metadata={"suffix": suffix},
+        metadata={"suffix": suffix, **metadata_for(path.name)},
     )
 
 
