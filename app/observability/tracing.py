@@ -105,3 +105,49 @@ def read_traces(path: Path = TRACES_PATH) -> list[dict]:
         return []
     with path.open(encoding="utf-8") as f:
         return [json.loads(line) for line in f if line.strip()]
+
+
+SPANS_PATH = ROOT_DIR / "analysis" / "week12" / "spans.jsonl"
+
+
+def log_span(
+    trace_id: str,
+    stage: str,
+    name: str,
+    latency_ms: float,
+    tokens: int = 0,
+    cost_usd: float = 0.0,
+    metadata: dict | None = None,
+    path: Path = SPANS_PATH,
+) -> None:
+    """Flat, process-agnostic span record. Both the agent process and an MCP server
+    process (a separate OS process, reachable only over stdio) can append to this
+    same file under the same trace_id, which is how one trace id survives both hops
+    without the two processes sharing any in-memory state."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    record = {
+        "trace_id": trace_id,
+        "timestamp": utc_now_iso(),
+        "stage": stage,
+        "name": name,
+        "latency_ms": round(latency_ms, 2),
+        "tokens": tokens,
+        "cost_usd": round(cost_usd, 8),
+        "metadata": metadata or {},
+    }
+    with path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def spans_for_trace(trace_id: str, path: Path = SPANS_PATH) -> list[dict]:
+    if not path.exists():
+        return []
+    records = []
+    with path.open(encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            if record["trace_id"] == trace_id:
+                records.append(record)
+    return records

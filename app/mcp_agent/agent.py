@@ -5,15 +5,17 @@ from contextlib import AsyncExitStack
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from google import genai
 from google.genai import types as genai_types
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 from app.agent.budgets import Budgets, BudgetExceeded, BudgetTracker
+from app.agent.llm_client import GeminiKeyRotatingClient
 from app.core.config import ROOT_DIR, settings
 from app.core.logging import get_logger
 from app.mcp_agent.config import ServerSpec, load_server_specs
+from app.observability.tracing import log_span
+from time import perf_counter
 
 logger = get_logger(__name__)
 
@@ -45,6 +47,8 @@ class MCPAgentRunResult:
     terminated_by_budget: str | None = None
     flagged_for_review: bool = False
     log: list[str] = field(default_factory=list)
+    final: dict | None = None
+    trace_id: str | None = None
 
 
 def _call_cost(usage) -> tuple[int, float]:
@@ -65,7 +69,7 @@ class MCPAgent:
         system_prompt: str | None = None,
         config_path: Path | None = None,
     ):
-        self.client = genai.Client(api_key=api_key or settings.gemini_api_key)
+        self._llm = GeminiKeyRotatingClient(api_key=api_key, model=model)
         self.model = model or settings.gemini_model
         self.budgets = budgets or Budgets()
         self.system_prompt = system_prompt or SYSTEM_PROMPT
@@ -130,6 +134,7 @@ class MCPAgent:
         final: dict | None = None
         flagged_for_review = False
         terminated_by_budget: str | None = None
+        captured_trace_id: str | None = None
 
         while final is None:
             try:
@@ -139,9 +144,13 @@ class MCPAgent:
                 log.append(f"BUDGET EXCEEDED before iteration {tracker.iterations + 1}: {exc}")
                 break
 
-            response = self.client.models.generate_content(model=self.model, contents=contents, config=config)
+            gen_started = perf_counter()
+            response = self._llm.generate(contents, config)
+            gen_latency_ms = (perf_counter() - gen_started) * 1000
             tokens, cost = _call_cost(response.usage_metadata)
             tracker.record_call(tokens=tokens, cost_usd=cost)
+            if captured_trace_id:
+                log_span(captured_trace_id, "generation", "agent_turn", gen_latency_ms, tokens=tokens, cost_usd=cost)
 
             candidate = response.candidates[0]
             contents.append(candidate.content)
@@ -160,6 +169,9 @@ class MCPAgent:
 
                 result = await self._call_tool(name, args)
                 log.append(f"iter {tracker.iterations}: [{owner}] {name}({args}) -> {json.dumps(result, default=str)[:300]}")
+
+                if not captured_trace_id and isinstance(result.get("trace_id"), str):
+                    captured_trace_id = result["trace_id"]
 
                 if result.get("final"):
                     final = result
@@ -186,4 +198,6 @@ class MCPAgent:
             terminated_by_budget=terminated_by_budget,
             flagged_for_review=flagged_for_review,
             log=log,
+            final=final,
+            trace_id=captured_trace_id,
         )

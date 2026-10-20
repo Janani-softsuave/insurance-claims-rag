@@ -1,0 +1,27 @@
+{
+  "motor_comprehensive": {
+    "deductible": 1000,
+    "sub_limit": null,
+    "policy_limit": "as declared (IDV)"
+  },
+  "motor_third_party": {
+    "deductible": 0,
+    "sub_limit": 750000,
+    "policy_limit": "unlimited (bodily injury)"
+  },
+  "property_building": {
+    "deductible": 10000,
+    "sub_limit": null,
+    "policy_limit": "as declared (reinstatement value)"
+  },
+  "property_contents": {
+    "deductible": 2500,
+    "sub_limit": null,
+    "policy_limit": "as declared (market value)"
+  },
+  "property_burglary": {
+    "deductible": 5000,
+    "sub_limit": 25000,
+    "policy_limit": "as declared"
+  }
+}

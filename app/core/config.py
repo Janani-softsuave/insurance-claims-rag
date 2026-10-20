@@ -11,6 +11,15 @@ ROOT_DIR = Path(__file__).resolve().parents[2]
 class Settings(BaseSettings):
     gemini_api_key: str = ""
     gemini_api_keys: str = ""
+    gemini_api_key_2: str = ""
+    gemini_api_key_3: str = ""
+    gemini_api_key_4: str = ""
+    gemini_api_key_5: str = ""
+    gemini_api_key_6: str = ""
+    gemini_api_key_7: str = ""
+    gemini_api_key_8: str = ""
+    gemini_api_key_9: str = ""
+    gemini_api_key_10: str = ""
     gemini_model: str = "gemini-flash-latest"
 
     embedding_model: str = "BAAI/bge-small-en-v1.5"
@@ -51,7 +60,15 @@ class Settings(BaseSettings):
     )
 
     def gemini_api_key_pool(self) -> list[str]:
-        keys = [self.gemini_api_key] + self.gemini_api_keys.split(",")
+        keys = (
+            [self.gemini_api_key]
+            + self.gemini_api_keys.split(",")
+            + [
+                self.gemini_api_key_2, self.gemini_api_key_3, self.gemini_api_key_4,
+                self.gemini_api_key_5, self.gemini_api_key_6, self.gemini_api_key_7,
+                self.gemini_api_key_8, self.gemini_api_key_9, self.gemini_api_key_10,
+            ]
+        )
         seen: set[str] = set()
         pool: list[str] = []
         for key in keys:

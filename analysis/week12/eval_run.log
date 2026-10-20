@@ -1,0 +1,131 @@
+running CLM-2027-00323...
+12:35:41 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+12:35:42 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:35:42 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 4.0s (attempt 1/6)
+12:35:46 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:35:46 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 8.0s (attempt 2/6)
+12:35:57 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+12:36:00 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+12:36:02 | INFO    | app.embeddings.embedder | Loading embedding model: BAAI/bge-small-en-v1.5
+12:36:02 | INFO    | sentence_transformers.base.model | No device provided, using cpu
+12:36:02 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+12:36:02 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+12:36:02 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+12:36:03 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+12:36:03 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+12:36:03 | INFO    | sentence_transformers.base.model | Loading SentenceTransformer model from BAAI/bge-small-en-v1.5.
+12:36:03 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+12:36:03 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config_sentence_transformers.json "HTTP/1.1 200 OK"
+12:36:03 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+12:36:03 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md "HTTP/1.1 200 OK"
+12:36:04 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+12:36:04 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/modules.json "HTTP/1.1 200 OK"
+12:36:04 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:04 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/sentence_bert_config.json "HTTP/1.1 200 OK"
+12:36:05 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+12:36:05 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:05 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|##########| 199/199 [00:00<00:00, 2328.47it/s]
+12:36:07 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+12:36:07 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+12:36:07 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+12:36:07 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+12:36:08 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:08 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+12:36:08 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:08 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+12:36:08 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:08 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/config.json "HTTP/1.1 200 OK"
+12:36:09 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:09 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/tokenizer_config.json "HTTP/1.1 200 OK"
+12:36:09 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+12:36:09 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+12:36:09 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:09 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-small-en-v1.5/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+12:36:10 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-small-en-v1.5/resolve/main/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+12:36:10 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-small-en-v1.5 "HTTP/1.1 200 OK"
+12:36:12 | INFO    | app.retrieval.retriever | Dense retrieval returned 8 candidate(s)
+12:36:12 | INFO    | app.retrieval.reranker | Loading reranker model: BAAI/bge-reranker-base
+12:36:12 | INFO    | sentence_transformers.base.model | No device provided, using cpu
+12:36:12 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+12:36:12 | INFO    | sentence_transformers.base.model | No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+12:36:12 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+12:36:13 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:13 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+12:36:13 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+12:36:13 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:13 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 2739.27it/s]
+12:36:14 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+12:36:14 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+12:36:14 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+12:36:14 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+12:36:14 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:14 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+12:36:15 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:15 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+12:36:15 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:15 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+12:36:15 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+12:36:15 | INFO    | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+12:36:16 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+12:36:16 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+12:36:19 | INFO    | httpx | HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:05<00:00,  5.70s/it]Batches: 100%|##########| 1/1 [00:05<00:00,  5.70s/it]
+12:36:25 | INFO    | app.retrieval.reranker | Reranked 8 candidate(s); top score=0.662
+12:36:25 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:36:25 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 4.0s (attempt 1/6)
+12:36:31 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+12:36:31 | INFO    | app.retrieval.retriever | Dense retrieval returned 8 candidate(s)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:01<00:00,  1.26s/it]Batches: 100%|##########| 1/1 [00:01<00:00,  1.26s/it]
+12:36:32 | INFO    | app.retrieval.reranker | Reranked 8 candidate(s); top score=0.669
+12:36:33 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:36:33 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 4.0s (attempt 1/6)
+12:36:37 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:36:37 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 8.0s (attempt 2/6)
+12:36:46 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:36:46 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 16.0s (attempt 3/6)
+12:37:02 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:37:02 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 32.0s (attempt 4/6)
+12:37:35 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:37:35 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 60.0s (attempt 5/6)
+12:38:38 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+12:38:39 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:38:39 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 4.0s (attempt 1/6)
+12:38:43 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:38:43 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 8.0s (attempt 2/6)
+12:38:52 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:38:52 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 16.0s (attempt 3/6)
+12:39:08 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:39:08 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 32.0s (attempt 4/6)
+12:39:41 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:39:41 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 60.0s (attempt 5/6)
+12:40:42 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:40:42 | WARNING | app.agent.llm_client | Gemini key 1/10 rate-limited (429); backing off 60.0s (attempt 6/6)
+12:41:42 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:41:42 | WARNING | app.agent.llm_client | Gemini key 1/10 still rate-limited, rotating to key 2/10
+12:41:43 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:41:43 | WARNING | app.agent.llm_client | Gemini key 2/10 rate-limited (429); backing off 4.0s (attempt 1/6)
+12:41:47 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:41:47 | WARNING | app.agent.llm_client | Gemini key 2/10 rate-limited (429); backing off 8.0s (attempt 2/6)
+12:41:56 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:41:56 | WARNING | app.agent.llm_client | Gemini key 2/10 rate-limited (429); backing off 16.0s (attempt 3/6)
+12:42:12 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:42:12 | WARNING | app.agent.llm_client | Gemini key 2/10 rate-limited (429); backing off 32.0s (attempt 4/6)
+12:42:45 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:42:45 | WARNING | app.agent.llm_client | Gemini key 2/10 rate-limited (429); backing off 60.0s (attempt 5/6)
+12:43:45 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:43:45 | WARNING | app.agent.llm_client | Gemini key 2/10 rate-limited (429); backing off 60.0s (attempt 6/6)
+12:44:46 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:44:46 | WARNING | app.agent.llm_client | Gemini key 2/10 still rate-limited, rotating to key 3/10
+12:44:46 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:44:46 | WARNING | app.agent.llm_client | Gemini key 3/10 rate-limited (429); backing off 4.0s (attempt 1/6)
+12:44:51 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:44:51 | WARNING | app.agent.llm_client | Gemini key 3/10 rate-limited (429); backing off 8.0s (attempt 2/6)
+12:44:59 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:44:59 | WARNING | app.agent.llm_client | Gemini key 3/10 rate-limited (429); backing off 16.0s (attempt 3/6)
+12:45:23 | INFO    | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent "HTTP/1.1 200 OK"
+CLM-2027-00323 -> final: {"claim_number": "CLM-2027-00323", "action": "referred_to_adjuster", "coverage_signal": "supports_coverage", "cited_clause": "Claims FAQ - Glass Breakage Cover ('My windshield cracked. Do I need to pa
+
+Done. 25 / 25 claims produced a referral.
