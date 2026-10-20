@@ -1,0 +1,54 @@
+{
+  "id": "W11-D-regression-206",
+  "source_claim": "CLM-2027-00206",
+  "suite_note": "This codebase's Week 6 suite (analysis/week6/eval_cases.json + scripts/run_week6_eval.py) grades claim-SUMMARY faithfulness via an LLM judge — a different subsystem from the one that produced this bug. The bug lives in ClaimsWorkflow's coverage DECISION, whose real regression suite is analysis/week7/claims.json, graded programmatically (expected_status/expected_payout), reused unchanged by Weeks 7 and 10 as 'the same judge'. CLM-2027-00206 is promoted here, explicitly and permanently, as the regression case for this failure class: a burglary/theft claim where the policy's forced-entry requirement must be found and honored.",
+  "claim_number": "CLM-2027-00206",
+  "policy_id": "PROP-CONT-01",
+  "sum_insured": 400000,
+  "excess_amount": 5000,
+  "claimed_amount": 60000,
+  "adjuster_notes": "Insured's home was burgled overnight. The back door was left unlocked; there are no signs of forced or violent entry. Electronics were stolen from the living room.",
+  "expected_status": "denied",
+  "expected_payout": 0,
+  "must_not_say": "covered",
+  "regression_class": "exclusion-ignored — coverage answer omits a policy exclusion the adjuster's own notes already satisfy the condition for",
+  "required_context_id": "insurance_policy_overview.md#chunk2",
+  "required_context_text": "Covers loss of contents due to forcible and violent entry. Unforced entry is not covered.",
+  "red_before_fix": {
+    "component": "ClaimsWorkflow",
+    "prompt_version": "v1",
+    "date_confirmed": "2026-10-01",
+    "status": "covered",
+    "payout": 55000.0,
+    "retrieved_context_ids": [
+      "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk108",
+      "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk134",
+      "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk19",
+      "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk103"
+    ],
+    "trace_id": "feb7a7f0a446",
+    "pass": false
+  },
+  "green_after_fix": {
+    "component": "ClaimsWorkflow",
+    "prompt_version": "v2-retrieval-widened",
+    "date_confirmed": "2026-10-01",
+    "status": "denied",
+    "payout": 0.0,
+    "retrieved_context_ids": [
+      "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk109",
+      "insurance_policy_overview.md#chunk2",
+      "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk108",
+      "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk134"
+    ],
+    "trace_id": "190d27d5ddde",
+    "pass": true
+  },
+  "fix_applied": {
+    "layer": "retrieval",
+    "file": "app/agent/tools.py",
+    "function": "search_policy",
+    "change": "Dense-retrieval candidate pool widened from top_k (4) to max(top_k*2, 8) before reranking narrows back down to top_k. The exclusions clause ranked #5 in dense similarity for this claim's raw-adjuster-notes query, one place outside the old top_k=4 cutoff, so it never reached the reranker at all. Reranking alone could not recover it because it was never a candidate.",
+    "no_prompt_text_changed": true
+  }
+}

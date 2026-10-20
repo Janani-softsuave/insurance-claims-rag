@@ -1,0 +1,60 @@
+{
+  "trace_id": "feb7a7f0a446",
+  "timestamp": "2026-09-29T12:05:00+00:00",
+  "user": "adjuster_03",
+  "claim_number": "CLM-2027-00206",
+  "input_type": "claim_number_lookup",
+  "prompt_version": "v1",
+  "component": "ClaimsWorkflow",
+  "note_on_corpus_vs_this_file": "traces.jsonl stores a short templated rationale for every 'covered'/'denied'/etc. entry so the output-status slice used in the drill is realistic (identical boilerplate across many rows, exactly like a real system would log a structured decision summary rather than freeform prose). This file restores the ORIGINAL verbatim rationale that the real Week 7 production run actually produced for this claim, redacted on write via app.core.tracing.redact (no PII hits in this case — the text contains no claim/policy numbers, emails, phones, or labelled names).",
+  "spans": [
+    {
+      "name": "search_policy",
+      "stage": "retrieval",
+      "latency_ms": 2715.95,
+      "tokens": 0,
+      "cost_usd": 0.0,
+      "context_ids": [
+        "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk108",
+        "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk134",
+        "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk19",
+        "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk103"
+      ]
+    },
+    {
+      "name": "workflow_decision",
+      "stage": "generation",
+      "latency_ms": 7604.65,
+      "tokens": 1826,
+      "cost_usd": 0.00015967
+    },
+    {
+      "name": "compute_payout",
+      "stage": "tools",
+      "latency_ms": 543.19,
+      "tokens": 0,
+      "cost_usd": 0.0
+    }
+  ],
+  "retrieved_context_ids": [
+    "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk108",
+    "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk134",
+    "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk19",
+    "20240928002-group-home-protect-policy-policy-wording8c0007ff45fd68ff8a0df0055fa0c9d6.pdf#chunk103"
+  ],
+  "missing_context_id": "insurance_policy_overview.md#chunk2",
+  "missing_context_text": "Covers loss of contents due to forcible and violent entry. Unforced entry is not covered.",
+  "final_status": "covered",
+  "final_payout": 55000.0,
+  "expected_status": "denied",
+  "expected_payout": 0,
+  "rationale_redacted": "The claim for stolen electronics is covered under the Burglary Cover extension as none of the retrieved policy exclusions (such as family involvement, unoccupancy exceeding 30 days, or items kept outside) apply. The standard policy excess of 5,000 applies since no excess waiver is specified in the retrieved policy text.",
+  "total_latency_ms": 10863.78,
+  "total_tokens": 1826,
+  "total_cost_usd": 0.00015967,
+  "diagnosis": "A genuine retrieval miss, not a model/prompt failure: the exclusion clause (insurance_policy_overview.md#chunk2, 'Unforced entry is not covered') ranks #5 by dense-embedding similarity against this claim's raw-adjuster-notes query, one place outside search_policy's old top_k=4 dense-retrieval cutoff — so it was never even a reranker candidate. The model's rationale lists exclusions it DID see (family involvement, unoccupancy, items kept outside) and correctly found none applied; it never had the one exclusion that did.",
+  "live_confirmation_traces": {
+    "red_rerun_today_same_bug": "35cd01674f12",
+    "green_rerun_today_after_fix": "190d27d5ddde"
+  }
+}

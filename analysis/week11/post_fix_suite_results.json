@@ -1,0 +1,172 @@
+{
+  "CLM-2027-00201": {
+    "claim_number": "CLM-2027-00201",
+    "status": "denied",
+    "payout": 0.0,
+    "rationale": "The claim for engine damage due to water ingression/hydrostatic lock is denied because this risk is excluded under standard coverage unless the policy includes the Engine & Gearbox Protection endorsement (IMT-29), which is not on file.",
+    "total_tokens": 1592,
+    "total_cost_usd": 0.00013807499999999998,
+    "elapsed_seconds": 19.01892229999976,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  "CLM-2027-00202": {
+    "claim_number": "CLM-2027-00202",
+    "status": "covered",
+    "payout": 17000.0,
+    "rationale": "The claim involves own-damage from an accidental collision with a pillar without third-party involvement, which is covered under standard motor policy terms. The standard policy excess of 1000 applies.",
+    "total_tokens": 1640,
+    "total_cost_usd": 0.00013964999999999998,
+    "elapsed_seconds": 18.987090399998124,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "covered",
+    "expected_payout": 17000
+  },
+  "CLM-2027-00203": {
+    "claim_number": "CLM-2027-00203",
+    "status": "denied",
+    "payout": 0.0,
+    "rationale": "Standard home policies do not cover earthquake damage without an Earthquake Extension endorsement on file. Since no Earthquake Extension endorsement exists for this policy, the claim is denied.",
+    "total_tokens": 1666,
+    "total_cost_usd": 0.000140025,
+    "elapsed_seconds": 20.083846400004404,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  "CLM-2027-00204": {
+    "claim_number": "CLM-2027-00204",
+    "status": "covered",
+    "payout": 80000.0,
+    "rationale": "The kitchen fire damaged the building structure, which is covered under standard building structure insurance. The standard excess amount of 10,000 applies as there is no applicable waiver.",
+    "total_tokens": 1673,
+    "total_cost_usd": 0.000141675,
+    "elapsed_seconds": 18.096062799995707,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "covered",
+    "expected_payout": 80000
+  },
+  "CLM-2027-00205": {
+    "claim_number": "CLM-2027-00205",
+    "status": "covered",
+    "payout": 11000.0,
+    "rationale": "The claim for accident damage to the bumper and tyre is covered under the policy. The standard policy excess of ₹1,000 applies since deductible waiver conditions do not apply to this claim.",
+    "total_tokens": 1457,
+    "total_cost_usd": 0.0001257,
+    "elapsed_seconds": 8.61087899999984,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": false,
+    "expected_status": "partial",
+    "expected_payout": 5500
+  },
+  "CLM-2027-00206": {
+    "claim_number": "CLM-2027-00206",
+    "status": "denied",
+    "payout": 0.0,
+    "rationale": "The claim is denied because the burglary occurred via an unlocked door with no signs of forcible or violent entry, which is explicitly excluded under Section 3.3 (Unforced entry is not covered).",
+    "total_tokens": 1748,
+    "total_cost_usd": 0.00014774999999999999,
+    "elapsed_seconds": 6.8661621999999625,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  "CLM-2027-00207": {
+    "claim_number": "CLM-2027-00207",
+    "status": "covered",
+    "payout": 4500.0,
+    "rationale": "The claim for windshield replacement is covered under glass breakage cover. Since no other damage was claimed simultaneously, the standard deductible is waived.",
+    "total_tokens": 1597,
+    "total_cost_usd": 0.0001326,
+    "elapsed_seconds": 10.100749299999734,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "covered",
+    "expected_payout": 4500
+  },
+  "CLM-2027-00208": {
+    "claim_number": "CLM-2027-00208",
+    "status": "pending",
+    "payout": 0.0,
+    "rationale": "The claim is pending because the police have not yet issued the required Non-Traceable Certificate, which is necessary for settlement after a vehicle theft. The standard excess of 1,000 applies.",
+    "total_tokens": 1641,
+    "total_cost_usd": 0.00013995,
+    "elapsed_seconds": 8.233949800000119,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "pending",
+    "expected_payout": 0
+  },
+  "CLM-2027-00209": {
+    "claim_number": "CLM-2027-00209",
+    "status": "pending",
+    "payout": 0.0,
+    "rationale": "The retrieved text is for a Group Home Protect Policy and does not contain the policy terms or exclusions for motor insurance (MOTOR-COMP-06) regarding driving under the influence. Per the rules, policy conditions cannot be assumed without explicit text, so the claim is marked as pending.",
+    "total_tokens": 1671,
+    "total_cost_usd": 0.0001458,
+    "elapsed_seconds": 19.999890400002187,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": false,
+    "expected_status": "denied",
+    "expected_payout": 0
+  },
+  "CLM-2027-00210": {
+    "claim_number": "CLM-2027-00210",
+    "status": "covered",
+    "payout": 140000.0,
+    "rationale": "Impact damage caused by a falling tree during a storm is explicitly covered under Clause B (Insured Events #5 and #8) of the policy wording. The standard excess amount of 10,000 applies as there are no waiver provisions for this event.",
+    "total_tokens": 1887,
+    "total_cost_usd": 0.00016155,
+    "elapsed_seconds": 5.509860899997875,
+    "tool_calls": [
+      "get_claim",
+      "search_policy",
+      "compute_payout"
+    ],
+    "pass": true,
+    "expected_status": "covered",
+    "expected_payout": 140000
+  }
+}

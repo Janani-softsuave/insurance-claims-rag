@@ -47,7 +47,8 @@ def _retriever() -> Retriever:
 
 
 def search_policy(query: str, top_k: int = 4) -> list[dict]:
-    candidates = _retriever().retrieve(query, top_k=top_k)
+    dense_pool_size = max(top_k * 2, 8)
+    candidates = _retriever().retrieve(query, top_k=dense_pool_size)
     reranked = get_reranker().rerank(query, candidates, top_n=min(4, top_k))
     return [
         {"source": rc.chunk.source, "chunk_index": rc.chunk.chunk_index, "text": rc.chunk.text.strip()}
